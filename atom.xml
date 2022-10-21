@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>wynneblog</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="http://wynneyin.site/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="http://wynneyin.site/"/>
   <updated>2022-10-21T05:50:24.070Z</updated>
-  <id>http://example.com/</id>
+  <id>http://wynneyin.site/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Wynneyin</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>测试</title>
-    <link href="http://example.com/2022/10/21/%E6%B5%8B%E8%AF%95/"/>
-    <id>http://example.com/2022/10/21/%E6%B5%8B%E8%AF%95/</id>
+    <link href="http://wynneyin.site/2022/10/21/%E6%B5%8B%E8%AF%95/"/>
+    <id>http://wynneyin.site/2022/10/21/%E6%B5%8B%E8%AF%95/</id>
     <published>2022-10-21T05:49:45.000Z</published>
     <updated>2022-10-21T05:50:24.070Z</updated>
     
@@ -38,8 +38,8 @@
   
   <entry>
     <title>test_my_site</title>
-    <link href="http://example.com/2022/10/21/test-my-site/"/>
-    <id>http://example.com/2022/10/21/test-my-site/</id>
+    <link href="http://wynneyin.site/2022/10/21/test-my-site/"/>
+    <id>http://wynneyin.site/2022/10/21/test-my-site/</id>
     <published>2022-10-21T05:08:03.000Z</published>
     <updated>2022-10-21T05:08:03.278Z</updated>
     
@@ -51,8 +51,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2022/10/21/hello-world/"/>
-    <id>http://example.com/2022/10/21/hello-world/</id>
+    <link href="http://wynneyin.site/2022/10/21/hello-world/"/>
+    <id>http://wynneyin.site/2022/10/21/hello-world/</id>
     <published>2022-10-21T05:05:39.454Z</published>
     <updated>2022-10-21T05:05:33.483Z</updated>
     
