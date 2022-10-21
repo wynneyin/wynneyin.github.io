@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2022-10-21T05:50:24.070Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试</title>
+    <link href="http://example.com/2022/10/21/%E6%B5%8B%E8%AF%95/"/>
+    <id>http://example.com/2022/10/21/%E6%B5%8B%E8%AF%95/</id>
+    <published>2022-10-21T05:49:45.000Z</published>
+    <updated>2022-10-21T05:50:24.070Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="github代码提交流程"><a href="#github代码提交流程" class="headerlink" title="github代码提交流程"></a>github代码提交流程</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git add 文件名字</span><br><span class="line">git commit -m  &quot;注释内容&quot;</span><br><span class="line">git remote add 仓库名字 仓库地址</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">git <span class="built_in">rm</span> 文件名 <span class="comment">#本地倒库内删除</span></span> </span><br><span class="line">git config --global http.proxy http://127.0.0.1:端口号</span><br><span class="line">git config --global https.proxy http://127.0.0.1:端口号</span><br><span class="line">git push -u 仓库名字</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name &quot;new name&quot;</span><br><span class="line">git config credential.username &quot;new name&quot;</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r sm3_加速</span><br><span class="line">git commit -m &quot;删除说明&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull practice master</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">每次提交前先pull一下</span></span><br></pre></td></tr></table></figure><h5 id="1-rejected-master-gt-master-non-fast-forward-解决方案："><a href="#1-rejected-master-gt-master-non-fast-forward-解决方案：" class="headerlink" title="1.! [rejected] master -&gt; master (non-fast-forward)解决方案："></a>1.! [rejected] master -&gt; master (non-fast-forward)解决方案：</h5><p><a href="https://blog.csdn.net/zyz00000000/article/details/84402189">https://blog.csdn.net/zyz00000000/article/details/84402189</a></p><p>2.删除文件夹</p><p><a href="https://blog.csdn.net/weixin_45309916/article/details/108275311">https://blog.csdn.net/weixin_45309916/article/details/108275311</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;github代码提交流程&quot;&gt;&lt;a href=&quot;#github代码提交流程&quot; class=&quot;headerlink&quot; title=&quot;github代码提交流程&quot;&gt;&lt;/a&gt;github代码提交流程&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>test_my_site</title>
+    <link href="http://example.com/2022/10/21/test-my-site/"/>
+    <id>http://example.com/2022/10/21/test-my-site/</id>
+    <published>2022-10-21T05:08:03.000Z</published>
+    <updated>2022-10-21T05:08:03.278Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2022/10/21/hello-world/"/>
+    <id>http://example.com/2022/10/21/hello-world/</id>
+    <published>2022-10-21T05:05:39.454Z</published>
+    <updated>2022-10-21T05:05:33.483Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
