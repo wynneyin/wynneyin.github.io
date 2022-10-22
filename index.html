@@ -214,6 +214,74 @@
             
 
   
+    <article id="post-线性分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="线性分析"><a href="#线性分析" class="headerlink" title="线性分析"></a>线性分析</h1><p>1.找到S盒的线性近似关系，$α∙u&#x3D;β∙v且Pr(α∙u&#x3D;β∙v)&#x3D;p$。</p>
+<p>2.将这个近似关系向3头尾延伸。</p>
+<p>3.得到了$α∙m⨁α∙k_0&#x3D;β∙c⨁β∙k_1$  以概率p成立 ,那么$α∙m⨁β∙c&#x3D;α∙k_0⨁β∙k_1$ 以概率p成立</p>
+<p>4.利用算法一，求解密钥一比特的信息。</p>
+<p>1.设已知N个明文及相应的密文(m,c)</p>
+<p>初始化两个计数器$T_0&#x3D;0, T_1&#x3D;0$</p>
+<p>2.对每一个(m,c)	</p>
+<p>​	计算b&#x3D;α∙m⨁β∙c;	</p>
+<p>​	若b&#x3D;0， $T_0++$；	</p>
+<p>​	否则，$T_1++$；</p>
+<p>3.若$T_0≥N&#x2F;2$	</p>
+<p>​		当p&gt; 1&#x2F;2时		</p>
+<p>​			猜测$α∙k_0 ⨁β∙k_1&#x3D;0	$</p>
+<p>​		否则，猜测$α∙k_0 ⨁β∙k_1&#x3D;1$</p>
+<p>4.若$T_0&lt;N&#x2F;2$，即$T_1&gt;N&#x2F;2   $</p>
+<p>​	当p&gt; 1&#x2F;2时		</p>
+<p>​		猜测$α∙k_0 ⨁β∙k_1&#x3D;1	$</p>
+<p>​	否则，猜测$α∙k_0 ⨁β∙k_1&#x3D;0$</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/10/22/%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
