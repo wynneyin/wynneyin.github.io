@@ -6,7 +6,7 @@
   <link href="http://wynneyin.site/atom.xml" rel="self"/>
   
   <link href="http://wynneyin.site/"/>
-  <updated>2022-10-23T13:06:40.355Z</updated>
+  <updated>2022-10-27T03:19:52.633Z</updated>
   <id>http://wynneyin.site/</id>
   
   <author>
@@ -15,6 +15,45 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://wynneyin.site/2022/10/27/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E5%9C%A8%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/"/>
+    <id>http://wynneyin.site/2022/10/27/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E5%9C%A8%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/</id>
+    <published>2022-10-27T02:54:41.882Z</published>
+    <updated>2022-10-27T03:19:52.633Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="公钥密码系统在区块链中的使用情况"><a href="#公钥密码系统在区块链中的使用情况" class="headerlink" title="公钥密码系统在区块链中的使用情况"></a>公钥密码系统在区块链中的使用情况</h2><h3 id="什么是比特币钱包？"><a href="#什么是比特币钱包？" class="headerlink" title="什么是比特币钱包？"></a>什么是比特币钱包？</h3><p>比特币钱包用于访问和转移加密货币，钱包内存有私钥。</p><span id="more"></span><h3 id="比特币钱包的分类"><a href="#比特币钱包的分类" class="headerlink" title="比特币钱包的分类"></a>比特币钱包的分类</h3><h4 id="热钱包"><a href="#热钱包" class="headerlink" title="热钱包"></a>热钱包</h4><p>钱包提供在线存储，通常与第三方应用程序或服务相关联。热钱包使存储您的加密密钥更加方便和易于管理。但是，如果发生网络盗窃或服务泄露，您有可能丢失密钥。 </p><h4 id="冷钱包"><a href="#冷钱包" class="headerlink" title="冷钱包"></a>冷钱包</h4><p>这些是未连接到互联网的加密存储设备，可减少您的资产受到攻击的机会。将这些密钥存储在从不连接到互联网的计算机上，使设备成为冷存储。与热钱包相比，冷钱包是一种更安全的选择，但它们会让您的资产交易变得不方便。</p><h4 id="硬件钱包"><a href="#硬件钱包" class="headerlink" title="硬件钱包"></a>硬件钱包</h4><p>硬件钱包是在物理介质上包含您的加密密钥的设备。一个明显的好处是您可以随时将硬钱包连接到互联网。硬件钱包可确保您的密钥安全并提高可用性。</p><h4 id="比特币钱包的工作："><a href="#比特币钱包的工作：" class="headerlink" title="比特币钱包的工作："></a>比特币钱包的工作：</h4><p>比特币钱包内存有你的公钥和私钥，所以可以用来转账。但是钱包内不存放比特币，</p><h2 id="比特币交易"><a href="#比特币交易" class="headerlink" title="比特币交易"></a>比特币交易</h2><h3 id="基本内容："><a href="#基本内容：" class="headerlink" title="基本内容："></a>基本内容：</h3><h4 id="私钥："><a href="#私钥：" class="headerlink" title="私钥："></a>私钥：</h4><p>私钥为随机选取的数字。私钥丢失无法复原，比特币随之丢失。</p><h5 id="公钥："><a href="#公钥：" class="headerlink" title="公钥："></a>公钥：</h5><p>​    通过椭圆曲线算法可以从私钥计算得到公钥，这是不可逆转的过程：K = k * G。其中k是私钥，G是被称为生成点的常数点，而K是所得公钥。</p><p>​    其反向运算，被称为“寻找离散对数”——已知公钥K来求出私钥k——是非常困难的，就像去试验所有可能的k值，即暴力搜索。</p><h5 id="比特币地址："><a href="#比特币地址：" class="headerlink" title="比特币地址："></a>比特币地址：</h5><p>比特币地址是一个由数字和字母组成的字符串，在交易中，比特币地址通常以收款方出现。如果把比特币交易比作一张支票，比特币地址就是收款人。</p><h6 id="如何生成比特币地址"><a href="#如何生成比特币地址" class="headerlink" title="如何生成比特币地址"></a>如何生成比特币地址</h6><p>比特币地址可由公钥经过单向的加密<a href="https://so.csdn.net/so/search?q=哈希&amp;spm=1001.2101.3001.7020">哈希</a>算法得到。公钥 K 为输入，计算其SHA256哈希值，并以此结果计算RIPEMD160 哈希值，得到一个长度为160比特（20字节）的数字。</p><h3 id="交易验签原理："><a href="#交易验签原理：" class="headerlink" title="交易验签原理："></a>交易验签原理：</h3><h4 id="接受者的output结构为："><a href="#接受者的output结构为：" class="headerlink" title="接受者的output结构为："></a>接受者的output结构为：</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;pk_script&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span>byte</span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>pk_script对应着为脚本字节数据，比特币有很多种脚本结构：例如P2PKH,P2SH,P2WSH等等。</p><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/41de67246b9b466ba50145d2f1f7b9f3~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p><p><code>OP_DUP</code> <code>OP_HASH160</code> 是比特币虚拟机的操作码，<code>OP</code>是英文<code>operation</code>的缩写，操作码的本质是16进制数字。</p><p>上面的 <code>P2PKH</code> 结构，虚拟机在运行它的时候，代码执行流程如下：</p><ol><li><code>OP_DUP</code>: 执行<code>复制栈顶数据</code>操作，然后该数据放置栈顶；</li><li><code>OP_HASH160</code>: 执行<code>对栈顶数据进行 ripemd160 哈希运算</code>操作。160 前，会先进行一次 sha256(data)；</li><li><code>OP_EQUALVERIFY</code>: 执行<code>对比栈顶的两个数据</code>操作，如果相等都被移除；</li><li><code>OP_CHECKSIG</code>: 执行<code>验证签名</code>操作，这里会用到 <code>pubKeyHash</code>。</li></ol><p>记住这个 <code>pubKeyHash</code>，它是后面验签要用到的，它是公钥哈希。</p>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;公钥密码系统在区块链中的使用情况&quot;&gt;&lt;a href=&quot;#公钥密码系统在区块链中的使用情况&quot; class=&quot;headerlink&quot; title=&quot;公钥密码系统在区块链中的使用情况&quot;&gt;&lt;/a&gt;公钥密码系统在区块链中的使用情况&lt;/h2&gt;&lt;h3 id=&quot;什么是比特币钱包？&quot;&gt;&lt;a href=&quot;#什么是比特币钱包？&quot; class=&quot;headerlink&quot; title=&quot;什么是比特币钱包？&quot;&gt;&lt;/a&gt;什么是比特币钱包？&lt;/h3&gt;&lt;p&gt;比特币钱包用于访问和转移加密货币，钱包内存有私钥。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://wynneyin.site/2022/10/26/numpy%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://wynneyin.site/2022/10/26/numpy%E5%AD%A6%E4%B9%A0/</id>
+    <published>2022-10-26T09:49:08.764Z</published>
+    <updated>2022-10-27T02:08:20.308Z</updated>
+    
+    <content type="html"><![CDATA[<p>对数组的某种特定元素进行操作，例如将小于0的元素变为0，等等。</p><p>例如：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=np.where(a != <span class="number">0</span>, a, <span class="number">0.00001</span>)<span class="comment">#####将数组中为0的元素替换为0.00001</span></span><br></pre></td></tr></table></figure><p>numpy.concatenate()</p><p>numpy数组维度的理解</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page3.jpg" alt="Page1"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page2.jpg" alt="Page2"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page1.jpg" alt="Page3"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;对数组的某种特定元素进行操作，例如将小于0的元素变为0，等等。&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;figure class=&quot;highlight py&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title></title>
