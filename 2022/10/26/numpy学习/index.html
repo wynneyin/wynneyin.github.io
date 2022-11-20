@@ -10,18 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="对数组的某种特定元素进行操作，例如将小于0的元素变为0，等等。 例如： 1a&#x3D;np.where(a !&#x3D; 0, a, 0.00001)#####将数组中为0的元素替换为0.00001 numpy.concatenate() numpy.clip(a, a_min, a_max, out&#x3D;None)[source] clip这个函数将将数组中的元素限制在a_min, a_max之间，大于a_max">
+  <meta name="description" content="Numpy对维数的理解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wynneblog">
 <meta property="og:url" content="http://wynneyin.site/2022/10/26/numpy%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="wynneblog">
-<meta property="og:description" content="对数组的某种特定元素进行操作，例如将小于0的元素变为0，等等。 例如： 1a&#x3D;np.where(a !&#x3D; 0, a, 0.00001)#####将数组中为0的元素替换为0.00001 numpy.concatenate() numpy.clip(a, a_min, a_max, out&#x3D;None)[source] clip这个函数将将数组中的元素限制在a_min, a_max之间，大于a_max">
+<meta property="og:description" content="Numpy对维数的理解">
 <meta property="og:locale">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page3.jpg">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page2.jpg">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page1.jpg">
 <meta property="article:published_time" content="2022-10-26T09:49:08.764Z">
-<meta property="article:modified_time" content="2022-11-20T03:35:55.146Z">
+<meta property="article:modified_time" content="2022-11-20T08:17:58.765Z">
 <meta property="article:author" content="Wynneyin">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page3.jpg">
@@ -220,7 +220,7 @@
     
   <div class="article-entry" itemprop="articleBody">
     
-    <span id="more"></span>
+    <h1 id="Numpy对维数的理解"><a href="#Numpy对维数的理解" class="headerlink" title="Numpy对维数的理解"></a>Numpy对维数的理解</h1><span id="more"></span>
 <p>对数组的某种特定元素进行操作，例如将小于0的元素变为0，等等。</p>
 <p>例如：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=np.where(a != <span class="number">0</span>, a, <span class="number">0.00001</span>)<span class="comment">#####将数组中为0的元素替换为0.00001</span></span><br></pre></td></tr></table></figure>
