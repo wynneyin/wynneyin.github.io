@@ -6,7 +6,7 @@
   <link href="http://wynneyin.site/atom.xml" rel="self"/>
   
   <link href="http://wynneyin.site/"/>
-  <updated>2022-10-27T03:19:52.633Z</updated>
+  <updated>2022-11-20T03:37:47.355Z</updated>
   <id>http://wynneyin.site/</id>
   
   <author>
@@ -15,6 +15,109 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://wynneyin.site/2022/11/20/%E4%B8%AD%E9%97%B4%E7%9B%B8%E9%81%87/"/>
+    <id>http://wynneyin.site/2022/11/20/%E4%B8%AD%E9%97%B4%E7%9B%B8%E9%81%87/</id>
+    <published>2022-11-20T03:36:46.096Z</published>
+    <updated>2022-11-20T03:37:47.355Z</updated>
+    
+    <content type="html"><![CDATA[<span id="more"></span><p>双重des</p><p><img src="C:/Users/wynne/AppData/Roaming/Typora/typora-user-images/image-20221113140730120.png" alt="image-20221113140730120" style="zoom:50%;" /></p><p>三des</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113141054994.png" alt="image-20221113141054994"></p><p><img src="C:/Users/wynne/AppData/Roaming/Typora/typora-user-images/image-20221113141326402.png" alt="image-20221113141326402" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113143852130.png" alt="image-20221113143852130" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113145836930.png" alt="image-20221113145836930" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113163126185.png" alt="image-20221113163126185" style="zoom: 33%;" /></p><p>从中间撕开，先后异或密钥自然遍历即可，向前扩展每一个猜测的kinit 都会有$2^8$个明文。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113180442955.png" alt="image-20221113180442955" style="zoom:50%;" /></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+&lt;p&gt;双重des&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;C:/Users/wynne/AppData/Roaming/Typora/typora-user-images/image-20221113140730120.png&quot; alt=</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://wynneyin.site/2022/11/20/%E6%9D%82%E5%87%91%E5%87%BD%E6%95%B0/"/>
+    <id>http://wynneyin.site/2022/11/20/%E6%9D%82%E5%87%91%E5%87%BD%E6%95%B0/</id>
+    <published>2022-11-20T03:36:46.087Z</published>
+    <updated>2022-11-20T03:37:22.507Z</updated>
+    
+    <content type="html"><![CDATA[<span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115091834322.png" alt="image-20221115091834322" style="zoom:50%;" /></p><p><img src="C:/Users/wynne/AppData/Roaming/Typora/typora-user-images/image-20221115091947930.png" alt="image-20221115091947930" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115092146832.png" alt="image-20221115092146832" style="zoom:50%;" /></p><p>强化md结构：</p><p>在分块的最后加消息长度</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115092536650.png" alt="image-20221115092536650" style="zoom:50%;" /></p><p><img src="C:/Users/wynne/AppData/Roaming/Typora/typora-user-images/image-20221115092547654.png" alt="image-20221115092547654" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115150931232.png" alt="image-20221115150931232" style="zoom:50%;" /></p><p>MD4算法：</p><p>输入的密钥（消息M），将512bit的消息块划分为16个32比特字，记为$m<em>0,m_1….m</em>{15}$, $w_j$为消息扩展的内容为48个</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115154326462.png" alt="image-20221115154326462" style="zoom:50%;" /></p><p>三个轮函数每16个换一个</p><p><img src="C:/Users/wynne/AppData/Roaming/Typora/typora-user-images/image-20221115154412693.png" alt="image-20221115154412693" style="zoom:50%;" /></p><p>输出值为T=(a+aa)||(b+bb)||(c+cc)||(d+dd)</p><p>aa||bb||cc||dd 为连接变量，初始为IV。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115160246771.png" alt="image-20221115160246771" style="zoom: 50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115162121336.png" alt="image-20221115162121336"></p><p>9</p><p><img src="C:/Users/wynne/AppData/Roaming/Typora/typora-user-images/image-20221115163415671.png" alt="image-20221115163415671" style="zoom:50%;" /></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+&lt;p&gt;&lt;img src=&quot;https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115091834322.png&quot; alt=&quot;image-2022111509183</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://wynneyin.site/2022/11/20/%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/"/>
+    <id>http://wynneyin.site/2022/11/20/%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/</id>
+    <published>2022-11-20T03:36:46.080Z</published>
+    <updated>2022-11-20T03:37:26.872Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="特征值到底是个什么玩意？"><a href="#特征值到底是个什么玩意？" class="headerlink" title="特征值到底是个什么玩意？"></a>特征值到底是个什么玩意？</h1><span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120110737240.png" alt="image-20221120110737240" style="zoom:50%;" /></p><p>矩阵理解为线性变换，有一个特殊的向量[-1,1]，他在经过线性变换之后相对于原来的基仅仅是乘上一个标量2而已。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120110915371.png" alt="image-20221120110915371" style="zoom: 33%;" /></p><p>那么显然这条向量上的所有的与之共线的向量都是满足这条性质的。</p><p><em>这种特殊的性质，自己经过线性变换仍然留在自己张成的空间内的向量，就是特征向量。2就是特征值。</em></p><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20221120111231875.png" alt="image-20221120111231875" style="zoom: 33%;" /></p><p>例如其他的向量经过线性变换之后，离开了自己的原向量。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120111710307.png" alt="image-20221120111710307" style="zoom:33%;" /></p><p>第一步很明显就是特征值和特征向量的直观描述</p><p>第二步将单纯的标量$\lambda$转化为一个线性变换</p><p>第三步将两次变化改为一次研究这个一次变化对V的影响，实际上就是一个解线性方程组前面为系数矩阵</p><p>第四步要使得线性方程组的解向量有意义，那么系数矩阵的秩要小于方程组个数，也就是行列式的值为0.</p><p>设想一下如果行列式不为0那么显然方程都是线性无关的，那么能解出来向量吗，显然不能只能是个点而已。</p><p>例如下面这个线性变换是没有特征向量的</p><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20221120112434842.png" alt="image-20221120112434842" style="zoom:33%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120112445846.png" alt="image-20221120112445846" style="zoom:50%;" /></p><h2 id="什么是代数重数和几何重数？"><a href="#什么是代数重数和几何重数？" class="headerlink" title="什么是代数重数和几何重数？"></a>什么是代数重数和几何重数？</h2><p><strong>代数重数(<a href="https://www.zhihu.com/search?q=特征值重数&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A&quot;1876727913&quot;}">特征值重数</a>)大于等于几何重数(特征值对应的线性无关的特征向量的个数)</strong></p><p><strong>前者之所以被称为代数重数，是因为这是解方程得到的；后者被称为几何重数是因为这是对应的<a href="https://www.zhihu.com/search?q=解空间&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A&quot;1876727913&quot;}">解空间</a>的维数(线性无关的特征向量的个数)</strong></p><p><strong>并且当代数重数等于几何重数的时候，矩阵就可以对角化。(n重特征值有n个线性无关的特征向量)</strong></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;特征值到底是个什么玩意？&quot;&gt;&lt;a href=&quot;#特征值到底是个什么玩意？&quot; class=&quot;headerlink&quot; title=&quot;特征值到底是个什么玩意？&quot;&gt;&lt;/a&gt;特征值到底是个什么玩意？&lt;/h1&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://wynneyin.site/2022/11/20/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6%E7%A7%AF%E5%88%86%E6%94%BB%E5%87%BB/"/>
+    <id>http://wynneyin.site/2022/11/20/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6%E7%A7%AF%E5%88%86%E6%94%BB%E5%87%BB/</id>
+    <published>2022-11-20T03:36:46.072Z</published>
+    <updated>2022-11-20T03:37:33.122Z</updated>
+    
+    <content type="html"><![CDATA[<span id="more"></span><p>密码分析学积分攻击</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192151582.png" alt="image-20221111192151582" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192212762.png" alt="image-20221111192212762" style="zoom:33%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192318383.png" alt="image-20221111192318383" style="zoom:33%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192856206.png" alt="image-20221111192856206" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111193726852.png" alt="image-20221111193726852"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113112959772.png" alt="image-20221113112959772"></p><p>结构体的大小是这个区分器的头部的只需要一个活跃</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113112833278.png" alt="image-20221113112833278"></p><p>头部添加一轮：</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113131249639.png" alt="image-20221113131249639" style="zoom:50%;" /></p><p>复杂度分析：</p><p>数据复杂度：$2^{32}$ 只需要两个结构体</p><p>时间复杂度：16<em>($2^{32} </em> 2^8+$ $2^{32} *2 $)</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113144031598.png" alt="image-20221113144031598" style="zoom: 33%;" /></p><p>)</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113133522854.png" alt="image-20221113133522854" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113133708407.png" alt="image-20221113133708407" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113134000505.png" alt="image-20221113134000505" style="zoom:50%;" /></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+&lt;p&gt;密码分析学积分攻击&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192151582.png&quot; alt=&quot;im</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://wynneyin.site/2022/11/20/%E5%B9%BF%E4%B9%89%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/"/>
+    <id>http://wynneyin.site/2022/11/20/%E5%B9%BF%E4%B9%89%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/</id>
+    <published>2022-11-20T03:36:46.023Z</published>
+    <updated>2022-11-20T03:37:14.484Z</updated>
+    
+    <content type="html"><![CDATA[<span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113193457882.png" alt="image-20221113193457882" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113194835376.png" alt="image-20221113194835376" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113200047841.png" alt="image-20221113200047841" style="zoom:50%;" /></p><p><img src="C:/Users/wynne/AppData/Roaming/Typora/typora-user-images/image-20221113201709621.png" alt="image-20221113201709621" style="zoom:50%;" /></p><p><img src="C:/Users/wynne/AppData/Roaming/Typora/typora-user-images/image-20221114144917338.png" alt="image-20221114144917338" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221114151145990.png" alt="image-20221114151145990" style="zoom:50%;" /></p><p><img src="C:/Users/wynne/AppData/Roaming/Typora/typora-user-images/image-20221114152359433.png" alt="image-20221114152359433" style="zoom:50%;" /></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+&lt;p&gt;&lt;img src=&quot;https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113193457882.png&quot; alt=&quot;image-2022111319345</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -38,16 +141,17 @@
     <link href="http://wynneyin.site/2022/10/26/numpy%E5%AD%A6%E4%B9%A0/"/>
     <id>http://wynneyin.site/2022/10/26/numpy%E5%AD%A6%E4%B9%A0/</id>
     <published>2022-10-26T09:49:08.764Z</published>
-    <updated>2022-10-27T02:08:20.308Z</updated>
+    <updated>2022-11-20T03:35:55.146Z</updated>
     
-    <content type="html"><![CDATA[<p>对数组的某种特定元素进行操作，例如将小于0的元素变为0，等等。</p><p>例如：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=np.where(a != <span class="number">0</span>, a, <span class="number">0.00001</span>)<span class="comment">#####将数组中为0的元素替换为0.00001</span></span><br></pre></td></tr></table></figure><p>numpy.concatenate()</p><p>numpy数组维度的理解</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page3.jpg" alt="Page1"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page2.jpg" alt="Page2"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page1.jpg" alt="Page3"></p>]]></content>
+    <content type="html"><![CDATA[<span id="more"></span><p>对数组的某种特定元素进行操作，例如将小于0的元素变为0，等等。</p><p>例如：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=np.where(a != <span class="number">0</span>, a, <span class="number">0.00001</span>)<span class="comment">#####将数组中为0的元素替换为0.00001</span></span><br></pre></td></tr></table></figure><p>numpy.concatenate()</p><p>numpy.clip(a, a_min, a_max, out=None)[source]</p><p>clip这个函数将将数组中的元素限制在a_min, a_max之间，大于a_max的就使得它等于 a_max，小于a_min,的就使得它等于a_min。</p><p>numpy数组维度的理解</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page3.jpg" alt="Page1"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page2.jpg" alt="Page2"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page1.jpg" alt="Page3"></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;对数组的某种特定元素进行操作，例如将小于0的元素变为0，等等。&lt;/p&gt;
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+&lt;p&gt;对数组的某种特定元素进行操作，例如将小于0的元素变为0，等等。&lt;/p&gt;
 &lt;p&gt;例如：&lt;/p&gt;
-&lt;figure class=&quot;highlight py&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span</summary>
+&lt;figure class=&quot;highlight py&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;s</summary>
       
     
     
@@ -98,28 +202,12 @@
     <link href="http://wynneyin.site/2022/10/21/%E6%B5%8B%E8%AF%95/"/>
     <id>http://wynneyin.site/2022/10/21/%E6%B5%8B%E8%AF%95/</id>
     <published>2022-10-21T05:49:45.000Z</published>
-    <updated>2022-10-21T05:50:24.070Z</updated>
+    <updated>2022-11-20T03:35:42.956Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="github代码提交流程"><a href="#github代码提交流程" class="headerlink" title="github代码提交流程"></a>github代码提交流程</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git add 文件名字</span><br><span class="line">git commit -m  &quot;注释内容&quot;</span><br><span class="line">git remote add 仓库名字 仓库地址</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">git <span class="built_in">rm</span> 文件名 <span class="comment">#本地倒库内删除</span></span> </span><br><span class="line">git config --global http.proxy http://127.0.0.1:端口号</span><br><span class="line">git config --global https.proxy http://127.0.0.1:端口号</span><br><span class="line">git push -u 仓库名字</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name &quot;new name&quot;</span><br><span class="line">git config credential.username &quot;new name&quot;</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r sm3_加速</span><br><span class="line">git commit -m &quot;删除说明&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull practice master</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">每次提交前先pull一下</span></span><br></pre></td></tr></table></figure><h5 id="1-rejected-master-gt-master-non-fast-forward-解决方案："><a href="#1-rejected-master-gt-master-non-fast-forward-解决方案：" class="headerlink" title="1.! [rejected] master -&gt; master (non-fast-forward)解决方案："></a>1.! [rejected] master -&gt; master (non-fast-forward)解决方案：</h5><p><a href="https://blog.csdn.net/zyz00000000/article/details/84402189">https://blog.csdn.net/zyz00000000/article/details/84402189</a></p><p>2.删除文件夹</p><p><a href="https://blog.csdn.net/weixin_45309916/article/details/108275311">https://blog.csdn.net/weixin_45309916/article/details/108275311</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;github代码提交流程&quot;&gt;&lt;a href=&quot;#github代码提交流程&quot; class=&quot;headerlink&quot; title=&quot;github代码提交流程&quot;&gt;&lt;/a&gt;github代码提交流程&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;</summary>
-      
+    <content type="html"><![CDATA[<h2 id="github代码提交流程"><a href="#github代码提交流程" class="headerlink" title="github代码提交流程"></a>github代码提交流程</h2><span id="more"></span><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git add 文件名字</span><br><span class="line">git commit -m  &quot;注释内容&quot;</span><br><span class="line">git remote add 仓库名字 仓库地址</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">git <span class="built_in">rm</span> 文件名 <span class="comment">#本地倒库内删除</span></span> </span><br><span class="line">git config --global http.proxy http://127.0.0.1:端口号</span><br><span class="line">git config --global https.proxy http://127.0.0.1:端口号</span><br><span class="line">git push -u 仓库名字</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name &quot;new name&quot;</span><br><span class="line">git config credential.username &quot;new name&quot;</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r sm3_加速</span><br><span class="line">git commit -m &quot;删除说明&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull practice master</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">每次提交前先pull一下</span></span><br></pre></td></tr></table></figure><h5 id="1-rejected-master-gt-master-non-fast-forward-解决方案："><a href="#1-rejected-master-gt-master-non-fast-forward-解决方案：" class="headerlink" title="1.! [rejected] master -&gt; master (non-fast-forward)解决方案："></a>1.! [rejected] master -&gt; master (non-fast-forward)解决方案：</h5><p><a href="https://blog.csdn.net/zyz00000000/article/details/84402189">https://blog.csdn.net/zyz00000000/article/details/84402189</a></p><p>2.删除文件夹</p><p><a href="https://blog.csdn.net/weixin_45309916/article/details/108275311">https://blog.csdn.net/weixin_45309916/article/details/108275311</a></p>]]></content>
     
     
-    
-    
-  </entry>
-  
-  <entry>
-    <title>test_my_site</title>
-    <link href="http://wynneyin.site/2022/10/21/test-my-site/"/>
-    <id>http://wynneyin.site/2022/10/21/test-my-site/</id>
-    <published>2022-10-21T05:08:03.000Z</published>
-    <updated>2022-10-21T05:08:03.278Z</updated>
-    
+    <summary type="html">&lt;h2 id=&quot;github代码提交流程&quot;&gt;&lt;a href=&quot;#github代码提交流程&quot; class=&quot;headerlink&quot; title=&quot;github代码提交流程&quot;&gt;&lt;/a&gt;github代码提交流程&lt;/h2&gt;</summary>
     
     
     
@@ -131,14 +219,15 @@
     <link href="http://wynneyin.site/2022/10/21/hello-world/"/>
     <id>http://wynneyin.site/2022/10/21/hello-world/</id>
     <published>2022-10-21T05:05:39.454Z</published>
-    <updated>2022-10-21T05:05:33.483Z</updated>
+    <updated>2022-11-20T03:36:07.230Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<span id="more"></span><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs</summary>
       
     
     
