@@ -6,7 +6,7 @@
   <link href="http://wynneyin.site/atom.xml" rel="self"/>
   
   <link href="http://wynneyin.site/"/>
-  <updated>2022-11-20T08:17:27.143Z</updated>
+  <updated>2022-11-20T08:25:38.108Z</updated>
   <id>http://wynneyin.site/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://wynneyin.site/2022/11/20/Maki%E2%80%94%E2%80%94%E8%B4%B9%E6%9B%BC%E5%AD%A6%E4%B9%A0%E6%B3%95/"/>
+    <id>http://wynneyin.site/2022/11/20/Maki%E2%80%94%E2%80%94%E8%B4%B9%E6%9B%BC%E5%AD%A6%E4%B9%A0%E6%B3%95/</id>
+    <published>2022-11-20T08:19:09.029Z</published>
+    <updated>2022-11-20T08:25:38.108Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Maki——费曼学习法"><a href="#Maki——费曼学习法" class="headerlink" title="Maki——费曼学习法"></a>Maki——费曼学习法</h1><span id="more"></span><p>1.行为上，写讲义。从最基础的东西和最具体的通俗的方式讲解知识点，深入浅出。高阶串联知识点，重排知识点，用读者更容易接受的方式去讲解。</p><p>影响函数走向的和斜率有关，和函数值无关和起点无关。</p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;Maki——费曼学习法&quot;&gt;&lt;a href=&quot;#Maki——费曼学习法&quot; class=&quot;headerlink&quot; title=&quot;Maki——费曼学习法&quot;&gt;&lt;/a&gt;Maki——费曼学习法&lt;/h1&gt;</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -55,9 +72,9 @@
     <link href="http://wynneyin.site/2022/11/20/%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/"/>
     <id>http://wynneyin.site/2022/11/20/%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/</id>
     <published>2022-11-20T03:36:46.080Z</published>
-    <updated>2022-11-20T03:37:26.872Z</updated>
+    <updated>2022-11-21T07:37:50.538Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="特征值到底是个什么玩意？"><a href="#特征值到底是个什么玩意？" class="headerlink" title="特征值到底是个什么玩意？"></a>特征值到底是个什么玩意？</h1><span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120110737240.png" alt="image-20221120110737240" style="zoom:50%;" /></p><p>矩阵理解为线性变换，有一个特殊的向量[-1,1]，他在经过线性变换之后相对于原来的基仅仅是乘上一个标量2而已。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120110915371.png" alt="image-20221120110915371" style="zoom: 33%;" /></p><p>那么显然这条向量上的所有的与之共线的向量都是满足这条性质的。</p><p><em>这种特殊的性质，自己经过线性变换仍然留在自己张成的空间内的向量，就是特征向量。2就是特征值。</em></p><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20221120111231875.png" alt="image-20221120111231875" style="zoom: 33%;" /></p><p>例如其他的向量经过线性变换之后，离开了自己的原向量。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120111710307.png" alt="image-20221120111710307" style="zoom:33%;" /></p><p>第一步很明显就是特征值和特征向量的直观描述</p><p>第二步将单纯的标量$\lambda$转化为一个线性变换</p><p>第三步将两次变化改为一次研究这个一次变化对V的影响，实际上就是一个解线性方程组前面为系数矩阵</p><p>第四步要使得线性方程组的解向量有意义，那么系数矩阵的秩要小于方程组个数，也就是行列式的值为0.</p><p>设想一下如果行列式不为0那么显然方程都是线性无关的，那么能解出来向量吗，显然不能只能是个点而已。</p><p>例如下面这个线性变换是没有特征向量的</p><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20221120112434842.png" alt="image-20221120112434842" style="zoom:33%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120112445846.png" alt="image-20221120112445846" style="zoom:50%;" /></p><h2 id="什么是代数重数和几何重数？"><a href="#什么是代数重数和几何重数？" class="headerlink" title="什么是代数重数和几何重数？"></a>什么是代数重数和几何重数？</h2><p><strong>代数重数(<a href="https://www.zhihu.com/search?q=特征值重数&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A&quot;1876727913&quot;}">特征值重数</a>)大于等于几何重数(特征值对应的线性无关的特征向量的个数)</strong></p><p><strong>前者之所以被称为代数重数，是因为这是解方程得到的；后者被称为几何重数是因为这是对应的<a href="https://www.zhihu.com/search?q=解空间&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A&quot;1876727913&quot;}">解空间</a>的维数(线性无关的特征向量的个数)</strong></p><p><strong>并且当代数重数等于几何重数的时候，矩阵就可以对角化。(n重特征值有n个线性无关的特征向量)</strong></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="特征值到底是个什么玩意？"><a href="#特征值到底是个什么玩意？" class="headerlink" title="特征值到底是个什么玩意？"></a>特征值到底是个什么玩意？</h1><span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120110737240.png" alt="image-20221120110737240" style="zoom:50%;" /></p><p>矩阵理解为线性变换，有一个特殊的向量[-1,1]，他在经过线性变换之后相对于原来的基仅仅是乘上一个标量2而已。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120110915371.png" alt="image-20221120110915371" style="zoom: 33%;" /></p><p>那么显然这条向量上的所有的与之共线的向量都是满足这条性质的。</p><p><em>这种特殊的性质，自己经过线性变换仍然留在自己张成的空间内的向量，就是特征向量。2就是特征值。</em></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120111231875.png" alt="image-20221120111231875" style="zoom: 33%;" /></p><p>例如其他的向量经过线性变换之后，离开了自己的原向量。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120111710307.png" alt="image-20221120111710307" style="zoom:33%;" /></p><p>第一步很明显就是特征值和特征向量的直观描述</p><p>第二步将单纯的标量$\lambda$转化为一个线性变换</p><p>第三步将两次变化改为一次研究这个一次变化对V的影响，实际上就是一个解线性方程组前面为系数矩阵</p><p>第四步要使得线性方程组的解向量有意义，那么系数矩阵的秩要小于方程组个数，也就是行列式的值为0.</p><p>设想一下如果行列式不为0那么显然方程都是线性无关的，那么能解出来向量吗，显然不能只能是个点而已。</p><p>例如下面这个线性变换是没有特征向量的</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120112434842.png" alt="image-20221120112434842" style="zoom:33%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120112445846.png" alt="image-20221120112445846" style="zoom:50%;" /></p><h2 id="什么是代数重数和几何重数？"><a href="#什么是代数重数和几何重数？" class="headerlink" title="什么是代数重数和几何重数？"></a>什么是代数重数和几何重数？</h2><p><strong>代数重数(<a href="https://www.zhihu.com/search?q=特征值重数&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A&quot;1876727913&quot;}">特征值重数</a>)大于等于几何重数(特征值对应的线性无关的特征向量的个数)</strong></p><p><strong>前者之所以被称为代数重数，是因为这是解方程得到的；后者被称为几何重数是因为这是对应的<a href="https://www.zhihu.com/search?q=解空间&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A&quot;1876727913&quot;}">解空间</a>的维数(线性无关的特征向量的个数)</strong></p><p><strong>并且当代数重数等于几何重数的时候，矩阵就可以对角化。(n重特征值有n个线性无关的特征向量)</strong></p>]]></content>
     
     
     <summary type="html">&lt;h1 id=&quot;特征值到底是个什么玩意？&quot;&gt;&lt;a href=&quot;#特征值到底是个什么玩意？&quot; class=&quot;headerlink&quot; title=&quot;特征值到底是个什么玩意？&quot;&gt;&lt;/a&gt;特征值到底是个什么玩意？&lt;/h1&gt;</summary>
