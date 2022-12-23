@@ -6,7 +6,7 @@
   <link href="http://wynneyin.site/atom.xml" rel="self"/>
   
   <link href="http://wynneyin.site/"/>
-  <updated>2022-11-20T08:25:38.108Z</updated>
+  <updated>2022-12-23T12:01:47.224Z</updated>
   <id>http://wynneyin.site/</id>
   
   <author>
@@ -18,32 +18,15 @@
   
   <entry>
     <title></title>
-    <link href="http://wynneyin.site/2022/11/20/Maki%E2%80%94%E2%80%94%E8%B4%B9%E6%9B%BC%E5%AD%A6%E4%B9%A0%E6%B3%95/"/>
-    <id>http://wynneyin.site/2022/11/20/Maki%E2%80%94%E2%80%94%E8%B4%B9%E6%9B%BC%E5%AD%A6%E4%B9%A0%E6%B3%95/</id>
-    <published>2022-11-20T08:19:09.029Z</published>
-    <updated>2022-11-20T08:25:38.108Z</updated>
+    <link href="http://wynneyin.site/2022/10/21/%E6%B5%8B%E8%AF%95/"/>
+    <id>http://wynneyin.site/2022/10/21/%E6%B5%8B%E8%AF%95/</id>
+    <published>2022-10-21T05:49:45.000Z</published>
+    <updated>2022-12-23T12:01:47.224Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Maki——费曼学习法"><a href="#Maki——费曼学习法" class="headerlink" title="Maki——费曼学习法"></a>Maki——费曼学习法</h1><span id="more"></span><p>1.行为上，写讲义。从最基础的东西和最具体的通俗的方式讲解知识点，深入浅出。高阶串联知识点，重排知识点，用读者更容易接受的方式去讲解。</p><p>影响函数走向的和斜率有关，和函数值无关和起点无关。</p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;Maki——费曼学习法&quot;&gt;&lt;a href=&quot;#Maki——费曼学习法&quot; class=&quot;headerlink&quot; title=&quot;Maki——费曼学习法&quot;&gt;&lt;/a&gt;Maki——费曼学习法&lt;/h1&gt;</summary>
+    <content type="html"><![CDATA[<h1 id="github代码提交流程"><a href="#github代码提交流程" class="headerlink" title="github代码提交流程"></a>github代码提交流程</h1><span id="more"></span><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git add 文件名字</span><br><span class="line">git commit -m  &quot;注释内容&quot;</span><br><span class="line">git remote add 仓库名字 仓库地址</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">git <span class="built_in">rm</span> 文件名 <span class="comment">#本地倒库内删除</span></span> </span><br><span class="line">git config --global http.proxy http://127.0.0.1:端口号</span><br><span class="line">git config --global https.proxy http://127.0.0.1:端口号</span><br><span class="line">git push -u 仓库名字</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name &quot;new name&quot;</span><br><span class="line">git config credential.username &quot;new name&quot;</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r sm3_加速</span><br><span class="line">git commit -m &quot;删除说明&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull practice master</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">每次提交前先pull一下</span></span><br></pre></td></tr></table></figure><h5 id="1-rejected-master-gt-master-non-fast-forward-解决方案："><a href="#1-rejected-master-gt-master-non-fast-forward-解决方案：" class="headerlink" title="1.! [rejected] master -&gt; master (non-fast-forward)解决方案："></a>1.! [rejected] master -&gt; master (non-fast-forward)解决方案：</h5><p><a href="https://blog.csdn.net/zyz00000000/article/details/84402189">https://blog.csdn.net/zyz00000000/article/details/84402189</a></p><p>2.删除文件夹</p><p><a href="https://blog.csdn.net/weixin_45309916/article/details/108275311">https://blog.csdn.net/weixin_45309916/article/details/108275311</a></p>]]></content>
     
     
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://wynneyin.site/2022/11/20/%E4%B8%AD%E9%97%B4%E7%9B%B8%E9%81%87/"/>
-    <id>http://wynneyin.site/2022/11/20/%E4%B8%AD%E9%97%B4%E7%9B%B8%E9%81%87/</id>
-    <published>2022-11-20T03:36:46.096Z</published>
-    <updated>2022-11-21T12:01:39.793Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="中间相遇攻击"><a href="#中间相遇攻击" class="headerlink" title="中间相遇攻击"></a>中间相遇攻击</h1><span id="more"></span><p>双重des</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113141326402.png" alt="image-20221113140730120" style="zoom:50%;" /></p><p>三des</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113141054994.png" alt="image-20221113141054994"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113140730120.png" alt="image-20221113141326402" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113143852130.png" alt="image-20221113143852130" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113145836930.png" alt="image-20221113145836930" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113163126185.png" alt="image-20221113163126185" style="zoom: 33%;" /></p><p>从中间撕开，先后异或密钥自然遍历即可，向前扩展每一个猜测的kinit 都会有$2^8$个明文。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113180442955.png" alt="image-20221113180442955" style="zoom:50%;" /></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;中间相遇攻击&quot;&gt;&lt;a href=&quot;#中间相遇攻击&quot; class=&quot;headerlink&quot; title=&quot;中间相遇攻击&quot;&gt;&lt;/a&gt;中间相遇攻击&lt;/h1&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;github代码提交流程&quot;&gt;&lt;a href=&quot;#github代码提交流程&quot; class=&quot;headerlink&quot; title=&quot;github代码提交流程&quot;&gt;&lt;/a&gt;github代码提交流程&lt;/h1&gt;</summary>
     
     
     
@@ -51,113 +34,11 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://wynneyin.site/2022/11/20/%E6%9D%82%E5%87%91%E5%87%BD%E6%95%B0/"/>
-    <id>http://wynneyin.site/2022/11/20/%E6%9D%82%E5%87%91%E5%87%BD%E6%95%B0/</id>
-    <published>2022-11-20T03:36:46.087Z</published>
-    <updated>2022-11-21T11:57:55.863Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="杂凑函数"><a href="#杂凑函数" class="headerlink" title="杂凑函数"></a>杂凑函数</h1><span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115091834322.png" alt="image-20221115091834322" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115091947930.png" alt="image-20221115091947930" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115092146832.png" alt="image-20221115092146832" style="zoom:50%;" /></p><p>强化md结构：</p><p>在分块的最后加消息长度</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115092536650.png" alt="image-20221115092536650" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115092547654.png" alt="image-20221115092547654" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115150931232.png" alt="image-20221115150931232" style="zoom:50%;" /></p><p>MD4算法：</p><p>输入的密钥（消息M），将512bit的消息块划分为16个32比特字，记为$m<em>0,m_1….m</em>{15}$, $w_j$为消息扩展的内容为48个</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115154326462.png" alt="image-20221115154326462" style="zoom:50%;" /></p><p>三个轮函数每16个换一个</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115163415671.png" alt="image-20221115154412693" style="zoom:50%;" /></p><p>输出值为T=(a+aa)||(b+bb)||(c+cc)||(d+dd)</p><p>aa||bb||cc||dd 为连接变量，初始为IV。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115160246771.png" alt="image-20221115160246771" style="zoom: 50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115162121336.png" alt="image-20221115162121336"></p><p>9</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115154412693.png" alt="image-20221115163415671" style="zoom:50%;" /></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;杂凑函数&quot;&gt;&lt;a href=&quot;#杂凑函数&quot; class=&quot;headerlink&quot; title=&quot;杂凑函数&quot;&gt;&lt;/a&gt;杂凑函数&lt;/h1&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://wynneyin.site/2022/11/20/%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/"/>
-    <id>http://wynneyin.site/2022/11/20/%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/</id>
-    <published>2022-11-20T03:36:46.080Z</published>
-    <updated>2022-11-21T07:37:50.538Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="特征值到底是个什么玩意？"><a href="#特征值到底是个什么玩意？" class="headerlink" title="特征值到底是个什么玩意？"></a>特征值到底是个什么玩意？</h1><span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120110737240.png" alt="image-20221120110737240" style="zoom:50%;" /></p><p>矩阵理解为线性变换，有一个特殊的向量[-1,1]，他在经过线性变换之后相对于原来的基仅仅是乘上一个标量2而已。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120110915371.png" alt="image-20221120110915371" style="zoom: 33%;" /></p><p>那么显然这条向量上的所有的与之共线的向量都是满足这条性质的。</p><p><em>这种特殊的性质，自己经过线性变换仍然留在自己张成的空间内的向量，就是特征向量。2就是特征值。</em></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120111231875.png" alt="image-20221120111231875" style="zoom: 33%;" /></p><p>例如其他的向量经过线性变换之后，离开了自己的原向量。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120111710307.png" alt="image-20221120111710307" style="zoom:33%;" /></p><p>第一步很明显就是特征值和特征向量的直观描述</p><p>第二步将单纯的标量$\lambda$转化为一个线性变换</p><p>第三步将两次变化改为一次研究这个一次变化对V的影响，实际上就是一个解线性方程组前面为系数矩阵</p><p>第四步要使得线性方程组的解向量有意义，那么系数矩阵的秩要小于方程组个数，也就是行列式的值为0.</p><p>设想一下如果行列式不为0那么显然方程都是线性无关的，那么能解出来向量吗，显然不能只能是个点而已。</p><p>例如下面这个线性变换是没有特征向量的</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120112434842.png" alt="image-20221120112434842" style="zoom:33%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120112445846.png" alt="image-20221120112445846" style="zoom:50%;" /></p><h2 id="什么是代数重数和几何重数？"><a href="#什么是代数重数和几何重数？" class="headerlink" title="什么是代数重数和几何重数？"></a>什么是代数重数和几何重数？</h2><p><strong>代数重数(<a href="https://www.zhihu.com/search?q=特征值重数&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A&quot;1876727913&quot;}">特征值重数</a>)大于等于几何重数(特征值对应的线性无关的特征向量的个数)</strong></p><p><strong>前者之所以被称为代数重数，是因为这是解方程得到的；后者被称为几何重数是因为这是对应的<a href="https://www.zhihu.com/search?q=解空间&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A&quot;1876727913&quot;}">解空间</a>的维数(线性无关的特征向量的个数)</strong></p><p><strong>并且当代数重数等于几何重数的时候，矩阵就可以对角化。(n重特征值有n个线性无关的特征向量)</strong></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;特征值到底是个什么玩意？&quot;&gt;&lt;a href=&quot;#特征值到底是个什么玩意？&quot; class=&quot;headerlink&quot; title=&quot;特征值到底是个什么玩意？&quot;&gt;&lt;/a&gt;特征值到底是个什么玩意？&lt;/h1&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://wynneyin.site/2022/11/20/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6%E7%A7%AF%E5%88%86%E6%94%BB%E5%87%BB/"/>
-    <id>http://wynneyin.site/2022/11/20/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6%E7%A7%AF%E5%88%86%E6%94%BB%E5%87%BB/</id>
-    <published>2022-11-20T03:36:46.072Z</published>
-    <updated>2022-11-20T08:16:39.520Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="密码分析学积分攻击"><a href="#密码分析学积分攻击" class="headerlink" title="密码分析学积分攻击"></a>密码分析学积分攻击</h1><span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192151582.png" alt="image-20221111192151582" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192212762.png" alt="image-20221111192212762" style="zoom:33%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192318383.png" alt="image-20221111192318383" style="zoom:33%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192856206.png" alt="image-20221111192856206" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111193726852.png" alt="image-20221111193726852"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113112959772.png" alt="image-20221113112959772"></p><p>结构体的大小是这个区分器的头部的只需要一个活跃</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113112833278.png" alt="image-20221113112833278"></p><p>头部添加一轮：</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113131249639.png" alt="image-20221113131249639" style="zoom:50%;" /></p><p>复杂度分析：</p><p>数据复杂度：$2^{32}$ 只需要两个结构体</p><p>时间复杂度：16<em>($2^{32} </em> 2^8+$ $2^{32} *2 $)</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113144031598.png" alt="image-20221113144031598" style="zoom: 33%;" /></p><p>)</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113133522854.png" alt="image-20221113133522854" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113133708407.png" alt="image-20221113133708407" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113134000505.png" alt="image-20221113134000505" style="zoom:50%;" /></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;密码分析学积分攻击&quot;&gt;&lt;a href=&quot;#密码分析学积分攻击&quot; class=&quot;headerlink&quot; title=&quot;密码分析学积分攻击&quot;&gt;&lt;/a&gt;密码分析学积分攻击&lt;/h1&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://wynneyin.site/2022/11/20/%E5%B9%BF%E4%B9%89%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/"/>
-    <id>http://wynneyin.site/2022/11/20/%E5%B9%BF%E4%B9%89%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/</id>
-    <published>2022-11-20T03:36:46.023Z</published>
-    <updated>2022-11-21T11:57:06.989Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="广义生日攻击"><a href="#广义生日攻击" class="headerlink" title="广义生日攻击"></a>广义生日攻击</h1><span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113193457882.png" alt="image-20221113193457882" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113194835376.png" alt="image-20221113194835376" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113200047841.png" alt="image-20221113200047841" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113201709621.png" alt="image-20221113201709621" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221114152359433.png" alt="image-20221114144917338" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221114151145990.png" alt="image-20221114151145990" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221114144917338.png" alt="image-20221114152359433" style="zoom:50%;" /></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;广义生日攻击&quot;&gt;&lt;a href=&quot;#广义生日攻击&quot; class=&quot;headerlink&quot; title=&quot;广义生日攻击&quot;&gt;&lt;/a&gt;广义生日攻击&lt;/h1&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://wynneyin.site/2022/10/27/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E5%9C%A8%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/"/>
-    <id>http://wynneyin.site/2022/10/27/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E5%9C%A8%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/</id>
-    <published>2022-10-27T02:54:41.882Z</published>
-    <updated>2022-10-27T03:19:52.633Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="公钥密码系统在区块链中的使用情况"><a href="#公钥密码系统在区块链中的使用情况" class="headerlink" title="公钥密码系统在区块链中的使用情况"></a>公钥密码系统在区块链中的使用情况</h2><h3 id="什么是比特币钱包？"><a href="#什么是比特币钱包？" class="headerlink" title="什么是比特币钱包？"></a>什么是比特币钱包？</h3><p>比特币钱包用于访问和转移加密货币，钱包内存有私钥。</p><span id="more"></span><h3 id="比特币钱包的分类"><a href="#比特币钱包的分类" class="headerlink" title="比特币钱包的分类"></a>比特币钱包的分类</h3><h4 id="热钱包"><a href="#热钱包" class="headerlink" title="热钱包"></a>热钱包</h4><p>钱包提供在线存储，通常与第三方应用程序或服务相关联。热钱包使存储您的加密密钥更加方便和易于管理。但是，如果发生网络盗窃或服务泄露，您有可能丢失密钥。 </p><h4 id="冷钱包"><a href="#冷钱包" class="headerlink" title="冷钱包"></a>冷钱包</h4><p>这些是未连接到互联网的加密存储设备，可减少您的资产受到攻击的机会。将这些密钥存储在从不连接到互联网的计算机上，使设备成为冷存储。与热钱包相比，冷钱包是一种更安全的选择，但它们会让您的资产交易变得不方便。</p><h4 id="硬件钱包"><a href="#硬件钱包" class="headerlink" title="硬件钱包"></a>硬件钱包</h4><p>硬件钱包是在物理介质上包含您的加密密钥的设备。一个明显的好处是您可以随时将硬钱包连接到互联网。硬件钱包可确保您的密钥安全并提高可用性。</p><h4 id="比特币钱包的工作："><a href="#比特币钱包的工作：" class="headerlink" title="比特币钱包的工作："></a>比特币钱包的工作：</h4><p>比特币钱包内存有你的公钥和私钥，所以可以用来转账。但是钱包内不存放比特币，</p><h2 id="比特币交易"><a href="#比特币交易" class="headerlink" title="比特币交易"></a>比特币交易</h2><h3 id="基本内容："><a href="#基本内容：" class="headerlink" title="基本内容："></a>基本内容：</h3><h4 id="私钥："><a href="#私钥：" class="headerlink" title="私钥："></a>私钥：</h4><p>私钥为随机选取的数字。私钥丢失无法复原，比特币随之丢失。</p><h5 id="公钥："><a href="#公钥：" class="headerlink" title="公钥："></a>公钥：</h5><p>​    通过椭圆曲线算法可以从私钥计算得到公钥，这是不可逆转的过程：K = k * G。其中k是私钥，G是被称为生成点的常数点，而K是所得公钥。</p><p>​    其反向运算，被称为“寻找离散对数”——已知公钥K来求出私钥k——是非常困难的，就像去试验所有可能的k值，即暴力搜索。</p><h5 id="比特币地址："><a href="#比特币地址：" class="headerlink" title="比特币地址："></a>比特币地址：</h5><p>比特币地址是一个由数字和字母组成的字符串，在交易中，比特币地址通常以收款方出现。如果把比特币交易比作一张支票，比特币地址就是收款人。</p><h6 id="如何生成比特币地址"><a href="#如何生成比特币地址" class="headerlink" title="如何生成比特币地址"></a>如何生成比特币地址</h6><p>比特币地址可由公钥经过单向的加密<a href="https://so.csdn.net/so/search?q=哈希&amp;spm=1001.2101.3001.7020">哈希</a>算法得到。公钥 K 为输入，计算其SHA256哈希值，并以此结果计算RIPEMD160 哈希值，得到一个长度为160比特（20字节）的数字。</p><h3 id="交易验签原理："><a href="#交易验签原理：" class="headerlink" title="交易验签原理："></a>交易验签原理：</h3><h4 id="接受者的output结构为："><a href="#接受者的output结构为：" class="headerlink" title="接受者的output结构为："></a>接受者的output结构为：</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;pk_script&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span>byte</span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>pk_script对应着为脚本字节数据，比特币有很多种脚本结构：例如P2PKH,P2SH,P2WSH等等。</p><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/41de67246b9b466ba50145d2f1f7b9f3~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p><p><code>OP_DUP</code> <code>OP_HASH160</code> 是比特币虚拟机的操作码，<code>OP</code>是英文<code>operation</code>的缩写，操作码的本质是16进制数字。</p><p>上面的 <code>P2PKH</code> 结构，虚拟机在运行它的时候，代码执行流程如下：</p><ol><li><code>OP_DUP</code>: 执行<code>复制栈顶数据</code>操作，然后该数据放置栈顶；</li><li><code>OP_HASH160</code>: 执行<code>对栈顶数据进行 ripemd160 哈希运算</code>操作。160 前，会先进行一次 sha256(data)；</li><li><code>OP_EQUALVERIFY</code>: 执行<code>对比栈顶的两个数据</code>操作，如果相等都被移除；</li><li><code>OP_CHECKSIG</code>: 执行<code>验证签名</code>操作，这里会用到 <code>pubKeyHash</code>。</li></ol><p>记住这个 <code>pubKeyHash</code>，它是后面验签要用到的，它是公钥哈希。</p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;公钥密码系统在区块链中的使用情况&quot;&gt;&lt;a href=&quot;#公钥密码系统在区块链中的使用情况&quot; class=&quot;headerlink&quot; title=&quot;公钥密码系统在区块链中的使用情况&quot;&gt;&lt;/a&gt;公钥密码系统在区块链中的使用情况&lt;/h2&gt;&lt;h3 id=&quot;什么是比特币钱包？&quot;&gt;&lt;a href=&quot;#什么是比特币钱包？&quot; class=&quot;headerlink&quot; title=&quot;什么是比特币钱包？&quot;&gt;&lt;/a&gt;什么是比特币钱包？&lt;/h3&gt;&lt;p&gt;比特币钱包用于访问和转移加密货币，钱包内存有私钥。&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://wynneyin.site/2022/10/26/numpy%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://wynneyin.site/2022/10/26/numpy%E5%AD%A6%E4%B9%A0/</id>
-    <published>2022-10-26T09:49:08.764Z</published>
-    <updated>2022-11-20T08:17:58.765Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Numpy对维数的理解"><a href="#Numpy对维数的理解" class="headerlink" title="Numpy对维数的理解"></a>Numpy对维数的理解</h1><span id="more"></span><p>对数组的某种特定元素进行操作，例如将小于0的元素变为0，等等。</p><p>例如：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=np.where(a != <span class="number">0</span>, a, <span class="number">0.00001</span>)<span class="comment">#####将数组中为0的元素替换为0.00001</span></span><br></pre></td></tr></table></figure><p>numpy.concatenate()</p><p>numpy.clip(a, a_min, a_max, out=None)[source]</p><p>clip这个函数将将数组中的元素限制在a_min, a_max之间，大于a_max的就使得它等于 a_max，小于a_min,的就使得它等于a_min。</p><p>numpy数组维度的理解</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page3.jpg" alt="Page1"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page2.jpg" alt="Page2"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page1.jpg" alt="Page3"></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;Numpy对维数的理解&quot;&gt;&lt;a href=&quot;#Numpy对维数的理解&quot; class=&quot;headerlink&quot; title=&quot;Numpy对维数的理解&quot;&gt;&lt;/a&gt;Numpy对维数的理解&lt;/h1&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://wynneyin.site/2022/10/23/%E5%8F%A4%E5%85%B8%EF%BC%9A/"/>
-    <id>http://wynneyin.site/2022/10/23/%E5%8F%A4%E5%85%B8%EF%BC%9A/</id>
-    <published>2022-10-23T13:04:29.604Z</published>
-    <updated>2022-11-27T07:07:27.692Z</updated>
+    <title>古典音乐</title>
+    <link href="http://wynneyin.site/2022/10/21/%E5%8F%A4%E5%85%B8%EF%BC%9A/"/>
+    <id>http://wynneyin.site/2022/10/21/%E5%8F%A4%E5%85%B8%EF%BC%9A/</id>
+    <published>2022-10-21T05:49:45.000Z</published>
+    <updated>2022-12-23T11:50:50.009Z</updated>
     
     <content type="html"><![CDATA[<p>科普兰的音乐欣赏的三个阶段：</p><p>1.美感阶段 2.表达阶段 3.纯音乐阶段</p><span id="more"></span><h4 id="交响曲"><a href="#交响曲" class="headerlink" title="交响曲"></a>交响曲</h4><p>1.海顿《G大调第九十四号交响曲“惊愕”》</p><p>2.莫扎特《G小调第四十号交响曲》</p><p>3.贝多芬《F大调第六号交响曲“田园”》</p><p>4贝多芬《D小调第九号交响曲“合唱”》</p><p>5.舒伯特《B小调第八号交响曲“未完成”》</p><p>6.舒曼《降B大调第一号交响曲“春天”》</p><p>7.柴科夫斯基《B小调第六号交响曲“悲怆”》</p><p>8.德沃夏克《E小调第九号交响曲“自新大陆”》 —————————— 第四乐章</p><p>9.柏辽兹《幻想交响曲》</p><p>10.马勒《D大调第一号交响曲》</p><h4 id="钢琴独奏曲"><a href="#钢琴独奏曲" class="headerlink" title="钢琴独奏曲"></a>钢琴独奏曲</h4><ol><li>莫扎特《A大调第十一号钢琴奏呜曲》</li><li>贝多芬《升c小调第十四号钢琴奏呜曲“月光”》</li><li>舒伯特《音乐的瞬间第三首，F小调&gt;</li><li>舒曼“梦幻曲”（《童年情景》之七)</li><li>李斯特《帕格尼尼大练习曲之三“钟”》</li><li>勃拉姆斯《升F小调第五号匈牙利舞曲》</li><li>肖邦《降B小调夜曲》</li><li>肖邦《c小调练习曲“革命”》</li><li>德彪西《亚麻色头发的少女》</li><li>拉赫玛尼诺夫《升c小调第二号前奏曲》</li></ol><h4 id="协奏曲"><a href="#协奏曲" class="headerlink" title="协奏曲"></a>协奏曲</h4><ol><li>维瓦尔第《E小调小提琴协奏曲“春”&gt;</li><li>巴赫《G大调第三号勃兰登堡协奏曲》</li><li>海顿《D大调钢琴协奏曲》</li><li>莫扎特《A大调钢琴协奏曲》</li><li>莫扎特《A大调单簧管协奏曲》</li><li>肖邦《E小调第一号钢琴协奏曲》</li><li>柴科夫斯基《降B小调第一号钢琴协奏曲</li><li>拉赫玛尼诺夫《c小调第二钢琴协奏曲》</li><li>德沃夏克《B小调大提琴协奏曲》</li><li>埃尔加《E小调大提琴协奏曲》</li></ol><h4 id="弦乐独奏曲"><a href="#弦乐独奏曲" class="headerlink" title="弦乐独奏曲"></a>弦乐独奏曲</h4><ol><li>巴赫《无伴奏大提琴组曲第一部》</li><li>帕格尼尼《摩西主题变奏曲》</li><li>圣-桑《引子与回旋随想曲》</li><li>勃拉姆斯《E小调大提琴奏呜曲》</li><li>萨拉萨蒂《流浪者之歌》</li><li>里姆斯基-科萨柯夫《野蜂飞舞》</li><li>克莱斯勒《美丽的罗斯玛琳》</li><li>弗雷《c小调悲歌》</li><li>拉赫玛尼诺夫《练声曲》</li><li>马斯涅“沉思”(选自《泰伊斯)</li></ol><h4 id="管弦乐曲、交响诗"><a href="#管弦乐曲、交响诗" class="headerlink" title="管弦乐曲、交响诗"></a>管弦乐曲、交响诗</h4><ol><li>李斯特《前奏曲》</li><li>理查·施特劳斯《查拉图斯特拉如是说》</li><li>理查·施特劳斯《英雄的生涯》</li><li>理查·施特劳斯《堂·吉诃德》</li><li>斯美塔纳《伏尔塔瓦河》</li><li>柴科夫斯基《1812序曲》</li><li>里姆斯基一科萨柯夫《西班牙随想曲》</li><li>穆索尔斯基《荒山之夜》</li><li>鲍罗丁《在中亚细亚草原上》</li><li>西贝柳斯《芬兰颂》</li></ol><h4 id="歌剧咏叹调"><a href="#歌剧咏叹调" class="headerlink" title="歌剧咏叹调"></a>歌剧咏叹调</h4><ol><li>莫扎特《魔笛》“复仇的火焰”</li><li>莫扎特《费加罗的婚礼》“你不要再去做情郎”</li><li>罗西尼《塞维利亚理发师》“快给大忙人让路”</li><li>唐尼采蒂《爱之甘醇》“偷洒一滴泪”</li><li>奥芬巴赫《霍夫曼的故事》“船歌”</li><li>比才《卡门》“爱情是一只自由鸟”</li><li>普契尼《图兰朵》“今夜无人入睡”</li><li>普契尼《托斯卡》“为艺术，为爱情”</li><li>普契尼《艺术家的生涯》“冰凉的小手”</li><li>威尔第《弄臣》“女人善变”</li></ol><h4 id="室内乐"><a href="#室内乐" class="headerlink" title="室内乐"></a>室内乐</h4><ol><li><p>海顿《c大调弦乐四重奏“皇帝”&gt;</p></li><li><p>莫扎特《A大调单簧管五重奏》</p></li><li><p>莫扎特《降E大调五重奏》</p></li><li><p>贝多芬《c大调第九号弦乐四重奏“拉祖莫夫斯基”》</p></li><li><p>舒伯特《降B大调第一号三重奏》</p></li><li><p>舒伯特《A大调钢琴五重奏“鲸鱼”》</p></li><li><p>门德尔松《降E大调弦乐八重奏》</p></li><li><p>勃拉姆斯《B小调单簧管五重奏》</p></li><li><p>拉威尔《F大调弦乐四重奏》</p></li><li><p>肖斯塔科维奇《c小调钢琴五重奏》</p></li></ol><h4 id="舞剧音乐-舞曲"><a href="#舞剧音乐-舞曲" class="headerlink" title="舞剧音乐/舞曲"></a>舞剧音乐/舞曲</h4><ol><li><p>莫扎特《D大调小步舞曲》</p></li><li><p>比才《阿莱城的姑娘》“法郎多尔舞曲”</p></li><li><p>柴科夫斯基《天鹅湖》“四小天鹅舞”</p></li><li><p>柴科夫斯基《天鹅湖》“西班牙舞”</p></li><li><p>柴科夫斯基《胡桃夹子》“俄罗斯特列帕克舞”</p></li><li><p>拉威尔《波莱罗》</p></li><li><p>老约翰·施特劳斯《可爱的安娜波尔卡》</p></li><li><p>小约翰·施特劳斯《电闪雷呜波尔卡》</p></li><li><p>小约翰·施特劳斯《皇帝圆舞曲》</p></li><li><p>埃米尔·瓦尔德退费尔《溜冰圆舞曲》</p></li><li><h4 id="艺术歌曲"><a href="#艺术歌曲" class="headerlink" title="艺术歌曲"></a>艺术歌曲</h4></li></ol><ol><li>莫扎特《紫罗兰》</li><li>贝多芬《五月之歌》</li><li>舒伯特《菩提树》</li><li>舒伯特《魔王》</li><li>舒伯特《醇鱼》</li><li>舒曼《蔷薇、百合、鸽子、太阳》</li><li>门德尔松《乘着歌声的翅膀&gt;</li><li>理查·施特劳斯《四首最后的歌》“入睡”</li><li>理查·施特劳斯《摇篮曲》</li><li>马勒《旅行者之歌》“清晨，我越过原野”</li></ol><h4 id="合唱曲"><a href="#合唱曲" class="headerlink" title="合唱曲"></a>合唱曲</h4><ol><li>巴赫《马太受难曲》“来吧，儿女们，与我同悲伤”</li><li>亨德尔哈利路亚（选自《弥赛亚&gt;)</li><li>莫扎特《安魂曲》“垂怜经”</li><li>贝多芬《欢乐颂》（选自《第九号交响曲》“合唱”）</li><li>贝多芬《庄严弥撒》“信经―化体”</li><li>普契尼《蝴蝶夫人》第二幕“嗡呜合唱”</li><li>柏辽兹《基督的童年》</li><li>瓦格纳《罗恩格林》婚礼合唱</li><li>威尔第《纳布科》“飞吧，让思想插上金色的翅膀”</li><li>奥尔夫《博伊伦之歌》“命运，世界的女神”</li></ol><p><a href="https://www.ncpa-classic.com/special/gdyysx/top100/index.shtml">https://www.ncpa-classic.com/special/gdyysx/top100/index.shtml</a></p>]]></content>
     
@@ -168,14 +49,16 @@
     
     
     
+    <category term="音乐" scheme="http://wynneyin.site/tags/%E9%9F%B3%E4%B9%90/"/>
+    
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://wynneyin.site/2022/10/22/%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90/"/>
-    <id>http://wynneyin.site/2022/10/22/%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90/</id>
-    <published>2022-10-22T12:40:42.016Z</published>
-    <updated>2022-10-23T03:28:08.484Z</updated>
+    <title>线性分析</title>
+    <link href="http://wynneyin.site/2022/10/21/%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90/"/>
+    <id>http://wynneyin.site/2022/10/21/%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90/</id>
+    <published>2022-10-21T05:49:45.000Z</published>
+    <updated>2022-12-23T12:13:55.842Z</updated>
     
     <content type="html"><![CDATA[<h1 id="线性分析"><a href="#线性分析" class="headerlink" title="线性分析"></a>线性分析</h1><p>1.找到S盒的线性近似关系，$α∙u=β∙v且Pr(α∙u=β∙v)=p$。</p><p>2.将这个近似关系向3头尾延伸。</p><p>3.得到了$α∙m⨁α∙k_0=β∙c⨁β∙k_1$  以概率p成立 ,那么$α∙m⨁β∙c=α∙k_0⨁β∙k_1$ 以概率p成立</p><p>4.利用算法一，求解密钥一比特的信息。</p><span id="more"></span><p>1.设已知N个明文及相应的密文(m,c)</p><p>初始化两个计数器$T_0=0, T_1=0$</p><p>2.对每一个(m,c)    </p><p>​    计算b=α∙m⨁β∙c;    </p><p>​    若b=0， $T_0++$；    </p><p>​    否则，$T_1++$；</p><p>3.若$T_0≥N/2$    </p><p>​        当p&gt; 1/2时        </p><p>​            猜测$α∙k_0 ⨁β∙k_1=0    $</p><p>​        否则，猜测$α∙k_0 ⨁β∙k_1=1$</p><p>4.若$T_0<N/2$，即$T_1>N/2   $</p><p>​    当p&gt; 1/2时        </p><p>​        猜测$α∙k_0 ⨁β∙k_1=1    $</p><p>​    否则，猜测$α∙k_0 ⨁β∙k_1=0$</p>]]></content>
     
@@ -188,22 +71,178 @@
     
     
     
+    <category term="密码分析学" scheme="http://wynneyin.site/tags/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6/"/>
+    
   </entry>
   
   <entry>
-    <title>测试</title>
-    <link href="http://wynneyin.site/2022/10/21/%E6%B5%8B%E8%AF%95/"/>
-    <id>http://wynneyin.site/2022/10/21/%E6%B5%8B%E8%AF%95/</id>
+    <title>Numpy对维数的理解</title>
+    <link href="http://wynneyin.site/2022/10/21/numpy%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://wynneyin.site/2022/10/21/numpy%E5%AD%A6%E4%B9%A0/</id>
     <published>2022-10-21T05:49:45.000Z</published>
-    <updated>2022-11-20T03:35:42.956Z</updated>
+    <updated>2022-12-23T12:05:32.379Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="github代码提交流程"><a href="#github代码提交流程" class="headerlink" title="github代码提交流程"></a>github代码提交流程</h2><span id="more"></span><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git add 文件名字</span><br><span class="line">git commit -m  &quot;注释内容&quot;</span><br><span class="line">git remote add 仓库名字 仓库地址</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">git <span class="built_in">rm</span> 文件名 <span class="comment">#本地倒库内删除</span></span> </span><br><span class="line">git config --global http.proxy http://127.0.0.1:端口号</span><br><span class="line">git config --global https.proxy http://127.0.0.1:端口号</span><br><span class="line">git push -u 仓库名字</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name &quot;new name&quot;</span><br><span class="line">git config credential.username &quot;new name&quot;</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r sm3_加速</span><br><span class="line">git commit -m &quot;删除说明&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull practice master</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">每次提交前先pull一下</span></span><br></pre></td></tr></table></figure><h5 id="1-rejected-master-gt-master-non-fast-forward-解决方案："><a href="#1-rejected-master-gt-master-non-fast-forward-解决方案：" class="headerlink" title="1.! [rejected] master -&gt; master (non-fast-forward)解决方案："></a>1.! [rejected] master -&gt; master (non-fast-forward)解决方案：</h5><p><a href="https://blog.csdn.net/zyz00000000/article/details/84402189">https://blog.csdn.net/zyz00000000/article/details/84402189</a></p><p>2.删除文件夹</p><p><a href="https://blog.csdn.net/weixin_45309916/article/details/108275311">https://blog.csdn.net/weixin_45309916/article/details/108275311</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;github代码提交流程&quot;&gt;&lt;a href=&quot;#github代码提交流程&quot; class=&quot;headerlink&quot; title=&quot;github代码提交流程&quot;&gt;&lt;/a&gt;github代码提交流程&lt;/h2&gt;</summary>
+    <content type="html"><![CDATA[<p>对数组的某种特定元素进行操作，例如将小于0的元素变为0，等等。</p><span id="more"></span><p>例如：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=np.where(a != <span class="number">0</span>, a, <span class="number">0.00001</span>)<span class="comment">#####将数组中为0的元素替换为0.00001</span></span><br></pre></td></tr></table></figure><p>numpy.concatenate()</p><p>numpy.clip(a, a_min, a_max, out=None)[source]</p><p>clip这个函数将将数组中的元素限制在a_min, a_max之间，大于a_max的就使得它等于 a_max，小于a_min,的就使得它等于a_min。</p><p>numpy数组维度的理解</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page3.jpg" alt="Page1"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page2.jpg" alt="Page2"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page1.jpg" alt="Page3"></p>]]></content>
     
     
+    <summary type="html">&lt;p&gt;对数组的某种特定元素进行操作，例如将小于0的元素变为0，等等。&lt;/p&gt;</summary>
     
+    
+    
+    
+    <category term="机器学习" scheme="http://wynneyin.site/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>公钥密码系统在区块链中的使用情况</title>
+    <link href="http://wynneyin.site/2022/10/21/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E5%9C%A8%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/"/>
+    <id>http://wynneyin.site/2022/10/21/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E5%9C%A8%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/</id>
+    <published>2022-10-21T05:49:45.000Z</published>
+    <updated>2022-12-23T12:16:19.474Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="公钥密码系统在区块链中的使用情况"><a href="#公钥密码系统在区块链中的使用情况" class="headerlink" title="公钥密码系统在区块链中的使用情况"></a>公钥密码系统在区块链中的使用情况</h2><h3 id="什么是比特币钱包？"><a href="#什么是比特币钱包？" class="headerlink" title="什么是比特币钱包？"></a>什么是比特币钱包？</h3><p>比特币钱包用于访问和转移加密货币，钱包内存有私钥。</p><span id="more"></span><h3 id="比特币钱包的分类"><a href="#比特币钱包的分类" class="headerlink" title="比特币钱包的分类"></a>比特币钱包的分类</h3><h4 id="热钱包"><a href="#热钱包" class="headerlink" title="热钱包"></a>热钱包</h4><p>钱包提供在线存储，通常与第三方应用程序或服务相关联。热钱包使存储您的加密密钥更加方便和易于管理。但是，如果发生网络盗窃或服务泄露，您有可能丢失密钥。 </p><h4 id="冷钱包"><a href="#冷钱包" class="headerlink" title="冷钱包"></a>冷钱包</h4><p>这些是未连接到互联网的加密存储设备，可减少您的资产受到攻击的机会。将这些密钥存储在从不连接到互联网的计算机上，使设备成为冷存储。与热钱包相比，冷钱包是一种更安全的选择，但它们会让您的资产交易变得不方便。</p><h4 id="硬件钱包"><a href="#硬件钱包" class="headerlink" title="硬件钱包"></a>硬件钱包</h4><p>硬件钱包是在物理介质上包含您的加密密钥的设备。一个明显的好处是您可以随时将硬钱包连接到互联网。硬件钱包可确保您的密钥安全并提高可用性。</p><h4 id="比特币钱包的工作："><a href="#比特币钱包的工作：" class="headerlink" title="比特币钱包的工作："></a>比特币钱包的工作：</h4><p>比特币钱包内存有你的公钥和私钥，所以可以用来转账。但是钱包内不存放比特币，</p><h2 id="比特币交易"><a href="#比特币交易" class="headerlink" title="比特币交易"></a>比特币交易</h2><h3 id="基本内容："><a href="#基本内容：" class="headerlink" title="基本内容："></a>基本内容：</h3><h4 id="私钥："><a href="#私钥：" class="headerlink" title="私钥："></a>私钥：</h4><p>私钥为随机选取的数字。私钥丢失无法复原，比特币随之丢失。</p><h5 id="公钥："><a href="#公钥：" class="headerlink" title="公钥："></a>公钥：</h5><p>​    通过椭圆曲线算法可以从私钥计算得到公钥，这是不可逆转的过程：K = k * G。其中k是私钥，G是被称为生成点的常数点，而K是所得公钥。</p><p>​    其反向运算，被称为“寻找离散对数”——已知公钥K来求出私钥k——是非常困难的，就像去试验所有可能的k值，即暴力搜索。</p><h5 id="比特币地址："><a href="#比特币地址：" class="headerlink" title="比特币地址："></a>比特币地址：</h5><p>比特币地址是一个由数字和字母组成的字符串，在交易中，比特币地址通常以收款方出现。如果把比特币交易比作一张支票，比特币地址就是收款人。</p><h6 id="如何生成比特币地址"><a href="#如何生成比特币地址" class="headerlink" title="如何生成比特币地址"></a>如何生成比特币地址</h6><p>比特币地址可由公钥经过单向的加密<a href="https://so.csdn.net/so/search?q=哈希&amp;spm=1001.2101.3001.7020">哈希</a>算法得到。公钥 K 为输入，计算其SHA256哈希值，并以此结果计算RIPEMD160 哈希值，得到一个长度为160比特（20字节）的数字。</p><h3 id="交易验签原理："><a href="#交易验签原理：" class="headerlink" title="交易验签原理："></a>交易验签原理：</h3><h4 id="接受者的output结构为："><a href="#接受者的output结构为：" class="headerlink" title="接受者的output结构为："></a>接受者的output结构为：</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;pk_script&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span>byte</span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>pk_script对应着为脚本字节数据，比特币有很多种脚本结构：例如P2PKH,P2SH,P2WSH等等。</p><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/41de67246b9b466ba50145d2f1f7b9f3~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p><p><code>OP_DUP</code> <code>OP_HASH160</code> 是比特币虚拟机的操作码，<code>OP</code>是英文<code>operation</code>的缩写，操作码的本质是16进制数字。</p><p>上面的 <code>P2PKH</code> 结构，虚拟机在运行它的时候，代码执行流程如下：</p><ol><li><code>OP_DUP</code>: 执行<code>复制栈顶数据</code>操作，然后该数据放置栈顶；</li><li><code>OP_HASH160</code>: 执行<code>对栈顶数据进行 ripemd160 哈希运算</code>操作。160 前，会先进行一次 sha256(data)；</li><li><code>OP_EQUALVERIFY</code>: 执行<code>对比栈顶的两个数据</code>操作，如果相等都被移除；</li><li><code>OP_CHECKSIG</code>: 执行<code>验证签名</code>操作，这里会用到 <code>pubKeyHash</code>。</li></ol><p>记住这个 <code>pubKeyHash</code>，它是后面验签要用到的，它是公钥哈希。</p>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;公钥密码系统在区块链中的使用情况&quot;&gt;&lt;a href=&quot;#公钥密码系统在区块链中的使用情况&quot; class=&quot;headerlink&quot; title=&quot;公钥密码系统在区块链中的使用情况&quot;&gt;&lt;/a&gt;公钥密码系统在区块链中的使用情况&lt;/h2&gt;&lt;h3 id=&quot;什么是比特币钱包？&quot;&gt;&lt;a href=&quot;#什么是比特币钱包？&quot; class=&quot;headerlink&quot; title=&quot;什么是比特币钱包？&quot;&gt;&lt;/a&gt;什么是比特币钱包？&lt;/h3&gt;&lt;p&gt;比特币钱包用于访问和转移加密货币，钱包内存有私钥。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="区块链" scheme="http://wynneyin.site/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中间相遇攻击</title>
+    <link href="http://wynneyin.site/2022/10/21/%E4%B8%AD%E9%97%B4%E7%9B%B8%E9%81%87/"/>
+    <id>http://wynneyin.site/2022/10/21/%E4%B8%AD%E9%97%B4%E7%9B%B8%E9%81%87/</id>
+    <published>2022-10-21T05:49:45.000Z</published>
+    <updated>2022-12-23T12:01:20.349Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="中间相遇攻击"><a href="#中间相遇攻击" class="headerlink" title="中间相遇攻击"></a>中间相遇攻击</h1><span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113141326402.png" alt="image-20221113140730120" style="zoom:50%;" /></p><p>三des</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113141054994.png" alt="image-20221113141054994"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113140730120.png" alt="image-20221113141326402" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113143852130.png" alt="image-20221113143852130" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113145836930.png" alt="image-20221113145836930" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113163126185.png" alt="image-20221113163126185" style="zoom: 33%;" /></p><p>从中间撕开，先后异或密钥自然遍历即可，向前扩展每一个猜测的kinit 都会有$2^8$个明文。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113180442955.png" alt="image-20221113180442955" style="zoom:50%;" /></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;中间相遇攻击&quot;&gt;&lt;a href=&quot;#中间相遇攻击&quot; class=&quot;headerlink&quot; title=&quot;中间相遇攻击&quot;&gt;&lt;/a&gt;中间相遇攻击&lt;/h1&gt;</summary>
+    
+    
+    
+    
+    <category term="密码分析学" scheme="http://wynneyin.site/tags/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>广义生日攻击</title>
+    <link href="http://wynneyin.site/2022/10/21/%E5%B9%BF%E4%B9%89%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/"/>
+    <id>http://wynneyin.site/2022/10/21/%E5%B9%BF%E4%B9%89%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/</id>
+    <published>2022-10-21T05:49:45.000Z</published>
+    <updated>2022-12-23T12:03:02.902Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="生日攻击"><a href="#生日攻击" class="headerlink" title="生日攻击"></a>生日攻击</h1><span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113193457882.png" alt="image-20221113193457882" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113194835376.png" alt="image-20221113194835376" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113200047841.png" alt="image-20221113200047841" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113201709621.png" alt="image-20221113201709621" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221114152359433.png" alt="image-20221114144917338" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221114151145990.png" alt="image-20221114151145990" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221114144917338.png" alt="image-20221114152359433" style="zoom:50%;" /></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;生日攻击&quot;&gt;&lt;a href=&quot;#生日攻击&quot; class=&quot;headerlink&quot; title=&quot;生日攻击&quot;&gt;&lt;/a&gt;生日攻击&lt;/h1&gt;</summary>
+    
+    
+    
+    
+    <category term="密码分析学" scheme="http://wynneyin.site/tags/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>积分攻击</title>
+    <link href="http://wynneyin.site/2022/10/21/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6%E7%A7%AF%E5%88%86%E6%94%BB%E5%87%BB/"/>
+    <id>http://wynneyin.site/2022/10/21/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6%E7%A7%AF%E5%88%86%E6%94%BB%E5%87%BB/</id>
+    <published>2022-10-21T05:49:45.000Z</published>
+    <updated>2022-12-23T12:11:12.922Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="积分攻击"><a href="#积分攻击" class="headerlink" title="积分攻击"></a>积分攻击</h1><span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192151582.png" alt="image-20221111192151582" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192212762.png" alt="image-20221111192212762" style="zoom:33%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192318383.png" alt="image-20221111192318383" style="zoom:33%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192856206.png" alt="image-20221111192856206" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111193726852.png" alt="image-20221111193726852"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113112959772.png" alt="image-20221113112959772"></p><p>结构体的大小是这个区分器的头部的只需要一个活跃</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113112833278.png" alt="image-20221113112833278"></p><p>头部添加一轮：</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113131249639.png" alt="image-20221113131249639" style="zoom:50%;" /></p><p>复杂度分析：</p><p>数据复杂度：$2^{32}$ 只需要两个结构体</p><p>时间复杂度：16<em>($2^{32} </em> 2^8+$ $2^{32} *2 $)</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113144031598.png" alt="image-20221113144031598" style="zoom: 33%;" /></p><p>)</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113133522854.png" alt="image-20221113133522854" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113133708407.png" alt="image-20221113133708407" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113134000505.png" alt="image-20221113134000505" style="zoom:50%;" /></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;积分攻击&quot;&gt;&lt;a href=&quot;#积分攻击&quot; class=&quot;headerlink&quot; title=&quot;积分攻击&quot;&gt;&lt;/a&gt;积分攻击&lt;/h1&gt;</summary>
+    
+    
+    
+    
+    <category term="密码分析学" scheme="http://wynneyin.site/tags/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>杂凑函数</title>
+    <link href="http://wynneyin.site/2022/10/21/%E6%9D%82%E5%87%91%E5%87%BD%E6%95%B0/"/>
+    <id>http://wynneyin.site/2022/10/21/%E6%9D%82%E5%87%91%E5%87%BD%E6%95%B0/</id>
+    <published>2022-10-21T05:49:45.000Z</published>
+    <updated>2022-12-23T12:12:23.951Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="杂凑函数"><a href="#杂凑函数" class="headerlink" title="杂凑函数"></a>杂凑函数</h1><span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115091834322.png" alt="image-20221115091834322" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115091947930.png" alt="image-20221115091947930" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115092146832.png" alt="image-20221115092146832" style="zoom:50%;" /></p><p>强化md结构：</p><p>在分块的最后加消息长度</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115092536650.png" alt="image-20221115092536650" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115092547654.png" alt="image-20221115092547654" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115150931232.png" alt="image-20221115150931232" style="zoom:50%;" /></p><p>MD4算法：</p><p>输入的密钥（消息M），将512bit的消息块划分为16个32比特字，记为$m<em>0,m_1….m</em>{15}$, $w_j$为消息扩展的内容为48个</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115154326462.png" alt="image-20221115154326462" style="zoom:50%;" /></p><p>三个轮函数每16个换一个</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115163415671.png" alt="image-20221115154412693" style="zoom:50%;" /></p><p>输出值为T=(a+aa)||(b+bb)||(c+cc)||(d+dd)</p><p>aa||bb||cc||dd 为连接变量，初始为IV。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115160246771.png" alt="image-20221115160246771" style="zoom: 50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115162121336.png" alt="image-20221115162121336"></p><p>9</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221115154412693.png" alt="image-20221115163415671" style="zoom:50%;" /></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;杂凑函数&quot;&gt;&lt;a href=&quot;#杂凑函数&quot; class=&quot;headerlink&quot; title=&quot;杂凑函数&quot;&gt;&lt;/a&gt;杂凑函数&lt;/h1&gt;</summary>
+    
+    
+    
+    
+    <category term="密码分析学" scheme="http://wynneyin.site/tags/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>特征值</title>
+    <link href="http://wynneyin.site/2022/10/21/%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/"/>
+    <id>http://wynneyin.site/2022/10/21/%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/</id>
+    <published>2022-10-21T05:49:45.000Z</published>
+    <updated>2022-12-23T11:56:56.946Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="特征值到底是个什么玩意？"><a href="#特征值到底是个什么玩意？" class="headerlink" title="特征值到底是个什么玩意？"></a>特征值到底是个什么玩意？</h1><span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120110737240.png" alt="image-20221120110737240" style="zoom:50%;" /></p><p>矩阵理解为线性变换，有一个特殊的向量[-1,1]，他在经过线性变换之后相对于原来的基仅仅是乘上一个标量2而已。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120110915371.png" alt="image-20221120110915371" style="zoom: 33%;" /></p><p>那么显然这条向量上的所有的与之共线的向量都是满足这条性质的。</p><p><em>这种特殊的性质，自己经过线性变换仍然留在自己张成的空间内的向量，就是特征向量。2就是特征值。</em></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120111231875.png" alt="image-20221120111231875" style="zoom: 33%;" /></p><p>例如其他的向量经过线性变换之后，离开了自己的原向量。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120111710307.png" alt="image-20221120111710307" style="zoom:33%;" /></p><p>第一步很明显就是特征值和特征向量的直观描述</p><p>第二步将单纯的标量$\lambda$转化为一个线性变换</p><p>第三步将两次变化改为一次研究这个一次变化对V的影响，实际上就是一个解线性方程组前面为系数矩阵</p><p>第四步要使得线性方程组的解向量有意义，那么系数矩阵的秩要小于方程组个数，也就是行列式的值为0.</p><p>设想一下如果行列式不为0那么显然方程都是线性无关的，那么能解出来向量吗，显然不能只能是个点而已。</p><p>例如下面这个线性变换是没有特征向量的</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120112434842.png" alt="image-20221120112434842" style="zoom:33%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221120112445846.png" alt="image-20221120112445846" style="zoom:50%;" /></p><h2 id="什么是代数重数和几何重数？"><a href="#什么是代数重数和几何重数？" class="headerlink" title="什么是代数重数和几何重数？"></a>什么是代数重数和几何重数？</h2><p><strong>代数重数(<a href="https://www.zhihu.com/search?q=特征值重数&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A&quot;1876727913&quot;}">特征值重数</a>)大于等于几何重数(特征值对应的线性无关的特征向量的个数)</strong></p><p><strong>前者之所以被称为代数重数，是因为这是解方程得到的；后者被称为几何重数是因为这是对应的<a href="https://www.zhihu.com/search?q=解空间&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A&quot;1876727913&quot;}">解空间</a>的维数(线性无关的特征向量的个数)</strong></p><p><strong>并且当代数重数等于几何重数的时候，矩阵就可以对角化。(n重特征值有n个线性无关的特征向量)</strong></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;特征值到底是个什么玩意？&quot;&gt;&lt;a href=&quot;#特征值到底是个什么玩意？&quot; class=&quot;headerlink&quot; title=&quot;特征值到底是个什么玩意？&quot;&gt;&lt;/a&gt;特征值到底是个什么玩意？&lt;/h1&gt;</summary>
+    
+    
+    
+    
+    <category term="线性代数" scheme="http://wynneyin.site/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Maki——费曼学习法</title>
+    <link href="http://wynneyin.site/2022/10/21/Maki%E2%80%94%E2%80%94%E8%B4%B9%E6%9B%BC%E5%AD%A6%E4%B9%A0%E6%B3%95/"/>
+    <id>http://wynneyin.site/2022/10/21/Maki%E2%80%94%E2%80%94%E8%B4%B9%E6%9B%BC%E5%AD%A6%E4%B9%A0%E6%B3%95/</id>
+    <published>2022-10-21T05:49:45.000Z</published>
+    <updated>2022-12-23T12:16:46.215Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Maki——费曼学习法"><a href="#Maki——费曼学习法" class="headerlink" title="Maki——费曼学习法"></a>Maki——费曼学习法</h1><span id="more"></span><p>1.行为上，写讲义。从最基础的东西和最具体的通俗的方式讲解知识点，深入浅出。高阶串联知识点，重排知识点，用读者更容易接受的方式去讲解。</p><p>影响函数走向的和斜率有关，和函数值无关和起点无关。</p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;Maki——费曼学习法&quot;&gt;&lt;a href=&quot;#Maki——费曼学习法&quot; class=&quot;headerlink&quot; title=&quot;Maki——费曼学习法&quot;&gt;&lt;/a&gt;Maki——费曼学习法&lt;/h1&gt;</summary>
+    
+    
+    
+    
+    <category term="Maki" scheme="http://wynneyin.site/tags/Maki/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一</title>
+    <link href="http://wynneyin.site/2022/10/21/%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/"/>
+    <id>http://wynneyin.site/2022/10/21/%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/</id>
+    <published>2022-10-21T05:49:45.000Z</published>
+    <updated>2022-12-23T12:21:56.471Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="安全协议总结"><a href="#安全协议总结" class="headerlink" title="安全协议总结"></a>安全协议总结</h1><h2 id="第一章："><a href="#第一章：" class="headerlink" title="第一章："></a>第一章：</h2><span id="more"></span><p>协议的主要特点：</p><p>1.协议有序性，前一步执行完，后一步才能执行</p><p>2.协议至少两人以上</p><p>3.通过协议完成某项任务</p><p>协议的其他特点：</p><p>1每个人都提前知道所要完成的步骤</p><p>2每个人都同意并遵循</p><p>3协议每一步确定</p><p>4协议完整，每一步的所有可能情况都要考虑</p><p>安全协议中的角色：</p><p>协议参与者 攻击者 仲裁 可信第三方</p><p>协议中的安全要求:</p><p>机密性 完整性 认证性 不可否认性 公平性 可验证性 匿名性 隐私性 稳定性 效率</p><p>安全协议：</p><p>盲签名 密钥协商 秘密共享 门限密码  零知识证明 身份认证权益认证 个人信息检索 安全多方计算</p><h3 id="Dolev和Yao的攻击者模型"><a href="#Dolev和Yao的攻击者模型" class="headerlink" title="Dolev和Yao的攻击者模型"></a>Dolev和Yao的攻击者模型</h3><p>攻击者的能力：</p><p>   1.可以窃听网络上的消息</p><p>   2.可以阻止和截获网路上消息</p><ol><li>可以存储获得自身创造的消息</li><li>可以根据存储的消息伪造消息，并发送该消息</li><li>作为合法的主体参与协议的运行</li></ol><h4 id="攻击的途径："><a href="#攻击的途径：" class="headerlink" title="攻击的途径："></a>攻击的途径：</h4><p>1.攻击密码算法</p><p>2.攻击实现算法的密码技术</p><p>3.攻击协议</p><h4 id="攻击手法："><a href="#攻击手法：" class="headerlink" title="攻击手法："></a>攻击手法：</h4><p>窃听         攻击者获取协议运行中所传输的消息</p><ol><li>被动攻击破坏机密性</li><li>搭线窃听 广播网络 <a href="">肩窥</a></li><li>明文传输认证信息  FTP Telnet</li></ol><p>篡改         攻击者更改协议运行中所传输的消息的内容</p><ol><li>主动攻击 破坏完整性</li></ol><p>重放         攻击者记录已经获取的消息并在随后的协议运行中发送给相同的或不同的接收者</p><p>预重放       重放的一种</p><p>反射         攻击者将消息发回给消息的发送者</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221130144318298.png" alt="image-20221130144318298" style="zoom: 50%;" /></p><p>拒绝服务     攻击者阻止合法用户完成协议</p><ol><li>拒绝服务攻击的基本目的是使网络泛滥/耗尽，使合法用户无法得到网络服务。</li><li>拒绝服务攻击可以用多种方法启动，最终结果是使网络泛滥或改变网络上的路由器配置。</li></ol><p>类型攻击     攻击者将协议运行中某一类消息域替换成其它的消息域</p><ol><li>抵抗类型攻击的方法有很多，有的使用每次改变消息元素的顺序，确保每次的加密密钥不同。或者在消息中添加认证数或消息域的类型信息</li></ol><p>密码分析     攻击者利用在协议运行中所获取的消息进行分析以获取有用的信息</p><ol><li>弱密钥问题</li></ol><p>证书操纵     攻击者选择或更改证书信息来攻击协议的运行</p><p>证书操控：</p><p>中间人攻击</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221130190644402.png" alt="image-20221130190644402" style="zoom:33%;" /></p><p>协议交互：</p><p>可能多个协议都用同一个密钥，例如嵌入式设备。</p><p>例如，一个利用解密来证明持有认证密钥的协议，可能会被攻击者用来解密另外一个协议中的消息。</p><p>攻击者可以自己构造协议和要攻击的协议进行交互，选择协议攻击。</p><h3 id="安全协议的缺陷"><a href="#安全协议的缺陷" class="headerlink" title="安全协议的缺陷"></a>安全协议的缺陷</h3><h4 id="基本协议缺陷"><a href="#基本协议缺陷" class="headerlink" title="基本协议缺陷"></a>基本协议缺陷</h4><p>指的是在安全协议中没有考虑或者很少考虑攻击者的协议缺陷</p><p>例如 对加密消息签名，从而使攻击者使用他自己的签名替换原有的签名来伪装成发送者。</p><h4 id="并行会话缺陷："><a href="#并行会话缺陷：" class="headerlink" title="并行会话缺陷："></a>并行会话缺陷：</h4><p>协议对并行会话攻击缺乏防范，从而导致入侵者通过交换适当的协议消息能够获得所需要的重要消息。(类似类型攻击？)</p><h4 id="口令／密钥猜测"><a href="#口令／密钥猜测" class="headerlink" title="口令／密钥猜测"></a>口令／密钥猜测</h4><p>弱口令</p><h4 id="陈旧消息缺陷"><a href="#陈旧消息缺陷" class="headerlink" title="陈旧消息缺陷"></a>陈旧消息缺陷</h4><p>指协议中对消息的新鲜性没有充分考虑，从而使入侵者能够进行消息重放攻击。包括消息源的攻击、消息目的的攻击等 。</p><h4 id="内部协议缺陷"><a href="#内部协议缺陷" class="headerlink" title="内部协议缺陷"></a>内部协议缺陷</h4><p>协议可达性存在问题，协议参与者有一方不能完成必须的动作而导致缺陷。</p><h4 id="密码系统缺陷"><a href="#密码系统缺陷" class="headerlink" title="密码系统缺陷"></a>密码系统缺陷</h4><p>协议中使用的密码算法和安全协议导致协议不能完全满足所要求的机密性、认证等需求而产生的缺陷。 </p><h4 id="对密码协议的攻击"><a href="#对密码协议的攻击" class="headerlink" title="对密码协议的攻击"></a>对密码协议的攻击</h4><p>见上攻击模型</p><h3 id="安全协议设计的困难性"><a href="#安全协议设计的困难性" class="headerlink" title="安全协议设计的困难性"></a>安全协议设计的困难性</h3><p>1.安全目标本身的微妙性。</p><p>2.运行环境的复杂性</p><p>3.攻击者模型的复杂性，攻击者的能力评估</p><p>4.安全协议本身具有高并发的特点</p><h3 id="安全协议的设计原则"><a href="#安全协议的设计原则" class="headerlink" title="安全协议的设计原则"></a>安全协议的设计原则</h3><p>1.设计目标明确</p><ol><li>对安全协议进行形式化的描述</li><li>通过形式化的方法证明安全协议实现的设计目标</li><li>安全性和具体采用的密码算法无关</li><li>防止重放攻击</li><li>采用异步认证</li><li>进行运行环境的评估</li><li>实用性强</li><li>减少密码运算降低成本</li><li></li></ol><h3 id="好的安全协议"><a href="#好的安全协议" class="headerlink" title="好的安全协议"></a>好的安全协议</h3><ol><li>满足安全目标</li><li>各方计算量小</li><li>易于实现</li><li>通信负载小</li><li>交互轮数少</li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;安全协议总结&quot;&gt;&lt;a href=&quot;#安全协议总结&quot; class=&quot;headerlink&quot; title=&quot;安全协议总结&quot;&gt;&lt;/a&gt;安全协议总结&lt;/h1&gt;&lt;h2 id=&quot;第一章：&quot;&gt;&lt;a href=&quot;#第一章：&quot; class=&quot;headerlink&quot; title=&quot;第一章：&quot;&gt;&lt;/a&gt;第一章：&lt;/h2&gt;</summary>
+    
+    
+    
+    
+    <category term="安全协议" scheme="http://wynneyin.site/tags/%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/"/>
     
   </entry>
   
@@ -212,16 +251,12 @@
     <link href="http://wynneyin.site/2022/10/21/hello-world/"/>
     <id>http://wynneyin.site/2022/10/21/hello-world/</id>
     <published>2022-10-21T05:05:39.454Z</published>
-    <updated>2022-11-20T03:36:07.230Z</updated>
+    <updated>2022-12-23T12:13:36.147Z</updated>
     
-    <content type="html"><![CDATA[<span id="more"></span><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="hexo基本操作"><a href="#hexo基本操作" class="headerlink" title="hexo基本操作"></a>hexo基本操作</h1><span id="more"></span><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs</summary>
-      
+    <summary type="html">&lt;h1 id=&quot;hexo基本操作&quot;&gt;&lt;a href=&quot;#hexo基本操作&quot; class=&quot;headerlink&quot; title=&quot;hexo基本操作&quot;&gt;&lt;/a&gt;hexo基本操作&lt;/h1&gt;</summary>
     
     
     
