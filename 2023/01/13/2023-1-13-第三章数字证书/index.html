@@ -10,12 +10,12 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="公钥基础设施PKIPKI就是一个以公钥技术为基础的，提供和实施安全服务的具有普适性的安全基础设施。用于解决身份认证，信息的完整性和不可抵赖性等安全问题，应用于电子商务，电子政务，网上银行等 从技术上，PKI是以公钥密码体制为理论基础，以CA为核心，以数字证书为工具 CA——认证中心 123456789101112CA的功能：证书申请\审核\签发\发布证书更新证书注销CA证书更新&#x2F;密钥更新证书验证">
+  <meta name="description" content="公钥基础设施PKIPKI就是一个以公钥技术为基础的，提供和实施安全服务的具有普适性的安全基础设施。用于解决身份认证，信息的完整性和不可抵赖性等安全问题，应用于电子商务，电子政务，网上银行等 从技术上，PKI是以公钥密码体制为理论基础，以CA为核心，以数字证书为工具">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第三章数字证书">
 <meta property="og:url" content="http://wynneyin.site/2023/01/13/2023-1-13-%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/index.html">
 <meta property="og:site_name" content="wynneblog">
-<meta property="og:description" content="公钥基础设施PKIPKI就是一个以公钥技术为基础的，提供和实施安全服务的具有普适性的安全基础设施。用于解决身份认证，信息的完整性和不可抵赖性等安全问题，应用于电子商务，电子政务，网上银行等 从技术上，PKI是以公钥密码体制为理论基础，以CA为核心，以数字证书为工具 CA——认证中心 123456789101112CA的功能：证书申请\审核\签发\发布证书更新证书注销CA证书更新&#x2F;密钥更新证书验证">
+<meta property="og:description" content="公钥基础设施PKIPKI就是一个以公钥技术为基础的，提供和实施安全服务的具有普适性的安全基础设施。用于解决身份认证，信息的完整性和不可抵赖性等安全问题，应用于电子商务，电子政务，网上银行等 从技术上，PKI是以公钥密码体制为理论基础，以CA为核心，以数字证书为工具">
 <meta property="og:locale">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113092518091.png">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113094443656.png">
@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113112148322.png">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113120758621.png">
 <meta property="article:published_time" content="2023-01-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-01-13T04:08:32.455Z">
+<meta property="article:modified_time" content="2023-01-13T10:57:01.232Z">
 <meta property="article:author" content="Wynneyin">
 <meta property="article:tag" content="安全协议">
 <meta name="twitter:card" content="summary">
@@ -281,6 +281,7 @@
     
     <h1 id="公钥基础设施PKI"><a href="#公钥基础设施PKI" class="headerlink" title="公钥基础设施PKI"></a>公钥基础设施PKI</h1><p>PKI就是一个以公钥技术为基础的，提供和实施安全服务的具有普适性的安全基础设施。用于解决身份认证，信息的完整性和不可抵赖性等安全问题，应用于电子商务，电子政务，网上银行等</p>
 <p><strong>从技术上，PKI是以公钥密码体制为理论基础，以CA为核心，以数字证书为工具</strong></p>
+<span id="more"></span>
 <p>CA——认证中心</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CA的功能：</span><br><span class="line">证书申请\审核\签发\发布</span><br><span class="line">证书更新</span><br><span class="line">证书注销</span><br><span class="line">CA证书更新/密钥更新</span><br><span class="line">证书验证 </span><br><span class="line">生成和发布证书注销列表</span><br><span class="line">证书状态查询服务－OCSP</span><br><span class="line">数字证书归档</span><br><span class="line">密钥归档</span><br><span class="line">历史数据归档</span><br><span class="line">数字时戳服务</span><br></pre></td></tr></table></figure>
 <p>RA是CA的延申，负责证书申请者的信息录入、审核等工作</p>

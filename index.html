@@ -248,101 +248,9 @@
     
     <h1 id="公钥基础设施PKI"><a href="#公钥基础设施PKI" class="headerlink" title="公钥基础设施PKI"></a>公钥基础设施PKI</h1><p>PKI就是一个以公钥技术为基础的，提供和实施安全服务的具有普适性的安全基础设施。用于解决身份认证，信息的完整性和不可抵赖性等安全问题，应用于电子商务，电子政务，网上银行等</p>
 <p><strong>从技术上，PKI是以公钥密码体制为理论基础，以CA为核心，以数字证书为工具</strong></p>
-<p>CA——认证中心</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CA的功能：</span><br><span class="line">证书申请\审核\签发\发布</span><br><span class="line">证书更新</span><br><span class="line">证书注销</span><br><span class="line">CA证书更新/密钥更新</span><br><span class="line">证书验证 </span><br><span class="line">生成和发布证书注销列表</span><br><span class="line">证书状态查询服务－OCSP</span><br><span class="line">数字证书归档</span><br><span class="line">密钥归档</span><br><span class="line">历史数据归档</span><br><span class="line">数字时戳服务</span><br></pre></td></tr></table></figure>
-<p>RA是CA的延申，负责证书申请者的信息录入、审核等工作</p>
-<p>RA功能:支持确定或确认签署者身份</p>
-<p>三级架构</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113092518091.png" alt="image-20230113092518091"></p>
-<h1 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h1><p>数字证书，就是公钥证书，是一个包含有用户身份信息、用户公钥以及一个可信第三方认证机构CA的数字签名的数据文件 </p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113094443656.png" alt="image-20230113094443656" style="zoom: 50%;" /></p>
-<p>CA用自己的私钥给主体的公钥和身份id进行签名 并附在后面</p>
-<h3 id="证书生成原理"><a href="#证书生成原理" class="headerlink" title="证书生成原理"></a>证书生成原理</h3><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113100528386.png" alt="image-20230113100528386" style="zoom:50%;" /></p>
-<p>证书主体进行散列被CA的私钥签名形成数字签名附在后面</p>
-<p><strong>数字证书的验证：</strong></p>
-<p>1.验证数字签名是否有效</p>
-<p>2.验证CA值得信任</p>
-<h2 id="证书的层级"><a href="#证书的层级" class="headerlink" title="证书的层级"></a>证书的层级</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113100829890.png" alt="image-20230113100829890" style="zoom:50%;" /></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113100921572.png" alt="image-20230113100921572" style="zoom:50%;" /></p>
-<p>证书路径一直延申到根CA，根CA会有一个自签名证书。如果两个根CA不同的地区进行验证，那么根CA会相互给对方颁发证书（交叉证书）</p>
-<h2 id="证书的注册实现"><a href="#证书的注册实现" class="headerlink" title="证书的注册实现"></a>证书的注册实现</h2><p>证书注册机构RA </p>
-<p>初始化</p>
-<ul>
-<li>实体要获得服务要连接的地方</li>
-<li>连接的pki是否提供已告知的服务</li>
-<li>实体对RA进行认证</li>
-<li>最终实体要产生自己的密钥对，在注册请求时使用</li>
-</ul>
-<p>初始信任</p>
-<ul>
-<li>手工方式 证件检查，然后提交注册管理员签名过的申请</li>
-<li>在线方式 分配 用户名／口令 认证 </li>
-</ul>
-<p>注册期间的信息不会全部体现在证书中</p>
-<h2 id="证书签发"><a href="#证书签发" class="headerlink" title="证书签发"></a>证书签发</h2><p><strong>离线证书签发</strong></p>
-<p>用户向RA提交审查材料，由RA提交CA签发的证书</p>
-<p><strong>在线证书签发</strong></p>
-<p>用户直接向CA提交申请信息，CA认可后，用户生成密钥，下载并安装证书</p>
-<h2 id="证书撤销"><a href="#证书撤销" class="headerlink" title="证书撤销"></a>证书撤销</h2><p>证书废止的原因：</p>
-<p>密钥泄露</p>
-<p>相关信息变更</p>
-<p>终止使用</p>
-<p>CA原因</p>
-<p><strong>CRL</strong>  CRL是一个具有时间戳的列表，在其中列出了所有已经吊销或挂起的数字证书信息。</p>
-<p>该列表记录尚在有效期之内,但是因各种原因而注销的证书. 注明证书注销时间/原因/签发日期等信息</p>
-<p>由CA中心签名</p>
-<h2 id="用户密钥管理"><a href="#用户密钥管理" class="headerlink" title="用户密钥管理"></a>用户密钥管理</h2><p>密钥种类</p>
-<ul>
-<li>签名密钥对  由私钥和公钥组成 用于用户信息的签名和验签，对应证书为签名证书</li>
-<li>加密密钥对 加密密钥和解密密钥组成 用于加密解密 密钥交换 对应证书为加密证书</li>
-</ul>
-<p>生成方式</p>
-<ul>
-<li>用户自己生成 一般指签名密钥对</li>
-<li>CA密钥管理中心分发 一般指加密密钥对</li>
-</ul>
-<h2 id="密钥备份和恢复"><a href="#密钥备份和恢复" class="headerlink" title="密钥备份和恢复"></a>密钥备份和恢复</h2><p>密钥恢复往往向CA或者密钥管理中心申请</p>
-<h2 id="X-500-目录系统"><a href="#X-500-目录系统" class="headerlink" title="X.500 目录系统"></a>X.500 目录系统</h2><p>一个X.500目录由一系列目录项组成。每个目录项对应一个现实世界中的对象。X.500每个对象都有一个无二义性的名称，称为区别名（distinguished name, DN）</p>
-<p>为支持无二义性命名的需要，所有的X.500目录项在逻辑上被组织成一种树型结构，称为目录信息树</p>
-<p>目录信息树有一个概念上的根节点和数目不限的非根节点。除了根节点，所有节点都属于其他节点。除根节点外，每个节点都对应于一个目录项，并有一个区别名。根节点的区别名为空</p>
-<h2 id="X-509证书"><a href="#X-509证书" class="headerlink" title="X.509证书"></a>X.509证书</h2><p>生成证书的基本过程</p>
-<ul>
-<li>用户生成自己的服务端的公私钥对</li>
-<li>构造自己的证书申请文件 包括用户信息和公钥</li>
-<li>用自己的私钥对申请文件签名</li>
-<li>用户提交给CA</li>
-<li>CA验证签名，提取用户信息，并加上颁发者信息，CA的私钥签发公钥证书</li>
-</ul>
-<p><img src="https://pic2.zhimg.com/80/v2-fa70a6ddb16f4896fa8385980fb22ef1_720w.webp" alt="img" style="zoom:67%;" /></p>
-<h2 id="数字证书的类型"><a href="#数字证书的类型" class="headerlink" title="数字证书的类型"></a>数字证书的类型</h2><p>从使用对象角度来分：</p>
-<ul>
-<li>个人数字证书</li>
-<li>服务器数字证书</li>
-<li>安全邮件证书</li>
-<li>代码签名证书</li>
-</ul>
-<p>从技术角度</p>
-<p>SSL：服务于银行对企业或者企业对企业的电子商务活动</p>
-<p>认证过程：</p>
-<p><img src="https://pic3.zhimg.com/80/v2-1d47ef5866629867c397fe5d1afe68c6_720w.webp" alt="img"></p>
-<p>SET：服务于持卡消费、网上购物</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113112022075.png" alt="image-20230113112022075"></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113112148322.png" alt="image-20230113112148322"></p>
-<h2 id="数字证书的功能"><a href="#数字证书的功能" class="headerlink" title="数字证书的功能"></a>数字证书的功能</h2><p>用来分发公钥</p>
-<p>用作主体的身份证明</p>
-<h3 id="使用证书进行加密"><a href="#使用证书进行加密" class="headerlink" title="使用证书进行加密"></a>使用证书进行加密</h3><p>实际上利用公钥分发公钥然后利用公钥协商出会话密钥 或者直接利用公钥加密</p>
-<h3 id="使用证书进行签名"><a href="#使用证书进行签名" class="headerlink" title="使用证书进行签名"></a>使用证书进行签名</h3><p>基本功能利用证书中的数字签名 对消息的hash进行签名</p>
-<p><strong>使用证书同时进行签名和加密</strong> </p>
-<p>融合上面两步 在甲方利用乙方的证书中的公钥对自己的hash和签名进行加密</p>
-<h2 id="利用数字证书进行身份认证"><a href="#利用数字证书进行身份认证" class="headerlink" title="利用数字证书进行身份认证"></a>利用数字证书进行身份认证</h2><ul>
-<li>验证证书是否有效</li>
-<li>验证申请者是否是证书的拥有者</li>
-</ul>
-<h2 id="X-509单向认证"><a href="#X-509单向认证" class="headerlink" title="X.509单向认证"></a>X.509单向认证</h2><p>不能抵抗重放攻击</p>
-<p>需要加上随机数和时间戳 以及身份表示id</p>
-<h2 id="口令机制和数字证书的比较"><a href="#口令机制和数字证书的比较" class="headerlink" title="口令机制和数字证书的比较"></a>口令机制和数字证书的比较</h2><p>通过数字证书则能够实现证书持有者得到在大范围的身份认证，而且不要求他曾经和认证方有过接触，只要某人持有数字证书，就能够让所有以前与他从未有过接触的实体认证他，这就像我们持有身份证可以在全国范围内得到身份认证一样。</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113120758621.png" alt="image-20230113120758621"></p>
-
+    
+    <a class="article-more-a" href="/2023/01/13/2023-1-13-%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/#more">more >></a>
+    
     
 
     
@@ -632,6 +540,94 @@
 
 
   
+    <article id="post-202319-args-和kwargs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/01/09/202319-args-%E5%92%8Ckwargs/" target="_blank">*args和*kwargs</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/01/09/202319-args-%E5%92%8Ckwargs/" class="archive-article-date">
+        <time datetime="2023-01-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-09</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h1>
+    
+    <a class="article-more-a" href="/2023/01/09/202319-args-%E5%92%8Ckwargs/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">python进阶</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/01/09/202319-args-%E5%92%8Ckwargs/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-数据库备忘录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -809,6 +805,58 @@
 
 
   
+    <article id="post-百年激进" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    <hr>
+<p>title:百年激进<br>date:2022/12/23</p>
+<h2 id="tags-温铁军文集"><a href="#tags-温铁军文集" class="headerlink" title="tags:温铁军文集"></a>tags:温铁军文集</h2>
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/12/23/%E7%99%BE%E5%B9%B4%E6%BF%80%E8%BF%9B/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -951,188 +999,9 @@
 
 
   
-    <article id="post-线性分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/10/21/%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90/" target="_blank">线性分析</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/10/21/%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="线性分析"><a href="#线性分析" class="headerlink" title="线性分析"></a>线性分析</h1><p>1.找到S盒的线性近似关系，$α∙u=β∙v且Pr(α∙u=β∙v)=p$。</p>
-<p>2.将这个近似关系向3头尾延伸。</p>
-<p>3.得到了$α∙m⨁α∙k_0=β∙c⨁β∙k_1$  以概率p成立 ,那么$α∙m⨁β∙c=α∙k_0⨁β∙k_1$ 以概率p成立</p>
-<p>4.利用算法一，求解密钥一比特的信息。</p>
-    
-    <a class="article-more-a" href="/2022/10/21/%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码分析学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/10/21/%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-numpy学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/10/21/numpy%E5%AD%A6%E4%B9%A0/" target="_blank">Numpy对维数的理解</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/10/21/numpy%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>对数组的某种特定元素进行操作，例如将小于0的元素变为0，等等。</p>
-    
-    <a class="article-more-a" href="/2022/10/21/numpy%E5%AD%A6%E4%B9%A0/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/10/21/numpy%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
