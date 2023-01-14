@@ -6,33 +6,36 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://wynneyin.site">
-  <title>第三章数字证书 | wynneblog</title>
+  <title>wynneblog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="公钥基础设施PKIPKI就是一个以公钥技术为基础的，提供和实施安全服务的具有普适性的安全基础设施。用于解决身份认证，信息的完整性和不可抵赖性等安全问题，应用于电子商务，电子政务，网上银行等 从技术上，PKI是以公钥密码体制为理论基础，以CA为核心，以数字证书为工具">
+  <meta name="description" content="title:第四章认证协议date:2023-1-13 tags:安全协议认证协议认证：是一个通信过程，通过这个过程，一个实体A （Claimant)可以向另一个实体B(Verifier)证明某种声称的属性。认证协议是安全协议的一种。 认证方式分类消息认证目的：  确认发送者的身份 确认数据的完整性  消息认证要涉及到确认消息的新鲜性，而数据完整性无必要 身份认证  主机主机类型 用户主机类型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第三章数字证书">
-<meta property="og:url" content="http://wynneyin.site/2023/01/13/2023-1-13-%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/index.html">
+<meta property="og:title" content="wynneblog">
+<meta property="og:url" content="http://wynneyin.site/2023/01/14/2023-1-13-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE/index.html">
 <meta property="og:site_name" content="wynneblog">
-<meta property="og:description" content="公钥基础设施PKIPKI就是一个以公钥技术为基础的，提供和实施安全服务的具有普适性的安全基础设施。用于解决身份认证，信息的完整性和不可抵赖性等安全问题，应用于电子商务，电子政务，网上银行等 从技术上，PKI是以公钥密码体制为理论基础，以CA为核心，以数字证书为工具">
+<meta property="og:description" content="title:第四章认证协议date:2023-1-13 tags:安全协议认证协议认证：是一个通信过程，通过这个过程，一个实体A （Claimant)可以向另一个实体B(Verifier)证明某种声称的属性。认证协议是安全协议的一种。 认证方式分类消息认证目的：  确认发送者的身份 确认数据的完整性  消息认证要涉及到确认消息的新鲜性，而数据完整性无必要 身份认证  主机主机类型 用户主机类型">
 <meta property="og:locale">
-<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113092518091.png">
-<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113094443656.png">
-<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113100528386.png">
-<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113100829890.png">
-<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113100921572.png">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-fa70a6ddb16f4896fa8385980fb22ef1_720w.webp">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-1d47ef5866629867c397fe5d1afe68c6_720w.webp">
-<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113112022075.png">
-<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113112148322.png">
-<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113120758621.png">
-<meta property="article:published_time" content="2023-01-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-01-13T10:57:01.232Z">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114090938835.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114093927669.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114094422199.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114100859567.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114103206878.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114104027426.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114162515339.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114194229505.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114194603857.png">
+<meta property="og:image" content="http://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114201427686.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114195559305.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114200426985.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114201055283.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114201520361.png">
+<meta property="article:published_time" content="2023-01-14T02:44:08.462Z">
+<meta property="article:modified_time" content="2023-01-14T12:16:37.489Z">
 <meta property="article:author" content="Wynneyin">
-<meta property="article:tag" content="安全协议">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113092518091.png">
+<meta name="twitter:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114090938835.png">
   
     <link rel="alternative" href="/atom.xml" title="wynneblog" type="application/atom+xml">
   
@@ -226,156 +229,104 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2023-1-13-第三章数字证书" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2023-1-13-第四章认证协议" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-  
-  
-    <h1 class="article-title" itemprop="name">
-      第三章数字证书
-    </h1>
-  
-
-
-  
-  
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2023/01/13/2023-1-13-%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/" class="archive-article-date">
-        <time datetime="2023-01-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-13</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.6k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">5分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="公钥基础设施PKI"><a href="#公钥基础设施PKI" class="headerlink" title="公钥基础设施PKI"></a>公钥基础设施PKI</h1><p>PKI就是一个以公钥技术为基础的，提供和实施安全服务的具有普适性的安全基础设施。用于解决身份认证，信息的完整性和不可抵赖性等安全问题，应用于电子商务，电子政务，网上银行等</p>
-<p><strong>从技术上，PKI是以公钥密码体制为理论基础，以CA为核心，以数字证书为工具</strong></p>
-<span id="more"></span>
-<p>CA——认证中心</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CA的功能：</span><br><span class="line">证书申请\审核\签发\发布</span><br><span class="line">证书更新</span><br><span class="line">证书注销</span><br><span class="line">CA证书更新/密钥更新</span><br><span class="line">证书验证 </span><br><span class="line">生成和发布证书注销列表</span><br><span class="line">证书状态查询服务－OCSP</span><br><span class="line">数字证书归档</span><br><span class="line">密钥归档</span><br><span class="line">历史数据归档</span><br><span class="line">数字时戳服务</span><br></pre></td></tr></table></figure>
-<p>RA是CA的延申，负责证书申请者的信息录入、审核等工作</p>
-<p>RA功能:支持确定或确认签署者身份</p>
-<p>三级架构</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113092518091.png" alt="image-20230113092518091"></p>
-<h1 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h1><p>数字证书，就是公钥证书，是一个包含有用户身份信息、用户公钥以及一个可信第三方认证机构CA的数字签名的数据文件 </p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113094443656.png" alt="image-20230113094443656" style="zoom: 50%;" /></p>
-<p>CA用自己的私钥给主体的公钥和身份id进行签名 并附在后面</p>
-<h3 id="证书生成原理"><a href="#证书生成原理" class="headerlink" title="证书生成原理"></a>证书生成原理</h3><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113100528386.png" alt="image-20230113100528386" style="zoom:50%;" /></p>
-<p>证书主体进行散列被CA的私钥签名形成数字签名附在后面</p>
-<p><strong>数字证书的验证：</strong></p>
-<p>1.验证数字签名是否有效</p>
-<p>2.验证CA值得信任</p>
-<h2 id="证书的层级"><a href="#证书的层级" class="headerlink" title="证书的层级"></a>证书的层级</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113100829890.png" alt="image-20230113100829890" style="zoom:50%;" /></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113100921572.png" alt="image-20230113100921572" style="zoom:50%;" /></p>
-<p>证书路径一直延申到根CA，根CA会有一个自签名证书。如果两个根CA不同的地区进行验证，那么根CA会相互给对方颁发证书（交叉证书）</p>
-<h2 id="证书的注册实现"><a href="#证书的注册实现" class="headerlink" title="证书的注册实现"></a>证书的注册实现</h2><p>证书注册机构RA </p>
-<p>初始化</p>
+    <hr>
+<p>title:第四章认证协议<br>date:2023-1-13</p>
+<h2 id="tags-安全协议"><a href="#tags-安全协议" class="headerlink" title="tags:安全协议"></a>tags:安全协议</h2><h1 id="认证协议"><a href="#认证协议" class="headerlink" title="认证协议"></a>认证协议</h1><p>认证：是一个通信过程，通过这个过程，一个实体A （Claimant)可以向另一个实体B(Verifier)证明某种声称的属性。认证协议是安全协议的一种。</p>
+<h2 id="认证方式分类"><a href="#认证方式分类" class="headerlink" title="认证方式分类"></a>认证方式分类</h2><h3 id="消息认证"><a href="#消息认证" class="headerlink" title="消息认证"></a>消息认证</h3><p>目的：</p>
 <ul>
-<li>实体要获得服务要连接的地方</li>
-<li>连接的pki是否提供已告知的服务</li>
-<li>实体对RA进行认证</li>
-<li>最终实体要产生自己的密钥对，在注册请求时使用</li>
+<li>确认发送者的身份</li>
+<li>确认数据的完整性</li>
 </ul>
-<p>初始信任</p>
+<p>消息认证要涉及到确认消息的新鲜性，而数据完整性无必要</p>
+<p>身份认证</p>
 <ul>
-<li>手工方式 证件检查，然后提交注册管理员签名过的申请</li>
-<li>在线方式 分配 用户名／口令 认证 </li>
+<li>主机主机类型</li>
+<li>用户主机类型</li>
+<li>进程主机类型</li>
+<li>成员俱乐部类型</li>
 </ul>
-<p>注册期间的信息不会全部体现在证书中</p>
-<h2 id="证书签发"><a href="#证书签发" class="headerlink" title="证书签发"></a>证书签发</h2><p><strong>离线证书签发</strong></p>
-<p>用户向RA提交审查材料，由RA提交CA签发的证书</p>
-<p><strong>在线证书签发</strong></p>
-<p>用户直接向CA提交申请信息，CA认可后，用户生成密钥，下载并安装证书</p>
-<h2 id="证书撤销"><a href="#证书撤销" class="headerlink" title="证书撤销"></a>证书撤销</h2><p>证书废止的原因：</p>
-<p>密钥泄露</p>
-<p>相关信息变更</p>
-<p>终止使用</p>
-<p>CA原因</p>
-<p><strong>CRL</strong>  CRL是一个具有时间戳的列表，在其中列出了所有已经吊销或挂起的数字证书信息。</p>
-<p>该列表记录尚在有效期之内,但是因各种原因而注销的证书. 注明证书注销时间/原因/签发日期等信息</p>
-<p>由CA中心签名</p>
-<h2 id="用户密钥管理"><a href="#用户密钥管理" class="headerlink" title="用户密钥管理"></a>用户密钥管理</h2><p>密钥种类</p>
+<p>带认证的密钥建立</p>
+<h2 id="设计基于服务器的密钥建立协议"><a href="#设计基于服务器的密钥建立协议" class="headerlink" title="设计基于服务器的密钥建立协议"></a>设计基于服务器的密钥建立协议</h2><p>设计目标：包括两个用户和一个可信服务器的三方密钥建立协议。使得服务器分配一个会话密钥$K_{AB}$给两个用户</p>
+<p>首先设计一个简单的但是有漏洞的协议</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114090938835.png" alt="image-20230114090938835" style="zoom:67%;" /></p>
+<h2 id="协议的结构"><a href="#协议的结构" class="headerlink" title="协议的结构"></a>协议的结构</h2><p>用一下结构来区分不同的协议</p>
 <ul>
-<li>签名密钥对  由私钥和公钥组成 用于用户信息的签名和验签，对应证书为签名证书</li>
-<li>加密密钥对 加密密钥和解密密钥组成 用于加密解密 密钥交换 对应证书为加密证书</li>
+<li>哪些密钥是已经建立的，长期密钥</li>
+<li>会话密钥如何产生</li>
+<li>参与密钥建立的用户数目</li>
 </ul>
-<p>生成方式</p>
+<h2 id="会话密钥的产生"><a href="#会话密钥的产生" class="headerlink" title="会话密钥的产生"></a>会话密钥的产生</h2><ol>
+<li>会话密钥由密钥建立协议的参与者之一产生并传输给各个用户。  密钥分配协议</li>
+<li>会话密钥由每个协议的参与者分别产生的参数计算得出      密钥协商协议</li>
+<li>混合协议  会话密钥的一部分由协商产生并分配给其余的用户</li>
+</ol>
+<h2 id="新鲜性"><a href="#新鲜性" class="headerlink" title="新鲜性"></a>新鲜性</h2><p>抵抗重放攻击</p>
 <ul>
-<li>用户自己生成 一般指签名密钥对</li>
-<li>CA密钥管理中心分发 一般指加密密钥对</li>
+<li>用户自己选择新鲜的消息加入到协议传输的消息当中</li>
+<li>用户收到的信息当中包括本身具有新鲜性的一部分信息。</li>
 </ul>
-<h2 id="密钥备份和恢复"><a href="#密钥备份和恢复" class="headerlink" title="密钥备份和恢复"></a>密钥备份和恢复</h2><p>密钥恢复往往向CA或者密钥管理中心申请</p>
-<h2 id="X-500-目录系统"><a href="#X-500-目录系统" class="headerlink" title="X.500 目录系统"></a>X.500 目录系统</h2><p>一个X.500目录由一系列目录项组成。每个目录项对应一个现实世界中的对象。X.500每个对象都有一个无二义性的名称，称为区别名（distinguished name, DN）</p>
-<p>为支持无二义性命名的需要，所有的X.500目录项在逻辑上被组织成一种树型结构，称为目录信息树</p>
-<p>目录信息树有一个概念上的根节点和数目不限的非根节点。除了根节点，所有节点都属于其他节点。除根节点外，每个节点都对应于一个目录项，并有一个区别名。根节点的区别名为空</p>
-<h2 id="X-509证书"><a href="#X-509证书" class="headerlink" title="X.509证书"></a>X.509证书</h2><p>生成证书的基本过程</p>
+<p>时间戳 随机数 计数器 混合计数器和时间戳</p>
+<h2 id="单方认证"><a href="#单方认证" class="headerlink" title="单方认证"></a>单方认证</h2><p>协议中两个参与主体只对一个主体进行认证 （服务器对客户端的认证）</p>
+<p>认证机制包括:</p>
 <ul>
-<li>用户生成自己的服务端的公私钥对</li>
-<li>构造自己的证书申请文件 包括用户信息和公钥</li>
-<li>用自己的私钥对申请文件签名</li>
-<li>用户提交给CA</li>
-<li>CA验证签名，提取用户信息，并加上颁发者信息，CA的私钥签发公钥证书</li>
+<li>基于交互模式的挑战应答机制 CR</li>
+<li>基于非交互式的时间戳机制  TS</li>
 </ul>
-<p><img src="https://pic2.zhimg.com/80/v2-fa70a6ddb16f4896fa8385980fb22ef1_720w.webp" alt="img" style="zoom:67%;" /></p>
-<h2 id="数字证书的类型"><a href="#数字证书的类型" class="headerlink" title="数字证书的类型"></a>数字证书的类型</h2><p>从使用对象角度来分：</p>
-<ul>
-<li>个人数字证书</li>
-<li>服务器数字证书</li>
-<li>安全邮件证书</li>
-<li>代码签名证书</li>
-</ul>
-<p>从技术角度</p>
-<p>SSL：服务于银行对企业或者企业对企业的电子商务活动</p>
-<p>认证过程：</p>
-<p><img src="https://pic3.zhimg.com/80/v2-1d47ef5866629867c397fe5d1afe68c6_720w.webp" alt="img"></p>
-<p>SET：服务于持卡消费、网上购物</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113112022075.png" alt="image-20230113112022075"></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113112148322.png" alt="image-20230113112148322"></p>
-<h2 id="数字证书的功能"><a href="#数字证书的功能" class="headerlink" title="数字证书的功能"></a>数字证书的功能</h2><p>用来分发公钥</p>
-<p>用作主体的身份证明</p>
-<h3 id="使用证书进行加密"><a href="#使用证书进行加密" class="headerlink" title="使用证书进行加密"></a>使用证书进行加密</h3><p>实际上利用公钥分发公钥然后利用公钥协商出会话密钥 或者直接利用公钥加密</p>
-<h3 id="使用证书进行签名"><a href="#使用证书进行签名" class="headerlink" title="使用证书进行签名"></a>使用证书进行签名</h3><p>基本功能利用证书中的数字签名 对消息的hash进行签名</p>
-<p><strong>使用证书同时进行签名和加密</strong> </p>
-<p>融合上面两步 在甲方利用乙方的证书中的公钥对自己的hash和签名进行加密</p>
-<h2 id="利用数字证书进行身份认证"><a href="#利用数字证书进行身份认证" class="headerlink" title="利用数字证书进行身份认证"></a>利用数字证书进行身份认证</h2><ul>
-<li>验证证书是否有效</li>
-<li>验证申请者是否是证书的拥有者</li>
-</ul>
-<h2 id="X-509单向认证"><a href="#X-509单向认证" class="headerlink" title="X.509单向认证"></a>X.509单向认证</h2><p>不能抵抗重放攻击</p>
-<p>需要加上随机数和时间戳 以及身份表示id</p>
-<h2 id="口令机制和数字证书的比较"><a href="#口令机制和数字证书的比较" class="headerlink" title="口令机制和数字证书的比较"></a>口令机制和数字证书的比较</h2><p>通过数字证书则能够实现证书持有者得到在大范围的身份认证，而且不要求他曾经和认证方有过接触，只要某人持有数字证书，就能够让所有以前与他从未有过接触的实体认证他，这就像我们持有身份证可以在全国范围内得到身份认证一样。</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230113120758621.png" alt="image-20230113120758621"></p>
+<h3 id="挑战应答机制"><a href="#挑战应答机制" class="headerlink" title="挑战应答机制"></a>挑战应答机制</h3><p>B期望从A获得一个新消息，那么发给A一个挑战值，并且后续从A收到鹅消息都要包含这个临时值。</p>
+<p>两种方法：</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114093927669.png" alt="image-20230114093927669"></p>
+<h3 id="数字时间戳"><a href="#数字时间戳" class="headerlink" title="数字时间戳"></a>数字时间戳</h3><p>B接受一个新消息仅当该消息包含一个时间戳，该时间戳在B看来，是足够接近B所知道的当前时间；这种方法要求不同参与者之间的时钟需要同步。</p>
+<p>由于变化的和不可预见的网络延迟的本性，不能期望分布式时钟保持精确的同步。因此，任何基于时间戳的过程必须采用时间窗的方式来处理：一方面时间窗应足够大以包容网络延迟，另一方面时间窗应足够小以最大限度地减小遭受攻击的机会。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114094422199.png" alt="image-20230114094422199"></p>
+<h2 id="双方认证"><a href="#双方认证" class="headerlink" title="双方认证"></a>双方认证</h2><p>双方认证协议的两个通信实体互相认证</p>
+<p>协议:</p>
+<p>前提：<em>A</em>拥有公钥证书Cert<em>A</em>，<em>B</em>拥有公钥证书Cert<em>B</em>；</p>
+<p>目标：<em>A</em>和<em>B</em>完成双方认证(对身份的确认)。</p>
+<p>协议步骤：</p>
+<ol>
+<li>①<em>B</em>→<em>A</em>：<em>R**B</em>; (表示认证请求的功能码)</li>
+<li>②<em>A</em>→<em>B</em>：Cert<em>A</em>, <em>RA</em>||<em>RB</em>||<em>B</em>||Sig<em>A</em>(<em>RA</em>||<em>RB</em>||<em>B</em>)</li>
+<li>③<em>B</em>→<em>A</em>：Cert<em>B</em>, <em>RB</em>||<em>RA</em>||<em>A</em>||Sig<em>B</em>(<em>RB</em>||<em>RA</em>||<em>A</em>)</li>
+</ol>
+<h3 id="加拿大人攻击"><a href="#加拿大人攻击" class="headerlink" title="加拿大人攻击"></a>加拿大人攻击</h3><p>若有中间也有证书，那么他可以冒充B向A取得信任，向A冒充B取得信任。</p>
+<h3 id="包含可信第三方的双方认证"><a href="#包含可信第三方的双方认证" class="headerlink" title="包含可信第三方的双方认证"></a>包含可信第三方的双方认证</h3><p>Woo-Lam协议：</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114100859567.png" alt="image-20230114100859567" style="zoom:67%;" /></p>
+<h3 id="并行攻击"><a href="#并行攻击" class="headerlink" title="并行攻击"></a>并行攻击</h3><p>是指攻击者安排协议的一个或多个会话并行地执行，使得自己能够从一个会话中获得消息，并通过重放到其他并行的会话中以达到自己的目的，</p>
+<p>攻击者同时向B发送我是A的消息和我是M的消息，然后攻击者掌握两个{NB} ，但是实际上没人能却分出A的密钥是$K<em>{M}$ 还是$K</em>{A}$ 那么M实际上向B申请两条，B也向中心请求两条，显然声称自己为A的线路返回的是垃圾，但是有一条返回是正确的，</p>
+<h2 id="经典的认证协议"><a href="#经典的认证协议" class="headerlink" title="经典的认证协议"></a>经典的认证协议</h2><h3 id="Needham-Schroeder对称密钥认证协议"><a href="#Needham-Schroeder对称密钥认证协议" class="headerlink" title="Needham-Schroeder对称密钥认证协议"></a>Needham-Schroeder对称密钥认证协议</h3><p>前提：Alice和Trent共享密钥$K<em>{AT}$；Bob和Trent共享密钥$K</em>{BT}$；</p>
+<p>目标：Alice和Bob希望建立一个新的共享密钥<em>K</em>。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114103206878.png" alt="image-20230114103206878" style="zoom: 50%;" /></p>
+<h4 id="Denning和Sacco对Needham-Schroeder对称密钥认证协议的攻击"><a href="#Denning和Sacco对Needham-Schroeder对称密钥认证协议的攻击" class="headerlink" title="Denning和Sacco对Needham-Schroeder对称密钥认证协议的攻击"></a>Denning和Sacco对Needham-Schroeder对称密钥认证协议的攻击</h4><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114104027426.png" alt="image-20230114104027426" style="zoom:50%;" /></p>
+<p><strong>改进方法加上时间戳，解决消息新鲜性</strong></p>
+<h3 id="Needham-Schroeder公钥认证协议"><a href="#Needham-Schroeder公钥认证协议" class="headerlink" title="Needham-Schroeder公钥认证协议"></a>Needham-Schroeder公钥认证协议</h3><p>目的：</p>
+<p>使通信双方安全地交换两方彼此独立的秘密。</p>
+<p>这与其它大多数公钥认证协议不同，它们的目的是通信双方安全地交换共享密钥。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114162515339.png" alt="image-20230114162515339" style="zoom: 50%;" /></p>
+<h4 id="Lowe对Needham-Schroeder公钥认证协议的攻击"><a href="#Lowe对Needham-Schroeder公钥认证协议的攻击" class="headerlink" title="Lowe对Needham-Schroeder公钥认证协议的攻击"></a>Lowe对Needham-Schroeder公钥认证协议的攻击</h4><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114194229505.png" alt="image-20230114194229505" style="zoom: 67%;" /></p>
+<p>A和M之间建立了连接，M假冒A和B进行连接。缺陷在于A直接将$N_{B}$ 解密出来了。</p>
+<p>修正后只要指明这条消息是谁发送的就能避免</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114194603857.png" alt="image-20230114194603857" style="zoom:50%;" /></p>
+<h3 id="Otway-Rees认证协议"><a href="#Otway-Rees认证协议" class="headerlink" title="Otway-Rees认证协议"></a>Otway-Rees认证协议</h3><p><img src="http://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114201427686.png" alt="image-20230114201427686" style="zoom:50%;" /></p>
+<p>目的：</p>
+<p>用于在通信双方之间分配会话密钥。</p>
+<p>特点：</p>
+<p>简单实用，不需要应用复杂的同步时钟机制。</p>
+<p>前提：Trent作为可信第三方（TTP)，Alice和Trent共享对称密钥$K<em>{AT}$，Bob和   Trent共享对称密钥$K</em>{BT}$</p>
+<p>目标：Alice和Bob协商密钥$K_{AB}$进行下一次会话。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114195559305.png" alt="image-20230114195559305" style="zoom:67%;" /></p>
+<h4 id="类型缺陷攻击"><a href="#类型缺陷攻击" class="headerlink" title="类型缺陷攻击"></a>类型缺陷攻击</h4><p>类型型攻击的特点是利用认证协议实现时的固定格式对协议进行攻击缺陷”。<strong>只是检测长度的合法性</strong>。假定在Otway-Rees认证协议中，<em>M</em>的长度是64比特，Alice和Bob的长度各为32比特 $K_{AB}$的长度为128比特。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114200426985.png" alt="image-20230114200426985" style="zoom:67%;" /></p>
+<p><strong>攻击者还可以冒充Trent</strong></p>
+<p>明显红框内的M+Alice+Bob成为新的协商密钥</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114201055283.png" alt="image-20230114201055283"></p>
+<h3 id="Yahalom协议"><a href="#Yahalom协议" class="headerlink" title="Yahalom协议"></a>Yahalom协议</h3><p>前提：Trent作为可信第三方（TTP)，Alice和Trent共享对称密钥$K<em>{AT}$，Bob和Trent共享对称密钥$K</em>{BT}$</p>
+<p>目标：Alice和Bob之间建立会话密钥$K_{AB}$</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114201520361.png" alt="image-20230114201520361" style="zoom:50%;" /></p>
 
     
 
@@ -422,7 +373,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://wynneyin.site/2023/01/13/2023-1-13-第三章数字证书/" title="第三章数字证书" target="_blank">http://wynneyin.site/2023/01/13/2023-1-13-第三章数字证书/</a>
+          <a href="http://wynneyin.site/2023/01/14/2023-1-13-第四章认证协议/" title="" target="_blank">http://wynneyin.site/2023/01/14/2023-1-13-第四章认证协议/</a>
         </li>
         
         <li>
@@ -439,17 +390,6 @@
   <div class="article-info article-info-index">
     
     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全协议</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
     
 
     
@@ -500,7 +440,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://wynneyin.site/2023/01/13/2023-1-13-%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://wynneyin.site/2023/01/14/2023-1-13-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -515,18 +455,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2023/01/14/2023-1-13-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/01/10/2023110-%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">可迭代对象</div>
+    <a href="/2023/01/13/2023-1-13-%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第三章数字证书</div>
       <i class="icon-circle-right"></i>
     </a>
   

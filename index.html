@@ -217,6 +217,149 @@
             
 
   
+    <article id="post-2023-1-13-第四章认证协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    <hr>
+<p>title:第四章认证协议<br>date:2023-1-13</p>
+<h2 id="tags-安全协议"><a href="#tags-安全协议" class="headerlink" title="tags:安全协议"></a>tags:安全协议</h2><h1 id="认证协议"><a href="#认证协议" class="headerlink" title="认证协议"></a>认证协议</h1><p>认证：是一个通信过程，通过这个过程，一个实体A （Claimant)可以向另一个实体B(Verifier)证明某种声称的属性。认证协议是安全协议的一种。</p>
+<h2 id="认证方式分类"><a href="#认证方式分类" class="headerlink" title="认证方式分类"></a>认证方式分类</h2><h3 id="消息认证"><a href="#消息认证" class="headerlink" title="消息认证"></a>消息认证</h3><p>目的：</p>
+<ul>
+<li>确认发送者的身份</li>
+<li>确认数据的完整性</li>
+</ul>
+<p>消息认证要涉及到确认消息的新鲜性，而数据完整性无必要</p>
+<p>身份认证</p>
+<ul>
+<li>主机主机类型</li>
+<li>用户主机类型</li>
+<li>进程主机类型</li>
+<li>成员俱乐部类型</li>
+</ul>
+<p>带认证的密钥建立</p>
+<h2 id="设计基于服务器的密钥建立协议"><a href="#设计基于服务器的密钥建立协议" class="headerlink" title="设计基于服务器的密钥建立协议"></a>设计基于服务器的密钥建立协议</h2><p>设计目标：包括两个用户和一个可信服务器的三方密钥建立协议。使得服务器分配一个会话密钥$K_{AB}$给两个用户</p>
+<p>首先设计一个简单的但是有漏洞的协议</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114090938835.png" alt="image-20230114090938835" style="zoom:67%;" /></p>
+<h2 id="协议的结构"><a href="#协议的结构" class="headerlink" title="协议的结构"></a>协议的结构</h2><p>用一下结构来区分不同的协议</p>
+<ul>
+<li>哪些密钥是已经建立的，长期密钥</li>
+<li>会话密钥如何产生</li>
+<li>参与密钥建立的用户数目</li>
+</ul>
+<h2 id="会话密钥的产生"><a href="#会话密钥的产生" class="headerlink" title="会话密钥的产生"></a>会话密钥的产生</h2><ol>
+<li>会话密钥由密钥建立协议的参与者之一产生并传输给各个用户。  密钥分配协议</li>
+<li>会话密钥由每个协议的参与者分别产生的参数计算得出      密钥协商协议</li>
+<li>混合协议  会话密钥的一部分由协商产生并分配给其余的用户</li>
+</ol>
+<h2 id="新鲜性"><a href="#新鲜性" class="headerlink" title="新鲜性"></a>新鲜性</h2><p>抵抗重放攻击</p>
+<ul>
+<li>用户自己选择新鲜的消息加入到协议传输的消息当中</li>
+<li>用户收到的信息当中包括本身具有新鲜性的一部分信息。</li>
+</ul>
+<p>时间戳 随机数 计数器 混合计数器和时间戳</p>
+<h2 id="单方认证"><a href="#单方认证" class="headerlink" title="单方认证"></a>单方认证</h2><p>协议中两个参与主体只对一个主体进行认证 （服务器对客户端的认证）</p>
+<p>认证机制包括:</p>
+<ul>
+<li>基于交互模式的挑战应答机制 CR</li>
+<li>基于非交互式的时间戳机制  TS</li>
+</ul>
+<h3 id="挑战应答机制"><a href="#挑战应答机制" class="headerlink" title="挑战应答机制"></a>挑战应答机制</h3><p>B期望从A获得一个新消息，那么发给A一个挑战值，并且后续从A收到鹅消息都要包含这个临时值。</p>
+<p>两种方法：</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114093927669.png" alt="image-20230114093927669"></p>
+<h3 id="数字时间戳"><a href="#数字时间戳" class="headerlink" title="数字时间戳"></a>数字时间戳</h3><p>B接受一个新消息仅当该消息包含一个时间戳，该时间戳在B看来，是足够接近B所知道的当前时间；这种方法要求不同参与者之间的时钟需要同步。</p>
+<p>由于变化的和不可预见的网络延迟的本性，不能期望分布式时钟保持精确的同步。因此，任何基于时间戳的过程必须采用时间窗的方式来处理：一方面时间窗应足够大以包容网络延迟，另一方面时间窗应足够小以最大限度地减小遭受攻击的机会。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114094422199.png" alt="image-20230114094422199"></p>
+<h2 id="双方认证"><a href="#双方认证" class="headerlink" title="双方认证"></a>双方认证</h2><p>双方认证协议的两个通信实体互相认证</p>
+<p>协议:</p>
+<p>前提：<em>A</em>拥有公钥证书Cert<em>A</em>，<em>B</em>拥有公钥证书Cert<em>B</em>；</p>
+<p>目标：<em>A</em>和<em>B</em>完成双方认证(对身份的确认)。</p>
+<p>协议步骤：</p>
+<ol>
+<li>①<em>B</em>→<em>A</em>：<em>R**B</em>; (表示认证请求的功能码)</li>
+<li>②<em>A</em>→<em>B</em>：Cert<em>A</em>, <em>RA</em>||<em>RB</em>||<em>B</em>||Sig<em>A</em>(<em>RA</em>||<em>RB</em>||<em>B</em>)</li>
+<li>③<em>B</em>→<em>A</em>：Cert<em>B</em>, <em>RB</em>||<em>RA</em>||<em>A</em>||Sig<em>B</em>(<em>RB</em>||<em>RA</em>||<em>A</em>)</li>
+</ol>
+<h3 id="加拿大人攻击"><a href="#加拿大人攻击" class="headerlink" title="加拿大人攻击"></a>加拿大人攻击</h3><p>若有中间也有证书，那么他可以冒充B向A取得信任，向A冒充B取得信任。</p>
+<h3 id="包含可信第三方的双方认证"><a href="#包含可信第三方的双方认证" class="headerlink" title="包含可信第三方的双方认证"></a>包含可信第三方的双方认证</h3><p>Woo-Lam协议：</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114100859567.png" alt="image-20230114100859567" style="zoom:67%;" /></p>
+<h3 id="并行攻击"><a href="#并行攻击" class="headerlink" title="并行攻击"></a>并行攻击</h3><p>是指攻击者安排协议的一个或多个会话并行地执行，使得自己能够从一个会话中获得消息，并通过重放到其他并行的会话中以达到自己的目的，</p>
+<p>攻击者同时向B发送我是A的消息和我是M的消息，然后攻击者掌握两个{NB} ，但是实际上没人能却分出A的密钥是$K<em>{M}$ 还是$K</em>{A}$ 那么M实际上向B申请两条，B也向中心请求两条，显然声称自己为A的线路返回的是垃圾，但是有一条返回是正确的，</p>
+<h2 id="经典的认证协议"><a href="#经典的认证协议" class="headerlink" title="经典的认证协议"></a>经典的认证协议</h2><h3 id="Needham-Schroeder对称密钥认证协议"><a href="#Needham-Schroeder对称密钥认证协议" class="headerlink" title="Needham-Schroeder对称密钥认证协议"></a>Needham-Schroeder对称密钥认证协议</h3><p>前提：Alice和Trent共享密钥$K<em>{AT}$；Bob和Trent共享密钥$K</em>{BT}$；</p>
+<p>目标：Alice和Bob希望建立一个新的共享密钥<em>K</em>。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114103206878.png" alt="image-20230114103206878" style="zoom: 50%;" /></p>
+<h4 id="Denning和Sacco对Needham-Schroeder对称密钥认证协议的攻击"><a href="#Denning和Sacco对Needham-Schroeder对称密钥认证协议的攻击" class="headerlink" title="Denning和Sacco对Needham-Schroeder对称密钥认证协议的攻击"></a>Denning和Sacco对Needham-Schroeder对称密钥认证协议的攻击</h4><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114104027426.png" alt="image-20230114104027426" style="zoom:50%;" /></p>
+<p><strong>改进方法加上时间戳，解决消息新鲜性</strong></p>
+<h3 id="Needham-Schroeder公钥认证协议"><a href="#Needham-Schroeder公钥认证协议" class="headerlink" title="Needham-Schroeder公钥认证协议"></a>Needham-Schroeder公钥认证协议</h3><p>目的：</p>
+<p>使通信双方安全地交换两方彼此独立的秘密。</p>
+<p>这与其它大多数公钥认证协议不同，它们的目的是通信双方安全地交换共享密钥。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114162515339.png" alt="image-20230114162515339" style="zoom: 50%;" /></p>
+<h4 id="Lowe对Needham-Schroeder公钥认证协议的攻击"><a href="#Lowe对Needham-Schroeder公钥认证协议的攻击" class="headerlink" title="Lowe对Needham-Schroeder公钥认证协议的攻击"></a>Lowe对Needham-Schroeder公钥认证协议的攻击</h4><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114194229505.png" alt="image-20230114194229505" style="zoom: 67%;" /></p>
+<p>A和M之间建立了连接，M假冒A和B进行连接。缺陷在于A直接将$N_{B}$ 解密出来了。</p>
+<p>修正后只要指明这条消息是谁发送的就能避免</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114194603857.png" alt="image-20230114194603857" style="zoom:50%;" /></p>
+<h3 id="Otway-Rees认证协议"><a href="#Otway-Rees认证协议" class="headerlink" title="Otway-Rees认证协议"></a>Otway-Rees认证协议</h3><p><img src="http://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114201427686.png" alt="image-20230114201427686" style="zoom:50%;" /></p>
+<p>目的：</p>
+<p>用于在通信双方之间分配会话密钥。</p>
+<p>特点：</p>
+<p>简单实用，不需要应用复杂的同步时钟机制。</p>
+<p>前提：Trent作为可信第三方（TTP)，Alice和Trent共享对称密钥$K<em>{AT}$，Bob和   Trent共享对称密钥$K</em>{BT}$</p>
+<p>目标：Alice和Bob协商密钥$K_{AB}$进行下一次会话。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114195559305.png" alt="image-20230114195559305" style="zoom:67%;" /></p>
+<h4 id="类型缺陷攻击"><a href="#类型缺陷攻击" class="headerlink" title="类型缺陷攻击"></a>类型缺陷攻击</h4><p>类型型攻击的特点是利用认证协议实现时的固定格式对协议进行攻击缺陷”。<strong>只是检测长度的合法性</strong>。假定在Otway-Rees认证协议中，<em>M</em>的长度是64比特，Alice和Bob的长度各为32比特 $K_{AB}$的长度为128比特。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114200426985.png" alt="image-20230114200426985" style="zoom:67%;" /></p>
+<p><strong>攻击者还可以冒充Trent</strong></p>
+<p>明显红框内的M+Alice+Bob成为新的协商密钥</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114201055283.png" alt="image-20230114201055283"></p>
+<h3 id="Yahalom协议"><a href="#Yahalom协议" class="headerlink" title="Yahalom协议"></a>Yahalom协议</h3><p>前提：Trent作为可信第三方（TTP)，Alice和Trent共享对称密钥$K<em>{AT}$，Bob和Trent共享对称密钥$K</em>{BT}$</p>
+<p>目标：Alice和Bob之间建立会话密钥$K_{AB}$</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230114201520361.png" alt="image-20230114201520361" style="zoom:50%;" /></p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/01/14/2023-1-13-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2023-1-13-第三章数字证书" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -881,95 +1024,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2022/10/21/%E6%B5%8B%E8%AF%95/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-古典：" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/10/21/%E5%8F%A4%E5%85%B8%EF%BC%9A/" target="_blank">古典音乐</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/10/21/%E5%8F%A4%E5%85%B8%EF%BC%9A/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>科普兰的音乐欣赏的三个阶段：</p>
-<p>1.美感阶段 2.表达阶段 3.纯音乐阶段</p>
-    
-    <a class="article-more-a" href="/2022/10/21/%E5%8F%A4%E5%85%B8%EF%BC%9A/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">音乐</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/10/21/%E5%8F%A4%E5%85%B8%EF%BC%9A/">展开全文 >></a>
     </p>
     
 
