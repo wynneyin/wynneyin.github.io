@@ -6,17 +6,52 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://wynneyin.site">
-  <title>Archives | wynneblog</title>
+  <title>密钥交换协议 | wynneblog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="wynneblog">
-<meta property="og:url" content="http://wynneyin.site/archives/page/2/index.html">
+  <meta name="description" content="第五章密钥交换协议两方 Diffie -Hellman 密钥交换协议密钥协商（key agreement）是一个协议，它通过两个或多个成员在一个公开的信道上通信联合地建立一个秘密密钥。 Diffie-Hellman密钥交换协议很容易受到主动攻击的中间人攻击： 端－端协议（STS protocol）  MTI密钥协定协议Matsumoto Takashima和Imai通过修改Diffie-Hellm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="密钥交换协议">
+<meta property="og:url" content="http://wynneyin.site/2023/01/16/2023-1-16-%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E5%8D%8F%E8%AE%AE/index.html">
 <meta property="og:site_name" content="wynneblog">
+<meta property="og:description" content="第五章密钥交换协议两方 Diffie -Hellman 密钥交换协议密钥协商（key agreement）是一个协议，它通过两个或多个成员在一个公开的信道上通信联合地建立一个秘密密钥。 Diffie-Hellman密钥交换协议很容易受到主动攻击的中间人攻击： 端－端协议（STS protocol）  MTI密钥协定协议Matsumoto Takashima和Imai通过修改Diffie-Hellm">
 <meta property="og:locale">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116191620366.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116191633745.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116211201740.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116210750075.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116210833847.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116211127162.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116211244972.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116211313728.png">
+<meta property="og:image" content="c:/Users/wynne/AppData/Roaming/Typora/typora-user-images/image-20230116211423791.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116211410958.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116212638816.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116212807390.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116213841309.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116213900284.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116214830155.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116214737850.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116214749547.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116215250690.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118090222900.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118090304082.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118090437829.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118090457116.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118090530686.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118091912931.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118095622727.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118095719899.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118095801121.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118101112394.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118101443872.png">
+<meta property="article:published_time" content="2023-01-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-01-18T02:19:19.975Z">
 <meta property="article:author" content="Wynneyin">
+<meta property="article:tag" content="安全协议">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116191620366.png">
   
     <link rel="alternative" href="/atom.xml" title="wynneblog" type="application/atom+xml">
   
@@ -210,437 +245,318 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-2023-1-16-密钥交换协议" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/10/21/%E6%B5%8B%E8%AF%95/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-        </div>
-    	 
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/10/21/%E5%8F%A4%E5%85%B8%EF%BC%9A/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/10/21/%E5%8F%A4%E5%85%B8%EF%BC%9A/" target="_blank">古典音乐</a>
-  
+    <h1 class="article-title" itemprop="name">
+      密钥交换协议
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2023/01/16/2023-1-16-%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E5%8D%8F%E8%AE%AE/" class="archive-article-date">
+        <time datetime="2023-01-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-16</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.7k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">6分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="第五章密钥交换协议"><a href="#第五章密钥交换协议" class="headerlink" title="第五章密钥交换协议"></a>第五章密钥交换协议</h1><h2 id="两方-Diffie-Hellman-密钥交换协议"><a href="#两方-Diffie-Hellman-密钥交换协议" class="headerlink" title="两方 Diffie -Hellman 密钥交换协议"></a>两方 Diffie -Hellman 密钥交换协议</h2><p>密钥协商（key agreement）是一个协议，它通过<strong>两个</strong>或<strong>多个成员</strong>在一个公开的信道上通信联合地建立一个秘密密钥。</p>
+<p>Diffie-Hellman密钥交换协议很容易受到主动攻击的<strong>中间人攻击</strong>：</p>
+<h2 id="端－端协议（STS-protocol）"><a href="#端－端协议（STS-protocol）" class="headerlink" title="端－端协议（STS protocol）"></a>端－端协议（STS protocol）</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116191620366.png" alt="image-20230116191620366"></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116191633745.png" alt="image-20230116191633745"></p>
+<h2 id="MTI密钥协定协议"><a href="#MTI密钥协定协议" class="headerlink" title="MTI密钥协定协议"></a>MTI密钥协定协议</h2><p>Matsumoto Takashima和Imai通过修改Diffie-Hellman密钥交换协议构造了一些密钥协定协议，这些协议我们称为MTI协议</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116211201740.png" alt="image-20230116211201740" style="zoom:50%;" /></p>
+<p>这些协议不需要用户U和V之间计算任何签名，他们是<strong>两段协议</strong>（two-pass protocol）。</p>
+<p>U 随机选择$R_u$ 计算<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116210750075.png" alt="image-20230116210750075" style="zoom: 50%;" />并发送(C(U),$S_u$)</p>
+<p> V随机选择$R_v$ ,计算<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116210833847.png" alt="image-20230116210833847" style="zoom:50%;" /></p>
+<p>U从C(V) 获得$b_v$ 并计算得<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116211127162.png" alt="image-20230116211127162" style="zoom:50%;" /></p>
+<p>V从C(U)获得$b_u$ 并计算</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116211244972.png" alt="image-20230116211244972" style="zoom: 50%;" /></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116211313728.png" alt="image-20230116211313728" style="zoom:67%;" /></p>
+<h4 id="MTI协议可使得中间人攻击失效"><a href="#MTI协议可使得中间人攻击失效" class="headerlink" title="MTI协议可使得中间人攻击失效"></a>MTI协议可使得中间人攻击失效</h4><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20230116211423791.png" alt="image-20230116211423791" style="zoom:50%;" /></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116211410958.png" alt="image-20230116211410958" style="zoom:50%;" /></p>
+<h3 id="Girault-密钥协定协议"><a href="#Girault-密钥协定协议" class="headerlink" title="Girault 密钥协定协议"></a>Girault 密钥协定协议</h3><p>基于自证明公钥的密钥交换，Girault密钥协定协议<strong>不需要证书</strong>。</p>
+<p><strong>用户的公开密钥的值</strong>和<strong>他自己的身份</strong>隐含着相互认证。</p>
+<p>假定 n=pq ,p=2$p_1$+1 q=2$q_1$ +1 p,q,$p_1,q_1$ 均为大素数</p>
+<p>设<em>α</em>是 <img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116212638816.png" alt="image-20230116212638816" style="zoom: 50%;" />中阶为 2$p_1q_1$的元素。<em>n</em> 的分解只有可信中心知道。<em>n</em>和<em>α</em>是公开的，<em>p</em>、<em>q</em>、$p_1$ 和 $q_1 $是秘密的。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116212807390.png" alt="image-20230116212807390" style="zoom: 50%;" /></p>
+<p>每一个用户U有一个 IDU</p>
+<h4 id="用户U可按下列步骤从可信中心得到一个自证明公钥（self-certifying-public-key）："><a href="#用户U可按下列步骤从可信中心得到一个自证明公钥（self-certifying-public-key）：" class="headerlink" title="用户U可按下列步骤从可信中心得到一个自证明公钥（self-certifying public key）："></a>用户U可按下列步骤从可信中心得到一个自证明公钥（self-certifying public key）：</h4><ul>
+<li>U选择一个秘密指数$a_u$ 计算$b_u=a^{a_u} mod n$ 然后提交$a_u,b_u$ 给可信中心</li>
+<li>可信中心计算$P_u=(b_u-ID_u)^nmod n$ 并将$P_u$ 发送给U</li>
+</ul>
+<h4 id="Girault密钥协定协议描述如下"><a href="#Girault密钥协定协议描述如下" class="headerlink" title="Girault密钥协定协议描述如下"></a>Girault密钥协定协议描述如下</h4><ul>
+<li>U随机的选择一个大的随机整数$r_u$ 计算得$S_u=a^{r_u} mod n$ 并发送$ID_u,P_u,S_u$ 给V</li>
+<li>V随机的选择一个大的随机整数$r_v$ 计算得$S_v=a^{r_v} mod n$ 并发送$ID_v,P_v,S_v$ 给U</li>
+<li>U计算<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116213841309.png" alt="image-20230116213841309" style="zoom:50%;" /></li>
+<li><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116213900284.png" alt="image-20230116213900284" style="zoom:50%;" />1</li>
+<li></li>
+</ul>
+<p><strong>在Girault密钥协定协议中，如果可信中心不通过要求用户提供*a</strong>U*值使可信中心检测用户拥有的$a^U$及对应的$b^U$，就随意地给用户颁布公钥$P^U$，那么Girault密钥协定协议可被攻击：</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116214830155.png" alt="image-20230116214830155" style="zoom:50%;" /></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116214737850.png" alt="image-20230116214737850" style="zoom:50%;" /></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116214749547.png" alt="image-20230116214749547" style="zoom:50%;" /></p>
+<p>基于离散对数问题</p>
+<p>这样W和V就共享了同一个密钥</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116215250690.png" alt="image-20230116215250690" style="zoom:67%;" /></p>
+<p><strong>几个密钥交换协议</strong></p>
+<h2 id="Blom-方案"><a href="#Blom-方案" class="headerlink" title="Blom 方案"></a>Blom 方案</h2><ul>
+<li>假定有一个n个用户的网络。 </li>
+<li>假定密钥从<em>Z**p</em>中选取，   p&gt;=n  是一个素数。</li>
+<li>设k（0&lt;k&lt;n-1）是一个整数，k 是使得网络中的任何k个用户合伙方案仍是安全的最大值。</li>
+<li>在Blom方案中（也称规模为k的Blom方案），可信中心给用户在一个安全的信道上发送<em>Z**p</em>中的k+1个元素。</li>
+<li>每一用户U和V将能计算一个密钥</li>
+</ul>
+<p><strong>安全条件</strong>为：至多k个不同用户的任何用户集必须不能确定关于<em>K**U</em>,<em>V</em>的任何信息. </p>
+<h2 id="规模为1的Blom方案"><a href="#规模为1的Blom方案" class="headerlink" title="规模为1的Blom方案"></a>规模为1的Blom方案</h2><ol>
+<li>每个用户公开一个素数，互不相同</li>
+<li>可信中心选择三个随机数a,b,c 形成多项式<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118090222900.png" alt="image-20230118090222900" style="zoom:50%;" /></li>
+<li>对于每个用户U，可信中心计算<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118090304082.png" alt="image-20230118090304082" style="zoom:50%;" />并发送给用户</li>
+<li>如果U和V想通信，<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118090437829.png" alt="image-20230118090437829" style="zoom:50%;" /></li>
+</ol>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118090457116.png" alt="image-20230118090457116"></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118090530686.png" alt="image-20230118090530686" style="zoom: 67%;" /></p>
+<h2 id="Diffie-Hellman密钥预分配方案"><a href="#Diffie-Hellman密钥预分配方案" class="headerlink" title="Diffie-Hellman密钥预分配方案"></a>Diffie-Hellman密钥预分配方案</h2><p>Diffie-Hellman密钥预分配方案是Diffie-Hellman密钥交换协议的一种<strong>修改</strong>。 </p>
+<p>每个用户拥有秘密指数 $a_u$ 和一个相应的公钥$b_u=A^{a_u}$  可信中信有一个签名算法，和秘密签名算法，签名消息之前先做hash。</p>
+<p> 当一个用户U入网时，可信中心需给他颁发一个证书（certificate）。用户U的证书为<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118091912931.png" alt="image-20230118091912931" style="zoom: 67%;" /></p>
+<p>可信中心无需知道$a^U$的值。证书可存储在一个公开的数据库中，也可由用户自己存储。 </p>
+<p>可信中心对证书的签名允许网络中的任何人能验证它所包含的信息。</p>
+<h2 id="Diffie-Hellman密钥预分配协议"><a href="#Diffie-Hellman密钥预分配协议" class="headerlink" title="Diffie-Hellman密钥预分配协议"></a>Diffie-Hellman密钥预分配协议</h2><p>公开一个素数P和一个本原元 <img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118095622727.png" alt="image-20230118095622727" style="zoom:50%;" /></p>
+<p>V使用自己的秘密值$a_V$及从U的证书中获得的公开值$b_U$ ，计算<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118095719899.png" alt="image-20230118095719899" style="zoom:50%;" /></p>
+<p>U使用自己的秘密值$a_U$ 及从V的证书中获得的公开值$b_V $，计算<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118095801121.png" alt="image-20230118095801121" style="zoom:50%;" /></p>
+<h2 id="Kerboros在线密钥分配协议"><a href="#Kerboros在线密钥分配协议" class="headerlink" title="Kerboros在线密钥分配协议"></a>Kerboros在线密钥分配协议</h2><ul>
+<li>如果同一个密钥使用的周期长了以后，就可能存在伪造的危险。</li>
+<li>因此，人们更喜欢使用<strong>在线方法分配密钥</strong>，也就是一对用户想通信时每次产生一个新的会话密钥。 </li>
+<li>如果使用在线密钥分配，那么网络中的每个用户和可信中心共享一个密钥而无需再存储别的密钥。</li>
+<li>会话密钥将通过请求可信中心来传送。</li>
+<li>确保密钥新鲜（key freshness）是可信中心的职责。</li>
+</ul>
+<p>Kerboros协议是基于一个私钥密码体制的流行的密钥服务系统。</p>
+<p>在这个系统中，每个用户U和可信中心共享一个秘密的DES密钥。</p>
+<p>在Kerboros协议（版本V）的最新版本中，传送的所有消息都通过CBC模式进行加密。 </p>
+<h3 id="使用Kerboros协议传输一个会话密钥的过程可描述如下："><a href="#使用Kerboros协议传输一个会话密钥的过程可描述如下：" class="headerlink" title="使用Kerboros协议传输一个会话密钥的过程可描述如下："></a>使用Kerboros协议传输一个会话密钥的过程可描述如下：</h3><ol>
+<li>用户U为了和用户V通信，U向可信中心要一个会话密钥</li>
+<li>可信中心随机选择一个会话密钥<em>K</em>、一个时戳T和一个生存期L；</li>
+<li>可信中心计算m1和m2并发送给U<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118101112394.png" alt="image-20230118101112394" style="zoom:50%;" /></li>
+<li>U解密m1 获得内容然后计算$m_3=E_k(ID_u,T)$ 并将$m_3$ 和可信中心的$m_2$ 一起发给V</li>
+<li>V解密$m_2$ 然后获得K 解密$m_3$ 检测T和$ID_u$ 是否一样，V计算<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118101443872.png" alt="image-20230118101443872" style="zoom:50%;" />发给U</li>
+<li>U解密，对比是不是T+1</li>
+</ol>
+<p>消息m1和m2用来提供会话密钥K在传输过程中的秘密性，m3和m4用来提供密钥正确性，也就是能使U和V相互相信他们拥有同样的会话密钥K。时戳T和生存期L的目的是阻止一个主动的敌手存储旧消息并在后来重发。这种攻击称为重放攻击（replay attack）</p>
+<h2 id="三方DF密钥协商"><a href="#三方DF密钥协商" class="headerlink" title="三方DF密钥协商"></a>三方DF密钥协商</h2><p>设p是一个素数，α是Z*p的本原元，p和α是公开的。在此条件下，通信三方（设为A、B和C）可以执行如下协议形成共享的秘密密钥K：<br>(1)A随机选择XA，0≤$X_A$≤p-2; 计算$Y_A$=$α^{XA}$ mod p，并把$Y_A$发送给B;<br>(2) B随机选择XB，0≤$X_B$≤p-2;计算$Y_B$=$α^{XB}$ mod p，并把$Y_B$发送给C;<br>(3)C随机选择Xc，0≤$X_c$≤p-2;计算$Y_C$=$α^{XC}$ mod p，并把$Y_C$发送给A;<br>(4)A计算：$k_A$=$Y_C^{XA}$ mod p 发送给B<br>(5)B计算：$k_B$=$Y_A^{XB}$ mod p发送给C；<br>(6)C计算：$k_C$=YBXC mod p 发送给A。<br>A、B、C分别计算$K=α^{XAXBXC} $mod p  此A、B和C之间就形成了一个共享的秘密密钥。 </p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Wynneyin
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://wynneyin.site/2023/01/16/2023-1-16-密钥交换协议/" title="密钥交换协议" target="_blank">http://wynneyin.site/2023/01/16/2023-1-16-密钥交换协议/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">音乐</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全协议</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://wynneyin.site/2023/01/16/2023-1-16-%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E5%8D%8F%E8%AE%AE/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/10/21/%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2023/01/13/2023-1-13-%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第三章数字证书</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/10/21/%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90/" target="_blank">线性分析</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码分析学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/10/21/numpy%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/10/21/numpy%E5%AD%A6%E4%B9%A0/" target="_blank">Numpy对维数的理解</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/10/21/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E5%9C%A8%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/10/21/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E5%9C%A8%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/" target="_blank">公钥密码系统在区块链中的使用情况</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">区块链</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/10/21/%E4%B8%AD%E9%97%B4%E7%9B%B8%E9%81%87/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/10/21/%E4%B8%AD%E9%97%B4%E7%9B%B8%E9%81%87/" target="_blank">中间相遇攻击</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码分析学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/10/21/%E5%B9%BF%E4%B9%89%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/10/21/%E5%B9%BF%E4%B9%89%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/" target="_blank">广义生日攻击</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码分析学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/10/21/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6%E7%A7%AF%E5%88%86%E6%94%BB%E5%87%BB/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/10/21/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6%E7%A7%AF%E5%88%86%E6%94%BB%E5%87%BB/" target="_blank">积分攻击</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码分析学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/10/21/%E6%9D%82%E5%87%91%E5%87%BD%E6%95%B0/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/10/21/%E6%9D%82%E5%87%91%E5%87%BD%E6%95%B0/" target="_blank">杂凑函数</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码分析学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/10/21/%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/10/21/%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/" target="_blank">特征值</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">线性代数</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -681,8 +597,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
