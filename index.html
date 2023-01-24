@@ -225,7 +225,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2023/01/16/2023-1-16-%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E5%8D%8F%E8%AE%AE/" target="_blank">密钥交换协议</a>
+	  <a class="article-title" href="/2023/01/16/2023-1-16-%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E5%8D%8F%E8%AE%AE/" target="_blank">第五章密钥交换协议</a>
   
     </h1>
   
@@ -248,89 +248,9 @@
     
     <h1 id="第五章密钥交换协议"><a href="#第五章密钥交换协议" class="headerlink" title="第五章密钥交换协议"></a>第五章密钥交换协议</h1><h2 id="两方-Diffie-Hellman-密钥交换协议"><a href="#两方-Diffie-Hellman-密钥交换协议" class="headerlink" title="两方 Diffie -Hellman 密钥交换协议"></a>两方 Diffie -Hellman 密钥交换协议</h2><p>密钥协商（key agreement）是一个协议，它通过<strong>两个</strong>或<strong>多个成员</strong>在一个公开的信道上通信联合地建立一个秘密密钥。</p>
 <p>Diffie-Hellman密钥交换协议很容易受到主动攻击的<strong>中间人攻击</strong>：</p>
-<h2 id="端－端协议（STS-protocol）"><a href="#端－端协议（STS-protocol）" class="headerlink" title="端－端协议（STS protocol）"></a>端－端协议（STS protocol）</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116191620366.png" alt="image-20230116191620366"></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116191633745.png" alt="image-20230116191633745"></p>
-<h2 id="MTI密钥协定协议"><a href="#MTI密钥协定协议" class="headerlink" title="MTI密钥协定协议"></a>MTI密钥协定协议</h2><p>Matsumoto Takashima和Imai通过修改Diffie-Hellman密钥交换协议构造了一些密钥协定协议，这些协议我们称为MTI协议</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116211201740.png" alt="image-20230116211201740" style="zoom:50%;" /></p>
-<p>这些协议不需要用户U和V之间计算任何签名，他们是<strong>两段协议</strong>（two-pass protocol）。</p>
-<p>U 随机选择$R_u$ 计算<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116210750075.png" alt="image-20230116210750075" style="zoom: 50%;" />并发送(C(U),$S_u$)</p>
-<p> V随机选择$R_v$ ,计算<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116210833847.png" alt="image-20230116210833847" style="zoom:50%;" /></p>
-<p>U从C(V) 获得$b_v$ 并计算得<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116211127162.png" alt="image-20230116211127162" style="zoom:50%;" /></p>
-<p>V从C(U)获得$b_u$ 并计算</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116211244972.png" alt="image-20230116211244972" style="zoom: 50%;" /></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116211313728.png" alt="image-20230116211313728" style="zoom:67%;" /></p>
-<h4 id="MTI协议可使得中间人攻击失效"><a href="#MTI协议可使得中间人攻击失效" class="headerlink" title="MTI协议可使得中间人攻击失效"></a>MTI协议可使得中间人攻击失效</h4><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20230116211423791.png" alt="image-20230116211423791" style="zoom:50%;" /></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116211410958.png" alt="image-20230116211410958" style="zoom:50%;" /></p>
-<h3 id="Girault-密钥协定协议"><a href="#Girault-密钥协定协议" class="headerlink" title="Girault 密钥协定协议"></a>Girault 密钥协定协议</h3><p>基于自证明公钥的密钥交换，Girault密钥协定协议<strong>不需要证书</strong>。</p>
-<p><strong>用户的公开密钥的值</strong>和<strong>他自己的身份</strong>隐含着相互认证。</p>
-<p>假定 n=pq ,p=2$p_1$+1 q=2$q_1$ +1 p,q,$p_1,q_1$ 均为大素数</p>
-<p>设<em>α</em>是 <img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116212638816.png" alt="image-20230116212638816" style="zoom: 50%;" />中阶为 2$p_1q_1$的元素。<em>n</em> 的分解只有可信中心知道。<em>n</em>和<em>α</em>是公开的，<em>p</em>、<em>q</em>、$p_1$ 和 $q_1 $是秘密的。</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116212807390.png" alt="image-20230116212807390" style="zoom: 50%;" /></p>
-<p>每一个用户U有一个 IDU</p>
-<h4 id="用户U可按下列步骤从可信中心得到一个自证明公钥（self-certifying-public-key）："><a href="#用户U可按下列步骤从可信中心得到一个自证明公钥（self-certifying-public-key）：" class="headerlink" title="用户U可按下列步骤从可信中心得到一个自证明公钥（self-certifying public key）："></a>用户U可按下列步骤从可信中心得到一个自证明公钥（self-certifying public key）：</h4><ul>
-<li>U选择一个秘密指数$a_u$ 计算$b_u=a^{a_u} mod n$ 然后提交$a_u,b_u$ 给可信中心</li>
-<li>可信中心计算$P_u=(b_u-ID_u)^nmod n$ 并将$P_u$ 发送给U</li>
-</ul>
-<h4 id="Girault密钥协定协议描述如下"><a href="#Girault密钥协定协议描述如下" class="headerlink" title="Girault密钥协定协议描述如下"></a>Girault密钥协定协议描述如下</h4><ul>
-<li>U随机的选择一个大的随机整数$r_u$ 计算得$S_u=a^{r_u} mod n$ 并发送$ID_u,P_u,S_u$ 给V</li>
-<li>V随机的选择一个大的随机整数$r_v$ 计算得$S_v=a^{r_v} mod n$ 并发送$ID_v,P_v,S_v$ 给U</li>
-<li>U计算<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116213841309.png" alt="image-20230116213841309" style="zoom:50%;" /></li>
-<li><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116213900284.png" alt="image-20230116213900284" style="zoom:50%;" />1</li>
-<li></li>
-</ul>
-<p><strong>在Girault密钥协定协议中，如果可信中心不通过要求用户提供*a</strong>U*值使可信中心检测用户拥有的$a^U$及对应的$b^U$，就随意地给用户颁布公钥$P^U$，那么Girault密钥协定协议可被攻击：</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116214830155.png" alt="image-20230116214830155" style="zoom:50%;" /></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116214737850.png" alt="image-20230116214737850" style="zoom:50%;" /></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116214749547.png" alt="image-20230116214749547" style="zoom:50%;" /></p>
-<p>基于离散对数问题</p>
-<p>这样W和V就共享了同一个密钥</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230116215250690.png" alt="image-20230116215250690" style="zoom:67%;" /></p>
-<p><strong>几个密钥交换协议</strong></p>
-<h2 id="Blom-方案"><a href="#Blom-方案" class="headerlink" title="Blom 方案"></a>Blom 方案</h2><ul>
-<li>假定有一个n个用户的网络。 </li>
-<li>假定密钥从<em>Z**p</em>中选取，   p&gt;=n  是一个素数。</li>
-<li>设k（0&lt;k&lt;n-1）是一个整数，k 是使得网络中的任何k个用户合伙方案仍是安全的最大值。</li>
-<li>在Blom方案中（也称规模为k的Blom方案），可信中心给用户在一个安全的信道上发送<em>Z**p</em>中的k+1个元素。</li>
-<li>每一用户U和V将能计算一个密钥</li>
-</ul>
-<p><strong>安全条件</strong>为：至多k个不同用户的任何用户集必须不能确定关于<em>K**U</em>,<em>V</em>的任何信息. </p>
-<h2 id="规模为1的Blom方案"><a href="#规模为1的Blom方案" class="headerlink" title="规模为1的Blom方案"></a>规模为1的Blom方案</h2><ol>
-<li>每个用户公开一个素数，互不相同</li>
-<li>可信中心选择三个随机数a,b,c 形成多项式<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118090222900.png" alt="image-20230118090222900" style="zoom:50%;" /></li>
-<li>对于每个用户U，可信中心计算<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118090304082.png" alt="image-20230118090304082" style="zoom:50%;" />并发送给用户</li>
-<li>如果U和V想通信，<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118090437829.png" alt="image-20230118090437829" style="zoom:50%;" /></li>
-</ol>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118090457116.png" alt="image-20230118090457116"></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118090530686.png" alt="image-20230118090530686" style="zoom: 67%;" /></p>
-<h2 id="Diffie-Hellman密钥预分配方案"><a href="#Diffie-Hellman密钥预分配方案" class="headerlink" title="Diffie-Hellman密钥预分配方案"></a>Diffie-Hellman密钥预分配方案</h2><p>Diffie-Hellman密钥预分配方案是Diffie-Hellman密钥交换协议的一种<strong>修改</strong>。 </p>
-<p>每个用户拥有秘密指数 $a_u$ 和一个相应的公钥$b_u=A^{a_u}$  可信中信有一个签名算法，和秘密签名算法，签名消息之前先做hash。</p>
-<p> 当一个用户U入网时，可信中心需给他颁发一个证书（certificate）。用户U的证书为<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118091912931.png" alt="image-20230118091912931" style="zoom: 67%;" /></p>
-<p>可信中心无需知道$a^U$的值。证书可存储在一个公开的数据库中，也可由用户自己存储。 </p>
-<p>可信中心对证书的签名允许网络中的任何人能验证它所包含的信息。</p>
-<h2 id="Diffie-Hellman密钥预分配协议"><a href="#Diffie-Hellman密钥预分配协议" class="headerlink" title="Diffie-Hellman密钥预分配协议"></a>Diffie-Hellman密钥预分配协议</h2><p>公开一个素数P和一个本原元 <img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118095622727.png" alt="image-20230118095622727" style="zoom:50%;" /></p>
-<p>V使用自己的秘密值$a_V$及从U的证书中获得的公开值$b_U$ ，计算<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118095719899.png" alt="image-20230118095719899" style="zoom:50%;" /></p>
-<p>U使用自己的秘密值$a_U$ 及从V的证书中获得的公开值$b_V $，计算<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118095801121.png" alt="image-20230118095801121" style="zoom:50%;" /></p>
-<h2 id="Kerboros在线密钥分配协议"><a href="#Kerboros在线密钥分配协议" class="headerlink" title="Kerboros在线密钥分配协议"></a>Kerboros在线密钥分配协议</h2><ul>
-<li>如果同一个密钥使用的周期长了以后，就可能存在伪造的危险。</li>
-<li>因此，人们更喜欢使用<strong>在线方法分配密钥</strong>，也就是一对用户想通信时每次产生一个新的会话密钥。 </li>
-<li>如果使用在线密钥分配，那么网络中的每个用户和可信中心共享一个密钥而无需再存储别的密钥。</li>
-<li>会话密钥将通过请求可信中心来传送。</li>
-<li>确保密钥新鲜（key freshness）是可信中心的职责。</li>
-</ul>
-<p>Kerboros协议是基于一个私钥密码体制的流行的密钥服务系统。</p>
-<p>在这个系统中，每个用户U和可信中心共享一个秘密的DES密钥。</p>
-<p>在Kerboros协议（版本V）的最新版本中，传送的所有消息都通过CBC模式进行加密。 </p>
-<h3 id="使用Kerboros协议传输一个会话密钥的过程可描述如下："><a href="#使用Kerboros协议传输一个会话密钥的过程可描述如下：" class="headerlink" title="使用Kerboros协议传输一个会话密钥的过程可描述如下："></a>使用Kerboros协议传输一个会话密钥的过程可描述如下：</h3><ol>
-<li>用户U为了和用户V通信，U向可信中心要一个会话密钥</li>
-<li>可信中心随机选择一个会话密钥<em>K</em>、一个时戳T和一个生存期L；</li>
-<li>可信中心计算m1和m2并发送给U<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118101112394.png" alt="image-20230118101112394" style="zoom:50%;" /></li>
-<li>U解密m1 获得内容然后计算$m_3=E_k(ID_u,T)$ 并将$m_3$ 和可信中心的$m_2$ 一起发给V</li>
-<li>V解密$m_2$ 然后获得K 解密$m_3$ 检测T和$ID_u$ 是否一样，V计算<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230118101443872.png" alt="image-20230118101443872" style="zoom:50%;" />发给U</li>
-<li>U解密，对比是不是T+1</li>
-</ol>
-<p>消息m1和m2用来提供会话密钥K在传输过程中的秘密性，m3和m4用来提供密钥正确性，也就是能使U和V相互相信他们拥有同样的会话密钥K。时戳T和生存期L的目的是阻止一个主动的敌手存储旧消息并在后来重发。这种攻击称为重放攻击（replay attack）</p>
-<h2 id="三方DF密钥协商"><a href="#三方DF密钥协商" class="headerlink" title="三方DF密钥协商"></a>三方DF密钥协商</h2><p>设p是一个素数，α是Z*p的本原元，p和α是公开的。在此条件下，通信三方（设为A、B和C）可以执行如下协议形成共享的秘密密钥K：<br>(1)A随机选择XA，0≤$X_A$≤p-2; 计算$Y_A$=$α^{XA}$ mod p，并把$Y_A$发送给B;<br>(2) B随机选择XB，0≤$X_B$≤p-2;计算$Y_B$=$α^{XB}$ mod p，并把$Y_B$发送给C;<br>(3)C随机选择Xc，0≤$X_c$≤p-2;计算$Y_C$=$α^{XC}$ mod p，并把$Y_C$发送给A;<br>(4)A计算：$k_A$=$Y_C^{XA}$ mod p 发送给B<br>(5)B计算：$k_B$=$Y_A^{XB}$ mod p发送给C；<br>(6)C计算：$k_C$=YBXC mod p 发送给A。<br>A、B、C分别计算$K=α^{XAXBXC} $mod p  此A、B和C之间就形成了一个共享的秘密密钥。 </p>
-
+    
+    <a class="article-more-a" href="/2023/01/16/2023-1-16-%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E5%8D%8F%E8%AE%AE/#more">more >></a>
+    
     
 
     
