@@ -217,6 +217,184 @@
             
 
   
+    <article id="post-2023-1-25-机器学习复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/01/25/2023-1-25-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/" target="_blank">机器学习复习</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/01/25/2023-1-25-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
+        <time datetime="2023-01-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-25</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="第一章回归"><a href="#第一章回归" class="headerlink" title="第一章回归"></a>第一章回归</h1><p>线性模型  好的损失函数 <img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230125101220506.png" alt="image-20230125101220506" style="zoom: 50%;" />  </p>
+<p>梯度下降<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230125101846849.png" alt="image-20230125101846849" style="zoom: 67%;" />  </p>
+<p>求偏导</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230125101906569.png" alt="image-20230125101906569" style="zoom: 67%;" /></p>
+<p>模型选择 是否带高次项 可能导致过拟合</p>
+<p>出现过拟合 可以采取两种方法去解决：</p>
+<p>1.减少选取变量的数量</p>
+<p>2.正则化  加上惩罚项  <img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230125102604554.png" alt="image-20230125102604554"></p>
+<p>由于不知道具体要去惩罚哪一个参数，直接加入<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230125103205122.png" alt="image-20230125103205122" style="zoom:67%;" /></p>
+<p>我们的model的表达式要尽可能的复杂，包含尽可能多的参数和尽可能多的高次非线性项；•但是我们的loss function又有能力去控制这条曲线的参数和形状，使之不会出现overfitting过拟合的现象；</p>
+<h2 id="方差和偏差"><a href="#方差和偏差" class="headerlink" title="方差和偏差"></a>方差和偏差</h2><p>无偏估计 往往不存在系统误差但是方差较大</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230125104403872.png" alt="image-20230125104403872" style="zoom: 25%;" /></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230125104504819.png" alt="image-20230125104504819" style="zoom:50%;" /></p>
+<p>如何应对大偏差：</p>
+<p>模型不能fit 训练数据 欠拟合  模型能fit训练数据不能fit测试数据过拟合 </p>
+<ul>
+<li>增加特征 </li>
+<li>换一个复杂的模型</li>
+<li>增加训练数据 不一定有用</li>
+<li>正则化</li>
+</ul>
+<p>模型选择在 偏差和方差之间做平衡</p>
+<h2 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h2><p>训练数据分为 训练集和验证集 训练集训练模型 验证集选择模型</p>
+<p>N-fold 交叉验证 分多种 train和val </p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230125105817928.png" alt="image-20230125105817928" style="zoom:50%;" /></p>
+<h1 id="第二章梯度下降"><a href="#第二章梯度下降" class="headerlink" title="第二章梯度下降"></a>第二章梯度下降</h1><p>普通的梯度下降 需要小心的选取学习率</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230125111109759.png" alt="image-20230125111109759" style="zoom:50%;" /></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230125111125299.png" alt="image-20230125111125299" style="zoom:50%;" /></p>
+<p>Adagrad 中，梯度越大，说明步伐越大，但分母里梯度越大，又说明步伐越小，这里不是会有矛盾吗？</p>
+<p><strong>最好的step就要考虑二次微分</strong>  分母就是在模拟二次微分</p>
+<h1 id="第三章分类"><a href="#第三章分类" class="headerlink" title="第三章分类"></a>第三章分类</h1><h2 id="为什么不同用回归来做"><a href="#为什么不同用回归来做" class="headerlink" title="为什么不同用回归来做"></a>为什么不同用回归来做</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126110242105.png" alt="image-20230126110242105"></p>
+<p>而且多分类的时候，分类的y值没法来和种类进行绑定，除非种类之间有相关性，例如水系为1 火系为2 木系为3 显然不合理火系和水下的差别应该最大。</p>
+<p>在f(x)f(x)中嵌入一个g(x)  g(x)&gt;0 预测为类别1，否则就预测为类别2</p>
+<p>这种损失函数无法微分感知机和SVM比较适合。</p>
+<h2 id="用生成模型"><a href="#用生成模型" class="headerlink" title="用生成模型"></a>用生成模型</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126114340007.png" alt="image-20230126114340007" style="zoom:67%;" /></p>
+<p>P(x)P(x)是一个边缘分布P(x)=P(x,∑C)，因为朴素贝叶斯计算了联合分布P(x,C1),P(x,C2)，因此属于生成模型。P(C1|x)P(C1|x)就是x属于C1的概率。如果一个数据没有在数据集中，那么我们如何去？</p>
+<p>所有宝可梦都用一个向量量化，这样就可以计算概率值了，不过如何计算条件概率值？海龟都没有出现在训练数据集中。从概率分布角度看，不同类别的数据有不同的数据分布，数据点量化后，我们就可以计算这个分布。</p>
+<p>假设宝可梦是从一个高斯分布中抽取的，那么可以通过训练数据集估计这个高斯分布，再去计算海龟从这个高斯分布中抽取的概率。</p>
+<h3 id="利用极大似然估计来确定分布"><a href="#利用极大似然估计来确定分布" class="headerlink" title="利用极大似然估计来确定分布"></a>利用极大似然估计来确定分布</h3><p>任意期望和协方差矩阵的高斯分布都可以生成这79个数据点，只不过概率大小不同。像图中左边的高斯分布产生这些数据的概率大，右边的概率小。记L(μ,Σ)为似然值</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126114830897.png" alt="image-20230126114830897"></p>
+<p>P(C1)和P(C2)通过类个数/所有个数 计算</p>
+<p>如果假设类分布式高斯分布，那么可以用每个类的训练数据计算每个类的μ和Σ ，进而计算出P(x|C1)和P(x|C2)</p>
+<p>最后计算出P(C1|x)并进行判别</p>
+<p>但是单纯这样分类还是不准确只有64%。</p>
+<p>因为假设服从高斯分布，当特征比较多的时候，协方差矩阵的维数就比较高，意味着着model的参数较多，再给每个类拟合一个高斯分布，就可能导致过拟合。因此一般使用相同的协方差矩阵描述不同的高斯分布。</p>
+<h3 id="利用共用协方差矩阵"><a href="#利用共用协方差矩阵" class="headerlink" title="利用共用协方差矩阵"></a>利用共用协方差矩阵</h3><p>μ1,μ2还是之前的算法，每个类数据的平均，共用的Σ 则是之前的加权平均</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126120522714.png" alt="image-20230126120522714" style="zoom:67%;" /></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200530214215355-1925973778.png" alt="img"></p>
+<p>n无限大时，二项分布就是正态分布，则是棣莫弗-拉普拉斯极限定理</p>
+<h2 id="用逻辑回归来分类"><a href="#用逻辑回归来分类" class="headerlink" title="用逻辑回归来分类"></a>用逻辑回归来分类</h2><p>交叉熵推导:</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126161143539.png" alt="image-20230126161143539"></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126150813688.png" alt="image-20230126150813688" style="zoom:50%;" /></p>
+<p>使用梯度下降求解参数，对  $w<em>{i} $ 微分。  $\sigma(z) $ 对  z  的微分为  $\sigma(z)(1-\sigma(z))$  ，可以背下来。 上图右下方是 $ \sigma(z)$  和微分的图像，在头和尾的地方  $\sigma(z) $ 的斜率接近于 0 ，在中间最大。注意这里的 $x</em>{i}^{n}$  意思是第  n  个样本的第  i  个特征</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126151606139.png" alt="image-20230126151606139" style="zoom:50%;" /></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126152315568.png" alt="image-20230126152315568" style="zoom:50%;" /></p>
+<h3 id="逻辑回归为什么不能用平方和"><a href="#逻辑回归为什么不能用平方和" class="headerlink" title="逻辑回归为什么不能用平方和"></a>逻辑回归为什么不能用平方和</h3><p> 求微分的结果为$\large 2(f<em>{w,b}(x)-\hat y)f</em>{w,b}(x)(1-f_{w,b}(x))x_i$</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126153802777.png" alt="image-20230126153802777" style="zoom:50%;" /></p>
+<h3 id="判别模型和生成模型"><a href="#判别模型和生成模型" class="headerlink" title="判别模型和生成模型"></a>判别模型和生成模型</h3><ul>
+<li>Logistic回归对后验概率没有分布假设（但是对target是有假设的，即假设target服从伯努利分布，出现负的概率为1-p，当后验概率&gt;1-p时，判断为正），单纯去求解w,b</li>
+<li>但是在生成式模型中，对后验概率是有假设的，比如假设服从高斯分布、伯努利分布、朴素贝叶斯等等，根据这些假设找到另外一组w,b</li>
+</ul>
+<p>对朴素贝叶斯来说，它不考虑不同维度之间的关系，对它来说，两个维度是独立产生的，在训练数据里之所以没有这样的数据，是因为样本不够多。</p>
+<p>生成模型的好处： 需要更少的训练数据   对于数据中的噪声有稳定性</p>
+<h2 id="多分类模型"><a href="#多分类模型" class="headerlink" title="多分类模型"></a>多分类模型</h2><p>类似于二分类，最后要做一个softmax 然后现在0到1之间。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126160021555.png" alt="image-20230126160021555"></p>
+<p>softmax由最大熵原理推出，一个input x，分别乘上3组不同的群众，加上3组不同的偏置，得到3个不同的zz ，通过softmax函数得到$\large y<em>1,y_2,y_3$ 计算target和$\large \hat{y_1},\hat{y_2},\hat{y_3}$ 的交叉熵。$\large -\sum\limits</em>{i=1}^3 \hat{y_i}ln (y_i)$ </p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126160829169.png" alt="image-20230126160829169" style="zoom:50%;" /></p>
+<h2 id="逻辑回归的限制"><a href="#逻辑回归的限制" class="headerlink" title="逻辑回归的限制"></a>逻辑回归的限制</h2><p>因为logistic回归在两个class之间的边界就是一条直线，在feature的平面上只能画一条直线，画出的2种情况如上图最下方所示。不管怎么画，都无法完全区分红色点和蓝色点.</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200611154548905-762325415.png" alt="img" style="zoom: 50%;" /></p>
+<p>坚持用逻辑回归需要进行特征转换，人为的进特征转换比较困难，利用机器自己产生转换。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126161959003.png" alt="image-20230126161959003" style="zoom:67%;" /></p>
+<p>一个logistic回归的input来自于其他logistic回归的output。</p>
+<p>一个logistic回归的output也可以是其他logistic回归的input。</p>
+<p>我们可以给每个logistic回归一个新名称，叫做神经元，把这些logistic回归串起来的网络就是神经网络。<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200611154550304-1946987782.png" alt="img"></p>
+<p>第四章</p>
+<h1 id="第七章RNN"><a href="#第七章RNN" class="headerlink" title="第七章RNN"></a>第七章RNN</h1><p>RNN就是对一组序列输入重复进行同样的操作。它可以应用在<strong>语言建模和文本生成、机器翻译、语音识别、生成图像描述、视频标记</strong>等领域，是最常用的神经网络之一</p>
+<p>循环神经网络：每次的值都会被存储下来供下次使用</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126093428196.png" alt="image-20230126093428196" style="zoom:80%;" /></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126093148345.png" alt="image-20230126093148345" style="zoom: 80%;" /></p>
+<p>Elman Network 和 Jordan Network</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126093325346.png" alt="image-20230126093325346" style="zoom: 50%;" /></p>
+<p>双向RNN </p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126093529229.png" alt="image-20230126093529229" style="zoom: 67%;" /></p>
+<p>长短期记忆（Long short-term memory, LSTM）是一种特殊的 RNN，主要是为了解决长序列训练过程中的<strong>梯度消失和梯度爆炸</strong>问题。简单来说，就是相比普通的 RNN，<strong>LSTM能够在更长的序列中有更好的表现</strong>。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126094716806.png" alt="image-20230126094716806" style="zoom:50%;" /></p>
+<p>RNN神经网络并不容易去训练，Total loss非常的陡峭。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126094918670.png" alt="image-20230126094918670" style="zoom:50%;" /></p>
+<p><em>clipping</em>:限制gradient的最大值</p>
+<p><strong>用clipping可以缓解梯度消失与梯度爆炸；LSTM可以用来解决梯度消失问题</strong></p>
+<p>RNN 多对一的：</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126100330092.png" alt="image-20230126100330092" style="zoom:50%;" /></p>
+<p>RNN 多对多的:(output is short)</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126100411495.png" alt="image-20230126100411495"></p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/01/25/2023-1-25-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2023-1-16-密钥交换协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -665,13 +843,19 @@
     
   <div class="article-entry" itemprop="articleBody">
     
-    <p>七术打马</p>
+    <p><strong>七术打马</strong></p>
 <p>中国坚持不能骗自己。没有人喜欢拍马屁。中国人喜欢听恭维话，当面讲实在话都死的很惨。</p>
 <p>讲话加入适当的恭维。同样一句话要让人听得进去。中国人沟通中主义立场，外国人注意内容。</p>
 <p>中国人爱面子</p>
 <p>中国人是上面认错，不是下面认错。</p>
 <p>不能拍马屁，但是要把话讲的好听一点。</p>
 <p>心坏没有人知道嘴巴坏都知道。</p>
+<p><strong>人们会为你做任何事情，只要你:</strong></p>
+<p>鼓励他们的梦想</p>
+<p>摆脱他们的过错</p>
+<p>减轻他们的恐惧</p>
+<p>肯定他们的推测</p>
+<p>攻击他们的敌人</p>
 
     
 
@@ -953,58 +1137,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2023/01/08/2023-1-8-%E7%BB%A7%E6%89%BF%E5%92%8C%E5%A4%9A%E6%80%81/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-百年激进" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-  <div class="article-entry" itemprop="articleBody">
-    
-    <hr>
-<p>title:百年激进<br>date:2022/12/23</p>
-<h2 id="tags-温铁军文集"><a href="#tags-温铁军文集" class="headerlink" title="tags:温铁军文集"></a>tags:温铁军文集</h2>
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/12/23/%E7%99%BE%E5%B9%B4%E6%BF%80%E8%BF%9B/">展开全文 >></a>
     </p>
     
 
