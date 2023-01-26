@@ -10,12 +10,12 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="第一章回归线性模型  好的损失函数    梯度下降   求偏导  模型选择 是否带高次项 可能导致过拟合 出现过拟合 可以采取两种方法去解决： 1.减少选取变量的数量 2.正则化  加上惩罚项   由于不知道具体要去惩罚哪一个参数，直接加入 我们的model的表达式要尽可能的复杂，包含尽可能多的参数和尽可能多的高次非线性项；•但是我们的loss function又有能力去控制这条曲线的参数和形状，">
+  <meta name="description" content="第一章回归">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习复习">
 <meta property="og:url" content="http://wynneyin.site/2023/01/25/2023-1-25-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/index.html">
 <meta property="og:site_name" content="wynneblog">
-<meta property="og:description" content="第一章回归线性模型  好的损失函数    梯度下降   求偏导  模型选择 是否带高次项 可能导致过拟合 出现过拟合 可以采取两种方法去解决： 1.减少选取变量的数量 2.正则化  加上惩罚项   由于不知道具体要去惩罚哪一个参数，直接加入 我们的model的表达式要尽可能的复杂，包含尽可能多的参数和尽可能多的高次非线性项；•但是我们的loss function又有能力去控制这条曲线的参数和形状，">
+<meta property="og:description" content="第一章回归">
 <meta property="og:locale">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230125101220506.png">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230125101846849.png">
@@ -42,6 +42,15 @@
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200611154548905-762325415.png">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126161959003.png">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200611154550304-1946987782.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126200441870.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200531212309787-1705825944.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200531212310493-934408583.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200531212311695-1077041435.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200531212312217-1893166561.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200531212312566-1430079230.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200531212312896-413391124.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200602204911739-2139350909.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200603205532394-1932748458.png">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126093428196.png">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126093148345.png">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126093325346.png">
@@ -50,8 +59,22 @@
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126094918670.png">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126100330092.png">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126100411495.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171048917-70962990.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171049283-234525115.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126172309300.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171050278-1795610873.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171050699-1482752531.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171050926-1532190562.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171051434-1192207020.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171051878-1863606556.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171052757-459756393.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171052930-107009120.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171053726-391482795.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171054214-300617742.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171054403-843738076.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126190619631.png">
 <meta property="article:published_time" content="2023-01-24T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-01-26T08:24:05.893Z">
+<meta property="article:modified_time" content="2023-01-26T13:09:28.912Z">
 <meta property="article:author" content="Wynneyin">
 <meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary">
@@ -282,7 +305,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.9k字</span>
+      <span class="post-count">5.1k字</span>
     </span>
   </span>
 
@@ -291,7 +314,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">7分</span>
+      <span class="post-count">18分</span>
     </span>
   </span>
 </div>
@@ -302,7 +325,8 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="第一章回归"><a href="#第一章回归" class="headerlink" title="第一章回归"></a>第一章回归</h1><p>线性模型  好的损失函数 <img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230125101220506.png" alt="image-20230125101220506" style="zoom: 50%;" />  </p>
+    <h1 id="第一章回归"><a href="#第一章回归" class="headerlink" title="第一章回归"></a>第一章回归</h1><span id="more"></span>
+<p>线性模型  好的损失函数 <img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230125101220506.png" alt="image-20230125101220506" style="zoom: 50%;" />  </p>
 <p>梯度下降<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230125101846849.png" alt="image-20230125101846849" style="zoom: 67%;" />  </p>
 <p>求偏导</p>
 <p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230125101906569.png" alt="image-20230125101906569" style="zoom: 67%;" /></p>
@@ -376,8 +400,53 @@
 <p>一个logistic回归的input来自于其他logistic回归的output。</p>
 <p>一个logistic回归的output也可以是其他logistic回归的input。</p>
 <p>我们可以给每个logistic回归一个新名称，叫做神经元，把这些logistic回归串起来的网络就是神经网络。<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200611154550304-1946987782.png" alt="img"></p>
-<p>第四章</p>
-<h1 id="第七章RNN"><a href="#第七章RNN" class="headerlink" title="第七章RNN"></a>第七章RNN</h1><p>RNN就是对一组序列输入重复进行同样的操作。它可以应用在<strong>语言建模和文本生成、机器翻译、语音识别、生成图像描述、视频标记</strong>等领域，是最常用的神经网络之一</p>
+<h1 id="第四章深度学习"><a href="#第四章深度学习" class="headerlink" title="第四章深度学习"></a>第四章深度学习</h1><h2 id="全连接神经网络"><a href="#全连接神经网络" class="headerlink" title="全连接神经网络"></a>全连接神经网络</h2><p>激活函数用sigmoid<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126200441870.png" alt="image-20230126200441870" style="zoom:50%;" /></p>
+<p>全链接：layer1与layer2之间两两都有连接</p>
+<p>前馈：传递的方向是由后往前传</p>
+<p>输入层不是有神经元组成的，严格讲不能当作一个layer</p>
+<p>除了输入层和输出层，其他的叫做隐藏层，上图有L个隐藏层</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200531212309787-1705825944.png" alt="image-20200531165041451"></p>
+<p>随着层数变多，错误率降低，随之运算量增大</p>
+<h3 id="矩阵计算"><a href="#矩阵计算" class="headerlink" title="矩阵计算"></a><strong>矩阵计算</strong></h3><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200531212310493-934408583.png" alt="image-20200531185748773" style="zoom:50%;" /></p>
+<p>整个神经网络运算就相当于一连串的矩阵运算</p>
+<p>写成矩阵运算的好处是可以使用GPU加速</p>
+<p>手写数字识别：</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200531212311695-1077041435.png" alt="image-20200531203816648"></p>
+<p>输入是256维的向量</p>
+<p>输出是10维的向量</p>
+<p>function就是一个神经网络</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200531212312217-1893166561.png" alt="image-20200531204142240"></p>
+<h2 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h2><p>有一张图片和label( y^y^ )，input图片的pixel,通过神经网络得到一个output( y )，然后计算交叉熵，接下来调整参数最小化交叉熵</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200531212312566-1430079230.png" alt="image-20200531210804492"></p>
+<h2 id="step3：选择最优函数"><a href="#step3：选择最优函数" class="headerlink" title="step3：选择最优函数"></a>step3：选择最优函数</h2><p>如何找到这组最优参数？</p>
+<p>就是使用梯度下降法<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200531212312896-413391124.png" alt="image-20200531211536499"></p>
+<p>反复计算梯度和更新参数</p>
+<h2 id="深度学习技巧"><a href="#深度学习技巧" class="headerlink" title="深度学习技巧"></a>深度学习技巧</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200602204911739-2139350909.png" alt="image-20200601150042427" style="zoom: 80%;" /></p>
+<p>通过深度学习三部曲得到一个神经网络，接下来要做什么事情？</p>
+<ol>
+<li>先检查神经网络在训练数据集上的结果好不好，不好则回头检查三部曲。过拟合在深度学习里面不是要先关注的问题，因为深度学习是一个不断迭代训练的模型，可能一开始训练精度很差，因此首先要考虑的是如何优化三部曲里面的东西。</li>
+<li>训练精度好，再去检查测试精度，如果结果不好，再考虑过拟合。而且有时候使用新技术去优化过拟合，可能又会导致训练精度变差，这时候又要去检查训练精度。</li>
+<li>训练精度和测试精度都好，才可以使用</li>
+</ol>
+<h2 id="如何改进深度学习"><a href="#如何改进深度学习" class="headerlink" title="如何改进深度学习"></a>如何改进深度学习</h2><h3 id="train结果不好"><a href="#train结果不好" class="headerlink" title="train结果不好"></a>train结果不好</h3><h4 id="新的激活函数"><a href="#新的激活函数" class="headerlink" title="新的激活函数"></a>新的激活函数</h4><p>train 结果不好的时候，考虑是否网络结构没有设计好。比如激活函数不好，因此换一些新的激活函数。</p>
+<p>1980年代比较常用的激活函数是sigmoid函数，为什么要用sigmoid？</p>
+<p>在过去，会发现越深不一定意味着越好，如上图，layer越多，准确率会下降。可能会觉得是过拟合，但这个是train的结果。</p>
+<h4 id="梯度消失"><a href="#梯度消失" class="headerlink" title="梯度消失"></a>梯度消失</h4><h2 id="深度学习是否越深越好？"><a href="#深度学习是否越深越好？" class="headerlink" title="深度学习是否越深越好？"></a>深度学习是否越深越好？</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200603205532394-1932748458.png" alt="image-20200602210346131"></p>
+<p>真正要比较”深“和”浅“的model的时候，要让它们的参数一样多。</p>
+<p>“浅”的model就会是一个矮胖的model，“深”的model就会是一个瘦高的model</p>
+<p>单纯的增加参数个数，不添加层数的话，效果也不会特别好。</p>
+<h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><p>当我们在做深度学习的时候，相当于在做模组化。</p>
+<p>什么是模组化？</p>
+<p>比如写程序，不会把所有功能都写在main function里。会写sub1,sub2…，然后main function里调用这些函数，可能sub1,sub2…里还会调用subsub1,subsub2…，做这样一层层结构化的架构。结构化的好处是可以共用function，例如subsub2就被sub1和subsub2共用，减少程序的复杂度。</p>
+<p>假设有个task是图片分类，分成长发女、长发男、短发女、短发男4类，4类都有训练数据可以训练一个分类器。</p>
+<p><strong>问题就是长发男的训练数据比较少，那么训练出来的分类器就很弱。</strong></p>
+<p>使用模组化的思想，把原问题分解成几个小问题。先学习一个用来检测某一种属性的分类器，例如不是学习长发男、长发女分类器，而是分成是否是男生、是否是长发两个基本分类器。虽然长发男的数据很少，但是男生、女生、短发和长发的数据足够，那这两个基本分类器就不会太差。</p>
+<p><strong>用电路来解释深度更有效率</strong></p>
+<p>假设要设计一个电路做奇偶校验，即input一串二元数字，如果1的次数是偶数的话，output为1，否则为0。</p>
+<p>如果input的序列长度有1bit，理论上用两层的话，需要$2^d$个门才可以描述这个电路。</p>
+<p>如果使用多层架构，例如上图把好几个XBOR接在一起，input1和0后，输出方式如右上图。input1和0，output就是0；input 0 和0，output就是1。这时只需要O(d)个门就可以完成之前的任务了。</p>
+<p>使用多层架构，使用比较少的逻辑闸，可以做到同样的事情。这对神经网络来说也是一样的，多层可以使用更少的神经元.</p>
+<h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><h1 id="第七章RNN"><a href="#第七章RNN" class="headerlink" title="第七章RNN"></a>第七章RNN</h1><p>RNN就是对一组序列输入重复进行同样的操作。它可以应用在<strong>语言建模和文本生成、机器翻译、语音识别、生成图像描述、视频标记</strong>等领域，是最常用的神经网络之一</p>
 <p>循环神经网络：每次的值都会被存储下来供下次使用</p>
 <p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126093428196.png" alt="image-20230126093428196" style="zoom:80%;" /></p>
 <p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126093148345.png" alt="image-20230126093148345" style="zoom: 80%;" /></p>
@@ -395,6 +464,77 @@
 <p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126100330092.png" alt="image-20230126100330092" style="zoom:50%;" /></p>
 <p>RNN 多对多的:(output is short)</p>
 <p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126100411495.png" alt="image-20230126100411495"></p>
+<h1 id="第八章半监督学习"><a href="#第八章半监督学习" class="headerlink" title="第八章半监督学习"></a>第八章半监督学习</h1><p>半监督学习是说，在label数据上面，有另外一组unlabeled的数据，写成$x^u$ 有U笔unlabeled的数据。</p>
+<p>半监督学习可以分成两种：</p>
+<ul>
+<li>一种叫做转换学习，ublabeled 数据就是testing set，使用的是testing set的特征。</li>
+<li>另一种是归纳学习，不考虑testing set，学习model的时候不使用testing set。</li>
+</ul>
+<h2 id="生成模型和半监督学习"><a href="#生成模型和半监督学习" class="headerlink" title="生成模型和半监督学习"></a>生成模型和半监督学习</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171048917-70962990.png" alt="image-20200609145743461"></p>
+<p>这边要讲4件事：</p>
+<ul>
+<li>第一个是在生成模型的时候，怎么使用半监督学习</li>
+<li>然后会讲两个通用的假设，一个是低密度分离假设</li>
+<li>一个是平滑度假设</li>
+<li>最后讲半监督学习还有的一招，找一个好的代表</li>
+</ul>
+<h3 id="生成模型的时候，怎么使用半监督学习"><a href="#生成模型的时候，怎么使用半监督学习" class="headerlink" title="生成模型的时候，怎么使用半监督学习"></a>生成模型的时候，怎么使用半监督学习</h3><p>对于已标记的数据可以求出相应的高斯分布的参数。如果加入没标记的数据分布就会不精确了</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171049283-234525115.png" alt="image-20200609160838193"></p>
+<p>这样会使先验概率受到影响，本来两个分布，正例数据是一样多，但是加入未标注数据之后，你可能会觉得类2的正例数据更多（先验概率就更大）权重大了。总之加入未标注数据后，会影响对均值和协方差的估测，继而影响类条件概率，最后影响了你的决策边界。</p>
+<h3 id="怎么做半监督学习"><a href="#怎么做半监督学习" class="headerlink" title="怎么做半监督学习"></a>怎么做半监督学习</h3><p>初始化一组参数，如果是二分类任务，就是初始化类1和类2的先验概率、均值和协方差，可以随机初始化，用已经有标注的数据估测，统称为$θ$</p>
+<ul>
+<li>step1：根据已有的$θ$ 可以计算每一笔未标注数据的后验概率（属于类1 的概率）</li>
+<li>step2：根据step1的后验概率更新模型，update的式子非常直觉</li>
+</ul>
+<p>$\large P(C<em>1)=\frac{N_1+\sum\limits</em>{x^u}P(C_1|x^u)}{N}$</p>
+<p>$\large \mu^1=\frac{1}{N<em>1}\sum\limits</em>{x^r\in C<em>1}x^r+\frac{1}{\sum\limits</em>{x^u}P(C<em>1|x^u)}\sum\limits</em>{x^u}P(C_1|x^u)x^u$</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126172309300.png" alt="image-20230126172309300"></p>
+<h2 id="低密度分离假设"><a href="#低密度分离假设" class="headerlink" title="低密度分离假设"></a>低密度分离假设</h2><p>假设现在有一大堆的data，有标注数据，有非标注数据，在两个类别之间会有一个明显的鸿沟。给一些标注数据，可以把边界分在上图右边的线，也可以把边界分在上图左边的线。但是考虑非标注数据，那么左边的边界会好一点，在边界处，两个类别的密度是低的（不会出现data）。</p>
+<h3 id="self-training"><a href="#self-training" class="headerlink" title="self-training"></a>self-training</h3><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171050278-1795610873.png" alt="image-20200609200805022"></p>
+<p>再次训练的function不会受到未标注的数据的影响</p>
+<p>唯一的差别是在做self-training的时候，用的是硬标签，生成模型里用的是软标签（概率）。在做self-training的时候，会强制分配一个数据属于某一个类别，在生成模型里，使用的是后验概率，部分属于类1，部分属于类2。</p>
+<p><strong>那哪一个比较好？</strong></p>
+<ul>
+<li>如果是硬标签，就直接分为类1，$x_u$的新target为[1,0]。</li>
+<li>如果是软标签，0.7的概率属于类1，0.3的概率属于类2，$x_u$的新target为[0.7,0.3]</li>
+</ul>
+<p>用硬标签的时候，用的就是低密度分离的概念。得到的概率$[0.70.3]$意味着为类1的概率高，但是在非黑即白的世界看来，就是等于类1。在神经网络中必须使用硬标签</p>
+<h3 id="Entropy-based-Regularization-基于熵的正则化"><a href="#Entropy-based-Regularization-基于熵的正则化" class="headerlink" title="Entropy-based Regularization(基于熵的正则化)"></a>Entropy-based Regularization(基于熵的正则化)</h3><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171050699-1482752531.png" alt="image-20200609210041170"></p>
+<p>我们希望output的熵越小越好</p>
+<p>上图右下的损失函数可以算微分，那就使用梯度下降最小化这个损失函数，迭代求解参数。加入未标注部分，作用就类似于正则化（在原来损失函数后加一个L1正则或者L2正则），这里则加入一个未标注集熵来防止过拟合，所以称之为基于熵的正则化。</p>
+<h3 id="半监督SVM"><a href="#半监督SVM" class="headerlink" title="半监督SVM"></a>半监督SVM</h3><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171050926-1532190562.png" alt="image-20200609213923208"></p>
+<p>穷举所有可能然后选出间隔最大的作为结果</p>
+<p><strong>穷举所有方法运算量很大啊？</strong></p>
+<p>在上图reference里，提出了一个近似方法，基本精神是一开始有一些label，然后每次改一笔未标注数据的label，看看能不能让目标函数变大，变大就改。</p>
+<h2 id="平滑度假设"><a href="#平滑度假设" class="headerlink" title="平滑度假设"></a>平滑度假设</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171051434-1192207020.png" alt="image-20200612215515681"></p>
+<p>假设：相似的x有相似的$\hat{y}$</p>
+<p>但是平滑度假设不是这样，更精确的假设是说，“像”要两个数据中间为高密度区域下，比如x1和x2中间是一个高密度区域（x1和x2由一个高密度区域连接），有很多数据(中间想成平原地带，地势平坦，人烟很多)，而x2和x3之间数据稀少(中间想成一座山，人烟稀少)，那么走平原会比走山容易，x2走到x1更容易（更相似）。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171051878-1863606556.png" alt="image-20200613191217587"></p>
+<h2 id="如何实践平滑度假设"><a href="#如何实践平滑度假设" class="headerlink" title="如何实践平滑度假设"></a>如何实践平滑度假设</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171052757-459756393.png" alt="image-20200613193019189"></p>
+<p>假如数据分布如上图，橙色是class 1，绿色是class 2，蓝色是未标注数据。接下来做聚类，可能把所有数据分成3个簇。在簇1里，class 1的label最多，那簇1里所有数据标记为class 1，同样的簇2和簇3都标记为class 2。把标记后的数据拿去learn就结束了。</p>
+<p>这个方式不一定有用，因为要求簇正确，这个方法有效的假设是同一个class的东西聚集在一起。但是在图像里要把同一个class的东西聚集在一起没有那么容易。之前深度学习讲过，不同class的图像可能会很像，同一个class可能会不像，只用像素点做聚类，结果八成是不好的。没办法把同一个class的数据聚集在一起，那未标注数据就没有用。</p>
+<p>所以要有用，就要有一个好的方法来描述一张图像，比如用Deep Autoencoder抽特征，然后再做聚类。</p>
+<h3 id="基于图的方法"><a href="#基于图的方法" class="headerlink" title="基于图的方法"></a>基于图的方法</h3><p>如果有两个点，在图上是相连的，那它们就是同一个class，如果没有相连，就算距离很近，也走不到。<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171052930-107009120.png" alt="image-20200614143220120"></p>
+<p>有些时候，图的表示可以很自然的得到。举例说网页的分类，你有记录网页和网页之间的超链接，那超链接就很自然的告诉你网页是怎么连接的。或者你要做的是论文的分类，论文和论文之间有引用的关系，这种引用的关系也是另外一种图的边，可以很自然地把这种图画出来。</p>
+<p><strong>怎么自己想办法构建图？</strong></p>
+<p>通常的做法是：</p>
+<ol>
+<li>先定义两个对象之间的相似度，比如图像可以是基于像素点的相似度（可能效果不好），也可以是基于自动编码器抽取出来的特征计算相似度（效果可能好一点）</li>
+<li>定义完相似度后，就可以构建图了（添加边），图有很多种：<ul>
+<li>K近邻的图，现在有一大堆数据，可以计算数据与数据之间的相似度，然后设置k例如3，就是3个最相似的点相连</li>
+<li>e-Neighborhood的图，只有相似度超过某个阈值的点才会相连</li>
+</ul>
+</li>
+</ol>
+<p>所谓的边也不是只有相连和不相连这两种选择，可以给边一些权重，让边跟两个数据点的相似度成正比。相似度可以用Gaussian Radial Basis Function来定义，$s(x^i,x^j)=exp(-\gamma||x^i-x^j||^2)$</p>
+<p>exp导致必须距离特别近才能达到相似的程度。</p>
+<p><strong>怎么定平滑度？</strong></p>
+<p>看上图两个例子，<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171053726-391482795.png" alt="image-20200614163344586">这两个例子都有4个数据点，数据点之间连接的数字代表了边的权重。现在给两个例子的数据不同的label，左边例子的label是1,1,1,0，右边例子的label是0,1,1,0，那谁更平滑呢？</p>
+<p>所以左边这个例子的S就是0.5，右边例子的S是3，S越小越平滑。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171054214-300617742.png" alt="image-20200614164542068"></p>
+<p>神经网络中的平滑度计算</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1242619-20200614171054403-843738076.png" alt="image-20200614165157169" style="zoom:80%;" /></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230126190619631.png" alt="image-20230126190619631"></p>
 
     
 
