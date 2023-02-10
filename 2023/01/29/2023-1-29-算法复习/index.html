@@ -6,22 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://wynneyin.site">
-  <title>Maki——费曼学习法 | wynneblog</title>
+  <title>算法复习 | wynneblog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Maki——费曼学习法">
+  <meta name="description" content="NP问题总结P类问题:(polynominal)  存在多项式时间算法的问题，即在多项式时间内可解的问题； NP类问题:(Nondeterministic polynominal) 能在多项式时间内验证出一个正确解的问题，也就是说这个问题不一定在多项式时间内可解，但可以在多项式时间内验证； 例如 大数分解 NPC类问题（Nondeterminism Polynomial complete）：存在这">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Maki——费曼学习法">
-<meta property="og:url" content="http://wynneyin.site/2022/10/21/Maki%E2%80%94%E2%80%94%E8%B4%B9%E6%9B%BC%E5%AD%A6%E4%B9%A0%E6%B3%95/index.html">
+<meta property="og:title" content="算法复习">
+<meta property="og:url" content="http://wynneyin.site/2023/01/29/2023-1-29-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/index.html">
 <meta property="og:site_name" content="wynneblog">
-<meta property="og:description" content="Maki——费曼学习法">
+<meta property="og:description" content="NP问题总结P类问题:(polynominal)  存在多项式时间算法的问题，即在多项式时间内可解的问题； NP类问题:(Nondeterministic polynominal) 能在多项式时间内验证出一个正确解的问题，也就是说这个问题不一定在多项式时间内可解，但可以在多项式时间内验证； 例如 大数分解 NPC类问题（Nondeterminism Polynomial complete）：存在这">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-10-21T05:49:45.000Z">
-<meta property="article:modified_time" content="2022-12-23T12:16:46.215Z">
+<meta property="og:image" content="https://joeylian.github.io/images/image-20200516205056214.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230129184059733.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230129194917639.png">
+<meta property="article:published_time" content="2023-01-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-01-29T11:50:29.656Z">
 <meta property="article:author" content="Wynneyin">
-<meta property="article:tag" content="Maki">
+<meta property="article:tag" content="算法设计">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://joeylian.github.io/images/image-20200516205056214.png">
   
     <link rel="alternative" href="/atom.xml" title="wynneblog" type="application/atom+xml">
   
@@ -215,14 +219,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Maki——费曼学习法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2023-1-29-算法复习" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      Maki——费曼学习法
+      算法复习
     </h1>
   
 
@@ -234,8 +238,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/10/21/Maki%E2%80%94%E2%80%94%E8%B4%B9%E6%9B%BC%E5%AD%A6%E4%B9%A0%E6%B3%95/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
+<a href="/2023/01/29/2023-1-29-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
+        <time datetime="2023-01-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-29</time>
 </a>
 
   
@@ -248,7 +252,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">88字</span>
+      <span class="post-count">458字</span>
     </span>
   </span>
 
@@ -257,7 +261,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -268,9 +272,18 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="Maki——费曼学习法"><a href="#Maki——费曼学习法" class="headerlink" title="Maki——费曼学习法"></a>Maki——费曼学习法</h1><span id="more"></span>
-<p>1.行为上，写讲义。从最基础的东西和最具体的通俗的方式讲解知识点，深入浅出。高阶串联知识点，重排知识点，用读者更容易接受的方式去讲解。</p>
-<p>影响函数走向的和斜率有关，和函数值无关和起点无关。</p>
+    <h1 id="NP问题总结"><a href="#NP问题总结" class="headerlink" title="NP问题总结"></a>NP问题总结</h1><p><strong>P类问题</strong>:(polynominal)  存在多项式时间算法的问题，即在多项式时间内可解的问题；</p>
+<p><strong>NP类问题</strong>:(Nondeterministic polynominal) 能在多项式时间内验证出一个正确解的问题，也就是说这个问题不一定在多项式时间内可解，但可以在多项式时间内验证；</p>
+<p>例如 大数分解</p>
+<p><strong>NPC类问题</strong>（Nondeterminism Polynomial complete）：存在这样一个NP问题，所有的NP问题都可以约化成它。 </p>
+<p><strong>NP-Hard类问题</strong>（Nondeterminism Polynomial hard）：所有的NP问题都可以约化成它。</p>
+<p>如果一个问题连NP问题都不是，也就是说我在<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=多项式&amp;spm=1001.2101.3001.7020">多项式</a>时间内连验证它都很费劲，又谈何解决出来呢？这类问题就不大有研究的必要了；</p>
+<p><img src="https://joeylian.github.io/images/image-20200516205056214.png" alt="image-20200516205056214"></p>
+<p><a target="_blank" rel="noopener" href="https://joeylian.github.io/2020/05/15/2020-05-16-%E5%85%B8%E5%9E%8BNPC%E9%97%AE%E9%A2%98%E5%8F%8A%E5%85%B6%E8%AF%81%E6%98%8E/">https://joeylian.github.io/2020/05/15/2020-05-16-%E5%85%B8%E5%9E%8BNPC%E9%97%AE%E9%A2%98%E5%8F%8A%E5%85%B6%E8%AF%81%E6%98%8E/</a></p>
+<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><h2 id="0-1背包问题"><a href="#0-1背包问题" class="headerlink" title="0-1背包问题"></a>0-1背包问题</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230129184059733.png" alt="image-20230129184059733"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//每个物品只有一个</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">printDP</span><span class="params">(<span class="type">int</span>[] weight,<span class="type">int</span>[] value,<span class="type">int</span> bag)</span></span>&#123;</span><br><span class="line">    <span class="comment">// dp[i][j]: 选择前ｉ个物品装入背包重量为ｊ的最大价值</span></span><br><span class="line">    <span class="type">int</span>[][] dp=<span class="keyword">new</span> <span class="type">int</span>[weight.length][bag+<span class="number">1</span>];</span><br><span class="line">    <span class="comment">// 初始化dp数组 需要初始化第一行和第一列</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;dp.length;i++)&#123;</span><br><span class="line">        dp[i][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j&lt;=bag;j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(weight[<span class="number">0</span>]&lt;=j)</span><br><span class="line">            dp[<span class="number">0</span>][j]=value[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">else</span> dp[<span class="number">0</span>][j]=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 完善dp数组</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;dp.length;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j&lt;=bag;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(weight[i]&gt;j)&#123;</span><br><span class="line">                dp[i][j] = dp[i<span class="number">-1</span>][j];</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                dp[i][j] = Math.<span class="built_in">max</span>(value[i]+dp[i<span class="number">-1</span>][j-weight[i]],dp[i<span class="number">-1</span>][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;dp.length;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">0</span>;j&lt;=bag;j++) &#123;</span><br><span class="line">            System.out.<span class="built_in">print</span>(dp[i][j]+<span class="string">&quot; &quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.<span class="built_in">println</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="完全背包问题"><a href="#完全背包问题" class="headerlink" title="完全背包问题"></a>完全背包问题</h2><p>不限制物品的个数</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230129194917639.png" alt="image-20230129194917639"></p>
 
     
 
@@ -317,7 +330,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://wynneyin.site/2022/10/21/Maki——费曼学习法/" title="Maki——费曼学习法" target="_blank">http://wynneyin.site/2022/10/21/Maki——费曼学习法/</a>
+          <a href="http://wynneyin.site/2023/01/29/2023-1-29-算法复习/" title="算法复习" target="_blank">http://wynneyin.site/2023/01/29/2023-1-29-算法复习/</a>
         </li>
         
         <li>
@@ -339,7 +352,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Maki</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">算法设计</a>
         		</li>
       		
 		</ul>
@@ -395,7 +408,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://wynneyin.site/2022/10/21/Maki%E2%80%94%E2%80%94%E8%B4%B9%E6%9B%BC%E5%AD%A6%E4%B9%A0%E6%B3%95/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://wynneyin.site/2023/01/29/2023-1-29-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -410,18 +423,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/10/21/%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          特征值
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/10/21/%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">第一</div>
+    <a href="/2023/01/28/SSL%E5%8D%8F%E8%AE%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ssl</div>
       <i class="icon-circle-right"></i>
     </a>
   

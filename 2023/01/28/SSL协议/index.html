@@ -6,22 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://wynneyin.site">
-  <title>Maki——费曼学习法 | wynneblog</title>
+  <title>ssl | wynneblog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Maki——费曼学习法">
+  <meta name="description" content="SSL协议工作过程： 握手 建立tcp连接，验证服务端身份，分发通信主密钥， 客户端发送一条向服务端的TCP连接，客户端向服务端发送测试消息，服务端用证书进行回应，客户端获取服务端的公钥，并随机生成的通信主密钥MS，然后将MS用公钥加密后发送给服务端。这样双方就共享了密钥MS。 密钥导出 通信双方用同样的方法生成如下四个密钥：  发送方将内容和MB进行级联之后做哈希，这样生成一个mac 数据传输">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Maki——费曼学习法">
-<meta property="og:url" content="http://wynneyin.site/2022/10/21/Maki%E2%80%94%E2%80%94%E8%B4%B9%E6%9B%BC%E5%AD%A6%E4%B9%A0%E6%B3%95/index.html">
+<meta property="og:title" content="ssl">
+<meta property="og:url" content="http://wynneyin.site/2023/01/28/SSL%E5%8D%8F%E8%AE%AE/index.html">
 <meta property="og:site_name" content="wynneblog">
-<meta property="og:description" content="Maki——费曼学习法">
+<meta property="og:description" content="SSL协议工作过程： 握手 建立tcp连接，验证服务端身份，分发通信主密钥， 客户端发送一条向服务端的TCP连接，客户端向服务端发送测试消息，服务端用证书进行回应，客户端获取服务端的公钥，并随机生成的通信主密钥MS，然后将MS用公钥加密后发送给服务端。这样双方就共享了密钥MS。 密钥导出 通信双方用同样的方法生成如下四个密钥：  发送方将内容和MB进行级联之后做哈希，这样生成一个mac 数据传输">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-10-21T05:49:45.000Z">
-<meta property="article:modified_time" content="2022-12-23T12:16:46.215Z">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128181036278.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128203528411.png">
+<meta property="article:published_time" content="2023-01-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-01-28T12:43:19.292Z">
 <meta property="article:author" content="Wynneyin">
-<meta property="article:tag" content="Maki">
+<meta property="article:tag" content="安全协议">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128181036278.png">
   
     <link rel="alternative" href="/atom.xml" title="wynneblog" type="application/atom+xml">
   
@@ -215,14 +218,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Maki——费曼学习法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-SSL协议" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      Maki——费曼学习法
+      ssl
     </h1>
   
 
@@ -234,8 +237,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/10/21/Maki%E2%80%94%E2%80%94%E8%B4%B9%E6%9B%BC%E5%AD%A6%E4%B9%A0%E6%B3%95/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
+<a href="/2023/01/28/SSL%E5%8D%8F%E8%AE%AE/" class="archive-article-date">
+        <time datetime="2023-01-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-28</time>
 </a>
 
   
@@ -248,7 +251,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">88字</span>
+      <span class="post-count">166字</span>
     </span>
   </span>
 
@@ -268,9 +271,15 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="Maki——费曼学习法"><a href="#Maki——费曼学习法" class="headerlink" title="Maki——费曼学习法"></a>Maki——费曼学习法</h1><span id="more"></span>
-<p>1.行为上，写讲义。从最基础的东西和最具体的通俗的方式讲解知识点，深入浅出。高阶串联知识点，重排知识点，用读者更容易接受的方式去讲解。</p>
-<p>影响函数走向的和斜率有关，和函数值无关和起点无关。</p>
+    <h1 id="SSL协议"><a href="#SSL协议" class="headerlink" title="SSL协议"></a>SSL协议</h1><p>工作过程：</p>
+<p><strong>握手 建立tcp连接，验证服务端身份，分发通信主密钥，</strong></p>
+<p>客户端发送一条向服务端的TCP连接，客户端向服务端发送测试消息，服务端用证书进行回应，客户端获取服务端的公钥，并随机生成的通信主密钥MS，然后将MS用公钥加密后发送给服务端。这样双方就共享了密钥MS。</p>
+<p><strong>密钥导出</strong></p>
+<p>通信双方用同样的方法生成如下四个密钥：</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128181036278.png" alt="image-20230128181036278"></p>
+<p>发送方将内容和MB进行级联之后做哈希，这样生成一个mac</p>
+<p><strong>数据传输</strong></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128203528411.png" alt="image-20230128203528411"></p>
 
     
 
@@ -317,7 +326,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://wynneyin.site/2022/10/21/Maki——费曼学习法/" title="Maki——费曼学习法" target="_blank">http://wynneyin.site/2022/10/21/Maki——费曼学习法/</a>
+          <a href="http://wynneyin.site/2023/01/28/SSL协议/" title="ssl" target="_blank">http://wynneyin.site/2023/01/28/SSL协议/</a>
         </li>
         
         <li>
@@ -339,7 +348,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Maki</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全协议</a>
         		</li>
       		
 		</ul>
@@ -395,7 +404,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://wynneyin.site/2022/10/21/Maki%E2%80%94%E2%80%94%E8%B4%B9%E6%9B%BC%E5%AD%A6%E4%B9%A0%E6%B3%95/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://wynneyin.site/2023/01/28/SSL%E5%8D%8F%E8%AE%AE/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -410,18 +419,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/10/21/%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/01/29/2023-1-29-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          特征值
+          算法复习
         
       </div>
     </a>
   
   
-    <a href="/2022/10/21/%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">第一</div>
+    <a href="/2023/01/25/2023-1-25-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">机器学习复习</div>
       <i class="icon-circle-right"></i>
     </a>
   
