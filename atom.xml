@@ -179,29 +179,6 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://wynneyin.site/2023/01/09/%E4%B8%83%E6%9C%AF%E6%89%93%E9%A9%AC/"/>
-    <id>http://wynneyin.site/2023/01/09/%E4%B8%83%E6%9C%AF%E6%89%93%E9%A9%AC/</id>
-    <published>2023-01-09T07:22:40.994Z</published>
-    <updated>2023-01-26T08:52:38.414Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>七术打马</strong></p><p>中国坚持不能骗自己。没有人喜欢拍马屁。中国人喜欢听恭维话，当面讲实在话都死的很惨。</p><p>讲话加入适当的恭维。同样一句话要让人听得进去。中国人沟通中主义立场，外国人注意内容。</p><p>中国人爱面子</p><p>中国人是上面认错，不是下面认错。</p><p>不能拍马屁，但是要把话讲的好听一点。</p><p>心坏没有人知道嘴巴坏都知道。</p><p><strong>人们会为你做任何事情，只要你:</strong></p><p>鼓励他们的梦想</p><p>摆脱他们的过错</p><p>减轻他们的恐惧</p><p>肯定他们的推测</p><p>攻击他们的敌人</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;strong&gt;七术打马&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;中国坚持不能骗自己。没有人喜欢拍马屁。中国人喜欢听恭维话，当面讲实在话都死的很惨。&lt;/p&gt;
-&lt;p&gt;讲话加入适当的恭维。同样一句话要让人听得进去。中国人沟通中主义立场，外国人注意内容。&lt;/p&gt;
-&lt;p&gt;中国人爱面子&lt;/p</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>*args和*kwargs</title>
     <link href="http://wynneyin.site/2023/01/09/202319-args-%E5%92%8Ckwargs/"/>
     <id>http://wynneyin.site/2023/01/09/202319-args-%E5%92%8Ckwargs/</id>
@@ -408,6 +385,25 @@
     
     
     <summary type="html">&lt;h1 id=&quot;生日攻击&quot;&gt;&lt;a href=&quot;#生日攻击&quot; class=&quot;headerlink&quot; title=&quot;生日攻击&quot;&gt;&lt;/a&gt;生日攻击&lt;/h1&gt;</summary>
+    
+    
+    
+    
+    <category term="密码分析学" scheme="http://wynneyin.site/tags/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>积分攻击</title>
+    <link href="http://wynneyin.site/2022/10/21/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6%E7%A7%AF%E5%88%86%E6%94%BB%E5%87%BB/"/>
+    <id>http://wynneyin.site/2022/10/21/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6%E7%A7%AF%E5%88%86%E6%94%BB%E5%87%BB/</id>
+    <published>2022-10-21T05:49:45.000Z</published>
+    <updated>2022-12-23T12:11:12.922Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="积分攻击"><a href="#积分攻击" class="headerlink" title="积分攻击"></a>积分攻击</h1><span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192151582.png" alt="image-20221111192151582" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192212762.png" alt="image-20221111192212762" style="zoom:33%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192318383.png" alt="image-20221111192318383" style="zoom:33%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192856206.png" alt="image-20221111192856206" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111193726852.png" alt="image-20221111193726852"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113112959772.png" alt="image-20221113112959772"></p><p>结构体的大小是这个区分器的头部的只需要一个活跃</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113112833278.png" alt="image-20221113112833278"></p><p>头部添加一轮：</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113131249639.png" alt="image-20221113131249639" style="zoom:50%;" /></p><p>复杂度分析：</p><p>数据复杂度：$2^{32}$ 只需要两个结构体</p><p>时间复杂度：16<em>($2^{32} </em> 2^8+$ $2^{32} *2 $)</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113144031598.png" alt="image-20221113144031598" style="zoom: 33%;" /></p><p>)</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113133522854.png" alt="image-20221113133522854" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113133708407.png" alt="image-20221113133708407" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113134000505.png" alt="image-20221113134000505" style="zoom:50%;" /></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;积分攻击&quot;&gt;&lt;a href=&quot;#积分攻击&quot; class=&quot;headerlink&quot; title=&quot;积分攻击&quot;&gt;&lt;/a&gt;积分攻击&lt;/h1&gt;</summary>
     
     
     
