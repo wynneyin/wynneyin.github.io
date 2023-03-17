@@ -10,17 +10,20 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <!-- <meta name="keywords" content="">
-    <meta name="description" content=""> -->
-  
-  <meta property="og:type" content="website">
+  <meta name="description" content="title:差分隐私预备知识tags:差分隐私 date:2023&#x2F;3&#x2F;14差分隐私—-指数机制 指数机制满足ϵ-差分隐私：  分析者选择一个备选回复集合R 分析者指定一个全局敏感度为Δu的评分函数u:D×R→R 指数机制输出r∈R，各个回复的输出概率与下述表达式成正比：   当必须从一个有限集合中选择输出结果，或不能直接在结果上增加噪声时，指数机制就会变得非常有用。 指数机制特点：  无论R中">
+<meta property="og:type" content="article">
 <meta property="og:title" content="wynneblog">
-<meta property="og:url" content="http://wynneyin.site/page/2/index.html">
+<meta property="og:url" content="http://wynneyin.site/2023/03/14/2023314-%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="wynneblog">
+<meta property="og:description" content="title:差分隐私预备知识tags:差分隐私 date:2023&#x2F;3&#x2F;14差分隐私—-指数机制 指数机制满足ϵ-差分隐私：  分析者选择一个备选回复集合R 分析者指定一个全局敏感度为Δu的评分函数u:D×R→R 指数机制输出r∈R，各个回复的输出概率与下述表达式成正比：   当必须从一个有限集合中选择输出结果，或不能直接在结果上增加噪声时，指数机制就会变得非常有用。 指数机制特点：  无论R中">
 <meta property="og:locale">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230314152157201.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230315171405044.png">
+<meta property="article:published_time" content="2023-03-14T09:57:38.137Z">
+<meta property="article:modified_time" content="2023-03-17T05:53:04.033Z">
 <meta property="article:author" content="Wynneyin">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230314152157201.png">
   
     <link rel="alternative" href="/atom.xml" title="wynneblog" type="application/atom+xml">
   
@@ -214,202 +217,117 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-数据库备忘录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/01/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%87%E5%BF%98%E5%BD%95/" target="_blank">数据库备忘录</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/01/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%87%E5%BF%98%E5%BD%95/" class="archive-article-date">
-        <time datetime="2023-01-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>域—一组具有相同数据类型的集合</p>
-<p>笛卡尔积中的每一个元素为元组</p>
-<p>元组的每一个值称为一个分量</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230305193542035.png" alt="image-20230305193542035" style="zoom:50%;" /></p>
-<h1 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h1><p>通过定义外键约束，关系数据库可以保证无法插入无效的数据。即如果<code>classes</code>表不存在<code>id=99</code>的记录，<code>students</code>表就无法插入<code>class_id=99</code>的记录。</p>
-<p>由于外键约束会降低数据库的性能，大部分互联网应用程序为了追求速度，并不设置外键约束，而是仅靠应用程序自身来保证逻辑的正确性。这种情况下，<code>class_id</code>仅仅是一个普通的列，只是它起到了外键的作用而已。</p>
-    
-    <a class="article-more-a" href="/2023/01/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%87%E5%BF%98%E5%BD%95/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/01/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%87%E5%BF%98%E5%BD%95/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2023-1-8-继承和多态" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/01/08/2023-1-8-%E7%BB%A7%E6%89%BF%E5%92%8C%E5%A4%9A%E6%80%81/" target="_blank">继承和多态</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/01/08/2023-1-8-%E7%BB%A7%E6%89%BF%E5%92%8C%E5%A4%9A%E6%80%81/" class="archive-article-date">
-        <time datetime="2023-01-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="Python类—继承和多态"><a href="#Python类—继承和多态" class="headerlink" title="Python类—继承和多态"></a>Python类—继承和多态</h1>
-    
-    <a class="article-more-a" href="/2023/01/08/2023-1-8-%E7%BB%A7%E6%89%BF%E5%92%8C%E5%A4%9A%E6%80%81/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/01/08/2023-1-8-%E7%BB%A7%E6%89%BF%E5%92%8C%E5%A4%9A%E6%80%81/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-百年激进" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-2023314-差分隐私预备知识" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
   <div class="article-entry" itemprop="articleBody">
     
     <hr>
-<p>title:百年激进<br>date:2022/12/23</p>
-<h2 id="tags-温铁军文集"><a href="#tags-温铁军文集" class="headerlink" title="tags:温铁军文集"></a>tags:温铁军文集</h2>
-    
+<p>title:差分隐私预备知识<br>tags:差分隐私</p>
+<h2 id="date-2023-3-14"><a href="#date-2023-3-14" class="headerlink" title="date:2023/3/14"></a>date:2023/3/14</h2><p>差分隐私—-指数机制</p>
+<p>指数机制满足ϵ-差分隐私：</p>
+<ol>
+<li>分析者选择一个备选回复集合R</li>
+<li>分析者指定一个全局敏感度为Δu的评分函数u:D×R→R</li>
+<li>指数机制输出r∈R，各个回复的输出概率与下述表达式成正比：</li>
+</ol>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230314152157201.png" alt="image-20230314152157201" style="zoom:50%;" /></p>
+<p><strong>当必须从一个有限集合中选择输出结果，或不能直接在结果上增加噪声时，指数机制就会变得非常有用。</strong></p>
+<p>指数机制特点：</p>
+<ol>
+<li>无论R中包含多少个备选输出，指数机制的隐私消耗量仍然为ϵ。</li>
+<li>指数机制代表了ϵ-差分隐私的”基本机制”：通过选择适当的评分函数u，所有其他的ϵ-差分隐私机制都可以用指数机制定义。</li>
+<li>无论R是有限集合还是无限集合，均可应用指数机制。</li>
+</ol>
+<p>指数机制仅发布<strong>最大噪声分数所对应的元素</strong>，但不发布最大噪声分数本身，也不会发布其他元素的噪声分数。</p>
+<p><strong>隐私预算：</strong></p>
+<p>隐私预算则是限制差分隐私算法中添加噪声的强度的一个指标，通常用 ε 或 δ 来表示。隐私预算越小，差分隐私算法添加的噪声就会越大，隐私保护效果会更好，但是查询结果的准确性也会受到影响。隐私预算越大，差分隐私算法添加的噪声就会越小，查询结果的准确性会更高，但是隐私保护效果会相对较差。因此，合理地设置隐私预算，可以在保证隐私保护效果的前提下，尽可能地保持查询结果的准确性。</p>
+<p><strong>敏感度:</strong></p>
+<p>在差分隐私中，我们需要限制查询结果的灵敏度，以保护数据的隐私性。灵敏度可以理解为查询函数的输出结果对输入数据的微小变化的敏感程度。因此，我们需要确定查询函数的灵敏度，才能确定添加的噪声量，从而使查询结果符合差分隐私的保护要求。询函数的灵敏度是差分隐私的核心问题，因为它直接影响噪声的添加量和查询结果的准确性。如果灵敏度设置得太低，可能导致查询结果不够精确；而如果灵敏度设置得太高，则可能无法达到差分隐私的保护要求。</p>
+<p><strong>差分隐私的基本组合定理：</strong></p>
+<p>Let 𝑀 be an adaptive composition of 𝑀1, …, 𝑀𝑘 , where each 𝑀𝑖 is 𝜀𝑖 -differential private, then mechanism 𝑀 is $ \sum_{i}^{k} \epsilon$ )-differential private</p>
+<p>下邻域的最优性：限制邻域以获得user-DP下的最优性</p>
+<p><strong>User-DP</strong> 是基于个体隐私保护的概念，它衡量的是在个体隐私保护的前提下，一个攻击者可以通过查询数据集来获得多少关于单个用户的隐私信息。在 User-DP 的定义中，查询会接收一个用户数据集和另一个相似的用户数据集，通过比较这两个数据集的输出结果，来检测是否能够确定一个特定的用户是否参与了数据集的构建。</p>
+<p><strong>Tuple-DP</strong> 是基于整体隐私保护的概念，它衡量的是在整体隐私保护的前提下，一个攻击者可以从查询结果中获得多少关于数据集的整体信息。Tuple-DP 是对于查询结果的输出值进行处理，使得不同的输出值之间的差异不超过一定的阈值，从而保证查询结果的隐私性。</p>
+<h3 id="如何通过局部敏感度来实现差分隐私："><a href="#如何通过局部敏感度来实现差分隐私：" class="headerlink" title="如何通过局部敏感度来实现差分隐私："></a>如何通过局部敏感度来实现差分隐私：</h3><h4 id="建议-测试-发布”框架"><a href="#建议-测试-发布”框架" class="headerlink" title="建议-测试-发布”框架"></a>建议-测试-发布”框架</h4><p>因为一个函数局部敏感度的全局敏感度是无上界的。</p>
+<ul>
+<li>该框架首先询问数据分析者函数的<em>建议</em>（Propose）局部敏感度上界。</li>
+<li>随后，该框架执行满足差分隐私的<em>测试</em>（Test），检验所问询的数据集是否”远离”了局部敏感度高于建议边界的数据集。</li>
+<li>如果测试通过，该框架<em>发布</em>（Release）噪声结果，并将噪声量校准到建议的边界。</li>
+</ul>
+<p>为了回答一个数据集是否”远离”了有着更高局部敏感度数据集的问题，我们定义k<em>距离局部敏感度</em>的概念。</p>
+<p>定义”建议-测试-发布”框架（详见<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1407.2988">Barthe等人的论文</a>，图10），其满足(ϵ,δ)-差分隐私性：</p>
+<ol>
+<li>建议一个局部敏感度的目标边界b。</li>
+<li>如果$D(f, x, b) + \mathsf{Lap}(\frac{1}{\epsilon}) &lt; \frac{\log(2/\delta)}{2\epsilon}$，返回⊥。</li>
+<li>否则，返回$f(x)+Lap(\frac{b}{\epsilon})$</li>
+</ol>
+<p>逆敏感度</p>
+<p>Our work builds on the inverse sensitivity mechanism [4], which we review. Key to the mechanism is the path-length (inverse sensitivity), which, for a target t, measures how many users we must change in x to reach x′ with a target value t  </p>
+<p>​    $\operatorname{len}<em>{f}(\boldsymbol{x} ; t):=\inf </em>{\boldsymbol{x}^{\prime}}\left{d_{\text {ham }}\left(\boldsymbol{x}, \boldsymbol{x}^{\prime}\right) \mid f\left(\boldsymbol{x}^{\prime}\right)=t\right} \text {. }$</p>
+<p>具体而言，它表示了在将 x 变换为一个新的数据集 x’ 时，至少需要修改 x 中多少个元素才能使得 f(x’) = t。该机制通过限制查询结果的灵敏度来保护隐私，其中灵敏度的定义与路径长度函数有关。t是查询函数的返回值</p>
+<p>对 Shifted Inverse: A General Mechanism for Monotonic Functions under User Differential Privacy中部分难理解问题的理解:</p>
+<ol>
+<li><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230315171405044.png" alt="image-20230315171405044"></li>
+</ol>
+<p>对于一个给定的函数f $\epsilon$ 差分隐私机制下的对于  下界为 $\rho$ 距离内的近邻的,机制M的误差界。</p>
 
     
 
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Wynneyin
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://wynneyin.site/2023/03/14/2023314-差分隐私预备知识/" title="" target="_blank">http://wynneyin.site/2023/03/14/2023314-差分隐私预备知识/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
     
 
   </div>
@@ -419,16 +337,76 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/12/23/%E7%99%BE%E5%B9%B4%E6%BF%80%E8%BF%9B/">展开全文 >></a>
-    </p>
+
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://wynneyin.site/2023/03/14/2023314-%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2023/01/29/2023-1-29-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">算法复习</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -449,597 +427,14 @@
 
 
 
-  
-    <article id="post-测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="github代码提交流程"><a href="#github代码提交流程" class="headerlink" title="github代码提交流程"></a>github代码提交流程</h1>
-    
-    <a class="article-more-a" href="/2022/10/21/%E6%B5%8B%E8%AF%95/#more">more >></a>
-    
-    
 
-    
 
-    
 
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
 
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/10/21/%E6%B5%8B%E8%AF%95/">展开全文 >></a>
-    </p>
-    
 
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
-
-
-  
-    <article id="post-古典：" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/10/21/%E5%8F%A4%E5%85%B8%EF%BC%9A/" target="_blank">古典音乐</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/10/21/%E5%8F%A4%E5%85%B8%EF%BC%9A/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>科普兰的音乐欣赏的三个阶段：</p>
-<p>1.美感阶段 2.表达阶段 3.纯音乐阶段</p>
-    
-    <a class="article-more-a" href="/2022/10/21/%E5%8F%A4%E5%85%B8%EF%BC%9A/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">音乐</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/10/21/%E5%8F%A4%E5%85%B8%EF%BC%9A/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-线性分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/10/21/%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90/" target="_blank">线性分析</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/10/21/%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="线性分析"><a href="#线性分析" class="headerlink" title="线性分析"></a>线性分析</h1><p>1.找到S盒的线性近似关系，$α∙u=β∙v且Pr(α∙u=β∙v)=p$。</p>
-<p>2.将这个近似关系向3头尾延伸。</p>
-<p>3.得到了$α∙m⨁α∙k_0=β∙c⨁β∙k_1$  以概率p成立 ,那么$α∙m⨁β∙c=α∙k_0⨁β∙k_1$ 以概率p成立</p>
-<p>4.利用算法一，求解密钥一比特的信息。</p>
-    
-    <a class="article-more-a" href="/2022/10/21/%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码分析学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/10/21/%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-numpy学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/10/21/numpy%E5%AD%A6%E4%B9%A0/" target="_blank">Numpy对维数的理解</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/10/21/numpy%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>对数组的某种特定元素进行操作，例如将小于0的元素变为0，等等。</p>
-    
-    <a class="article-more-a" href="/2022/10/21/numpy%E5%AD%A6%E4%B9%A0/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/10/21/numpy%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-公钥密码系统在区块链中的使用情况" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/10/21/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E5%9C%A8%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/" target="_blank">公钥密码系统在区块链中的使用情况</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/10/21/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E5%9C%A8%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="公钥密码系统在区块链中的使用情况"><a href="#公钥密码系统在区块链中的使用情况" class="headerlink" title="公钥密码系统在区块链中的使用情况"></a>公钥密码系统在区块链中的使用情况</h2><h3 id="什么是比特币钱包？"><a href="#什么是比特币钱包？" class="headerlink" title="什么是比特币钱包？"></a>什么是比特币钱包？</h3><p>比特币钱包用于访问和转移加密货币，钱包内存有私钥。</p>
-    
-    <a class="article-more-a" href="/2022/10/21/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E5%9C%A8%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">区块链</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/10/21/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E5%9C%A8%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-中间相遇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/10/21/%E4%B8%AD%E9%97%B4%E7%9B%B8%E9%81%87/" target="_blank">中间相遇攻击</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/10/21/%E4%B8%AD%E9%97%B4%E7%9B%B8%E9%81%87/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="中间相遇攻击"><a href="#中间相遇攻击" class="headerlink" title="中间相遇攻击"></a>中间相遇攻击</h1>
-    
-    <a class="article-more-a" href="/2022/10/21/%E4%B8%AD%E9%97%B4%E7%9B%B8%E9%81%87/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码分析学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/10/21/%E4%B8%AD%E9%97%B4%E7%9B%B8%E9%81%87/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-广义生日攻击" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/10/21/%E5%B9%BF%E4%B9%89%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/" target="_blank">广义生日攻击</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/10/21/%E5%B9%BF%E4%B9%89%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/" class="archive-article-date">
-        <time datetime="2022-10-21T05:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="生日攻击"><a href="#生日攻击" class="headerlink" title="生日攻击"></a>生日攻击</h1>
-    
-    <a class="article-more-a" href="/2022/10/21/%E5%B9%BF%E4%B9%89%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码分析学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/10/21/%E5%B9%BF%E4%B9%89%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -1079,8 +474,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

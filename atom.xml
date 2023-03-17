@@ -6,7 +6,7 @@
   <link href="http://wynneyin.site/atom.xml" rel="self"/>
   
   <link href="http://wynneyin.site/"/>
-  <updated>2023-03-03T01:35:35.998Z</updated>
+  <updated>2023-03-17T05:53:04.033Z</updated>
   <id>http://wynneyin.site/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://wynneyin.site/2023/03/14/2023314-%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/"/>
+    <id>http://wynneyin.site/2023/03/14/2023314-%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/</id>
+    <published>2023-03-14T09:57:38.137Z</published>
+    <updated>2023-03-17T05:53:04.033Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>title:差分隐私预备知识<br>tags:差分隐私</p><h2 id="date-2023-3-14"><a href="#date-2023-3-14" class="headerlink" title="date:2023/3/14"></a>date:2023/3/14</h2><p>差分隐私—-指数机制</p><p>指数机制满足ϵ-差分隐私：</p><ol><li>分析者选择一个备选回复集合R</li><li>分析者指定一个全局敏感度为Δu的评分函数u:D×R→R</li><li>指数机制输出r∈R，各个回复的输出概率与下述表达式成正比：</li></ol><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230314152157201.png" alt="image-20230314152157201" style="zoom:50%;" /></p><p><strong>当必须从一个有限集合中选择输出结果，或不能直接在结果上增加噪声时，指数机制就会变得非常有用。</strong></p><p>指数机制特点：</p><ol><li>无论R中包含多少个备选输出，指数机制的隐私消耗量仍然为ϵ。</li><li>指数机制代表了ϵ-差分隐私的”基本机制”：通过选择适当的评分函数u，所有其他的ϵ-差分隐私机制都可以用指数机制定义。</li><li>无论R是有限集合还是无限集合，均可应用指数机制。</li></ol><p>指数机制仅发布<strong>最大噪声分数所对应的元素</strong>，但不发布最大噪声分数本身，也不会发布其他元素的噪声分数。</p><p><strong>隐私预算：</strong></p><p>隐私预算则是限制差分隐私算法中添加噪声的强度的一个指标，通常用 ε 或 δ 来表示。隐私预算越小，差分隐私算法添加的噪声就会越大，隐私保护效果会更好，但是查询结果的准确性也会受到影响。隐私预算越大，差分隐私算法添加的噪声就会越小，查询结果的准确性会更高，但是隐私保护效果会相对较差。因此，合理地设置隐私预算，可以在保证隐私保护效果的前提下，尽可能地保持查询结果的准确性。</p><p><strong>敏感度:</strong></p><p>在差分隐私中，我们需要限制查询结果的灵敏度，以保护数据的隐私性。灵敏度可以理解为查询函数的输出结果对输入数据的微小变化的敏感程度。因此，我们需要确定查询函数的灵敏度，才能确定添加的噪声量，从而使查询结果符合差分隐私的保护要求。询函数的灵敏度是差分隐私的核心问题，因为它直接影响噪声的添加量和查询结果的准确性。如果灵敏度设置得太低，可能导致查询结果不够精确；而如果灵敏度设置得太高，则可能无法达到差分隐私的保护要求。</p><p><strong>差分隐私的基本组合定理：</strong></p><p>Let 𝑀 be an adaptive composition of 𝑀1, …, 𝑀𝑘 , where each 𝑀𝑖 is 𝜀𝑖 -differential private, then mechanism 𝑀 is $ \sum_{i}^{k} \epsilon$ )-differential private</p><p>下邻域的最优性：限制邻域以获得user-DP下的最优性</p><p><strong>User-DP</strong> 是基于个体隐私保护的概念，它衡量的是在个体隐私保护的前提下，一个攻击者可以通过查询数据集来获得多少关于单个用户的隐私信息。在 User-DP 的定义中，查询会接收一个用户数据集和另一个相似的用户数据集，通过比较这两个数据集的输出结果，来检测是否能够确定一个特定的用户是否参与了数据集的构建。</p><p><strong>Tuple-DP</strong> 是基于整体隐私保护的概念，它衡量的是在整体隐私保护的前提下，一个攻击者可以从查询结果中获得多少关于数据集的整体信息。Tuple-DP 是对于查询结果的输出值进行处理，使得不同的输出值之间的差异不超过一定的阈值，从而保证查询结果的隐私性。</p><h3 id="如何通过局部敏感度来实现差分隐私："><a href="#如何通过局部敏感度来实现差分隐私：" class="headerlink" title="如何通过局部敏感度来实现差分隐私："></a>如何通过局部敏感度来实现差分隐私：</h3><h4 id="建议-测试-发布”框架"><a href="#建议-测试-发布”框架" class="headerlink" title="建议-测试-发布”框架"></a>建议-测试-发布”框架</h4><p>因为一个函数局部敏感度的全局敏感度是无上界的。</p><ul><li>该框架首先询问数据分析者函数的<em>建议</em>（Propose）局部敏感度上界。</li><li>随后，该框架执行满足差分隐私的<em>测试</em>（Test），检验所问询的数据集是否”远离”了局部敏感度高于建议边界的数据集。</li><li>如果测试通过，该框架<em>发布</em>（Release）噪声结果，并将噪声量校准到建议的边界。</li></ul><p>为了回答一个数据集是否”远离”了有着更高局部敏感度数据集的问题，我们定义k<em>距离局部敏感度</em>的概念。</p><p>定义”建议-测试-发布”框架（详见<a href="https://arxiv.org/abs/1407.2988">Barthe等人的论文</a>，图10），其满足(ϵ,δ)-差分隐私性：</p><ol><li>建议一个局部敏感度的目标边界b。</li><li>如果$D(f, x, b) + \mathsf{Lap}(\frac{1}{\epsilon}) &lt; \frac{\log(2/\delta)}{2\epsilon}$，返回⊥。</li><li>否则，返回$f(x)+Lap(\frac{b}{\epsilon})$</li></ol><p>逆敏感度</p><p>Our work builds on the inverse sensitivity mechanism [4], which we review. Key to the mechanism is the path-length (inverse sensitivity), which, for a target t, measures how many users we must change in x to reach x′ with a target value t  </p><p>​    $\operatorname{len}<em>{f}(\boldsymbol{x} ; t):=\inf </em>{\boldsymbol{x}^{\prime}}\left{d_{\text {ham }}\left(\boldsymbol{x}, \boldsymbol{x}^{\prime}\right) \mid f\left(\boldsymbol{x}^{\prime}\right)=t\right} \text {. }$</p><p>具体而言，它表示了在将 x 变换为一个新的数据集 x’ 时，至少需要修改 x 中多少个元素才能使得 f(x’) = t。该机制通过限制查询结果的灵敏度来保护隐私，其中灵敏度的定义与路径长度函数有关。t是查询函数的返回值</p><p>对 Shifted Inverse: A General Mechanism for Monotonic Functions under User Differential Privacy中部分难理解问题的理解:</p><ol><li><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230315171405044.png" alt="image-20230315171405044"></li></ol><p>对于一个给定的函数f $\epsilon$ 差分隐私机制下的对于  下界为 $\rho$ 距离内的近邻的,机制M的误差界。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;title:差分隐私预备知识&lt;br&gt;tags:差分隐私&lt;/p&gt;
+&lt;h2 id=&quot;date-2023-3-14&quot;&gt;&lt;a href=&quot;#date-2023-3-14&quot; class=&quot;headerlink&quot; title=&quot;date:2023/3/14&quot;&gt;&lt;/a&gt;date</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>算法复习</title>
@@ -386,25 +408,6 @@
     
     
     <summary type="html">&lt;h1 id=&quot;生日攻击&quot;&gt;&lt;a href=&quot;#生日攻击&quot; class=&quot;headerlink&quot; title=&quot;生日攻击&quot;&gt;&lt;/a&gt;生日攻击&lt;/h1&gt;</summary>
-    
-    
-    
-    
-    <category term="密码分析学" scheme="http://wynneyin.site/tags/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>积分攻击</title>
-    <link href="http://wynneyin.site/2022/10/21/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6%E7%A7%AF%E5%88%86%E6%94%BB%E5%87%BB/"/>
-    <id>http://wynneyin.site/2022/10/21/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6%E7%A7%AF%E5%88%86%E6%94%BB%E5%87%BB/</id>
-    <published>2022-10-21T05:49:45.000Z</published>
-    <updated>2022-12-23T12:11:12.922Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="积分攻击"><a href="#积分攻击" class="headerlink" title="积分攻击"></a>积分攻击</h1><span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192151582.png" alt="image-20221111192151582" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192212762.png" alt="image-20221111192212762" style="zoom:33%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192318383.png" alt="image-20221111192318383" style="zoom:33%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192856206.png" alt="image-20221111192856206" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111193726852.png" alt="image-20221111193726852"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113112959772.png" alt="image-20221113112959772"></p><p>结构体的大小是这个区分器的头部的只需要一个活跃</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113112833278.png" alt="image-20221113112833278"></p><p>头部添加一轮：</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113131249639.png" alt="image-20221113131249639" style="zoom:50%;" /></p><p>复杂度分析：</p><p>数据复杂度：$2^{32}$ 只需要两个结构体</p><p>时间复杂度：16<em>($2^{32} </em> 2^8+$ $2^{32} *2 $)</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113144031598.png" alt="image-20221113144031598" style="zoom: 33%;" /></p><p>)</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113133522854.png" alt="image-20221113133522854" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113133708407.png" alt="image-20221113133708407" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113134000505.png" alt="image-20221113134000505" style="zoom:50%;" /></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;积分攻击&quot;&gt;&lt;a href=&quot;#积分攻击&quot; class=&quot;headerlink&quot; title=&quot;积分攻击&quot;&gt;&lt;/a&gt;积分攻击&lt;/h1&gt;</summary>
     
     
     
