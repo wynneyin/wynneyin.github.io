@@ -6,7 +6,7 @@
   <link href="http://wynneyin.site/atom.xml" rel="self"/>
   
   <link href="http://wynneyin.site/"/>
-  <updated>2023-03-20T09:03:25.942Z</updated>
+  <updated>2023-03-20T11:06:50.717Z</updated>
   <id>http://wynneyin.site/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://wynneyin.site/2023/03/20/2023-3-20-Leetcode,997%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/"/>
     <id>http://wynneyin.site/2023/03/20/2023-3-20-Leetcode,997%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</id>
     <published>2023-03-19T16:00:00.000Z</published>
-    <updated>2023-03-20T09:03:25.942Z</updated>
+    <updated>2023-03-20T11:06:50.717Z</updated>
     
     <content type="html"><![CDATA[<h1 id="997有序数组的平方"><a href="#997有序数组的平方" class="headerlink" title="997有序数组的平方"></a>997有序数组的平方</h1><p>给你一个按 <strong>非递减顺序</strong> 排序的整数数组 <code>nums</code>，返回 <strong>每个数字的平方</strong> 组成的新数组，要求也按 <strong>非递减顺序</strong> 排序。</p><p><strong>示例 1：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [-4,-1,0,3,10]</span><br><span class="line">输出：[0,1,9,16,100]</span><br><span class="line">解释：平方后，数组变为 [16,1,0,9,100]</span><br><span class="line">排序后，数组变为 [0,1,9,16,100]</span><br></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [-7,-3,2,3,11]</span><br><span class="line">输出：[4,9,9,49,121]</span><br></pre></td></tr></table></figure><p>方法：在数组的首尾分别设置一个指针，头尾指针分别念从前和从后探测，因为绝对值大的数字都在数组的两侧，那么经过对比把比较大的数筛选出来放到result数组中，一直比较到头指针大于尾指针。</p><p><strong>第一遍提交没过</strong>：因为将截至条件设置为了头指针大于等于尾指针，这样会漏掉中间的那个数。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> length=nums.<span class="built_in">size</span>();</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">result</span><span class="params">(length,<span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="type">int</span> k=length<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span> ,j=nums.<span class="built_in">size</span>()<span class="number">-1</span> ;i&lt;nums.<span class="built_in">size</span>();) <span class="comment">///双指针探测 复杂度O(n)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> pre=nums[i]*nums[i];</span><br><span class="line">        <span class="type">int</span> las=nums[j]*nums[j];</span><br><span class="line">        <span class="keyword">if</span>(pre&gt;las)</span><br><span class="line">        &#123;</span><br><span class="line">            result[k]=pre;</span><br><span class="line">            k--;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            result[k]=las;</span><br><span class="line">            k--;</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br></pre></td></tr></table></figure><p>当然双指针也可以先找到数组中负数和正数的分界线，复杂度相同。</p>]]></content>
     
@@ -29,6 +29,28 @@
       
       
     <summary type="html">&lt;h1 id=&quot;997有序数组的平方&quot;&gt;&lt;a href=&quot;#997有序数组的平方&quot; class=&quot;headerlink&quot; title=&quot;997有序数组的平方&quot;&gt;&lt;/a&gt;997有序数组的平方&lt;/h1&gt;&lt;p&gt;给你一个按 &lt;strong&gt;非递减顺序&lt;/strong&gt; 排序的整数数组 &lt;</summary>
+      
+    
+    
+    
+    
+    <category term="leetcode" scheme="http://wynneyin.site/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>3无重复字符的最长子串</title>
+    <link href="http://wynneyin.site/2023/03/20/2023-3-20-3.-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/"/>
+    <id>http://wynneyin.site/2023/03/20/2023-3-20-3.-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/</id>
+    <published>2023-03-19T16:00:00.000Z</published>
+    <updated>2023-03-20T11:07:30.974Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="无重复字符的最长子串"><a href="#无重复字符的最长子串" class="headerlink" title="无重复字符的最长子串"></a>无重复字符的最长子串</h1><p>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。</p><p><strong>示例 1:</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;abcabcbb&quot;</span><br><span class="line">输出: 3 </span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;abc&quot;，所以其长度为 3。</span><br></pre></td></tr></table></figure><p><strong>示例 2:</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;bbbbb&quot;</span><br><span class="line">输出: 1</span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;b&quot;，所以其长度为 1。</span><br></pre></td></tr></table></figure><p><strong>示例 3:</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;pwwkew&quot;</span><br><span class="line">输出: 3</span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;wke&quot;，所以其长度为 3。</span><br><span class="line">     请注意，你的答案必须是 子串 的长度，&quot;pwke&quot; 是一个子序列，不是子串。</span><br></pre></td></tr></table></figure><p>思路: 利用滑动窗口，两个指针right和left作为窗口的左边和右边，开始右边逐渐扩大，增大窗口，利用map得到每个字母出现的次数，如果出现次数大于2那么就发生重复，下一步是收缩窗口收缩的标准为窗口的右边大于1，那么左边窗口移动，一直到窗口内无重复元素就停止，并返回窗口的大小。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">char</span>,<span class="type">int</span>&gt; window;</span><br><span class="line">        <span class="type">int</span> left=<span class="number">0</span>,right=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(right&lt;s.<span class="built_in">size</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">char</span> c=s[right];</span><br><span class="line">            right++;</span><br><span class="line">            window[c]++;</span><br><span class="line">         </span><br><span class="line">         <span class="keyword">while</span>(window[c]&gt;<span class="number">1</span>)</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="type">char</span> d=s[left];</span><br><span class="line">             left++;</span><br><span class="line">             window[d]--;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         res=<span class="built_in">max</span>(res,right-left);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p><strong>为什么要用unordered_map:</strong></p><ul><li>unordered_map查询单个key的时候效率比map高，但是要查询某一范围内的key值时比map效率低。</li></ul><p><strong>内部实现机理</strong> :</p><ul><li><strong>map</strong>： map内部实现了一个红黑树，该结构具有自动排序的功能，因此map内部的所有元素都是有序的，红黑树的每一个节点都代表着map的一个元素，因此，对于map进行的查找，删除，添加等一系列的操作都相当于是对红黑树进行这样的操作，故红黑树的效率决定了map的效率。</li><li><strong>unordered_map</strong>: unordered_map内部实现了一个哈希表，因此其元素的排列顺序是杂乱的，无序的</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;无重复字符的最长子串&quot;&gt;&lt;a href=&quot;#无重复字符的最长子串&quot; class=&quot;headerlink&quot; title=&quot;无重复字符的最长子串&quot;&gt;&lt;/a&gt;无重复字符的最长子串&lt;/h1&gt;&lt;p&gt;给定一个字符串 &lt;code&gt;s&lt;/code&gt; ，请你找出其中不含有重复字符的</summary>
       
     
     
@@ -389,25 +411,6 @@
     
     
     <summary type="html">&lt;h1 id=&quot;中间相遇攻击&quot;&gt;&lt;a href=&quot;#中间相遇攻击&quot; class=&quot;headerlink&quot; title=&quot;中间相遇攻击&quot;&gt;&lt;/a&gt;中间相遇攻击&lt;/h1&gt;</summary>
-    
-    
-    
-    
-    <category term="密码分析学" scheme="http://wynneyin.site/tags/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>广义生日攻击</title>
-    <link href="http://wynneyin.site/2022/10/21/%E5%B9%BF%E4%B9%89%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/"/>
-    <id>http://wynneyin.site/2022/10/21/%E5%B9%BF%E4%B9%89%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/</id>
-    <published>2022-10-21T05:49:45.000Z</published>
-    <updated>2022-12-23T12:03:02.902Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="生日攻击"><a href="#生日攻击" class="headerlink" title="生日攻击"></a>生日攻击</h1><span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113193457882.png" alt="image-20221113193457882" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113194835376.png" alt="image-20221113194835376" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113200047841.png" alt="image-20221113200047841" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113201709621.png" alt="image-20221113201709621" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221114152359433.png" alt="image-20221114144917338" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221114151145990.png" alt="image-20221114151145990" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221114144917338.png" alt="image-20221114152359433" style="zoom:50%;" /></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;生日攻击&quot;&gt;&lt;a href=&quot;#生日攻击&quot; class=&quot;headerlink&quot; title=&quot;生日攻击&quot;&gt;&lt;/a&gt;生日攻击&lt;/h1&gt;</summary>
     
     
     
