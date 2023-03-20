@@ -6,7 +6,7 @@
   <link href="http://wynneyin.site/atom.xml" rel="self"/>
   
   <link href="http://wynneyin.site/"/>
-  <updated>2023-03-03T01:35:35.998Z</updated>
+  <updated>2023-03-20T09:03:25.942Z</updated>
   <id>http://wynneyin.site/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>997有序数组的平方</title>
+    <link href="http://wynneyin.site/2023/03/20/2023-3-20-Leetcode,997%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/"/>
+    <id>http://wynneyin.site/2023/03/20/2023-3-20-Leetcode,997%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</id>
+    <published>2023-03-19T16:00:00.000Z</published>
+    <updated>2023-03-20T09:03:25.942Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="997有序数组的平方"><a href="#997有序数组的平方" class="headerlink" title="997有序数组的平方"></a>997有序数组的平方</h1><p>给你一个按 <strong>非递减顺序</strong> 排序的整数数组 <code>nums</code>，返回 <strong>每个数字的平方</strong> 组成的新数组，要求也按 <strong>非递减顺序</strong> 排序。</p><p><strong>示例 1：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [-4,-1,0,3,10]</span><br><span class="line">输出：[0,1,9,16,100]</span><br><span class="line">解释：平方后，数组变为 [16,1,0,9,100]</span><br><span class="line">排序后，数组变为 [0,1,9,16,100]</span><br></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [-7,-3,2,3,11]</span><br><span class="line">输出：[4,9,9,49,121]</span><br></pre></td></tr></table></figure><p>方法：在数组的首尾分别设置一个指针，头尾指针分别念从前和从后探测，因为绝对值大的数字都在数组的两侧，那么经过对比把比较大的数筛选出来放到result数组中，一直比较到头指针大于尾指针。</p><p><strong>第一遍提交没过</strong>：因为将截至条件设置为了头指针大于等于尾指针，这样会漏掉中间的那个数。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> length=nums.<span class="built_in">size</span>();</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">result</span><span class="params">(length,<span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="type">int</span> k=length<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span> ,j=nums.<span class="built_in">size</span>()<span class="number">-1</span> ;i&lt;nums.<span class="built_in">size</span>();) <span class="comment">///双指针探测 复杂度O(n)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> pre=nums[i]*nums[i];</span><br><span class="line">        <span class="type">int</span> las=nums[j]*nums[j];</span><br><span class="line">        <span class="keyword">if</span>(pre&gt;las)</span><br><span class="line">        &#123;</span><br><span class="line">            result[k]=pre;</span><br><span class="line">            k--;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            result[k]=las;</span><br><span class="line">            k--;</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br></pre></td></tr></table></figure><p>当然双指针也可以先找到数组中负数和正数的分界线，复杂度相同。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;997有序数组的平方&quot;&gt;&lt;a href=&quot;#997有序数组的平方&quot; class=&quot;headerlink&quot; title=&quot;997有序数组的平方&quot;&gt;&lt;/a&gt;997有序数组的平方&lt;/h1&gt;&lt;p&gt;给你一个按 &lt;strong&gt;非递减顺序&lt;/strong&gt; 排序的整数数组 &lt;</summary>
+      
+    
+    
+    
+    
+    <category term="leetcode" scheme="http://wynneyin.site/tags/leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>算法复习</title>
@@ -386,25 +408,6 @@
     
     
     <summary type="html">&lt;h1 id=&quot;生日攻击&quot;&gt;&lt;a href=&quot;#生日攻击&quot; class=&quot;headerlink&quot; title=&quot;生日攻击&quot;&gt;&lt;/a&gt;生日攻击&lt;/h1&gt;</summary>
-    
-    
-    
-    
-    <category term="密码分析学" scheme="http://wynneyin.site/tags/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>积分攻击</title>
-    <link href="http://wynneyin.site/2022/10/21/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6%E7%A7%AF%E5%88%86%E6%94%BB%E5%87%BB/"/>
-    <id>http://wynneyin.site/2022/10/21/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6%E7%A7%AF%E5%88%86%E6%94%BB%E5%87%BB/</id>
-    <published>2022-10-21T05:49:45.000Z</published>
-    <updated>2022-12-23T12:11:12.922Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="积分攻击"><a href="#积分攻击" class="headerlink" title="积分攻击"></a>积分攻击</h1><span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192151582.png" alt="image-20221111192151582" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192212762.png" alt="image-20221111192212762" style="zoom:33%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192318383.png" alt="image-20221111192318383" style="zoom:33%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111192856206.png" alt="image-20221111192856206" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221111193726852.png" alt="image-20221111193726852"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113112959772.png" alt="image-20221113112959772"></p><p>结构体的大小是这个区分器的头部的只需要一个活跃</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113112833278.png" alt="image-20221113112833278"></p><p>头部添加一轮：</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113131249639.png" alt="image-20221113131249639" style="zoom:50%;" /></p><p>复杂度分析：</p><p>数据复杂度：$2^{32}$ 只需要两个结构体</p><p>时间复杂度：16<em>($2^{32} </em> 2^8+$ $2^{32} *2 $)</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113144031598.png" alt="image-20221113144031598" style="zoom: 33%;" /></p><p>)</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113133522854.png" alt="image-20221113133522854" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113133708407.png" alt="image-20221113133708407" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113134000505.png" alt="image-20221113134000505" style="zoom:50%;" /></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;积分攻击&quot;&gt;&lt;a href=&quot;#积分攻击&quot; class=&quot;headerlink&quot; title=&quot;积分攻击&quot;&gt;&lt;/a&gt;积分攻击&lt;/h1&gt;</summary>
     
     
     
