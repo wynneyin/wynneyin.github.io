@@ -229,6 +229,255 @@
             
 
   
+    <article id="post-2023-3-25-联合云论文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    <hr>
+<p>title:联合云论文<br>tags:云数据安全</p>
+<h2 id="date-2023-3-25"><a href="#date-2023-3-25" class="headerlink" title="date:2023-3-25"></a>date:2023-3-25</h2><h1 id="JointCloud-A-Cross-Cloud-Cooperation-Architecture-for-Integrated-Internet-Service-Customization"><a href="#JointCloud-A-Cross-Cloud-Cooperation-Architecture-for-Integrated-Internet-Service-Customization" class="headerlink" title="JointCloud: A Cross-Cloud Cooperation Architecture for Integrated Internet Service Customization"></a>JointCloud: A Cross-Cloud Cooperation Architecture for Integrated Internet Service Customization</h1><p>联合云</p>
+<p>初步设计：对等合作机制PCM</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230325103103358.png" alt="image-20230325103103358" style="zoom:80%;" /></p>
+<p><strong>资源面板</strong>包含各种软件定义的资源。</p>
+<p><strong>控制面板</strong>管理各种软件定义的资源并处理云之间的存储和计算通信细节</p>
+<p><strong>业务面板</strong>处理云之间的协作</p>
+<h2 id="联合云通信"><a href="#联合云通信" class="headerlink" title="联合云通信"></a>联合云通信</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230325104721655.png" alt="image-20230325104721655" style="zoom:80%;" /></p>
+<p>控制面板管理多个云提供商之间的互连，并配置资源面板以构建云际网络。</p>
+<p>业务面板处理高级协调，如资源供应和服务整合。</p>
+<p>信息面板促进了单个云内的通信以及与 JCCE 的交互</p>
+<p>云与云之间的计费运行在JCCE管理的分布式账本上</p>
+<h2 id="联合云存储"><a href="#联合云存储" class="headerlink" title="联合云存储"></a>联合云存储</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230325105426651.png" alt="image-20230325105426651" style="zoom:80%;" /></p>
+<p><strong>资源面板</strong>提供了异构存储服务之间的抽象视图。引入了有效的运行时以提供快速且可扩展的命名空间处理和元数据集成</p>
+<p><strong>控制面板</strong>，云节点可以根据本层提供的基本机制和服务相互协调。为了增强跨联合云的存储服务的可扩展性，提出了一种分散和复制的元数据管理协议和机制，具有可配置的细粒度一致性、高效协调和可扩展的消息通信。</p>
+<p><strong>业务面板</strong>提供了联合云存储服务的统一业务视图。云节点之间的共享存储能力可以联合起来形成不同的存储池，提供不同的QoS保证。</p>
+<p><strong>信息面板</strong>来收集用户统计数据并在云对等点之间共享。</p>
+<h2 id="联合云计算"><a href="#联合云计算" class="headerlink" title="联合云计算"></a>联合云计算</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230325105910646.png" alt="image-20230325105910646" style="zoom:80%;" /></p>
+<p>资源面板将这些资源划分成资源池</p>
+<p>控制面板可以在资源池上动态分配和管理计算单元控制面板还负责在跨云视图中管理计算单元。它提供了一种跨云迁移机制，并将应用程序状态与平台状态解耦，以提供与 JCCE 的无缝接口。</p>
+<p>业务面板反而提供不同的政策来实施不同的业务模型，包括定价、会计和审计。</p>
+<p>信息面板提供了一套服务，包括资源监控和故障推理机制，以帮助用户定位具体的计算任务失败是哪个云造成的。信息面板还持续监控联合云使用情况并动态平衡云提供商之间的计算工作量。</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/03/25/2023-3-25-%E8%81%94%E5%90%88%E4%BA%91%E8%AE%BA%E6%96%87/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2023-3-24-机密计算的联合云" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/03/24/2023-3-24-%E6%9C%BA%E5%AF%86%E8%AE%A1%E7%AE%97%E7%9A%84%E8%81%94%E5%90%88%E4%BA%91/" target="_blank">机密计算的联合云</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/03/24/2023-3-24-%E6%9C%BA%E5%AF%86%E8%AE%A1%E7%AE%97%E7%9A%84%E8%81%94%E5%90%88%E4%BA%91/" class="archive-article-date">
+        <time datetime="2023-03-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-24</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="迈向具有机密计算的安全联合云"><a href="#迈向具有机密计算的安全联合云" class="headerlink" title="迈向具有机密计算的安全联合云"></a>迈向具有机密计算的安全联合云</h1><p>厂商锁定;厂商锁定是很多云部署的通病。我们都知道一个历史性的IT难题：如果一家企业所使用特定厂商的产品或服务越多，那么它对于这家厂商及其产品服务的依赖性就越高;同样，企业也就越难以变更厂商。</p>
+<h2 id="机密计算的概念"><a href="#机密计算的概念" class="headerlink" title="机密计算的概念"></a>机密计算的概念</h2><p>CC 在基于硬件的可信执行环境 (TEE) 中保护数据和代码。为了实现完整性，CC 对物理内存进行分区，并保证只有授权的实体才能访问特定的内存区域。为了保密，CC 使用硬件增强的内存加密引擎来防止攻击者探测内存内容。</p>
+<p>CC 不可或缺的组成部分是远程证明，它为底层硬件的真实性和当前执行状态提供可验证的证据。</p>
+<p>现有的机密计算的技术：</p>
+<p>英特尔软件防护扩展 (SGX)</p>
+<p>AMD 安全加密虚拟化 (SEV)</p>
+<p>各产品的功能对照图：</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230324151935604.png" alt=""></p>
+<h2 id="当今的云的机密计算"><a href="#当今的云的机密计算" class="headerlink" title="当今的云的机密计算"></a>当今的云的机密计算</h2><h2 id="当前面临的几个问题："><a href="#当前面临的几个问题：" class="headerlink" title="当前面临的几个问题："></a>当前面临的几个问题：</h2><ol>
+<li>云供应商提供各种 CC 抽象。使用一种抽象的 CC 应用程序可能不容易适应另一种抽象，从而导致潜在的供应商锁定。</li>
+<li>云供应商提供类似的 CC 基础设施，但具有不同的假设和方法。</li>
+<li>云供应商提供类似的 CC 基础设施，但具有不同的假设和方法。</li>
+<li>云CC公司因为云CC的巨大市场而蓬勃发展，提供多样化和分式的产品。</li>
+<li>Cloud CC 在 AI/ML、区块链、数据库等热门应用中很受欢迎。</li>
+</ol>
+<h2 id="安全联合云的机遇"><a href="#安全联合云的机遇" class="headerlink" title="安全联合云的机遇"></a>安全联合云的机遇</h2><p>1.为什么联合云需要机密计算</p>
+<p>2.目前的障碍：</p>
+<ol>
+<li>缺乏统一的编程模型</li>
+<li>缺乏联合远程认证机制</li>
+<li>缺乏相同的安全保证</li>
+<li>缺乏对无服务器等云原生计算模型的支持。</li>
+</ol>
+<p>3.如何实现安全的联合云</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">云数据</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/03/24/2023-3-24-%E6%9C%BA%E5%AF%86%E8%AE%A1%E7%AE%97%E7%9A%84%E8%81%94%E5%90%88%E4%BA%91/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2023-3-21-7整数反转" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    <hr>
+<p>title:7整数反转<br>tags:leetcode</p>
+<h2 id="date-2023-3-21"><a href="#date-2023-3-21" class="headerlink" title="date:2023-3-21"></a>date:2023-3-21</h2><h1 id="7整数反转"><a href="#7整数反转" class="headerlink" title="7整数反转"></a>7整数反转</h1><p>给你一个 32 位的有符号整数 <code>x</code> ，返回将 <code>x</code> 中的数字部分反转后的结果。</p>
+<p>如果反转后整数超过 32 位的有符号整数的范围 <code>[−231, 231 − 1]</code> ，就返回 0。</p>
+<p><strong>假设环境不允许存储 64 位整数（有符号或无符号）。</strong></p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：x = 123</span><br><span class="line">输出：321</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：x = -123</span><br><span class="line">输出：-321</span><br></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：x = 120</span><br><span class="line">输出：21</span><br></pre></td></tr></table></figure>
+<p><strong>示例 4：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：x = 0</span><br><span class="line">输出：0</span><br></pre></td></tr></table></figure>
+<p> 思路: </p>
+<p>一个数字abc 要反转为cba 那么必然要先取余来获取余数c然后将abc-&gt;ab ，如此递归直到0。如何生成cba呢？</p>
+<p>res=c res=10(c)+b res=10(10(c)+b)+a</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">reverse</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">       </span><br><span class="line">      <span class="type">long</span> reslut=<span class="number">0</span>;</span><br><span class="line">      <span class="keyword">while</span>(x!=<span class="number">0</span>)</span><br><span class="line">      &#123;</span><br><span class="line">          <span class="type">int</span> res;</span><br><span class="line">          res=x%<span class="number">10</span>; <span class="comment">/////保留出第一个余数</span></span><br><span class="line">          <span class="type">int</span> new_int=reslut*<span class="number">10</span>+res;</span><br><span class="line">          <span class="keyword">if</span>((new_int-res)/<span class="number">10</span>!=reslut)    <span class="comment">////边界检查</span></span><br><span class="line">          &#123;</span><br><span class="line">              <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          x=x/<span class="number">10</span>;   <span class="comment">////x缩小为之前的十分之一丢掉余数</span></span><br><span class="line">          </span><br><span class="line">          reslut=new_int;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">    <span class="keyword">return</span> reslut;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/03/21/2023-3-21-7%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2023-3-20-Leetcode,997有序数组的平方" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -874,274 +1123,9 @@
 
 
   
-    <article id="post-2023-1-13-第四章认证协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/01/13/2023-1-13-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE/" target="_blank">第四章认证协议</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/01/13/2023-1-13-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE/" class="archive-article-date">
-        <time datetime="2023-01-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-13</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="认证协议"><a href="#认证协议" class="headerlink" title="认证协议"></a>认证协议</h1><p>认证：是一个通信过程，通过这个过程，一个实体A （Claimant)可以向另一个实体B(Verifier)证明某种声称的属性。认证协议是安全协议的一种。</p>
-    
-    <a class="article-more-a" href="/2023/01/13/2023-1-13-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全协议</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/01/13/2023-1-13-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2023110-可迭代对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/01/10/2023110-%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1/" target="_blank">可迭代对象</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/01/10/2023110-%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1/" class="archive-article-date">
-        <time datetime="2023-01-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-10</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>可迭代对象：</p>
-<p>python中任意的对象，只要能返回一个迭代器的 –iter–方法，或者支持下标访问的—getiteme—方法。那么就是一个可迭代的对象</p>
-    
-    <a class="article-more-a" href="/2023/01/10/2023110-%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">python进阶</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/01/10/2023110-%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2023110-装饰器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/01/10/2023110-%E8%A3%85%E9%A5%B0%E5%99%A8/" target="_blank">装饰器</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/01/10/2023110-%E8%A3%85%E9%A5%B0%E5%99%A8/" class="archive-article-date">
-        <time datetime="2023-01-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-10</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="一切皆是对象"><a href="#一切皆是对象" class="headerlink" title="一切皆是对象"></a>一切皆是对象</h1><p>在python中函数也可以作为变量传入另一个函数。同时函数也可以成为一个返回值。</p>
-    
-    <a class="article-more-a" href="/2023/01/10/2023110-%E8%A3%85%E9%A5%B0%E5%99%A8/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">python进阶</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/01/10/2023110-%E8%A3%85%E9%A5%B0%E5%99%A8/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1342,6 +1326,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">云数据</a>
               </li>
             
             <div class="clearfix"></div>

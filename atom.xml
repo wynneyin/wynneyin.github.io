@@ -6,7 +6,7 @@
   <link href="http://wynneyin.site/atom.xml" rel="self"/>
   
   <link href="http://wynneyin.site/"/>
-  <updated>2023-03-20T11:06:50.717Z</updated>
+  <updated>2023-03-25T03:18:14.313Z</updated>
   <id>http://wynneyin.site/</id>
   
   <author>
@@ -15,6 +15,72 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://wynneyin.site/2023/03/25/2023-3-25-%E8%81%94%E5%90%88%E4%BA%91%E8%AE%BA%E6%96%87/"/>
+    <id>http://wynneyin.site/2023/03/25/2023-3-25-%E8%81%94%E5%90%88%E4%BA%91%E8%AE%BA%E6%96%87/</id>
+    <published>2023-03-25T03:18:14.313Z</published>
+    <updated>2023-03-25T03:18:14.313Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>title:联合云论文<br>tags:云数据安全</p><h2 id="date-2023-3-25"><a href="#date-2023-3-25" class="headerlink" title="date:2023-3-25"></a>date:2023-3-25</h2><h1 id="JointCloud-A-Cross-Cloud-Cooperation-Architecture-for-Integrated-Internet-Service-Customization"><a href="#JointCloud-A-Cross-Cloud-Cooperation-Architecture-for-Integrated-Internet-Service-Customization" class="headerlink" title="JointCloud: A Cross-Cloud Cooperation Architecture for Integrated Internet Service Customization"></a>JointCloud: A Cross-Cloud Cooperation Architecture for Integrated Internet Service Customization</h1><p>联合云</p><p>初步设计：对等合作机制PCM</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230325103103358.png" alt="image-20230325103103358" style="zoom:80%;" /></p><p><strong>资源面板</strong>包含各种软件定义的资源。</p><p><strong>控制面板</strong>管理各种软件定义的资源并处理云之间的存储和计算通信细节</p><p><strong>业务面板</strong>处理云之间的协作</p><h2 id="联合云通信"><a href="#联合云通信" class="headerlink" title="联合云通信"></a>联合云通信</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230325104721655.png" alt="image-20230325104721655" style="zoom:80%;" /></p><p>控制面板管理多个云提供商之间的互连，并配置资源面板以构建云际网络。</p><p>业务面板处理高级协调，如资源供应和服务整合。</p><p>信息面板促进了单个云内的通信以及与 JCCE 的交互</p><p>云与云之间的计费运行在JCCE管理的分布式账本上</p><h2 id="联合云存储"><a href="#联合云存储" class="headerlink" title="联合云存储"></a>联合云存储</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230325105426651.png" alt="image-20230325105426651" style="zoom:80%;" /></p><p><strong>资源面板</strong>提供了异构存储服务之间的抽象视图。引入了有效的运行时以提供快速且可扩展的命名空间处理和元数据集成</p><p><strong>控制面板</strong>，云节点可以根据本层提供的基本机制和服务相互协调。为了增强跨联合云的存储服务的可扩展性，提出了一种分散和复制的元数据管理协议和机制，具有可配置的细粒度一致性、高效协调和可扩展的消息通信。</p><p><strong>业务面板</strong>提供了联合云存储服务的统一业务视图。云节点之间的共享存储能力可以联合起来形成不同的存储池，提供不同的QoS保证。</p><p><strong>信息面板</strong>来收集用户统计数据并在云对等点之间共享。</p><h2 id="联合云计算"><a href="#联合云计算" class="headerlink" title="联合云计算"></a>联合云计算</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230325105910646.png" alt="image-20230325105910646" style="zoom:80%;" /></p><p>资源面板将这些资源划分成资源池</p><p>控制面板可以在资源池上动态分配和管理计算单元控制面板还负责在跨云视图中管理计算单元。它提供了一种跨云迁移机制，并将应用程序状态与平台状态解耦，以提供与 JCCE 的无缝接口。</p><p>业务面板反而提供不同的政策来实施不同的业务模型，包括定价、会计和审计。</p><p>信息面板提供了一套服务，包括资源监控和故障推理机制，以帮助用户定位具体的计算任务失败是哪个云造成的。信息面板还持续监控联合云使用情况并动态平衡云提供商之间的计算工作量。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;title:联合云论文&lt;br&gt;tags:云数据安全&lt;/p&gt;
+&lt;h2 id=&quot;date-2023-3-25&quot;&gt;&lt;a href=&quot;#date-2023-3-25&quot; class=&quot;headerlink&quot; title=&quot;date:2023-3-25&quot;&gt;&lt;/a&gt;date:2</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>机密计算的联合云</title>
+    <link href="http://wynneyin.site/2023/03/24/2023-3-24-%E6%9C%BA%E5%AF%86%E8%AE%A1%E7%AE%97%E7%9A%84%E8%81%94%E5%90%88%E4%BA%91/"/>
+    <id>http://wynneyin.site/2023/03/24/2023-3-24-%E6%9C%BA%E5%AF%86%E8%AE%A1%E7%AE%97%E7%9A%84%E8%81%94%E5%90%88%E4%BA%91/</id>
+    <published>2023-03-23T16:00:00.000Z</published>
+    <updated>2023-03-24T08:20:54.355Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="迈向具有机密计算的安全联合云"><a href="#迈向具有机密计算的安全联合云" class="headerlink" title="迈向具有机密计算的安全联合云"></a>迈向具有机密计算的安全联合云</h1><p>厂商锁定;厂商锁定是很多云部署的通病。我们都知道一个历史性的IT难题：如果一家企业所使用特定厂商的产品或服务越多，那么它对于这家厂商及其产品服务的依赖性就越高;同样，企业也就越难以变更厂商。</p><h2 id="机密计算的概念"><a href="#机密计算的概念" class="headerlink" title="机密计算的概念"></a>机密计算的概念</h2><p>CC 在基于硬件的可信执行环境 (TEE) 中保护数据和代码。为了实现完整性，CC 对物理内存进行分区，并保证只有授权的实体才能访问特定的内存区域。为了保密，CC 使用硬件增强的内存加密引擎来防止攻击者探测内存内容。</p><p>CC 不可或缺的组成部分是远程证明，它为底层硬件的真实性和当前执行状态提供可验证的证据。</p><p>现有的机密计算的技术：</p><p>英特尔软件防护扩展 (SGX)</p><p>AMD 安全加密虚拟化 (SEV)</p><p>各产品的功能对照图：</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230324151935604.png" alt=""></p><h2 id="当今的云的机密计算"><a href="#当今的云的机密计算" class="headerlink" title="当今的云的机密计算"></a>当今的云的机密计算</h2><h2 id="当前面临的几个问题："><a href="#当前面临的几个问题：" class="headerlink" title="当前面临的几个问题："></a>当前面临的几个问题：</h2><ol><li>云供应商提供各种 CC 抽象。使用一种抽象的 CC 应用程序可能不容易适应另一种抽象，从而导致潜在的供应商锁定。</li><li>云供应商提供类似的 CC 基础设施，但具有不同的假设和方法。</li><li>云供应商提供类似的 CC 基础设施，但具有不同的假设和方法。</li><li>云CC公司因为云CC的巨大市场而蓬勃发展，提供多样化和分式的产品。</li><li>Cloud CC 在 AI/ML、区块链、数据库等热门应用中很受欢迎。</li></ol><h2 id="安全联合云的机遇"><a href="#安全联合云的机遇" class="headerlink" title="安全联合云的机遇"></a>安全联合云的机遇</h2><p>1.为什么联合云需要机密计算</p><p>2.目前的障碍：</p><ol><li>缺乏统一的编程模型</li><li>缺乏联合远程认证机制</li><li>缺乏相同的安全保证</li><li>缺乏对无服务器等云原生计算模型的支持。</li></ol><p>3.如何实现安全的联合云</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;迈向具有机密计算的安全联合云&quot;&gt;&lt;a href=&quot;#迈向具有机密计算的安全联合云&quot; class=&quot;headerlink&quot; title=&quot;迈向具有机密计算的安全联合云&quot;&gt;&lt;/a&gt;迈向具有机密计算的安全联合云&lt;/h1&gt;&lt;p&gt;厂商锁定;厂商锁定是很多云部署的通病。我们都</summary>
+      
+    
+    
+    
+    
+    <category term="云数据" scheme="http://wynneyin.site/tags/%E4%BA%91%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://wynneyin.site/2023/03/21/2023-3-21-7%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/"/>
+    <id>http://wynneyin.site/2023/03/21/2023-3-21-7%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/</id>
+    <published>2023-03-21T14:13:06.905Z</published>
+    <updated>2023-03-22T08:18:15.767Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>title:7整数反转<br>tags:leetcode</p><h2 id="date-2023-3-21"><a href="#date-2023-3-21" class="headerlink" title="date:2023-3-21"></a>date:2023-3-21</h2><h1 id="7整数反转"><a href="#7整数反转" class="headerlink" title="7整数反转"></a>7整数反转</h1><p>给你一个 32 位的有符号整数 <code>x</code> ，返回将 <code>x</code> 中的数字部分反转后的结果。</p><p>如果反转后整数超过 32 位的有符号整数的范围 <code>[−231, 231 − 1]</code> ，就返回 0。</p><p><strong>假设环境不允许存储 64 位整数（有符号或无符号）。</strong></p><p><strong>示例 1：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：x = 123</span><br><span class="line">输出：321</span><br></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：x = -123</span><br><span class="line">输出：-321</span><br></pre></td></tr></table></figure><p><strong>示例 3：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：x = 120</span><br><span class="line">输出：21</span><br></pre></td></tr></table></figure><p><strong>示例 4：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：x = 0</span><br><span class="line">输出：0</span><br></pre></td></tr></table></figure><p> 思路: </p><p>一个数字abc 要反转为cba 那么必然要先取余来获取余数c然后将abc-&gt;ab ，如此递归直到0。如何生成cba呢？</p><p>res=c res=10(c)+b res=10(10(c)+b)+a</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">reverse</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">       </span><br><span class="line">      <span class="type">long</span> reslut=<span class="number">0</span>;</span><br><span class="line">      <span class="keyword">while</span>(x!=<span class="number">0</span>)</span><br><span class="line">      &#123;</span><br><span class="line">          <span class="type">int</span> res;</span><br><span class="line">          res=x%<span class="number">10</span>; <span class="comment">/////保留出第一个余数</span></span><br><span class="line">          <span class="type">int</span> new_int=reslut*<span class="number">10</span>+res;</span><br><span class="line">          <span class="keyword">if</span>((new_int-res)/<span class="number">10</span>!=reslut)    <span class="comment">////边界检查</span></span><br><span class="line">          &#123;</span><br><span class="line">              <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          x=x/<span class="number">10</span>;   <span class="comment">////x缩小为之前的十分之一丢掉余数</span></span><br><span class="line">          </span><br><span class="line">          reslut=new_int;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">    <span class="keyword">return</span> reslut;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;title:7整数反转&lt;br&gt;tags:leetcode&lt;/p&gt;
+&lt;h2 id=&quot;date-2023-3-21&quot;&gt;&lt;a href=&quot;#date-2023-3-21&quot; class=&quot;headerlink&quot; title=&quot;date:2023-3-21&quot;&gt;&lt;/a&gt;dat</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>997有序数组的平方</title>
@@ -354,63 +420,6 @@
 &lt;p&gt;2.将这个近似关系向3头尾延伸。&lt;/p&gt;
 &lt;p&gt;3.得到了$α∙m⨁α∙k_0=β∙c⨁β∙k_1$  以概率p成立 ,那么$α∙m⨁β∙c=α∙k_0⨁β∙k_1$ 以概率p成立&lt;/p&gt;
 &lt;p&gt;4.利用算法一，求解密钥一比特的信息。&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="密码分析学" scheme="http://wynneyin.site/tags/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Numpy对维数的理解</title>
-    <link href="http://wynneyin.site/2022/10/21/numpy%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://wynneyin.site/2022/10/21/numpy%E5%AD%A6%E4%B9%A0/</id>
-    <published>2022-10-21T05:49:45.000Z</published>
-    <updated>2022-12-23T12:05:32.379Z</updated>
-    
-    <content type="html"><![CDATA[<p>对数组的某种特定元素进行操作，例如将小于0的元素变为0，等等。</p><span id="more"></span><p>例如：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=np.where(a != <span class="number">0</span>, a, <span class="number">0.00001</span>)<span class="comment">#####将数组中为0的元素替换为0.00001</span></span><br></pre></td></tr></table></figure><p>numpy.concatenate()</p><p>numpy.clip(a, a_min, a_max, out=None)[source]</p><p>clip这个函数将将数组中的元素限制在a_min, a_max之间，大于a_max的就使得它等于 a_max，小于a_min,的就使得它等于a_min。</p><p>numpy数组维度的理解</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page3.jpg" alt="Page1"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page2.jpg" alt="Page2"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/Page1.jpg" alt="Page3"></p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;对数组的某种特定元素进行操作，例如将小于0的元素变为0，等等。&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="机器学习" scheme="http://wynneyin.site/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>公钥密码系统在区块链中的使用情况</title>
-    <link href="http://wynneyin.site/2022/10/21/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E5%9C%A8%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/"/>
-    <id>http://wynneyin.site/2022/10/21/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E5%9C%A8%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/</id>
-    <published>2022-10-21T05:49:45.000Z</published>
-    <updated>2022-12-23T12:16:19.474Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="公钥密码系统在区块链中的使用情况"><a href="#公钥密码系统在区块链中的使用情况" class="headerlink" title="公钥密码系统在区块链中的使用情况"></a>公钥密码系统在区块链中的使用情况</h2><h3 id="什么是比特币钱包？"><a href="#什么是比特币钱包？" class="headerlink" title="什么是比特币钱包？"></a>什么是比特币钱包？</h3><p>比特币钱包用于访问和转移加密货币，钱包内存有私钥。</p><span id="more"></span><h3 id="比特币钱包的分类"><a href="#比特币钱包的分类" class="headerlink" title="比特币钱包的分类"></a>比特币钱包的分类</h3><h4 id="热钱包"><a href="#热钱包" class="headerlink" title="热钱包"></a>热钱包</h4><p>钱包提供在线存储，通常与第三方应用程序或服务相关联。热钱包使存储您的加密密钥更加方便和易于管理。但是，如果发生网络盗窃或服务泄露，您有可能丢失密钥。 </p><h4 id="冷钱包"><a href="#冷钱包" class="headerlink" title="冷钱包"></a>冷钱包</h4><p>这些是未连接到互联网的加密存储设备，可减少您的资产受到攻击的机会。将这些密钥存储在从不连接到互联网的计算机上，使设备成为冷存储。与热钱包相比，冷钱包是一种更安全的选择，但它们会让您的资产交易变得不方便。</p><h4 id="硬件钱包"><a href="#硬件钱包" class="headerlink" title="硬件钱包"></a>硬件钱包</h4><p>硬件钱包是在物理介质上包含您的加密密钥的设备。一个明显的好处是您可以随时将硬钱包连接到互联网。硬件钱包可确保您的密钥安全并提高可用性。</p><h4 id="比特币钱包的工作："><a href="#比特币钱包的工作：" class="headerlink" title="比特币钱包的工作："></a>比特币钱包的工作：</h4><p>比特币钱包内存有你的公钥和私钥，所以可以用来转账。但是钱包内不存放比特币，</p><h2 id="比特币交易"><a href="#比特币交易" class="headerlink" title="比特币交易"></a>比特币交易</h2><h3 id="基本内容："><a href="#基本内容：" class="headerlink" title="基本内容："></a>基本内容：</h3><h4 id="私钥："><a href="#私钥：" class="headerlink" title="私钥："></a>私钥：</h4><p>私钥为随机选取的数字。私钥丢失无法复原，比特币随之丢失。</p><h5 id="公钥："><a href="#公钥：" class="headerlink" title="公钥："></a>公钥：</h5><p>​    通过椭圆曲线算法可以从私钥计算得到公钥，这是不可逆转的过程：K = k * G。其中k是私钥，G是被称为生成点的常数点，而K是所得公钥。</p><p>​    其反向运算，被称为“寻找离散对数”——已知公钥K来求出私钥k——是非常困难的，就像去试验所有可能的k值，即暴力搜索。</p><h5 id="比特币地址："><a href="#比特币地址：" class="headerlink" title="比特币地址："></a>比特币地址：</h5><p>比特币地址是一个由数字和字母组成的字符串，在交易中，比特币地址通常以收款方出现。如果把比特币交易比作一张支票，比特币地址就是收款人。</p><h6 id="如何生成比特币地址"><a href="#如何生成比特币地址" class="headerlink" title="如何生成比特币地址"></a>如何生成比特币地址</h6><p>比特币地址可由公钥经过单向的加密<a href="https://so.csdn.net/so/search?q=哈希&amp;spm=1001.2101.3001.7020">哈希</a>算法得到。公钥 K 为输入，计算其SHA256哈希值，并以此结果计算RIPEMD160 哈希值，得到一个长度为160比特（20字节）的数字。</p><h3 id="交易验签原理："><a href="#交易验签原理：" class="headerlink" title="交易验签原理："></a>交易验签原理：</h3><h4 id="接受者的output结构为："><a href="#接受者的output结构为：" class="headerlink" title="接受者的output结构为："></a>接受者的output结构为：</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;pk_script&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span>byte</span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>pk_script对应着为脚本字节数据，比特币有很多种脚本结构：例如P2PKH,P2SH,P2WSH等等。</p><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/41de67246b9b466ba50145d2f1f7b9f3~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p><p><code>OP_DUP</code> <code>OP_HASH160</code> 是比特币虚拟机的操作码，<code>OP</code>是英文<code>operation</code>的缩写，操作码的本质是16进制数字。</p><p>上面的 <code>P2PKH</code> 结构，虚拟机在运行它的时候，代码执行流程如下：</p><ol><li><code>OP_DUP</code>: 执行<code>复制栈顶数据</code>操作，然后该数据放置栈顶；</li><li><code>OP_HASH160</code>: 执行<code>对栈顶数据进行 ripemd160 哈希运算</code>操作。160 前，会先进行一次 sha256(data)；</li><li><code>OP_EQUALVERIFY</code>: 执行<code>对比栈顶的两个数据</code>操作，如果相等都被移除；</li><li><code>OP_CHECKSIG</code>: 执行<code>验证签名</code>操作，这里会用到 <code>pubKeyHash</code>。</li></ol><p>记住这个 <code>pubKeyHash</code>，它是后面验签要用到的，它是公钥哈希。</p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;公钥密码系统在区块链中的使用情况&quot;&gt;&lt;a href=&quot;#公钥密码系统在区块链中的使用情况&quot; class=&quot;headerlink&quot; title=&quot;公钥密码系统在区块链中的使用情况&quot;&gt;&lt;/a&gt;公钥密码系统在区块链中的使用情况&lt;/h2&gt;&lt;h3 id=&quot;什么是比特币钱包？&quot;&gt;&lt;a href=&quot;#什么是比特币钱包？&quot; class=&quot;headerlink&quot; title=&quot;什么是比特币钱包？&quot;&gt;&lt;/a&gt;什么是比特币钱包？&lt;/h3&gt;&lt;p&gt;比特币钱包用于访问和转移加密货币，钱包内存有私钥。&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="区块链" scheme="http://wynneyin.site/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>中间相遇攻击</title>
-    <link href="http://wynneyin.site/2022/10/21/%E4%B8%AD%E9%97%B4%E7%9B%B8%E9%81%87/"/>
-    <id>http://wynneyin.site/2022/10/21/%E4%B8%AD%E9%97%B4%E7%9B%B8%E9%81%87/</id>
-    <published>2022-10-21T05:49:45.000Z</published>
-    <updated>2022-12-23T12:01:20.349Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="中间相遇攻击"><a href="#中间相遇攻击" class="headerlink" title="中间相遇攻击"></a>中间相遇攻击</h1><span id="more"></span><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113141326402.png" alt="image-20221113140730120" style="zoom:50%;" /></p><p>三des</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113141054994.png" alt="image-20221113141054994"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113140730120.png" alt="image-20221113141326402" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113143852130.png" alt="image-20221113143852130" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113145836930.png" alt="image-20221113145836930" style="zoom:50%;" /></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113163126185.png" alt="image-20221113163126185" style="zoom: 33%;" /></p><p>从中间撕开，先后异或密钥自然遍历即可，向前扩展每一个猜测的kinit 都会有$2^8$个明文。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20221113180442955.png" alt="image-20221113180442955" style="zoom:50%;" /></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;中间相遇攻击&quot;&gt;&lt;a href=&quot;#中间相遇攻击&quot; class=&quot;headerlink&quot; title=&quot;中间相遇攻击&quot;&gt;&lt;/a&gt;中间相遇攻击&lt;/h1&gt;</summary>
     
     
     
