@@ -39,6 +39,29 @@
   </entry>
   
   <entry>
+    <title>盛雨水最多的容器</title>
+    <link href="http://wynneyin.site/2023/03/25/2023-3-25-%E7%9B%9B%E9%9B%A8%E6%B0%B4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AE%B9%E5%99%A8/"/>
+    <id>http://wynneyin.site/2023/03/25/2023-3-25-%E7%9B%9B%E9%9B%A8%E6%B0%B4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AE%B9%E5%99%A8/</id>
+    <published>2023-03-24T16:00:00.000Z</published>
+    <updated>2023-03-25T09:32:26.508Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="11-盛最多水的容器"><a href="#11-盛最多水的容器" class="headerlink" title="11.盛最多水的容器"></a>11.盛最多水的容器</h1><p>相关企业</p><p>给定一个长度为 <code>n</code> 的整数数组 <code>height</code> 。有 <code>n</code> 条垂线，第 <code>i</code> 条线的两个端点是 <code>(i, 0)</code> 和 <code>(i, height[i])</code> 。</p><p>找出其中的两条线，使得它们与 <code>x</code> 轴共同构成的容器可以容纳最多的水。</p><p>返回容器可以储存的最大水量。</p><p><strong>说明：</strong>你不能倾斜容器。</p><p>方法一： 暴力遍历</p><p>结果超时了 XD</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxArea</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">auto</span>* head = &amp;height[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">auto</span>* tail = &amp;height[height.<span class="built_in">size</span>()<span class="number">-1</span>];</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">while</span> (head &lt;= &amp;height[height.<span class="built_in">size</span>()<span class="number">-1</span>])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span> (head &lt;tail)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">auto</span> h = (*head &gt; *tail) ? *tail : *head;</span><br><span class="line">                <span class="type">int</span> l = tail - head;</span><br><span class="line">                <span class="type">int</span> size = h * l;</span><br><span class="line">                res.<span class="built_in">push_back</span>(size);</span><br><span class="line">                </span><br><span class="line">                tail--;</span><br><span class="line">            &#125;</span><br><span class="line">            head++;</span><br><span class="line">            tail = &amp;height[height.<span class="built_in">size</span>() - <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">auto</span> a = <span class="built_in">max_element</span>(res.<span class="built_in">begin</span>(), res.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> *a;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>双指针解法：</p><p>left指向数组的头部 right 指向数组的尾部 ,雨水的总量为min(height[left], height[right]) * (right - left)  . </p><p>接下来去移动left和right中较小的边，向中心收缩。 因为移动小的可能会使雨水总量增大，但是移动大的一定不会使雨水总量增大。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxArea</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>, right = height.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="comment">// [left, right] 之间的矩形面积</span></span><br><span class="line">            <span class="type">int</span> cur_area = <span class="built_in">min</span>(height[left], height[right]) * (right - left);</span><br><span class="line">            res = <span class="built_in">max</span>(res, cur_area);</span><br><span class="line">            <span class="comment">// 双指针技巧，移动较低的一边</span></span><br><span class="line">            <span class="keyword">if</span> (height[left] &lt; height[right]) &#123;</span><br><span class="line">                left++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;11-盛最多水的容器&quot;&gt;&lt;a href=&quot;#11-盛最多水的容器&quot; class=&quot;headerlink&quot; title=&quot;11.盛最多水的容器&quot;&gt;&lt;/a&gt;11.盛最多水的容器&lt;/h1&gt;&lt;p&gt;相关企业&lt;/p&gt;
+&lt;p&gt;给定一个长度为 &lt;code&gt;n&lt;/code&gt; 的整数</summary>
+      
+    
+    
+    
+    
+    <category term="leetcode" scheme="http://wynneyin.site/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>机密计算的联合云</title>
     <link href="http://wynneyin.site/2023/03/24/2023-3-24-%E6%9C%BA%E5%AF%86%E8%AE%A1%E7%AE%97%E7%9A%84%E8%81%94%E5%90%88%E4%BA%91/"/>
     <id>http://wynneyin.site/2023/03/24/2023-3-24-%E6%9C%BA%E5%AF%86%E8%AE%A1%E7%AE%97%E7%9A%84%E8%81%94%E5%90%88%E4%BA%91/</id>
@@ -403,28 +426,6 @@
     
     
     <category term="音乐" scheme="http://wynneyin.site/tags/%E9%9F%B3%E4%B9%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>线性分析</title>
-    <link href="http://wynneyin.site/2022/10/21/%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90/"/>
-    <id>http://wynneyin.site/2022/10/21/%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90/</id>
-    <published>2022-10-21T05:49:45.000Z</published>
-    <updated>2022-12-23T12:13:55.842Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="线性分析"><a href="#线性分析" class="headerlink" title="线性分析"></a>线性分析</h1><p>1.找到S盒的线性近似关系，$α∙u=β∙v且Pr(α∙u=β∙v)=p$。</p><p>2.将这个近似关系向3头尾延伸。</p><p>3.得到了$α∙m⨁α∙k_0=β∙c⨁β∙k_1$  以概率p成立 ,那么$α∙m⨁β∙c=α∙k_0⨁β∙k_1$ 以概率p成立</p><p>4.利用算法一，求解密钥一比特的信息。</p><span id="more"></span><p>1.设已知N个明文及相应的密文(m,c)</p><p>初始化两个计数器$T_0=0, T_1=0$</p><p>2.对每一个(m,c)    </p><p>​    计算b=α∙m⨁β∙c;    </p><p>​    若b=0， $T_0++$；    </p><p>​    否则，$T_1++$；</p><p>3.若$T_0≥N/2$    </p><p>​        当p&gt; 1/2时        </p><p>​            猜测$α∙k_0 ⨁β∙k_1=0    $</p><p>​        否则，猜测$α∙k_0 ⨁β∙k_1=1$</p><p>4.若$T_0<N/2$，即$T_1>N/2   $</p><p>​    当p&gt; 1/2时        </p><p>​        猜测$α∙k_0 ⨁β∙k_1=1    $</p><p>​    否则，猜测$α∙k_0 ⨁β∙k_1=0$</p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;线性分析&quot;&gt;&lt;a href=&quot;#线性分析&quot; class=&quot;headerlink&quot; title=&quot;线性分析&quot;&gt;&lt;/a&gt;线性分析&lt;/h1&gt;&lt;p&gt;1.找到S盒的线性近似关系，$α∙u=β∙v且Pr(α∙u=β∙v)=p$。&lt;/p&gt;
-&lt;p&gt;2.将这个近似关系向3头尾延伸。&lt;/p&gt;
-&lt;p&gt;3.得到了$α∙m⨁α∙k_0=β∙c⨁β∙k_1$  以概率p成立 ,那么$α∙m⨁β∙c=α∙k_0⨁β∙k_1$ 以概率p成立&lt;/p&gt;
-&lt;p&gt;4.利用算法一，求解密钥一比特的信息。&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="密码分析学" scheme="http://wynneyin.site/tags/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E5%AD%A6/"/>
     
   </entry>
   
