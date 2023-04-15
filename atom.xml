@@ -6,7 +6,7 @@
   <link href="http://wynneyin.site/atom.xml" rel="self"/>
   
   <link href="http://wynneyin.site/"/>
-  <updated>2023-04-02T06:28:27.497Z</updated>
+  <updated>2023-04-05T07:46:00.909Z</updated>
   <id>http://wynneyin.site/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>82. 删除排序链表中的重复元素 II</title>
+    <link href="http://wynneyin.site/2023/04/05/2023-4-5-82.-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0-II/"/>
+    <id>http://wynneyin.site/2023/04/05/2023-4-5-82.-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0-II/</id>
+    <published>2023-04-04T16:00:00.000Z</published>
+    <updated>2023-04-05T07:46:00.909Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="82-删除排序链表中的重复元素-II"><a href="#82-删除排序链表中的重复元素-II" class="headerlink" title="82. 删除排序链表中的重复元素 II"></a>82. 删除排序链表中的重复元素 II</h1><p>给定一个已排序的链表的头 <code>head</code> ， <em>删除原始链表中所有重复数字的节点，只留下不同的数字</em> 。返回 <em>已排序的链表</em> 。</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1616650335-dUWxLB-82.001.jpeg" alt="82.001.jpeg" style="zoom: 33%;" /></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">deleteDuplicates</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>( ! head || !head-&gt;next)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(head-&gt;val!=head-&gt;next-&gt;val)</span><br><span class="line">        &#123;</span><br><span class="line">            head-&gt;next=<span class="built_in">deleteDuplicates</span>(head-&gt;next);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            ListNode * move;</span><br><span class="line">            move=head-&gt;next;</span><br><span class="line">            <span class="keyword">while</span>(move &amp;&amp;move-&gt;val==head-&gt;val)</span><br><span class="line">            &#123;</span><br><span class="line">                move=move-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> head-&gt;next=<span class="built_in">deleteDuplicates</span>(move);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>如果链表为空或者只有一个元素那么，直接返回头指针。如果链表中元素和下一个元素不同，那么指针指向下一个节点(递归调用)。如果元素和下一个元素相同，那么一直指到不同时返回头指针。成为head–&gt;next</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;82-删除排序链表中的重复元素-II&quot;&gt;&lt;a href=&quot;#82-删除排序链表中的重复元素-II&quot; class=&quot;headerlink&quot; title=&quot;82. 删除排序链表中的重复元素 II&quot;&gt;&lt;/a&gt;82. 删除排序链表中的重复元素 II&lt;/h1&gt;&lt;p&gt;给定一个</summary>
+      
+    
+    
+    
+    
+    <category term="leetcode" scheme="http://wynneyin.site/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>两整数之和</title>
+    <link href="http://wynneyin.site/2023/04/05/2023-4-5-%E4%B8%A4%E6%95%B4%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
+    <id>http://wynneyin.site/2023/04/05/2023-4-5-%E4%B8%A4%E6%95%B4%E6%95%B0%E4%B9%8B%E5%92%8C/</id>
+    <published>2023-04-04T16:00:00.000Z</published>
+    <updated>2023-04-05T13:00:37.938Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>两整数之和</li></ol><p>给你两个整数 <code>a</code> 和 <code>b</code> ，<strong>不使用</strong> 运算符 <code>+</code> 和 <code>-</code> ，计算并返回两整数之和。</p><p>思路：</p><p>无进位加法为a ^ b</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = 5 = 0101</span><br><span class="line">b = 4 = 0100</span><br><span class="line"></span><br><span class="line">a ^ b 如下：</span><br><span class="line"></span><br><span class="line">0 1 0 1</span><br><span class="line">0 1 0 0</span><br><span class="line">-------</span><br><span class="line">0 0 0 1</span><br></pre></td></tr></table></figure><p>进位操作用a&amp;b</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = 5 = 0101</span><br><span class="line">b = 4 = 0100</span><br><span class="line"></span><br><span class="line">a &amp; b 如下：</span><br><span class="line"></span><br><span class="line">0 1 0 1</span><br><span class="line">0 1 0 0</span><br><span class="line">-------</span><br><span class="line">0 1 0 0</span><br></pre></td></tr></table></figure><p>代码如下：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getSum</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (b != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="type">unsigned</span> <span class="type">int</span> carry = (<span class="type">unsigned</span> <span class="type">int</span>)(a &amp; b) &lt;&lt; <span class="number">1</span>;</span><br><span class="line">            a = a ^ b;</span><br><span class="line">            b = carry;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>carry 为进位操作 </p><p>例如 </p><p>a=0101</p><p>b=0100</p><ol><li>carry 0100&lt;&lt;1=1000</li><li>a=0001 b=1000</li><li>carry=0000&lt;&lt;1=0000</li><li>a=1001,b=0000</li><li>输出1001</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;两整数之和&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;给你两个整数 &lt;code&gt;a&lt;/code&gt; 和 &lt;code&gt;b&lt;/code&gt; ，&lt;strong&gt;不使用&lt;/strong&gt; 运算符 &lt;code&gt;+&lt;/code&gt; 和 &lt;code&gt;-&lt;/code&gt; ，计算并返回两整数之和。&lt;/</summary>
+      
+    
+    
+    
+    
+    <category term="力扣" scheme="http://wynneyin.site/tags/%E5%8A%9B%E6%89%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>1008.前序遍历构造二叉搜索树</title>
@@ -391,49 +438,6 @@
     
     
     <category term="python进阶" scheme="http://wynneyin.site/tags/python%E8%BF%9B%E9%98%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库备忘录</title>
-    <link href="http://wynneyin.site/2023/01/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%87%E5%BF%98%E5%BD%95/"/>
-    <id>http://wynneyin.site/2023/01/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%87%E5%BF%98%E5%BD%95/</id>
-    <published>2023-01-07T16:00:00.000Z</published>
-    <updated>2023-03-05T12:51:14.522Z</updated>
-    
-    <content type="html"><![CDATA[<p>域—一组具有相同数据类型的集合</p><p>笛卡尔积中的每一个元素为元组</p><p>元组的每一个值称为一个分量</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230305193542035.png" alt="image-20230305193542035" style="zoom:50%;" /></p><h1 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h1><p>通过定义外键约束，关系数据库可以保证无法插入无效的数据。即如果<code>classes</code>表不存在<code>id=99</code>的记录，<code>students</code>表就无法插入<code>class_id=99</code>的记录。</p><p>由于外键约束会降低数据库的性能，大部分互联网应用程序为了追求速度，并不设置外键约束，而是仅靠应用程序自身来保证逻辑的正确性。这种情况下，<code>class_id</code>仅仅是一个普通的列，只是它起到了外键的作用而已。</p><span id="more"></span><h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>索引是关系数据库中对某一列或多个列的值进行预排序的数据结构。通过使用索引，可以让数据库系统不必扫描整个表，而是直接定位到符合条件的记录，这样就大大加快了查询速度。</p><p>可以对一张表创建多个索引。索引的优点是提高了查询效率，缺点是在插入、更新和删除记录时，需要同时修改索引，因此，索引越多，插入、更新和删除记录的速度就越慢。</p><p>对于主键，关系数据库会自动对其创建主键索引。使用主键索引的效率是最高的，因为主键会保证绝对唯一。</p><h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="基本查询"><a href="#基本查询" class="headerlink" title="基本查询"></a>基本查询</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>表名<span class="operator">&gt;</span></span><br></pre></td></tr></table></figure><p>可以不加from 那么就直接计算出表达式的结果。 select 1 可以用来测试数据库连接。</p><p>select查询结果显然为二维表。</p><h2 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>表名<span class="operator">&gt;</span> <span class="keyword">WHERE</span> <span class="operator">&lt;</span>条件表达式<span class="operator">&gt;</span></span><br></pre></td></tr></table></figure><div class="table-container"><table><thead><tr><th>条件</th><th>表达式举例1</th><th>表达式举例2</th><th>说明</th></tr></thead><tbody><tr><td>使用=判断相等</td><td>score = 80</td><td>name = ‘abc’</td><td>字符串需要用单引号括起来</td></tr><tr><td>使用&gt;判断大于</td><td>score &gt; 80</td><td>name &gt; ‘abc’</td><td>字符串比较根据ASCII码，中文字符比较根据数据库设置</td></tr><tr><td>使用&gt;=判断大于或相等</td><td>score &gt;= 80</td><td>name &gt;= ‘abc’</td><td></td></tr><tr><td>使用&lt;判断小于</td><td>score &lt; 80</td><td>name &lt;= ‘abc’</td><td></td></tr><tr><td>使用&lt;=判断小于或相等</td><td>score &lt;= 80</td><td>name &lt;= ‘abc’</td><td></td></tr><tr><td>使用&lt;&gt;判断不相等</td><td>score &lt;&gt; 80</td><td>name &lt;&gt; ‘abc’</td><td></td></tr><tr><td>使用LIKE判断相似</td><td>name LIKE ‘ab%’</td><td>name LIKE ‘%bc%’</td><td>%表示任意字符，例如’ab%’将匹配’ab’，’abc’，’abcd’</td></tr></tbody></table></div><h1 id="投影查询"><a href="#投影查询" class="headerlink" title="投影查询"></a>投影查询</h1><p>如果我们只希望返回某些列的数据，而不是所有列的数据，我们可以用<code>SELECT 列1, 列2, 列3 FROM …</code>，让结果集仅包含指定列。这种操作称为投影查询。</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 列<span class="number">1</span>, 列<span class="number">2</span>, 列<span class="number">3</span> <span class="keyword">FROM</span> …</span><br></pre></td></tr></table></figure><h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><p><strong>ORDER BY </strong>+ 排序的指标</p><h1 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h1><p>要实现分页功能，实际上就是从结果集中显示第1~100条记录作为第1页，显示第101~200条记录作为第2页，以此类推。</p><p>因此，分页实际上就是从结果集中“截取”出第M~N条记录。这个查询可以通过<code>LIMIT &lt;M&gt; OFFSET &lt;N&gt;</code>子句实现。我们先把所有学生按照成绩从高到低进行排序：</p><h1 id="聚合查询"><a href="#聚合查询" class="headerlink" title="聚合查询"></a>聚合查询</h1><div class="table-container"><table><thead><tr><th>函数</th><th>说明</th></tr></thead><tbody><tr><td>SUM</td><td>计算某一列的合计值，该列必须为数值类型</td></tr><tr><td>AVG</td><td>计算某一列的平均值，该列必须为数值类型</td></tr><tr><td>MAX</td><td>计算某一列的最大值</td></tr><tr><td>MIN</td><td>计算某一列的最小值</td></tr></tbody></table></div><h1 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>表<span class="number">1</span><span class="operator">&gt;</span> <span class="operator">&lt;</span>表<span class="number">2</span><span class="operator">&gt;</span></span><br></pre></td></tr></table></figure><h1 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h1><p>连接查询是另一种类型的多表查询。连接查询对多个表进行JOIN运算，简单地说，就是先确定一个主表作为结果集，然后，把其他表的行有选择性地“连接”在主表结果集上。</p><ul><li>先确定主表，仍然使用<code>FROM &lt;表1&gt;</code>的语法；</li><li>再确定需要连接的表，使用<code>INNER JOIN &lt;表2&gt;</code>的语法；</li><li>然后确定连接条件，使用<code>ON &lt;条件…&gt;</code>，这里的条件是<code>s.class_id = c.id</code>，表示<code>students</code>表的<code>class_id</code>列与<code>classes</code>表的<code>id</code>列相同的行需要连接；</li><li>可选：加上<code>WHERE</code>子句、<code>ORDER BY</code>等子句。使用别名不是必须的，但可以更好地简化查询语句。</li></ul><p><strong>等值与非等值连接查询</strong></p><p>等值查询where中 加入=</p><p>非等值查询 可能含有非等于号</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230305193007879.png" alt="image-20230305193007879" style="zoom:50%;" /></p><p>自联结</p><p><strong>需要给表起别名以示区别</strong></p><p><strong>由于所有属性名都是同名属性，因此必须使用别名前缀</strong></p><p>外连接</p><p><strong>普通连接操作只输出满足连接条件的元组</strong></p><p><strong>外连接操作以指定表为连接主体，将主体表中不满足连接条件的元组一并输出</strong></p><p>具体见<a href="https://www.bookstack.cn/read/liaoxuefeng-sql/bf30f02838d0e30e.md">廖雪峰</a></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230303104636939.png" alt="image-20230303104636939" style="zoom:67%;" /></p><p><strong>模式相当于命名空间</strong></p><p>一个模式包含多个基本表。</p><p><strong>GROUP BY 语句</strong></p><p><strong>细化聚集函数的作用对象</strong></p><p><strong>如果未对查询结果分组，聚集函数将作用于整个查询结果</strong></p><p> <strong>对查询结果分组后，聚集函数将分别作用于每个组</strong> </p><p><strong>按指定的一列或多列值分组，值相等的为一组</strong></p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;域—一组具有相同数据类型的集合&lt;/p&gt;
-&lt;p&gt;笛卡尔积中的每一个元素为元组&lt;/p&gt;
-&lt;p&gt;元组的每一个值称为一个分量&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230305193542035.png&quot; alt=&quot;image-20230305193542035&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;外键&quot;&gt;&lt;a href=&quot;#外键&quot; class=&quot;headerlink&quot; title=&quot;外键&quot;&gt;&lt;/a&gt;外键&lt;/h1&gt;&lt;p&gt;通过定义外键约束，关系数据库可以保证无法插入无效的数据。即如果&lt;code&gt;classes&lt;/code&gt;表不存在&lt;code&gt;id=99&lt;/code&gt;的记录，&lt;code&gt;students&lt;/code&gt;表就无法插入&lt;code&gt;class_id=99&lt;/code&gt;的记录。&lt;/p&gt;
-&lt;p&gt;由于外键约束会降低数据库的性能，大部分互联网应用程序为了追求速度，并不设置外键约束，而是仅靠应用程序自身来保证逻辑的正确性。这种情况下，&lt;code&gt;class_id&lt;/code&gt;仅仅是一个普通的列，只是它起到了外键的作用而已。&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="数据库" scheme="http://wynneyin.site/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>继承和多态</title>
-    <link href="http://wynneyin.site/2023/01/08/2023-1-8-%E7%BB%A7%E6%89%BF%E5%92%8C%E5%A4%9A%E6%80%81/"/>
-    <id>http://wynneyin.site/2023/01/08/2023-1-8-%E7%BB%A7%E6%89%BF%E5%92%8C%E5%A4%9A%E6%80%81/</id>
-    <published>2023-01-07T16:00:00.000Z</published>
-    <updated>2023-01-12T00:30:46.955Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Python类—继承和多态"><a href="#Python类—继承和多态" class="headerlink" title="Python类—继承和多态"></a>Python类—继承和多态</h1><span id="more"></span><h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">student</span>:</span><br><span class="line">      <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, age,name</span>):</span><br><span class="line">          self.age=age</span><br><span class="line">          self.name=name</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">boystduent</span>(<span class="title class_ inherited__">student</span>):  <span class="comment">####继承父类的所有性质</span></span><br><span class="line">...        </span><br></pre></td></tr></table></figure><h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>在子类中可以重新编写函数</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">student</span>:</span><br><span class="line">      <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, age,name</span>):</span><br><span class="line">          self.age=age</span><br><span class="line">          self.name=name</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">boystduent</span>(<span class="title class_ inherited__">student</span>):  <span class="comment">####继承父类的所有性质</span></span><br><span class="line">...      </span><br></pre></td></tr></table></figure><p>super函数直接调用父类的函数。</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">student</span>:</span><br><span class="line">      <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, age,name</span>):</span><br><span class="line">          self.age=age</span><br><span class="line">          self.name=name</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">boystduent</span>(<span class="title class_ inherited__">student</span>):  <span class="comment">####继承父类的所有性质</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,age,name,grade</span>):</span><br><span class="line">        <span class="built_in">super</span>(boystduent,self).__init__(age,name)</span><br><span class="line">        self.grade=grade</span><br><span class="line">        </span><br></pre></td></tr></table></figure><p>为子类增加私有对象</p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;Python类—继承和多态&quot;&gt;&lt;a href=&quot;#Python类—继承和多态&quot; class=&quot;headerlink&quot; title=&quot;Python类—继承和多态&quot;&gt;&lt;/a&gt;Python类—继承和多态&lt;/h1&gt;</summary>
-    
-    
-    
-    
-    <category term="python" scheme="http://wynneyin.site/tags/python/"/>
     
   </entry>
   
