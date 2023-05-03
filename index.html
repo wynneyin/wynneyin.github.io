@@ -223,6 +223,70 @@
             
 
   
+    <article id="post-2023-5-3-信息论--极化码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    <hr>
+<p>title:信息论—极化码<br>tags:信息论</p>
+<h2 id="date-2023-5-3"><a href="#date-2023-5-3" class="headerlink" title="date:2023-5-3"></a>date:2023-5-3</h2><h1 id="极化码"><a href="#极化码" class="headerlink" title="极化码"></a>极化码</h1><p>极化码的形式:</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/0a95e6e0fa9947e7a691a34a1f22fd52.png" alt="img"></p>
+<p>解码的方法:</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1b06991b8c8e46209cf483becdd434e1.png" alt="img"></p>
+<p>W_ 信道:<br><img src="https://img-blog.csdnimg.cn/8363c111a82643cfbbe66edd64082b6f.png" alt="img"></p>
+<p>W+信道:</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/50ccac3a660f4b27b0a481396c1db712.png" alt="img"></p>
+<p>因为U1信道不好那么我们直接放弃，改为一个固定的值。</p>
+<p><em>解决</em>：Arikan的思路为抛弃差信道(冻结)，差信道不传输信息，而U1的值事先约定好，即U1已知不需要解码，目的是为了成功解码好信道中传输的U2</p>
+<p>相较于两个BEC信道独立的传输U1 U2时，成功传输的概率各自为1-P，而极化信道<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/gif.latex" alt="W^{-}()">中U1传输成功的概率为<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/gif.latex" alt="(1-P)^{2}">，U2传输成功的概率为<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/gif.latex" alt="1-P^{2}"></p>
+<p>$\begin{array}{l}<br>I(w)=1-p \<br>I\left(W^{-}\right)=1-p(2-p)=(1-p)^{2} \<br>I\left(W^{+}\right)=1-p^{2}<br>\end{array}$  </p>
+<p>$\begin{array}{l}<br>\text {定理(BEC)} \forall \varepsilon&gt;0 ,W=B E C(p) \text {, } \<br>\mu<em>{t}(\varepsilon)=\frac{1}{2^{t}} \sum</em>{s^{\epsilon} \in\left{+,-\xi^{t}\right.} 1\left(p\left(s^{t}\right) \in(\varepsilon, 1-\varepsilon)\right) \<br>\text { k24. } \lim <em>{t \rightarrow \infty} \mu</em>{t}(\varepsilon)=0 \<br>\end{array}$</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/05/03/2023-5-3-%E4%BF%A1%E6%81%AF%E8%AE%BA--%E6%9E%81%E5%8C%96%E7%A0%81/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2023-4-30-C++常用的函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1084,106 +1148,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2023/03/24/2023-3-24-%E6%9C%BA%E5%AF%86%E8%AE%A1%E7%AE%97%E7%9A%84%E8%81%94%E5%90%88%E4%BA%91/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2023-3-21-7整数反转" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/03/21/2023-3-21-7%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/" target="_blank">7整数反转</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/03/21/2023-3-21-7%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/" class="archive-article-date">
-        <time datetime="2023-03-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="7整数反转"><a href="#7整数反转" class="headerlink" title="7整数反转"></a>7整数反转</h1><p>给你一个 32 位的有符号整数 <code>x</code> ，返回将 <code>x</code> 中的数字部分反转后的结果。</p>
-<p>如果反转后整数超过 32 位的有符号整数的范围 <code>[−231, 231 − 1]</code> ，就返回 0。</p>
-<p><strong>假设环境不允许存储 64 位整数（有符号或无符号）。</strong></p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：x = 123</span><br><span class="line">输出：321</span><br></pre></td></tr></table></figure>
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：x = -123</span><br><span class="line">输出：-321</span><br></pre></td></tr></table></figure>
-<p><strong>示例 3：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：x = 120</span><br><span class="line">输出：21</span><br></pre></td></tr></table></figure>
-<p><strong>示例 4：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：x = 0</span><br><span class="line">输出：0</span><br></pre></td></tr></table></figure>
-<p> 思路: </p>
-<p>一个数字abc 要反转为cba 那么必然要先取余来获取余数c然后将abc-&gt;ab ，如此递归直到0。如何生成cba呢？</p>
-<p>res=c res=10(c)+b res=10(10(c)+b)+a</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">reverse</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">       </span><br><span class="line">      <span class="type">long</span> reslut=<span class="number">0</span>;</span><br><span class="line">      <span class="keyword">while</span>(x!=<span class="number">0</span>)</span><br><span class="line">      &#123;</span><br><span class="line">          <span class="type">int</span> res;</span><br><span class="line">          res=x%<span class="number">10</span>; <span class="comment">/////保留出第一个余数</span></span><br><span class="line">          <span class="type">int</span> new_int=reslut*<span class="number">10</span>+res;</span><br><span class="line">          <span class="keyword">if</span>((new_int-res)/<span class="number">10</span>!=reslut)    <span class="comment">////边界检查</span></span><br><span class="line">          &#123;</span><br><span class="line">              <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          x=x/<span class="number">10</span>;   <span class="comment">////x缩小为之前的十分之一丢掉余数</span></span><br><span class="line">          </span><br><span class="line">          reslut=new_int;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">    <span class="keyword">return</span> reslut;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/03/21/2023-3-21-7%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">展开全文 >></a>
     </p>
     
 
