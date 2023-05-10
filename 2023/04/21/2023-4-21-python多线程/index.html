@@ -18,7 +18,7 @@
 <meta property="og:description" content="Python多线程123456789101112131415161718192021222324252627282930313233343536373839import threadingimport timeexitFlag &#x3D; 0# 创建类  继承自threading.Thread类class myThread (threading.Thread):    # 注意：不要忘记在子类中初始化父类">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-04-20T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-04-21T09:21:44.728Z">
+<meta property="article:modified_time" content="2023-05-07T08:54:22.942Z">
 <meta property="article:author" content="Wynneyin">
 <meta property="article:tag" content="python学习">
 <meta name="twitter:card" content="summary">
@@ -254,7 +254,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">264字</span>
+      <span class="post-count">419字</span>
     </span>
   </span>
 
@@ -263,7 +263,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -278,7 +278,9 @@
 <p>join函数会阻塞掉主线程 直到thead线程执行完毕。</p>
 <p>另一种写法：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">thread_job</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;T1 start\n&#x27;</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">        time.sleep(<span class="number">0.1</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;T1 findish\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    added_thread=threading.Thread(thread=thread_job,name=<span class="string">&#x27;T1&#x27;</span>)</span><br><span class="line">    added_thread.start()</span><br><span class="line">    added_thread.join()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;all done&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h2>
+<h2 id="线程信号量机制"><a href="#线程信号量机制" class="headerlink" title="线程信号量机制"></a>线程信号量机制</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">Class mainwindow(...):</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">__intit__</span>(<span class="params">self</span>)</span><br><span class="line">    self.pushButton.clicked.connect(self.start_ping)  <span class="comment">##按钮绑定事件</span></span><br><span class="line">    self.myth=mytherad()</span><br><span class="line">    self.myth.my_ip_info.connect(self.set_ipinfo_to_ui)  <span class="comment">###my_ip_info信号量连接到要投射到屏幕的函数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">set_ipinfo_to_ui</span>(<span class="params">self,<span class="built_in">str</span></span>):</span><br><span class="line">		self.textBrowser.setTex(<span class="built_in">str</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">start_ping</span>(<span class="params">self</span>):</span><br><span class="line">	self.myth.start()</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">mythread</span>(<span class="title class_ inherited__">QThread</span>):</span><br><span class="line">	my_ip_info=pyqtSiginal(<span class="built_in">str</span>)</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">    	<span class="built_in">super</span>(mytherad,self).__intit__()</span><br><span class="line">    	self.ip_fo=<span class="string">&#x27;&#x27;</span></span><br><span class="line">    	<span class="built_in">super</span>(mytherad,self).--init__()</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">work</span>(<span class="params">self,ip</span>):</span><br><span class="line">     ....</span><br><span class="line">     self.ip_info=... <span class="comment">#更改ip_info的值</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">gevent_ping</span>(<span class="params">self</span>):</span><br><span class="line">    	starttime=time.time()</span><br><span class="line">    	glis</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line">    	self.gevent_ping()</span><br><span class="line">    	self.my_ip_info.emit(self.ip_fo)   <span class="comment">### 变量ip_fo 的改变会激发my_ip_info信号量</span></span><br><span class="line">    </span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>pyqt中引入信号量机制，来实现主线程运行窗口，子线程运行耗时间比较大的程序。</p>
+
     
 
     

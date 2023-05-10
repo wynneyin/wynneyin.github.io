@@ -223,6 +223,103 @@
             
 
   
+    <article id="post-2023-3-25-盛雨水最多的容器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/03/25/2023-3-25-%E7%9B%9B%E9%9B%A8%E6%B0%B4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AE%B9%E5%99%A8/" target="_blank">盛雨水最多的容器</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/03/25/2023-3-25-%E7%9B%9B%E9%9B%A8%E6%B0%B4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AE%B9%E5%99%A8/" class="archive-article-date">
+        <time datetime="2023-03-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-25</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="11-盛最多水的容器"><a href="#11-盛最多水的容器" class="headerlink" title="11.盛最多水的容器"></a>11.盛最多水的容器</h1><p>相关企业</p>
+<p>给定一个长度为 <code>n</code> 的整数数组 <code>height</code> 。有 <code>n</code> 条垂线，第 <code>i</code> 条线的两个端点是 <code>(i, 0)</code> 和 <code>(i, height[i])</code> 。</p>
+<p>找出其中的两条线，使得它们与 <code>x</code> 轴共同构成的容器可以容纳最多的水。</p>
+<p>返回容器可以储存的最大水量。</p>
+<p><strong>说明：</strong>你不能倾斜容器。</p>
+<p>方法一： 暴力遍历</p>
+<p>结果超时了 XD</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxArea</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">auto</span>* head = &amp;height[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">auto</span>* tail = &amp;height[height.<span class="built_in">size</span>()<span class="number">-1</span>];</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">while</span> (head &lt;= &amp;height[height.<span class="built_in">size</span>()<span class="number">-1</span>])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span> (head &lt;tail)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">auto</span> h = (*head &gt; *tail) ? *tail : *head;</span><br><span class="line">                <span class="type">int</span> l = tail - head;</span><br><span class="line">                <span class="type">int</span> size = h * l;</span><br><span class="line">                res.<span class="built_in">push_back</span>(size);</span><br><span class="line">                </span><br><span class="line">                tail--;</span><br><span class="line">            &#125;</span><br><span class="line">            head++;</span><br><span class="line">            tail = &amp;height[height.<span class="built_in">size</span>() - <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">auto</span> a = <span class="built_in">max_element</span>(res.<span class="built_in">begin</span>(), res.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> *a;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>双指针解法：</p>
+<p>left指向数组的头部 right 指向数组的尾部 ,雨水的总量为min(height[left], height[right]) * (right - left)  . </p>
+<p>接下来去移动left和right中较小的边，向中心收缩。 因为移动小的可能会使雨水总量增大，但是移动大的一定不会使雨水总量增大。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxArea</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>, right = height.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="comment">// [left, right] 之间的矩形面积</span></span><br><span class="line">            <span class="type">int</span> cur_area = <span class="built_in">min</span>(height[left], height[right]) * (right - left);</span><br><span class="line">            res = <span class="built_in">max</span>(res, cur_area);</span><br><span class="line">            <span class="comment">// 双指针技巧，移动较低的一边</span></span><br><span class="line">            <span class="keyword">if</span> (height[left] &lt; height[right]) &#123;</span><br><span class="line">                left++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/03/25/2023-3-25-%E7%9B%9B%E9%9B%A8%E6%B0%B4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AE%B9%E5%99%A8/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2023-3-24-机密计算的联合云" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1206,95 +1303,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2023/01/24/2023-1-24-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0--%E7%AC%AC%E5%9B%9B%E7%AB%A0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2023-1-16-密钥交换协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/01/16/2023-1-16-%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E5%8D%8F%E8%AE%AE/" target="_blank">第五章密钥交换协议</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/01/16/2023-1-16-%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E5%8D%8F%E8%AE%AE/" class="archive-article-date">
-        <time datetime="2023-01-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-16</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="第五章密钥交换协议"><a href="#第五章密钥交换协议" class="headerlink" title="第五章密钥交换协议"></a>第五章密钥交换协议</h1><h2 id="两方-Diffie-Hellman-密钥交换协议"><a href="#两方-Diffie-Hellman-密钥交换协议" class="headerlink" title="两方 Diffie -Hellman 密钥交换协议"></a>两方 Diffie -Hellman 密钥交换协议</h2><p>密钥协商（key agreement）是一个协议，它通过<strong>两个</strong>或<strong>多个成员</strong>在一个公开的信道上通信联合地建立一个秘密密钥。</p>
-<p>Diffie-Hellman密钥交换协议很容易受到主动攻击的<strong>中间人攻击</strong>：</p>
-    
-    <a class="article-more-a" href="/2023/01/16/2023-1-16-%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E5%8D%8F%E8%AE%AE/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全协议</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/01/16/2023-1-16-%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E5%8D%8F%E8%AE%AE/">展开全文 >></a>
     </p>
     
 
