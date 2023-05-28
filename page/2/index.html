@@ -223,6 +223,206 @@
             
 
   
+    <article id="post-2023-4-1-1008.前序遍历构造二叉搜索树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/04/01/2023-4-1-1008.%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" target="_blank">1008.前序遍历构造二叉搜索树</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/04/01/2023-4-1-1008.%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" class="archive-article-date">
+        <time datetime="2023-03-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-01</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="1008-前序遍历构造二叉搜索树"><a href="#1008-前序遍历构造二叉搜索树" class="headerlink" title="1008.前序遍历构造二叉搜索树"></a>1008.前序遍历构造二叉搜索树</h1><p>给定一个整数数组，它表示BST(即 <strong>二叉搜索树</strong> )的 先序遍历 ，构造树并返回其根。</p>
+<p><strong>保证</strong> 对于给定的测试用例，总是有可能找到具有给定需求的二叉搜索树。</p>
+<p><strong>二叉搜索树</strong> 是一棵二叉树，其中每个节点， <code>Node.left</code> 的任何后代的值 <strong>严格小于</strong> <code>Node.val</code> , <code>Node.right</code> 的任何后代的值 <strong>严格大于</strong> <code>Node.val</code>。</p>
+<p>二叉树的 <strong>前序遍历</strong> 首先显示节点的值，然后遍历<code>Node.left</code>，最后遍历<code>Node.right</code>。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1266.png" alt="img" style="zoom:67%;" /></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：preorder = [8,5,1,7,10,12]</span><br><span class="line">输出：[8,5,10,1,7,null,12]</span><br></pre></td></tr></table></figure>
+<p>对于一个前序遍历 ，第一个元素必为根节点，那根据根节点的值再进行划分，大于根的为右子树 小于根的为左子树。再分别对左右子树进行递归。构建 以图中 10为例子 当确定10为根节点时候 会在[10,12]中寻找 小于10的但是没有 就返回null  比10大的为12就返回12.</p>
+<p>截至条件为idx==p.size() 。 这个二叉树所有位置都走了一遍，null的节点递归不增加idx。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">int</span> idx=<span class="number">0</span>;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; p;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">bstFromPreorder</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; preorder)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        p=preorder;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">dfs</span>(INT_MIN,INT_MAX);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function">TreeNode *<span class="title">dfs</span><span class="params">(<span class="type">int</span> l ,<span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(idx==p.<span class="built_in">size</span>()|| p[idx]&lt;INT_MIN || p[idx]&gt;r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode* ans=<span class="keyword">new</span> <span class="built_in">TreeNode</span>(p[idx++]);</span><br><span class="line">        ans-&gt;left=<span class="built_in">dfs</span>(l,ans-&gt;val);</span><br><span class="line">        ans-&gt;right=<span class="built_in">dfs</span>(ans-&gt;val,r);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/04/01/2023-4-1-1008.%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2023-3-25-联合云论文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/03/25/2023-3-25-%E8%81%94%E5%90%88%E4%BA%91%E8%AE%BA%E6%96%87/" target="_blank">联合云论文</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/03/25/2023-3-25-%E8%81%94%E5%90%88%E4%BA%91%E8%AE%BA%E6%96%87/" class="archive-article-date">
+        <time datetime="2023-03-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-25</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="JointCloud-A-Cross-Cloud-Cooperation-Architecture-for-Integrated-Internet-Service-Customization"><a href="#JointCloud-A-Cross-Cloud-Cooperation-Architecture-for-Integrated-Internet-Service-Customization" class="headerlink" title="JointCloud: A Cross-Cloud Cooperation Architecture for Integrated Internet Service Customization"></a>JointCloud: A Cross-Cloud Cooperation Architecture for Integrated Internet Service Customization</h1><p>联合云</p>
+<p>初步设计：对等合作机制PCM</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230325103103358.png" alt="image-20230325103103358" style="zoom:80%;" /></p>
+<p><strong>资源面板</strong>包含各种软件定义的资源。</p>
+<p><strong>控制面板</strong>管理各种软件定义的资源并处理云之间的存储和计算通信细节</p>
+<p><strong>业务面板</strong>处理云之间的协作</p>
+<h2 id="联合云通信"><a href="#联合云通信" class="headerlink" title="联合云通信"></a>联合云通信</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230325104721655.png" alt="image-20230325104721655" style="zoom:80%;" /></p>
+<p>控制面板管理多个云提供商之间的互连，并配置资源面板以构建云际网络。</p>
+<p>业务面板处理高级协调，如资源供应和服务整合。</p>
+<p>信息面板促进了单个云内的通信以及与 JCCE 的交互</p>
+<p>云与云之间的计费运行在JCCE管理的分布式账本上</p>
+<h2 id="联合云存储"><a href="#联合云存储" class="headerlink" title="联合云存储"></a>联合云存储</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230325105426651.png" alt="image-20230325105426651" style="zoom:80%;" /></p>
+<p><strong>资源面板</strong>提供了异构存储服务之间的抽象视图。引入了有效的运行时以提供快速且可扩展的命名空间处理和元数据集成</p>
+<p><strong>控制面板</strong>，云节点可以根据本层提供的基本机制和服务相互协调。为了增强跨联合云的存储服务的可扩展性，提出了一种分散和复制的元数据管理协议和机制，具有可配置的细粒度一致性、高效协调和可扩展的消息通信。</p>
+<p><strong>业务面板</strong>提供了联合云存储服务的统一业务视图。云节点之间的共享存储能力可以联合起来形成不同的存储池，提供不同的QoS保证。</p>
+<p><strong>信息面板</strong>来收集用户统计数据并在云对等点之间共享。</p>
+<h2 id="联合云计算"><a href="#联合云计算" class="headerlink" title="联合云计算"></a>联合云计算</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230325105910646.png" alt="image-20230325105910646" style="zoom:80%;" /></p>
+<p>资源面板将这些资源划分成资源池</p>
+<p>控制面板可以在资源池上动态分配和管理计算单元控制面板还负责在跨云视图中管理计算单元。它提供了一种跨云迁移机制，并将应用程序状态与平台状态解耦，以提供与 JCCE 的无缝接口。</p>
+<p>业务面板反而提供不同的政策来实施不同的业务模型，包括定价、会计和审计。</p>
+<p>信息面板提供了一套服务，包括资源监控和故障推理机制，以帮助用户定位具体的计算任务失败是哪个云造成的。信息面板还持续监控联合云使用情况并动态平衡云提供商之间的计算工作量。</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">云数据安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/03/25/2023-3-25-%E8%81%94%E5%90%88%E4%BA%91%E8%AE%BA%E6%96%87/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2023-3-25-盛雨水最多的容器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1112,197 +1312,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2023/01/28/2023-1-28-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%AC%E4%BA%94%E7%AB%A0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2023-1-25-机器学习复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/01/25/2023-1-25-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/" target="_blank">机器学习复习</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/01/25/2023-1-25-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
-        <time datetime="2023-01-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-25</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="第一章回归"><a href="#第一章回归" class="headerlink" title="第一章回归"></a>第一章回归</h1><p>[TOC]</p>
-    
-    <a class="article-more-a" href="/2023/01/25/2023-1-25-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/01/25/2023-1-25-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2023-1-24-网络安全复习--第四章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/01/24/2023-1-24-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0--%E7%AC%AC%E5%9B%9B%E7%AB%A0/" target="_blank">网络安全复习--第四章</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/01/24/2023-1-24-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0--%E7%AC%AC%E5%9B%9B%E7%AB%A0/" class="archive-article-date">
-        <time datetime="2023-01-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-24</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="缓冲区溢出"><a href="#缓冲区溢出" class="headerlink" title="缓冲区溢出"></a>缓冲区溢出</h2><p><a target="_blank" rel="noopener" href="http://baike.baidu.com/view/266782.htm">缓冲区</a>溢出是指当计算机向缓冲区内填充数据位数时超过了缓冲区本身的容量溢出的数据覆盖在合法数据上,理想的情况是程序检查数据长度并不允许输入超过缓冲区长度的字符,但是绝大多数程序都会假设数据长度总是与所分配的储存空间相匹配,这就为缓冲区溢出埋下隐患.操作系统所使用的缓冲区 又被称为”堆栈”. 在各个操作进程之间,指令会被临时储存在”堆栈”当中,”堆栈”也会出现缓冲区溢出。</p>
-<p>栈溢出：</p>
-<p>　栈溢出就是缓冲区溢出的一种。 由于缓冲区溢出而使得有用的存储单元被改写,往往会引发不可预料的后果。程序在运行过程中，为了临时存取数据的需要，一般都要分配一些内存空间，通常称这些空间为缓冲区。如果向缓冲区中写入超过其本身长度的数据，以致于缓冲区无法容纳，就会造成缓冲区以外的存储单元被改写，这种现象就称为缓冲区溢出。</p>
-<h2 id="Format-String-Vulnerabilities"><a href="#Format-String-Vulnerabilities" class="headerlink" title="Format String Vulnerabilities"></a>Format String Vulnerabilities</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span>  <span class="string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">// This line is safe</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, argv[<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// This line is vulnerable</span></span><br><span class="line">	<span class="built_in">printf</span>(argv[<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>正常输出结果为”Hello World %s%s%s%s%s%s”第一句不会对 后面的%s做解释。</p>
-<p>第二<code>printf</code>行中的<code>%s%s%s%s%s%s</code> 会将输入字符串中的 %s 解释为对字符串指针的引用，因此它将尝试将每个 %s 解释为指向字符串的指针，从缓冲区的位置开始（可能在堆栈上）。在某些时候，它会到达一个无效地址，并试图访问它会导致程序崩溃</p>
-<h2 id="Command-Injection"><a href="#Command-Injection" class="headerlink" title="Command Injection"></a>Command Injection</h2><h1 id="网络安全分类"><a href="#网络安全分类" class="headerlink" title="网络安全分类"></a>网络安全分类</h1><h2 id="基于头部的"><a href="#基于头部的" class="headerlink" title="基于头部的"></a>基于头部的</h2><p>由头部的无效值引起的漏洞</p>
-<h3 id="死亡ping攻击"><a href="#死亡ping攻击" class="headerlink" title="死亡ping攻击"></a>死亡ping攻击</h3><p>一般，每次向目标主机发送Ping命令测试数据包时，目标主机都需要耗费一定的系统资源进行应答回复，Ping攻击就是不断向指定的IP地址发送不接收回复的数据包，这种攻击通过发送大于65536字节的ICMP包使操作系统崩溃；通常不可能发送大于65536个字节的ICMP包，但可以把报文分割成片段，然后在目标主机上重组；最终会导致被攻击目标<a href="https://link.zhihu.com/?target=https%3A//baike.baidu.com/item/%E7%BC%93%E5%86%B2%E5%8C%BA%E6%BA%A2%E5%87%BA/678453">缓冲区溢出</a>，直至目标主机有限系统资源被消耗殆尽。<br>网络中的许多病毒或黑客常常会通过上述方法来对目标主机实施Ping命令攻击，从而导致目标主机发生瘫痪故障。</p>
-<h2 id="基于协议的"><a href="#基于协议的" class="headerlink" title="基于协议的"></a>基于协议的</h2><h3 id="SYN洪水攻击"><a href="#SYN洪水攻击" class="headerlink" title="SYN洪水攻击"></a>SYN洪水攻击</h3><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230124185352257.png" alt="image-20230124185352257" style="zoom:50%;" /></p>
-<h2 id="基于认证的"><a href="#基于认证的" class="headerlink" title="基于认证的"></a>基于认证的</h2><h3 id="四种不同的身份验证"><a href="#四种不同的身份验证" class="headerlink" title="四种不同的身份验证"></a>四种不同的身份验证</h3><ul>
-<li>user to host 人向计算机资源证明身份</li>
-<li>host to host 过去通常使用ip地址来实现</li>
-<li>user to user e-mail中常用 通常通过密钥和证书来实现</li>
-<li>host to user 服务器对用户进行身份验证</li>
-</ul>
-<h2 id="基于流量的"><a href="#基于流量的" class="headerlink" title="基于流量的"></a>基于流量的</h2><p>广播数据包将造成最大的损害 Broadcast Flood Attack</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230124191138001.png" alt="image-20230124191138001" style="zoom:25%;" /></p>
-<p>如果攻击者能够“看到”流量，则可以对网络中的任何层进行数据包嗅探。  流量捕获</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/01/24/2023-1-24-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0--%E7%AC%AC%E5%9B%9B%E7%AB%A0/">展开全文 >></a>
     </p>
     
 
