@@ -6,29 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://wynneyin.site">
-  <title>wynneblog</title>
+  <title>Tag: 其他 | wynneblog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="title:IPV6tags:网络工程师 date:2023-5-4IPv6IPv6的地址长度为128位，采用十六进制表示 IPv6表示方式（1）地址压缩方式：中间0可用::压缩；前导0可以压缩；两者可以同时使用；::只能出现一次 ①2001:0410:0000:0001::45ff———中间0全压缩②2001:410:0:1:0:0:0:45ff————压缩前导的0③2001:410:0:1:">
-<meta property="og:type" content="article">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="wynneblog">
-<meta property="og:url" content="http://wynneyin.site/2023/05/04/2023-5-4-IPV6/index.html">
+<meta property="og:url" content="http://wynneyin.site/tags/%E5%85%B6%E4%BB%96/index.html">
 <meta property="og:site_name" content="wynneblog">
-<meta property="og:description" content="title:IPV6tags:网络工程师 date:2023-5-4IPv6IPv6的地址长度为128位，采用十六进制表示 IPv6表示方式（1）地址压缩方式：中间0可用::压缩；前导0可以压缩；两者可以同时使用；::只能出现一次 ①2001:0410:0000:0001::45ff———中间0全压缩②2001:410:0:1:0:0:0:45ff————压缩前导的0③2001:410:0:1:">
 <meta property="og:locale">
-<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504190555278.png">
-<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191232962.png">
-<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191239228.png">
-<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191249220.png">
-<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191351193.png">
-<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191405404.png">
-<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191442736.png">
-<meta property="article:published_time" content="2023-05-04T11:17:05.983Z">
-<meta property="article:modified_time" content="2023-05-04T11:17:05.983Z">
 <meta property="article:author" content="Wynneyin">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504190555278.png">
   
     <link rel="alternative" href="/atom.xml" title="wynneblog" type="application/atom+xml">
   
@@ -228,200 +216,65 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2023-5-4-IPV6" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+            
+  
+  
     
-  <div class="article-entry" itemprop="articleBody">
     
-    <hr>
-<p>title:IPV6<br>tags:网络工程师</p>
-<h2 id="date-2023-5-4"><a href="#date-2023-5-4" class="headerlink" title="date:2023-5-4"></a>date:2023-5-4</h2><h1 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a>IPv6</h1><p>IPv6的地址长度为128位，采用十六进制表示</p>
-<p>IPv6表示方式<br><strong>（1）地址压缩方式：</strong><br>中间0可用::压缩；前导0可以压缩；两者可以同时使用；::<br>只能出现一次</p>
-<p>①2001:0410:0000:0001::45ff———中间0全压缩<br>②2001:410:0:1:0:0:0:45ff————压缩前导的0<br>③2001:410:0:1::45ff——————-中间0全压缩和压<br>缩前导0同时使用</p>
-<p><strong>（2）地址表示方法：</strong><br>IPv6地址 = 前缀 + 接口标识</p>
-<h2 id="IPv6地址范围"><a href="#IPv6地址范围" class="headerlink" title="IPv6地址范围:"></a>IPv6地址范围:</h2><p>（1）可聚合全球单播地址：作用类似于IPv4中的公网地址。<br>前缀前3位固定是001，有效地址范围前缀（2000~3FFF）。<br>2001::/64—-首批使用的可聚合全球单播地址；<br>2002::/64—-IPv4网络中建立6to4隧道的地址。<br>（2）链路本地地址：只限于直连链路，是单网络链路上给<br>的主机编号，作用是进行链路上主机的通信。前10位为<br>1111111010；中间54位填充0，用于子网或预留。前缀地<br>址为FE80::/10，接口ID在后64位</p>
-<p>（3）站点本地地址：用于对特定范围的通信也可说成是规<br>定站点内的通信，不能与站点外地址通信，也不能直接连接<br>到全球Internet。类似于IPv4的内部私有地址。前10位为<br>1111111011；中间54位填充0，用于子网或预留。前缀地址<br>为FEC0::/10，接口ID在后64位。</p>
-<h2 id="IPv6特殊地址"><a href="#IPv6特殊地址" class="headerlink" title="IPv6特殊地址"></a>IPv6特殊地址</h2><p>（1）0:0:0:0:0:0:0:0或::（未指定地址）—-用于表示不<br>存在的地址。等同于IPV4的0.0.0.0。未指定地址通常在目<br>标地址还为确定时充当源地址使用。此地址不能分配给接口<br>或者是做为目标地址使用。<br>（2）0:0:0:0:0:0:0:1或::1（环回接口地址）—-分配给环<br>回接口，使得节点能够向自己发送数据包，该地址等同IPv4<br>的环回地址127.0.0.1。发往环回地址的数据包永远不应该<br>通过链路发送或者通过IPv6路由器进行转发。</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504190555278.png" alt="image-20230504190555278"></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191232962.png" alt="image-20230504191232962"></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191239228.png" alt="image-20230504191239228"></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191249220.png" alt="image-20230504191249220" style="zoom:67%;" /></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191351193.png" alt="image-20230504191351193" style="zoom:67%;" /></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191405404.png" alt="image-20230504191405404" style="zoom:67%;" /></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191442736.png" alt="image-20230504191442736" style="zoom:67%;" /></p>
-
-    
-
-    
-    <div class="page-reward">
-      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
-        <div class="tooltip tooltip-east">
-          <span class="tooltip-item">
-            赏
-          </span>
-          <span class="tooltip-content">
-            <span class="tooltip-text">
-              <span class="tooltip-inner">
-                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
-                    class="icon icon-quo-right"></i></p>
-                <div class="reward-box">
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/img/alipay.jpg">
-                    <span class="reward-type">支付宝</span>
-                  </div>
-                  
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/img/weixin.png">
-                    <span class="reward-type">微信</span>
-                  </div>
-                  
-                </div>
-              </span>
-            </span>
-          </span>
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2023" class="archive-year">2023</a>
         </div>
-      </a>
-    </div>
+        <div class="archives">
     
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2023/05/14/2023-5-14-%E8%B0%B7%E6%AD%8C%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="archive-article-date">
+        <time datetime="2023-05-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-14</time>
+</a>
 
-    
-    <div class="declare"> 
-      <ul class="post-copyright">
-        <li>
-          <strong>本文作者：</strong>
-          Wynneyin
-        </li>
-        <li>
-          <strong>本文链接：</strong>
-          <a href="http://wynneyin.site/2023/05/04/2023-5-4-IPV6/" title="" target="_blank">http://wynneyin.site/2023/05/04/2023-5-4-IPV6/</a>
-        </li>
-        
-        <li>
-          <strong>版权声明： </strong>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+	
+	  <a class="archive-article-title" href="/2023/05/14/2023-5-14-%E8%B0%B7%E6%AD%8C%E5%BF%AB%E6%8D%B7%E9%94%AE/" target="_blank">快捷键</a>
+  
+    </h1>
+  
+
+
+        <div class="article-info info-on-right">
           
-          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
-        </li>
-        
-      </ul>
-    </div>
-    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其他</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
+          
 
-    
-
-    
-    
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a> -->
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://wynneyin.site/2023/05/04/2023-5-4-IPV6/" alt="微信分享二维码"> -->
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-
-    
-    <div class="clearfix"></div>
-  </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-<nav id="article-nav">
-  
-    <a href="/2023/05/10/2023-5-10-%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%A4%87%E5%BF%98%E5%BD%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
   
-    <a href="/2023/05/03/2023-5-3-%E4%BF%A1%E6%81%AF%E8%AE%BA--%E6%9E%81%E5%8C%96%E7%A0%81/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
           </div>
@@ -462,9 +315,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
@@ -644,6 +497,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">网络工程师</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">信息论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">其他</a>
               </li>
             
             <div class="clearfix"></div>

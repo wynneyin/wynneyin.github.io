@@ -223,6 +223,194 @@
             
 
   
+    <article id="post-2023-5-3-信息论--极化码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/05/25/2023-5-3-%E4%BF%A1%E6%81%AF%E8%AE%BA--%E6%9E%81%E5%8C%96%E7%A0%81/" target="_blank">信息论极化码</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/05/25/2023-5-3-%E4%BF%A1%E6%81%AF%E8%AE%BA--%E6%9E%81%E5%8C%96%E7%A0%81/" class="archive-article-date">
+        <time datetime="2023-05-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-25</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="极化码"><a href="#极化码" class="headerlink" title="极化码"></a>极化码</h1><p>极化码的形式:</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/0a95e6e0fa9947e7a691a34a1f22fd52.png" alt="img"></p>
+<p>解码的方法:</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1b06991b8c8e46209cf483becdd434e1.png" alt="img"></p>
+<p>W_ 信道:<br><img src="https://img-blog.csdnimg.cn/8363c111a82643cfbbe66edd64082b6f.png" alt="img"></p>
+<p>W+信道:</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/50ccac3a660f4b27b0a481396c1db712.png" alt="img"></p>
+<p>因为U1信道不好那么我们直接放弃，改为一个固定的值。</p>
+<p><em>解决</em>：Arikan的思路为抛弃差信道(冻结)，差信道不传输信息，而U1的值事先约定好，即U1已知不需要解码，目的是为了成功解码好信道中传输的U2</p>
+<p>相较于两个BEC信道独立的传输U1 U2时，成功传输的概率各自为1-P，而极化信道<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/gif.latex" alt="W^{-}()">中U1传输成功的概率为<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/gif.latex" alt="(1-P)^{2}">，U2传输成功的概率为<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/gif.latex" alt="1-P^{2}"></p>
+<p>$\begin{array}{l}<br>I(w)=1-p \<br>I\left(W^{-}\right)=1-p(2-p)=(1-p)^{2} \<br>I\left(W^{+}\right)=1-p^{2}<br>\end{array}$  </p>
+<p>$\begin{array}{l}<br>\text {定理(BEC)} \forall \varepsilon&gt;0 ,W=B E C(p) \text {, } \<br>\mu<em>{t}(\varepsilon)=\frac{1}{2^{t}} \sum</em>{s^{\epsilon} \in\left{+,-\xi^{t}\right.} 1\left(p\left(s^{t}\right) \in(\varepsilon, 1-\varepsilon)\right) \<br>\text { k24. } \lim <em>{t \rightarrow \infty} \mu</em>{t}(\varepsilon)=0 \<br>\end{array}$</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">信息论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/05/25/2023-5-3-%E4%BF%A1%E6%81%AF%E8%AE%BA--%E6%9E%81%E5%8C%96%E7%A0%81/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2023-5-10-信息论备忘录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/05/25/2023-5-10-%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%A4%87%E5%BF%98%E5%BD%95/" target="_blank">信息论--熵部分</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/05/25/2023-5-10-%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%A4%87%E5%BF%98%E5%BD%95/" class="archive-article-date">
+        <time datetime="2023-05-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-25</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="信息论备忘录"><a href="#信息论备忘录" class="headerlink" title="信息论备忘录"></a>信息论备忘录</h1><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/MI1.png" alt="img"></p>
+<script type="math/tex; mode=display">
+I\left(X_{1}, X_{2}, \ldots, X_{n} ; Y\right)=\sum_{i=1}^{n} I\left(X_{i} ; Y \mid X_{i-1}, X_{i-2}, \ldots, X_{1}\right)</script><script type="math/tex; mode=display">
+I\left(X; Y,Z\right)=I(X,Z)+I\left(X; Y\mid Z\right) \\
+I\left(X; Y,Z\right)=I(X,Y)+I\left(X; Z\mid Y\right)</script><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230510155640342.png" alt="image-20230510155640342"></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230510155826326.png" alt="image-20230510155826326"></p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">信息论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/05/25/2023-5-10-%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%A4%87%E5%BF%98%E5%BD%95/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2023-5-17-网工，磁盘阵列技术" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -231,7 +419,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2023/05/25/2023-5-17-%E7%BD%91%E5%B7%A5%EF%BC%8C%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/" target="_blank">磁盘阵列技术</a>
+	  <a class="article-title" href="/2023/05/25/2023-5-17-%E7%BD%91%E5%B7%A5%EF%BC%8C%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/" target="_blank">网工知识点</a>
   
     </h1>
   
@@ -264,6 +452,20 @@
 <p>前面所述的各个RAID等级都只能保护因单个磁盘失效而造成的数据丢失。如果两个磁盘同时发生故障，数据将无法恢复。RAID 6读性能高，写性能低</p>
 <p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230517142216981.png" alt="image-20230517142216981" style="zoom:50%;" /></p>
 <p>主要有基于以太网（IP-SAN）和光纤通道（FC-SAN）两种类。FC-SAN支持高速的数据传输速率，扩展能力强，但是成本高，适用于短距离传输。IP-SAN是把FC-SAN中光纤通道解决的问题通过更为成熟的以太网来实现，具有成本低，可靠性，扩展性，没有FC-SAN中光纤通道的传输距离限制。</p>
+<h2 id="IPV6"><a href="#IPV6" class="headerlink" title="IPV6"></a>IPV6</h2><p>IPv6的地址长度为128位，采用十六进制表示</p>
+<p>IPv6表示方式<br><strong>（1）地址压缩方式：</strong><br>中间0可用::压缩；前导0可以压缩；两者可以同时使用；::<br>只能出现一次</p>
+<p>①2001:0410:0000:0001::45ff———中间0全压缩<br>②2001:410:0:1:0:0:0:45ff————压缩前导的0<br>③2001:410:0:1::45ff——————-中间0全压缩和压<br>缩前导0同时使用</p>
+<p><strong>（2）地址表示方法：</strong><br>IPv6地址 = 前缀 + 接口标识</p>
+<h2 id="IPv6地址范围"><a href="#IPv6地址范围" class="headerlink" title="IPv6地址范围:"></a>IPv6地址范围:</h2><p>（1）可聚合全球单播地址：作用类似于IPv4中的公网地址。<br>前缀前3位固定是001，有效地址范围前缀（2000~3FFF）。<br>2001::/64—-首批使用的可聚合全球单播地址；<br>2002::/64—-IPv4网络中建立6to4隧道的地址。<br>（2）链路本地地址：只限于直连链路，是单网络链路上给<br>的主机编号，作用是进行链路上主机的通信。前10位为<br>1111111010；中间54位填充0，用于子网或预留。前缀地<br>址为FE80::/10，接口ID在后64位</p>
+<p>（3）站点本地地址：用于对特定范围的通信也可说成是规<br>定站点内的通信，不能与站点外地址通信，也不能直接连接<br>到全球Internet。类似于IPv4的内部私有地址。前10位为<br>1111111011；中间54位填充0，用于子网或预留。前缀地址<br>为FEC0::/10，接口ID在后64位。</p>
+<h2 id="IPv6特殊地址"><a href="#IPv6特殊地址" class="headerlink" title="IPv6特殊地址"></a>IPv6特殊地址</h2><p>（1）0:0:0:0:0:0:0:0或::（未指定地址）—-用于表示不<br>存在的地址。等同于IPV4的0.0.0.0。未指定地址通常在目<br>标地址还为确定时充当源地址使用。此地址不能分配给接口<br>或者是做为目标地址使用。<br>（2）0:0:0:0:0:0:0:1或::1（环回接口地址）—-分配给环<br>回接口，使得节点能够向自己发送数据包，该地址等同IPv4<br>的环回地址127.0.0.1。发往环回地址的数据包永远不应该<br>通过链路发送或者通过IPv6路由器进行转发。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504190555278.png" alt="image-20230504190555278"></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191232962.png" alt="image-20230504191232962"></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191239228.png" alt="image-20230504191239228"></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191249220.png" alt="image-20230504191249220" style="zoom:67%;" /></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191351193.png" alt="image-20230504191351193" style="zoom:67%;" /></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191405404.png" alt="image-20230504191405404" style="zoom:67%;" /></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191442736.png" alt="image-20230504191442736" style="zoom:67%;" /></p>
 
     
 
@@ -323,11 +525,33 @@
     <article id="post-2023-5-14-谷歌快捷键" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/05/14/2023-5-14-%E8%B0%B7%E6%AD%8C%E5%BF%AB%E6%8D%B7%E9%94%AE/" target="_blank">快捷键</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/05/14/2023-5-14-%E8%B0%B7%E6%AD%8C%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="archive-article-date">
+        <time datetime="2023-05-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-14</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
   <div class="article-entry" itemprop="articleBody">
     
-    <hr>
-<p>title:谷歌快捷键<br>tags:其他</p>
-<h2 id="date-2023-5-14"><a href="#date-2023-5-14" class="headerlink" title="date:2023-5-14"></a>date:2023-5-14</h2><p>谷歌浏览器的快捷键：</p>
+    <p>谷歌浏览器的快捷键：</p>
 <p><strong>定位地址栏：alt + d</strong> </p>
 <p><strong>搜索：ctrl + f</strong></p>
 <p><strong>打开最近关闭的窗口 ctrl + shift + t</strong></p>
@@ -344,199 +568,22 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其他</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2023/05/14/2023-5-14-%E8%B0%B7%E6%AD%8C%E5%BF%AB%E6%8D%B7%E9%94%AE/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2023-5-10-信息论备忘录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-  <div class="article-entry" itemprop="articleBody">
-    
-    <hr>
-<p>title:信息论—-熵部分<br>tags:信息论</p>
-<h2 id="date-2023-5-10"><a href="#date-2023-5-10" class="headerlink" title="date:2023-5-10"></a>date:2023-5-10</h2><h1 id="信息论备忘录"><a href="#信息论备忘录" class="headerlink" title="信息论备忘录"></a>信息论备忘录</h1><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/MI1.png" alt="img"></p>
-<script type="math/tex; mode=display">
-I\left(X_{1}, X_{2}, \ldots, X_{n} ; Y\right)=\sum_{i=1}^{n} I\left(X_{i} ; Y \mid X_{i-1}, X_{i-2}, \ldots, X_{1}\right)</script><script type="math/tex; mode=display">
-I\left(X; Y,Z\right)=I(X,Z)+I\left(X; Y\mid Z\right) \\
-I\left(X; Y,Z\right)=I(X,Y)+I\left(X; Z\mid Y\right)</script><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230510155640342.png" alt="image-20230510155640342"></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230510155826326.png" alt="image-20230510155826326"></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/05/10/2023-5-10-%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%A4%87%E5%BF%98%E5%BD%95/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2023-5-4-IPV6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-  <div class="article-entry" itemprop="articleBody">
-    
-    <hr>
-<p>title:IPV6<br>tags:网络工程师</p>
-<h2 id="date-2023-5-4"><a href="#date-2023-5-4" class="headerlink" title="date:2023-5-4"></a>date:2023-5-4</h2><h1 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a>IPv6</h1><p>IPv6的地址长度为128位，采用十六进制表示</p>
-<p>IPv6表示方式<br><strong>（1）地址压缩方式：</strong><br>中间0可用::压缩；前导0可以压缩；两者可以同时使用；::<br>只能出现一次</p>
-<p>①2001:0410:0000:0001::45ff———中间0全压缩<br>②2001:410:0:1:0:0:0:45ff————压缩前导的0<br>③2001:410:0:1::45ff——————-中间0全压缩和压<br>缩前导0同时使用</p>
-<p><strong>（2）地址表示方法：</strong><br>IPv6地址 = 前缀 + 接口标识</p>
-<h2 id="IPv6地址范围"><a href="#IPv6地址范围" class="headerlink" title="IPv6地址范围:"></a>IPv6地址范围:</h2><p>（1）可聚合全球单播地址：作用类似于IPv4中的公网地址。<br>前缀前3位固定是001，有效地址范围前缀（2000~3FFF）。<br>2001::/64—-首批使用的可聚合全球单播地址；<br>2002::/64—-IPv4网络中建立6to4隧道的地址。<br>（2）链路本地地址：只限于直连链路，是单网络链路上给<br>的主机编号，作用是进行链路上主机的通信。前10位为<br>1111111010；中间54位填充0，用于子网或预留。前缀地<br>址为FE80::/10，接口ID在后64位</p>
-<p>（3）站点本地地址：用于对特定范围的通信也可说成是规<br>定站点内的通信，不能与站点外地址通信，也不能直接连接<br>到全球Internet。类似于IPv4的内部私有地址。前10位为<br>1111111011；中间54位填充0，用于子网或预留。前缀地址<br>为FEC0::/10，接口ID在后64位。</p>
-<h2 id="IPv6特殊地址"><a href="#IPv6特殊地址" class="headerlink" title="IPv6特殊地址"></a>IPv6特殊地址</h2><p>（1）0:0:0:0:0:0:0:0或::（未指定地址）—-用于表示不<br>存在的地址。等同于IPV4的0.0.0.0。未指定地址通常在目<br>标地址还为确定时充当源地址使用。此地址不能分配给接口<br>或者是做为目标地址使用。<br>（2）0:0:0:0:0:0:0:1或::1（环回接口地址）—-分配给环<br>回接口，使得节点能够向自己发送数据包，该地址等同IPv4<br>的环回地址127.0.0.1。发往环回地址的数据包永远不应该<br>通过链路发送或者通过IPv6路由器进行转发。</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504190555278.png" alt="image-20230504190555278"></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191232962.png" alt="image-20230504191232962"></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191239228.png" alt="image-20230504191239228"></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191249220.png" alt="image-20230504191249220" style="zoom:67%;" /></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191351193.png" alt="image-20230504191351193" style="zoom:67%;" /></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191405404.png" alt="image-20230504191405404" style="zoom:67%;" /></p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191442736.png" alt="image-20230504191442736" style="zoom:67%;" /></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/05/04/2023-5-4-IPV6/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2023-5-3-信息论--极化码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-  <div class="article-entry" itemprop="articleBody">
-    
-    <hr>
-<p>title:信息论—极化码<br>tags:信息论</p>
-<h2 id="date-2023-5-3"><a href="#date-2023-5-3" class="headerlink" title="date:2023-5-3"></a>date:2023-5-3</h2><h1 id="极化码"><a href="#极化码" class="headerlink" title="极化码"></a>极化码</h1><p>极化码的形式:</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/0a95e6e0fa9947e7a691a34a1f22fd52.png" alt="img"></p>
-<p>解码的方法:</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1b06991b8c8e46209cf483becdd434e1.png" alt="img"></p>
-<p>W_ 信道:<br><img src="https://img-blog.csdnimg.cn/8363c111a82643cfbbe66edd64082b6f.png" alt="img"></p>
-<p>W+信道:</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/50ccac3a660f4b27b0a481396c1db712.png" alt="img"></p>
-<p>因为U1信道不好那么我们直接放弃，改为一个固定的值。</p>
-<p><em>解决</em>：Arikan的思路为抛弃差信道(冻结)，差信道不传输信息，而U1的值事先约定好，即U1已知不需要解码，目的是为了成功解码好信道中传输的U2</p>
-<p>相较于两个BEC信道独立的传输U1 U2时，成功传输的概率各自为1-P，而极化信道<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/gif.latex" alt="W^{-}()">中U1传输成功的概率为<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/gif.latex" alt="(1-P)^{2}">，U2传输成功的概率为<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/gif.latex" alt="1-P^{2}"></p>
-<p>$\begin{array}{l}<br>I(w)=1-p \<br>I\left(W^{-}\right)=1-p(2-p)=(1-p)^{2} \<br>I\left(W^{+}\right)=1-p^{2}<br>\end{array}$  </p>
-<p>$\begin{array}{l}<br>\text {定理(BEC)} \forall \varepsilon&gt;0 ,W=B E C(p) \text {, } \<br>\mu<em>{t}(\varepsilon)=\frac{1}{2^{t}} \sum</em>{s^{\epsilon} \in\left{+,-\xi^{t}\right.} 1\left(p\left(s^{t}\right) \in(\varepsilon, 1-\varepsilon)\right) \<br>\text { k24. } \lim <em>{t \rightarrow \infty} \mu</em>{t}(\varepsilon)=0 \<br>\end{array}$</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/05/03/2023-5-3-%E4%BF%A1%E6%81%AF%E8%AE%BA--%E6%9E%81%E5%8C%96%E7%A0%81/">展开全文 >></a>
     </p>
     
 
@@ -1052,6 +1099,100 @@ I\left(X; Y,Z\right)=I(X,Y)+I\left(X; Z\mid Y\right)</script><p><img src="https:
 
 
   
+    <article id="post-2023-4-1-1008.前序遍历构造二叉搜索树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/04/01/2023-4-1-1008.%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" target="_blank">1008.前序遍历构造二叉搜索树</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/04/01/2023-4-1-1008.%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" class="archive-article-date">
+        <time datetime="2023-03-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-01</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="1008-前序遍历构造二叉搜索树"><a href="#1008-前序遍历构造二叉搜索树" class="headerlink" title="1008.前序遍历构造二叉搜索树"></a>1008.前序遍历构造二叉搜索树</h1><p>给定一个整数数组，它表示BST(即 <strong>二叉搜索树</strong> )的 先序遍历 ，构造树并返回其根。</p>
+<p><strong>保证</strong> 对于给定的测试用例，总是有可能找到具有给定需求的二叉搜索树。</p>
+<p><strong>二叉搜索树</strong> 是一棵二叉树，其中每个节点， <code>Node.left</code> 的任何后代的值 <strong>严格小于</strong> <code>Node.val</code> , <code>Node.right</code> 的任何后代的值 <strong>严格大于</strong> <code>Node.val</code>。</p>
+<p>二叉树的 <strong>前序遍历</strong> 首先显示节点的值，然后遍历<code>Node.left</code>，最后遍历<code>Node.right</code>。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1266.png" alt="img" style="zoom:67%;" /></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：preorder = [8,5,1,7,10,12]</span><br><span class="line">输出：[8,5,10,1,7,null,12]</span><br></pre></td></tr></table></figure>
+<p>对于一个前序遍历 ，第一个元素必为根节点，那根据根节点的值再进行划分，大于根的为右子树 小于根的为左子树。再分别对左右子树进行递归。构建 以图中 10为例子 当确定10为根节点时候 会在[10,12]中寻找 小于10的但是没有 就返回null  比10大的为12就返回12.</p>
+<p>截至条件为idx==p.size() 。 这个二叉树所有位置都走了一遍，null的节点递归不增加idx。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">int</span> idx=<span class="number">0</span>;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; p;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">bstFromPreorder</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; preorder)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        p=preorder;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">dfs</span>(INT_MIN,INT_MAX);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function">TreeNode *<span class="title">dfs</span><span class="params">(<span class="type">int</span> l ,<span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(idx==p.<span class="built_in">size</span>()|| p[idx]&lt;INT_MIN || p[idx]&gt;r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode* ans=<span class="keyword">new</span> <span class="built_in">TreeNode</span>(p[idx++]);</span><br><span class="line">        ans-&gt;left=<span class="built_in">dfs</span>(l,ans-&gt;val);</span><br><span class="line">        ans-&gt;right=<span class="built_in">dfs</span>(ans-&gt;val,r);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/04/01/2023-4-1-1008.%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1279,6 +1420,14 @@ I\left(X; Y,Z\right)=I(X,Y)+I\left(X; Z\mid Y\right)</script><p><img src="https:
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">网络工程师</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">信息论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">其他</a>
               </li>
             
             <div class="clearfix"></div>
