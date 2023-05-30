@@ -6,7 +6,7 @@
   <link href="http://wynneyin.site/atom.xml" rel="self"/>
   
   <link href="http://wynneyin.site/"/>
-  <updated>2023-05-17T06:51:24.950Z</updated>
+  <updated>2023-05-30T08:50:45.620Z</updated>
   <id>http://wynneyin.site/</id>
   
   <author>
@@ -17,24 +17,24 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://wynneyin.site/2023/05/17/2023-5-17-%E7%BD%91%E5%B7%A5%EF%BC%8C%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/"/>
-    <id>http://wynneyin.site/2023/05/17/2023-5-17-%E7%BD%91%E5%B7%A5%EF%BC%8C%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/</id>
-    <published>2023-05-17T06:51:24.946Z</published>
-    <updated>2023-05-17T06:51:24.950Z</updated>
+    <title>磁盘阵列技术</title>
+    <link href="http://wynneyin.site/2023/05/25/2023-5-17-%E7%BD%91%E5%B7%A5%EF%BC%8C%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/"/>
+    <id>http://wynneyin.site/2023/05/25/2023-5-17-%E7%BD%91%E5%B7%A5%EF%BC%8C%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/</id>
+    <published>2023-05-24T16:00:00.000Z</published>
+    <updated>2023-05-30T08:50:45.620Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>title:网工，磁盘阵列技术<br>tags:网工</p><h2 id="date-2023-5-17"><a href="#date-2023-5-17" class="headerlink" title="date:2023-5-17"></a>date:2023-5-17</h2><h1 id="磁盘阵列技术"><a href="#磁盘阵列技术" class="headerlink" title="磁盘阵列技术"></a>磁盘阵列技术</h1><h2 id="1-RAID-0"><a href="#1-RAID-0" class="headerlink" title="1. RAID 0"></a>1. RAID 0</h2><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20230517140513660.png" alt="image-20230517140513660" style="zoom:50%;" /></p><p>无数据校验的条带化技术。RAID 0具有低成本、最高读写性能、磁盘利用率100%，<br>不提供数据冗余保护。</p><h2 id="2-RAID-1："><a href="#2-RAID-1：" class="headerlink" title="2. RAID 1："></a>2. RAID 1：</h2><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20230517140625757.png" alt="image-20230517140625757" style="zoom:50%;" /></p><p>磁盘空间利用率为50%。RAID 1具有最高的安全性，实现成本高。一旦工作磁盘发生故障，系统自动从镜像磁盘读取数据，但读写性能最低。</p><h2 id="3-RAID-3"><a href="#3-RAID-3" class="headerlink" title="3. RAID  3:"></a>3. RAID  3:</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230517140816836.png" alt="image-20230517140816836" style="zoom:50%;" /></p><p>使用专用校验盘的并行访问阵列，它采用一个专用的磁盘作为校验盘，其余磁盘作为数据盘，RAID 3至少需要三块磁盘，不同磁盘上同一带区的数据作校验，校验值写入校验盘中。</p><h2 id="4-RAID-5"><a href="#4-RAID-5" class="headerlink" title="4. RAID 5"></a>4. RAID 5</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230517141008052.png" alt="image-20230517141008052" style="zoom:50%;" /></p><p>每块磁盘上同时存储数据和校验数据，RAID 5具备很好的扩展性。当一个数据盘损坏时，系统可以根据同一条带的其他数据块和对应的校验数据来重建损坏的数据。RAID 5读性能高，写性能低，兼顾存储性能、数据安全和存储成本等各方面因素.  <strong>目前最好的解决方案</strong></p><h2 id="5-RAID-6"><a href="#5-RAID-6" class="headerlink" title="5. RAID 6"></a>5. RAID 6</h2><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20230517141522949.png" alt="image-20230517141522949" style="zoom:50%;" /></p><p>前面所述的各个RAID等级都只能保护因单个磁盘失效而造成的数据丢失。如果两个磁盘同时发生故障，数据将无法恢复。RAID 6读性能高，写性能低</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230517142216981.png" alt="image-20230517142216981" style="zoom:50%;" /></p><p>主要有基于以太网（IP-SAN）和光纤通道（FC-SAN）两种类。FC-SAN支持高速的数据传输速率，扩展能力强，但是成本高，适用于短距离传输。IP-SAN是把FC-SAN中光纤通道解决的问题通过更为成熟的以太网来实现，具有成本低，可靠性，扩展性，没有FC-SAN中光纤通道的传输距离限制。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="磁盘阵列技术"><a href="#磁盘阵列技术" class="headerlink" title="磁盘阵列技术"></a>磁盘阵列技术</h1><h2 id="1-RAID-0"><a href="#1-RAID-0" class="headerlink" title="1. RAID 0"></a>1. RAID 0</h2><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20230517140513660.png" alt="image-20230517140513660" style="zoom:50%;" /></p><p>无数据校验的条带化技术。RAID 0具有低成本、最高读写性能、磁盘利用率100%，<br>不提供数据冗余保护。</p><h2 id="2-RAID-1："><a href="#2-RAID-1：" class="headerlink" title="2. RAID 1："></a>2. RAID 1：</h2><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20230517140625757.png" alt="image-20230517140625757" style="zoom:50%;" /></p><p>磁盘空间利用率为50%。RAID 1具有最高的安全性，实现成本高。一旦工作磁盘发生故障，系统自动从镜像磁盘读取数据，但读写性能最低。</p><h2 id="3-RAID-3"><a href="#3-RAID-3" class="headerlink" title="3. RAID  3:"></a>3. RAID  3:</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230517140816836.png" alt="image-20230517140816836" style="zoom:50%;" /></p><p>使用专用校验盘的并行访问阵列，它采用一个专用的磁盘作为校验盘，其余磁盘作为数据盘，RAID 3至少需要三块磁盘，不同磁盘上同一带区的数据作校验，校验值写入校验盘中。</p><h2 id="4-RAID-5"><a href="#4-RAID-5" class="headerlink" title="4. RAID 5"></a>4. RAID 5</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230517141008052.png" alt="image-20230517141008052" style="zoom:50%;" /></p><p>每块磁盘上同时存储数据和校验数据，RAID 5具备很好的扩展性。当一个数据盘损坏时，系统可以根据同一条带的其他数据块和对应的校验数据来重建损坏的数据。RAID 5读性能高，写性能低，兼顾存储性能、数据安全和存储成本等各方面因素.  <strong>目前最好的解决方案</strong></p><h2 id="5-RAID-6"><a href="#5-RAID-6" class="headerlink" title="5. RAID 6"></a>5. RAID 6</h2><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20230517141522949.png" alt="image-20230517141522949" style="zoom:50%;" /></p><p>前面所述的各个RAID等级都只能保护因单个磁盘失效而造成的数据丢失。如果两个磁盘同时发生故障，数据将无法恢复。RAID 6读性能高，写性能低</p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230517142216981.png" alt="image-20230517142216981" style="zoom:50%;" /></p><p>主要有基于以太网（IP-SAN）和光纤通道（FC-SAN）两种类。FC-SAN支持高速的数据传输速率，扩展能力强，但是成本高，适用于短距离传输。IP-SAN是把FC-SAN中光纤通道解决的问题通过更为成熟的以太网来实现，具有成本低，可靠性，扩展性，没有FC-SAN中光纤通道的传输距离限制。</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;title:网工，磁盘阵列技术&lt;br&gt;tags:网工&lt;/p&gt;
-&lt;h2 id=&quot;date-2023-5-17&quot;&gt;&lt;a href=&quot;#date-2023-5-17&quot; class=&quot;headerlink&quot; title=&quot;date:2023-5-17&quot;&gt;&lt;/a&gt;date:</summary>
+    <summary type="html">&lt;h1 id=&quot;磁盘阵列技术&quot;&gt;&lt;a href=&quot;#磁盘阵列技术&quot; class=&quot;headerlink&quot; title=&quot;磁盘阵列技术&quot;&gt;&lt;/a&gt;磁盘阵列技术&lt;/h1&gt;&lt;h2 id=&quot;1-RAID-0&quot;&gt;&lt;a href=&quot;#1-RAID-0&quot; class=&quot;headerlink&quot; </summary>
       
     
     
     
+    
+    <category term="网络工程师" scheme="http://wynneyin.site/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/"/>
     
   </entry>
   
@@ -65,16 +65,16 @@
     <link href="http://wynneyin.site/2023/05/10/2023-5-10-%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%A4%87%E5%BF%98%E5%BD%95/"/>
     <id>http://wynneyin.site/2023/05/10/2023-5-10-%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%A4%87%E5%BF%98%E5%BD%95/</id>
     <published>2023-05-10T07:57:03.359Z</published>
-    <updated>2023-05-10T08:23:11.358Z</updated>
+    <updated>2023-05-30T08:51:30.357Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>title:信息论备忘录<br>tags:信息论</p><h2 id="date-2023-5-10"><a href="#date-2023-5-10" class="headerlink" title="date:2023-5-10"></a>date:2023-5-10</h2><h1 id="信息论备忘录"><a href="#信息论备忘录" class="headerlink" title="信息论备忘录"></a>信息论备忘录</h1><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/MI1.png" alt="img"></p><script type="math/tex; mode=display">I\left(X_{1}, X_{2}, \ldots, X_{n} ; Y\right)=\sum_{i=1}^{n} I\left(X_{i} ; Y \mid X_{i-1}, X_{i-2}, \ldots, X_{1}\right)</script><script type="math/tex; mode=display">I\left(X; Y,Z\right)=I(X,Z)+I\left(X; Y\mid Z\right) \\I\left(X; Y,Z\right)=I(X,Y)+I\left(X; Z\mid Y\right)</script><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230510155640342.png" alt="image-20230510155640342"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230510155826326.png" alt="image-20230510155826326"></p>]]></content>
+    <content type="html"><![CDATA[<hr><p>title:信息论—-熵部分<br>tags:信息论</p><h2 id="date-2023-5-10"><a href="#date-2023-5-10" class="headerlink" title="date:2023-5-10"></a>date:2023-5-10</h2><h1 id="信息论备忘录"><a href="#信息论备忘录" class="headerlink" title="信息论备忘录"></a>信息论备忘录</h1><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/MI1.png" alt="img"></p><script type="math/tex; mode=display">I\left(X_{1}, X_{2}, \ldots, X_{n} ; Y\right)=\sum_{i=1}^{n} I\left(X_{i} ; Y \mid X_{i-1}, X_{i-2}, \ldots, X_{1}\right)</script><script type="math/tex; mode=display">I\left(X; Y,Z\right)=I(X,Z)+I\left(X; Y\mid Z\right) \\I\left(X; Y,Z\right)=I(X,Y)+I\left(X; Z\mid Y\right)</script><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230510155640342.png" alt="image-20230510155640342"></p><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230510155826326.png" alt="image-20230510155826326"></p>]]></content>
     
     
       
       
     <summary type="html">&lt;hr&gt;
-&lt;p&gt;title:信息论备忘录&lt;br&gt;tags:信息论&lt;/p&gt;
-&lt;h2 id=&quot;date-2023-5-10&quot;&gt;&lt;a href=&quot;#date-2023-5-10&quot; class=&quot;headerlink&quot; title=&quot;date:2023-5-10&quot;&gt;&lt;/a&gt;date:20</summary>
+&lt;p&gt;title:信息论—-熵部分&lt;br&gt;tags:信息论&lt;/p&gt;
+&lt;h2 id=&quot;date-2023-5-10&quot;&gt;&lt;a href=&quot;#date-2023-5-10&quot; class=&quot;headerlink&quot; title=&quot;date:2023-5-10&quot;&gt;&lt;/a&gt;date:</summary>
       
     
     

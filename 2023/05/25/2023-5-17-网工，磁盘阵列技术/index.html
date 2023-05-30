@@ -6,24 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://wynneyin.site">
-  <title>1008.前序遍历构造二叉搜索树 | wynneblog</title>
+  <title>磁盘阵列技术 | wynneblog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="1008.前序遍历构造二叉搜索树给定一个整数数组，它表示BST(即 二叉搜索树 )的 先序遍历 ，构造树并返回其根。 保证 对于给定的测试用例，总是有可能找到具有给定需求的二叉搜索树。 二叉搜索树 是一棵二叉树，其中每个节点， Node.left 的任何后代的值 严格小于 Node.val , Node.right 的任何后代的值 严格大于 Node.val。 二叉树的 前序遍历 首先显示节点的值">
+  <meta name="description" content="磁盘阵列技术1. RAID 0 无数据校验的条带化技术。RAID 0具有低成本、最高读写性能、磁盘利用率100%，不提供数据冗余保护。 2. RAID 1： 磁盘空间利用率为50%。RAID 1具有最高的安全性，实现成本高。一旦工作磁盘发生故障，系统自动从镜像磁盘读取数据，但读写性能最低。 3. RAID  3: 使用专用校验盘的并行访问阵列，它采用一个专用的磁盘作为校验盘，其余磁盘作为数据盘，R">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1008.前序遍历构造二叉搜索树">
-<meta property="og:url" content="http://wynneyin.site/2023/04/01/2023-4-1-1008.%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/index.html">
+<meta property="og:title" content="磁盘阵列技术">
+<meta property="og:url" content="http://wynneyin.site/2023/05/25/2023-5-17-%E7%BD%91%E5%B7%A5%EF%BC%8C%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/index.html">
 <meta property="og:site_name" content="wynneblog">
-<meta property="og:description" content="1008.前序遍历构造二叉搜索树给定一个整数数组，它表示BST(即 二叉搜索树 )的 先序遍历 ，构造树并返回其根。 保证 对于给定的测试用例，总是有可能找到具有给定需求的二叉搜索树。 二叉搜索树 是一棵二叉树，其中每个节点， Node.left 的任何后代的值 严格小于 Node.val , Node.right 的任何后代的值 严格大于 Node.val。 二叉树的 前序遍历 首先显示节点的值">
+<meta property="og:description" content="磁盘阵列技术1. RAID 0 无数据校验的条带化技术。RAID 0具有低成本、最高读写性能、磁盘利用率100%，不提供数据冗余保护。 2. RAID 1： 磁盘空间利用率为50%。RAID 1具有最高的安全性，实现成本高。一旦工作磁盘发生故障，系统自动从镜像磁盘读取数据，但读写性能最低。 3. RAID  3: 使用专用校验盘的并行访问阵列，它采用一个专用的磁盘作为校验盘，其余磁盘作为数据盘，R">
 <meta property="og:locale">
-<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1266.png">
-<meta property="article:published_time" content="2023-03-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-04-02T06:28:27.497Z">
+<meta property="og:image" content="c:/Users/wynne/AppData/Roaming/Typora/typora-user-images/image-20230517140513660.png">
+<meta property="og:image" content="c:/Users/wynne/AppData/Roaming/Typora/typora-user-images/image-20230517140625757.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230517140816836.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230517141008052.png">
+<meta property="og:image" content="c:/Users/wynne/AppData/Roaming/Typora/typora-user-images/image-20230517141522949.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230517142216981.png">
+<meta property="article:published_time" content="2023-05-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-30T08:50:45.620Z">
 <meta property="article:author" content="Wynneyin">
-<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="网络工程师">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1266.png">
+<meta name="twitter:image" content="c:/Users/wynne/AppData/Roaming/Typora/typora-user-images/image-20230517140513660.png">
   
     <link rel="alternative" href="/atom.xml" title="wynneblog" type="application/atom+xml">
   
@@ -223,14 +228,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2023-4-1-1008.前序遍历构造二叉搜索树" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2023-5-17-网工，磁盘阵列技术" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      1008.前序遍历构造二叉搜索树
+      磁盘阵列技术
     </h1>
   
 
@@ -242,8 +247,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2023/04/01/2023-4-1-1008.%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" class="archive-article-date">
-        <time datetime="2023-03-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-01</time>
+<a href="/2023/05/25/2023-5-17-%E7%BD%91%E5%B7%A5%EF%BC%8C%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/" class="archive-article-date">
+        <time datetime="2023-05-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-25</time>
 </a>
 
   
@@ -256,7 +261,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">432字</span>
+      <span class="post-count">458字</span>
     </span>
   </span>
 
@@ -276,15 +281,18 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="1008-前序遍历构造二叉搜索树"><a href="#1008-前序遍历构造二叉搜索树" class="headerlink" title="1008.前序遍历构造二叉搜索树"></a>1008.前序遍历构造二叉搜索树</h1><p>给定一个整数数组，它表示BST(即 <strong>二叉搜索树</strong> )的 先序遍历 ，构造树并返回其根。</p>
-<p><strong>保证</strong> 对于给定的测试用例，总是有可能找到具有给定需求的二叉搜索树。</p>
-<p><strong>二叉搜索树</strong> 是一棵二叉树，其中每个节点， <code>Node.left</code> 的任何后代的值 <strong>严格小于</strong> <code>Node.val</code> , <code>Node.right</code> 的任何后代的值 <strong>严格大于</strong> <code>Node.val</code>。</p>
-<p>二叉树的 <strong>前序遍历</strong> 首先显示节点的值，然后遍历<code>Node.left</code>，最后遍历<code>Node.right</code>。</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1266.png" alt="img" style="zoom:67%;" /></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：preorder = [8,5,1,7,10,12]</span><br><span class="line">输出：[8,5,10,1,7,null,12]</span><br></pre></td></tr></table></figure>
-<p>对于一个前序遍历 ，第一个元素必为根节点，那根据根节点的值再进行划分，大于根的为右子树 小于根的为左子树。再分别对左右子树进行递归。构建 以图中 10为例子 当确定10为根节点时候 会在[10,12]中寻找 小于10的但是没有 就返回null  比10大的为12就返回12.</p>
-<p>截至条件为idx==p.size() 。 这个二叉树所有位置都走了一遍，null的节点递归不增加idx。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">int</span> idx=<span class="number">0</span>;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; p;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">bstFromPreorder</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; preorder)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        p=preorder;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">dfs</span>(INT_MIN,INT_MAX);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function">TreeNode *<span class="title">dfs</span><span class="params">(<span class="type">int</span> l ,<span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(idx==p.<span class="built_in">size</span>()|| p[idx]&lt;INT_MIN || p[idx]&gt;r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode* ans=<span class="keyword">new</span> <span class="built_in">TreeNode</span>(p[idx++]);</span><br><span class="line">        ans-&gt;left=<span class="built_in">dfs</span>(l,ans-&gt;val);</span><br><span class="line">        ans-&gt;right=<span class="built_in">dfs</span>(ans-&gt;val,r);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+    <h1 id="磁盘阵列技术"><a href="#磁盘阵列技术" class="headerlink" title="磁盘阵列技术"></a>磁盘阵列技术</h1><h2 id="1-RAID-0"><a href="#1-RAID-0" class="headerlink" title="1. RAID 0"></a>1. RAID 0</h2><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20230517140513660.png" alt="image-20230517140513660" style="zoom:50%;" /></p>
+<p>无数据校验的条带化技术。RAID 0具有低成本、最高读写性能、磁盘利用率100%，<br>不提供数据冗余保护。</p>
+<h2 id="2-RAID-1："><a href="#2-RAID-1：" class="headerlink" title="2. RAID 1："></a>2. RAID 1：</h2><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20230517140625757.png" alt="image-20230517140625757" style="zoom:50%;" /></p>
+<p>磁盘空间利用率为50%。RAID 1具有最高的安全性，实现成本高。一旦工作磁盘发生故障，系统自动从镜像磁盘读取数据，但读写性能最低。</p>
+<h2 id="3-RAID-3"><a href="#3-RAID-3" class="headerlink" title="3. RAID  3:"></a>3. RAID  3:</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230517140816836.png" alt="image-20230517140816836" style="zoom:50%;" /></p>
+<p>使用专用校验盘的并行访问阵列，它采用一个专用的磁盘作为校验盘，其余磁盘作为数据盘，RAID 3至少需要三块磁盘，不同磁盘上同一带区的数据作校验，校验值写入校验盘中。</p>
+<h2 id="4-RAID-5"><a href="#4-RAID-5" class="headerlink" title="4. RAID 5"></a>4. RAID 5</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230517141008052.png" alt="image-20230517141008052" style="zoom:50%;" /></p>
+<p>每块磁盘上同时存储数据和校验数据，RAID 5具备很好的扩展性。当一个数据盘损坏时，系统可以根据同一条带的其他数据块和对应的校验数据来重建损坏的数据。RAID 5读性能高，写性能低，兼顾存储性能、数据安全和存储成本等各方面因素.  <strong>目前最好的解决方案</strong></p>
+<h2 id="5-RAID-6"><a href="#5-RAID-6" class="headerlink" title="5. RAID 6"></a>5. RAID 6</h2><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20230517141522949.png" alt="image-20230517141522949" style="zoom:50%;" /></p>
+<p>前面所述的各个RAID等级都只能保护因单个磁盘失效而造成的数据丢失。如果两个磁盘同时发生故障，数据将无法恢复。RAID 6读性能高，写性能低</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230517142216981.png" alt="image-20230517142216981" style="zoom:50%;" /></p>
+<p>主要有基于以太网（IP-SAN）和光纤通道（FC-SAN）两种类。FC-SAN支持高速的数据传输速率，扩展能力强，但是成本高，适用于短距离传输。IP-SAN是把FC-SAN中光纤通道解决的问题通过更为成熟的以太网来实现，具有成本低，可靠性，扩展性，没有FC-SAN中光纤通道的传输距离限制。</p>
 
     
 
@@ -331,7 +339,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://wynneyin.site/2023/04/01/2023-4-1-1008.前序遍历构造二叉搜索树/" title="1008.前序遍历构造二叉搜索树" target="_blank">http://wynneyin.site/2023/04/01/2023-4-1-1008.前序遍历构造二叉搜索树/</a>
+          <a href="http://wynneyin.site/2023/05/25/2023-5-17-网工，磁盘阵列技术/" title="磁盘阵列技术" target="_blank">http://wynneyin.site/2023/05/25/2023-5-17-网工，磁盘阵列技术/</a>
         </li>
         
         <li>
@@ -353,7 +361,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">网络工程师</a>
         		</li>
       		
 		</ul>
@@ -409,7 +417,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://wynneyin.site/2023/04/01/2023-4-1-1008.%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://wynneyin.site/2023/05/25/2023-5-17-%E7%BD%91%E5%B7%A5%EF%BC%8C%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -424,18 +432,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2023/04/05/2023-4-5-%E4%B8%A4%E6%95%B4%E6%95%B0%E4%B9%8B%E5%92%8C/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          两整数之和
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/03/25/2023-3-25-%E8%81%94%E5%90%88%E4%BA%91%E8%AE%BA%E6%96%87/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">联合云论文</div>
+    <a href="/2023/05/14/2023-5-14-%E8%B0%B7%E6%AD%8C%E5%BF%AB%E6%8D%B7%E9%94%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   
