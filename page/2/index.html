@@ -223,6 +223,100 @@
             
 
   
+    <article id="post-2023-4-1-1008.前序遍历构造二叉搜索树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/04/01/2023-4-1-1008.%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" target="_blank">1008.前序遍历构造二叉搜索树</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/04/01/2023-4-1-1008.%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" class="archive-article-date">
+        <time datetime="2023-03-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-01</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="1008-前序遍历构造二叉搜索树"><a href="#1008-前序遍历构造二叉搜索树" class="headerlink" title="1008.前序遍历构造二叉搜索树"></a>1008.前序遍历构造二叉搜索树</h1><p>给定一个整数数组，它表示BST(即 <strong>二叉搜索树</strong> )的 先序遍历 ，构造树并返回其根。</p>
+<p><strong>保证</strong> 对于给定的测试用例，总是有可能找到具有给定需求的二叉搜索树。</p>
+<p><strong>二叉搜索树</strong> 是一棵二叉树，其中每个节点， <code>Node.left</code> 的任何后代的值 <strong>严格小于</strong> <code>Node.val</code> , <code>Node.right</code> 的任何后代的值 <strong>严格大于</strong> <code>Node.val</code>。</p>
+<p>二叉树的 <strong>前序遍历</strong> 首先显示节点的值，然后遍历<code>Node.left</code>，最后遍历<code>Node.right</code>。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1266.png" alt="img" style="zoom:67%;" /></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：preorder = [8,5,1,7,10,12]</span><br><span class="line">输出：[8,5,10,1,7,null,12]</span><br></pre></td></tr></table></figure>
+<p>对于一个前序遍历 ，第一个元素必为根节点，那根据根节点的值再进行划分，大于根的为右子树 小于根的为左子树。再分别对左右子树进行递归。构建 以图中 10为例子 当确定10为根节点时候 会在[10,12]中寻找 小于10的但是没有 就返回null  比10大的为12就返回12.</p>
+<p>截至条件为idx==p.size() 。 这个二叉树所有位置都走了一遍，null的节点递归不增加idx。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">int</span> idx=<span class="number">0</span>;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; p;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">bstFromPreorder</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; preorder)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        p=preorder;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">dfs</span>(INT_MIN,INT_MAX);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function">TreeNode *<span class="title">dfs</span><span class="params">(<span class="type">int</span> l ,<span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(idx==p.<span class="built_in">size</span>()|| p[idx]&lt;INT_MIN || p[idx]&gt;r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode* ans=<span class="keyword">new</span> <span class="built_in">TreeNode</span>(p[idx++]);</span><br><span class="line">        ans-&gt;left=<span class="built_in">dfs</span>(l,ans-&gt;val);</span><br><span class="line">        ans-&gt;right=<span class="built_in">dfs</span>(ans-&gt;val,r);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/04/01/2023-4-1-1008.%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2023-3-25-联合云论文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1247,94 +1341,6 @@
 
 
   
-    <article id="post-2023-1-25-机器学习复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/01/25/2023-1-25-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/" target="_blank">机器学习复习</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/01/25/2023-1-25-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
-        <time datetime="2023-01-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-25</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="第一章回归"><a href="#第一章回归" class="headerlink" title="第一章回归"></a>第一章回归</h1><p>[TOC]</p>
-    
-    <a class="article-more-a" href="/2023/01/25/2023-1-25-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/01/25/2023-1-25-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
@@ -1570,6 +1576,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">其他</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">深度学习</a>
               </li>
             
             <div class="clearfix"></div>
