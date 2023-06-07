@@ -223,6 +223,524 @@
             
 
   
+    <article id="post-2023-3-20-3.-无重复字符的最长子串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/03/20/2023-3-20-3.-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/" target="_blank">3无重复字符的最长子串</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/03/20/2023-3-20-3.-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/" class="archive-article-date">
+        <time datetime="2023-03-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-20</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="无重复字符的最长子串"><a href="#无重复字符的最长子串" class="headerlink" title="无重复字符的最长子串"></a>无重复字符的最长子串</h1><p>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;abcabcbb&quot;</span><br><span class="line">输出: 3 </span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;abc&quot;，所以其长度为 3。</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;bbbbb&quot;</span><br><span class="line">输出: 1</span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;b&quot;，所以其长度为 1。</span><br></pre></td></tr></table></figure>
+<p><strong>示例 3:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;pwwkew&quot;</span><br><span class="line">输出: 3</span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;wke&quot;，所以其长度为 3。</span><br><span class="line">     请注意，你的答案必须是 子串 的长度，&quot;pwke&quot; 是一个子序列，不是子串。</span><br></pre></td></tr></table></figure>
+<p>思路: 利用滑动窗口，两个指针right和left作为窗口的左边和右边，开始右边逐渐扩大，增大窗口，利用map得到每个字母出现的次数，如果出现次数大于2那么就发生重复，下一步是收缩窗口收缩的标准为窗口的右边大于1，那么左边窗口移动，一直到窗口内无重复元素就停止，并返回窗口的大小。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">char</span>,<span class="type">int</span>&gt; window;</span><br><span class="line">        <span class="type">int</span> left=<span class="number">0</span>,right=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(right&lt;s.<span class="built_in">size</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">char</span> c=s[right];</span><br><span class="line">            right++;</span><br><span class="line">            window[c]++;</span><br><span class="line">         </span><br><span class="line">         <span class="keyword">while</span>(window[c]&gt;<span class="number">1</span>)</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="type">char</span> d=s[left];</span><br><span class="line">             left++;</span><br><span class="line">             window[d]--;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         res=<span class="built_in">max</span>(res,right-left);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>为什么要用unordered_map:</strong></p>
+<ul>
+<li>unordered_map查询单个key的时候效率比map高，但是要查询某一范围内的key值时比map效率低。</li>
+</ul>
+<p><strong>内部实现机理</strong> :</p>
+<ul>
+<li><strong>map</strong>： map内部实现了一个红黑树，该结构具有自动排序的功能，因此map内部的所有元素都是有序的，红黑树的每一个节点都代表着map的一个元素，因此，对于map进行的查找，删除，添加等一系列的操作都相当于是对红黑树进行这样的操作，故红黑树的效率决定了map的效率。</li>
+<li><strong>unordered_map</strong>: unordered_map内部实现了一个哈希表，因此其元素的排列顺序是杂乱的，无序的</li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/03/20/2023-3-20-3.-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2023-1-29-算法复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/01/29/2023-1-29-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/" target="_blank">算法复习</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/01/29/2023-1-29-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
+        <time datetime="2023-01-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-29</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="NP问题总结"><a href="#NP问题总结" class="headerlink" title="NP问题总结"></a>NP问题总结</h1>
+    
+    <a class="article-more-a" href="/2023/01/29/2023-1-29-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">算法设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/01/29/2023-1-29-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SSL协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/01/28/SSL%E5%8D%8F%E8%AE%AE/" target="_blank">ssl</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/01/28/SSL%E5%8D%8F%E8%AE%AE/" class="archive-article-date">
+        <time datetime="2023-01-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-28</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="SSL协议"><a href="#SSL协议" class="headerlink" title="SSL协议"></a>SSL协议</h1><p>工作过程：</p>
+<p><strong>握手 建立tcp连接，验证服务端身份，分发通信主密钥，</strong></p>
+<p>客户端发送一条向服务端的TCP连接，客户端向服务端发送测试消息，服务端用证书进行回应，客户端获取服务端的公钥，并随机生成的通信主密钥MS，然后将MS用公钥加密后发送给服务端。这样双方就共享了密钥MS。</p>
+<p><strong>密钥导出</strong></p>
+<p>通信双方用同样的方法生成如下四个密钥：</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128181036278.png" alt="image-20230128181036278"></p>
+<p>发送方将内容和MB进行级联之后做哈希，这样生成一个mac</p>
+<p><strong>数据传输</strong></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128203528411.png" alt="image-20230128203528411"></p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全协议</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/01/28/SSL%E5%8D%8F%E8%AE%AE/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2023-1-28-网络安全第五章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/01/28/2023-1-28-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%AC%E4%BA%94%E7%AB%A0/" target="_blank">网络安全第五章</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/01/28/2023-1-28-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%AC%E4%BA%94%E7%AB%A0/" class="archive-article-date">
+        <time datetime="2023-01-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-28</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="第五章物理层"><a href="#第五章物理层" class="headerlink" title="第五章物理层"></a>第五章物理层</h1><p><strong>硬件地址欺骗</strong></p>
+<p>攻击者通过修改系统的硬件地址来伪装成另一台机器。</p>
+<p>修改非法的目的地址来造成网络上大流量的产生。</p>
+<p><strong>网络嗅探</strong></p>
+<p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20230128114133901.png" alt="image-20230128114133901" style="zoom:67%;" /></p>
+<p>攻击者1只能嗅探A的流量，B可以嗅探所有的流量。但是现实中典型的骨干网络是被保护的，流量进入ISP就不用担心嗅探了，大多数嗅探都是边缘网络。</p>
+<p><strong>物理攻击</strong></p>
+<p>故意的———涉及对网路的物理的破坏 电缆和路由器的破坏</p>
+<p>偶然的  错误配置错误连线  </p>
+<p>例如 有问题的网络电缆 发生网路电缆的闭环 例如两个线插到同一个设备上 有问题的网络控制器  硬件的地址冲突</p>
+<h2 id="有线网络协议"><a href="#有线网络协议" class="headerlink" title="有线网络协议"></a>有线网络协议</h2><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1.png" alt="1"></p>
+<h2 id="有线以太网CSMA-CD"><a href="#有线以太网CSMA-CD" class="headerlink" title="有线以太网CSMA/CD"></a>有线以太网CSMA/CD</h2><p>监听 如果没有其他设备在发送 那么监听设备就可以发送了，最小包长 保证碰撞发生的时候所有的机器都可以看的到。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128121628417.png" alt="image-20230128121628417"></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128121915218.png" alt="image-20230128121915218"></p>
+<h2 id="以太网碰撞域"><a href="#以太网碰撞域" class="headerlink" title="以太网碰撞域"></a>以太网碰撞域</h2><p>范围受是否发生碰撞影响</p>
+<p>10Mbps的以太网最大端到端长度为2500米</p>
+<p>可以被交换机和路由器改变</p>
+<h2 id="连接的设备"><a href="#连接的设备" class="headerlink" title="连接的设备"></a>连接的设备</h2><p>•中继器(仅物理层)</p>
+<p>•集线器(多端口中继器)</p>
+<p>•网桥(仅二层)</p>
+<p>•路由器(三层)</p>
+<p>•二层交换机</p>
+<p>•三层交换机</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128122907216.png" alt="image-20230128122907216" style="zoom:67%;" /></p>
+<p><strong>以太网交换机的作用</strong></p>
+<p>•碰撞可以降低网络速度</p>
+<p>•交换机创建多个碰撞域</p>
+<p>•通常交换机的每个分支都有一台机器</p>
+<p>•交换机只将流量传递到目的地所在的交换机分支</p>
+<p>•交换机减少了每个分支上的流量-网络监控问题</p>
+<h2 id="以太网交换机捕捉点"><a href="#以太网交换机捕捉点" class="headerlink" title="以太网交换机捕捉点"></a>以太网交换机捕捉点</h2><p>网络管理员需要监听网络上的所有流量。例如入侵检测系统</p>
+<p>方法一：镜像端口把所有数据包的副本都发送到这个端口   ———出现速度问题</p>
+<p>方法二： 使用带交换机的集线器  二者速度不同</p>
+<p>方法三：网络捕捉器 一种设别插在流量经过的线路上，并作电子副本 如下图所示：可以看到交换机和路由器之间的流量 ，但是不能跨系统查看流量。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128124414289.png" alt="image-20230128124414289" style="zoom:67%;" /></p>
+<h2 id="以太网的帧格式"><a href="#以太网的帧格式" class="headerlink" title="以太网的帧格式"></a>以太网的帧格式</h2><p>序号7byte   起始帧限定符1byte 目的地址6byte 源地址6byte 类型或者长度2byte 数据46-1500 fcs</p>
+<p>提交给物理层从目的地址开始</p>
+<p> <img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128124733073.png" alt="image-20230128124733073"></p>
+<h2 id="以太网的地址"><a href="#以太网的地址" class="headerlink" title="以太网的地址"></a>以太网的地址</h2><p>硬件地址的唯一</p>
+<p>前三个字节分给硬件控制器的提供商（表示控制器类型），后三个字节提供商自行分配</p>
+<p>以太网类型字节</p>
+<p>表明基于什么协议</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128131932865.png" alt="image-20230128131932865"></p>
+<h1 id="常见的攻击手段"><a href="#常见的攻击手段" class="headerlink" title="常见的攻击手段"></a>常见的攻击手段</h1><h2 id="有线网络协议-1"><a href="#有线网络协议-1" class="headerlink" title="有线网络协议"></a>有线网络协议</h2><h3 id="基于头部的"><a href="#基于头部的" class="headerlink" title="基于头部的"></a>基于头部的</h3><p>攻击：</p>
+<p>设置目的地址为广播地址能够造成流量问题</p>
+<p>设置源地址和目的地址一样能够造成交换机迷惑</p>
+<p>如何防范：</p>
+<p>难以防范</p>
+<h3 id="基于协议的"><a href="#基于协议的" class="headerlink" title="基于协议的"></a>基于协议的</h3><p>协议很简单，而且是在硬件中基本没有 </p>
+<h3 id="基于验证的"><a href="#基于验证的" class="headerlink" title="基于验证的"></a>基于验证的</h3><p>目的地址的嗅探</p>
+<p>目的地址的动态获取</p>
+<p>让一台设备相信你是目的主机<strong>ARP 中毒</strong></p>
+<p>没有好的解决方法</p>
+<p>攻击者向A发送将自己的mac和B主机的ip地址绑定发送。</p>
+<p>攻击者向B发送将自己的mac和A主机的ip地址绑定发送。</p>
+<p>这样攻击者将AB主机的arp表都进行了欺骗。本来AB通过交换机相连，攻击者无法嗅探到流量现在可以了。<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128161722938.png" alt="image-20230128161722938"></p>
+<p>解决方法 物理层的加密</p>
+<h3 id="基于流量的"><a href="#基于流量的" class="headerlink" title="基于流量的"></a>基于流量的</h3><p>攻击：<br>以太网控制器可以设置为混杂模式，使它们能够嗅探流量</p>
+<p>缓解</p>
+<p>—加密、VLAN(稍后详细介绍)</p>
+<p>广播流量会导致泛滥，除非直接连接到局域网，否则很难泛滥</p>
+<p>没有很好的防洪措施</p>
+<h2 id="无线网络协议"><a href="#无线网络协议" class="headerlink" title="无线网络协议"></a>无线网络协议</h2><p>无线网络每台设备执行同样的协议，有一台设备负责网络，称为AP，两个主要的功能 产生无线网络，提供对有线网络的访问</p>
+<p>无线网络设备接入：</p>
+<p>1.发现设备能到达的无线网络接入点。无线设备发送探测包等待接受SSID</p>
+<p>2.有很多个SSID如何来接入某一个呢如下图</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128164607089.png" alt="image-20230128164607089" style="zoom:80%;" /></p>
+<h2 id="CSMA-CA"><a href="#CSMA-CA" class="headerlink" title="CSMA/CA"></a>CSMA/CA</h2><p>1.等待介质空闲</p>
+<p>2.延迟随机量后的回退</p>
+<p>3.重传指数后退</p>
+<p>4.如果空闲退避计时器复位</p>
+<p>5.如果正确接收到帧，则获取ACK</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128171458662.png" alt="image-20230128171458662"></p>
+<h2 id="AP-接入点"><a href="#AP-接入点" class="headerlink" title="AP 接入点"></a>AP 接入点</h2><p>两种形式：</p>
+<p>扩展网络    接入点使无线设备看起来像在同一个网络上的有线设备</p>
+<p><img src="http://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128171755798.png" alt="image-20230128171755798"></p>
+<p>无线路由</p>
+<p>接入点充当路由设备</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128171846042.png" alt="image-20230128171846042"></p>
+<h3 id="无线以太网帧的格式"><a href="#无线以太网帧的格式" class="headerlink" title="无线以太网帧的格式"></a>无线以太网帧的格式</h3><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128172123363.png" alt="image-20230128172123363"></p>
+<p>•帧控制:用于识别帧类型和其他帧特定信息。</p>
+<p>•时长/ID:用于接入控制协议管理。</p>
+<p>•地址1:用于标识发送报文的目的地。这被硬件控制器用来决定是否应该读取帧。如果它与控制器地址不匹配，帧的剩余部分将被忽略。</p>
+<p>•地址2:发送设备的地址。</p>
+<p>•地址3:当接入点是扩展网络的一部分时使用，接入点将中继流量。</p>
+<p>•地址4:当接入点是扩展网络的一部分时使用，接入点将中继流量序列控制:用于确认过程。</p>
+<p>•Data:数据字段包含数据。数据字段的长度被限制为2312字节。无线以太网没有最小数据长度。</p>
+<p>•帧检查序列(FCS):该字段用于帮助验证帧在传输过程中没有被损坏。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230128172433934.png" alt="image-20230128172433934"></p>
+<h3 id="基于头部的-1"><a href="#基于头部的-1" class="headerlink" title="基于头部的"></a>基于头部的</h3><p>将目的地址设置为广播地址会导致流量问题</p>
+<p>拒绝服务——无效的报头将导致访问或关联的丢失</p>
+<h3 id="基于协议的-1"><a href="#基于协议的-1" class="headerlink" title="基于协议的"></a>基于协议的</h3><p>针对于CSMA/CA协议的攻击，攻击者发送大量信号迫使一个设备不能接受应答的信号，造成阻塞。无线DOS攻击</p>
+<h3 id="基于验证的-1"><a href="#基于验证的-1" class="headerlink" title="基于验证的"></a>基于验证的</h3><p><strong>你可以重新设置硬件地址  硬件地址用做接入点的认证</strong></p>
+<h4 id="设备授权"><a href="#设备授权" class="headerlink" title="设备授权"></a>设备授权</h4><p>接入点的授权</p>
+<p>无线设备的授权</p>
+<p>接入点配置的授权 攻击者访问接入点的配置菜单</p>
+<h4 id="接入点授权"><a href="#接入点授权" class="headerlink" title="接入点授权"></a>接入点授权</h4><p><strong>恶意访问接入点</strong></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230129213017916.png" alt="image-20230129213017916"></p>
+<p>一个用户把访问接入点连接到指定的单位的内部网络上，</p>
+<p>接入点的存在可能带来严重的安全威胁，例如：</p>
+<ol>
+<li>数据泄露：接入点可能会监听和记录员工的网络数据，导致敏感信息的泄露。</li>
+<li>网络攻击：接入点可以作为攻击者对企业内网进行攻击的入口。</li>
+<li>网络性能下降：接入点可能导致网络的带宽和性能下降。</li>
+</ol>
+<p>解决方案:</p>
+<p>按照类似于有线网络的停止授权的方法如NAC(用于控制网络中的设备和用户对网络的访问。NAC通过识别设备和用户的身份，并对他们的网络访问进行限制，以保护网络的安全。加密等)</p>
+<p>通过寻找无线信号扫描恶意访问接入点（比较难）</p>
+<p><strong>非法访问接入点</strong></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230129214056392.png" alt="image-20230129214056392"></p>
+<h3 id="基于流量的-1"><a href="#基于流量的-1" class="headerlink" title="基于流量的"></a>基于流量的</h3><p>•以太网控制器可以设置为混杂模式，使它们能够嗅探流量</p>
+<p>•广播流量可能导致泛洪</p>
+<p><strong>中间人攻击</strong></p>
+<p><strong>框架注入攻击</strong></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230130090609466.png" alt="image-20230130090609466"></p>
+<h4 id="WEP"><a href="#WEP" class="headerlink" title="WEP"></a>WEP</h4><p>提供简单的认证和加密。</p>
+<p>设备和接入点有一个共享的密钥40-128bit。无线设备发送信息之前先发送一条共享密钥来加密它本身。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230130092753061.png" alt="image-20230130092753061"></p>
+<h4 id="WAP"><a href="#WAP" class="headerlink" title="WAP"></a>WAP</h4><p>家庭使用的WAP</p>
+<p>•使用共享密码进行身份验证</p>
+<p>•如果移动密码与AP匹配，则交换加密密钥</p>
+<p>•每个新关联的新密钥</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230130093341310.png" alt="image-20230130093341310"></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230130093658882.png" alt="image-20230130093658882" style="zoom:67%;" /></p>
+<p>•移动设备与AP关联</p>
+<p>•移动设备通过身份验证服务器（使用802.1X）进行身份验证</p>
+<p>•身份验证服务器向AP和移动设备分发密钥</p>
+<p>攻击：看到足够的流量可以发现加密密钥</p>
+<h3 id="WPA（Wi-Fi-Protected-Access）比WEP（Wired-Equivalent-Privacy）更加安全，原因如下："><a href="#WPA（Wi-Fi-Protected-Access）比WEP（Wired-Equivalent-Privacy）更加安全，原因如下：" class="headerlink" title="WPA（Wi-Fi Protected Access）比WEP（Wired Equivalent Privacy）更加安全，原因如下："></a>WPA（Wi-Fi Protected Access）比WEP（Wired Equivalent Privacy）更加安全，原因如下：</h3><ol>
+<li>加密算法：WPA使用了更强大的加密算法（TKIP），而WEP使用了较弱的加密算法（RC4）。</li>
+<li>密钥生成：WPA使用动态密钥生成，而WEP使用固定密钥。因此，WPA的密钥更难被破解。</li>
+<li>认证：WPA需要客户端向热点进行认证，以确保只有授权的客户端可以连接到网络。WEP没有这样的认证过程。</li>
+<li>攻击保护：WPA提供了对某些常见攻击的保护，例如重放攻击、洪水攻击和拒绝服务攻击。WEP没有这样的保护。</li>
+</ol>
+<p>因此，WPA比WEP更加安全，应该优先选择WPA作为Wi-Fi安全协议。</p>
+<h2 id="常用对策"><a href="#常用对策" class="headerlink" title="常用对策"></a>常用对策</h2><h3 id="Vlan"><a href="#Vlan" class="headerlink" title="Vlan"></a>Vlan</h3><p>创建虚拟网络，其中流量在每个VLAN之间根据硬件地址隔离</p>
+<p>静态:交换机的每个端口都是一个VLAN的一部分</p>
+<p>动态:基于硬件地址分配VLAN</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230130101650197.png" alt="image-20230130101650197"></p>
+<p>转化为</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230130101705515.png" alt="image-20230130101705515"></p>
+<p>VLAN可以隔离流量，但不能保护同一网络内的设备与同一网络内的设备</p>
+<p>动态VLAN可以通过改变MAC地址来欺骗 所以有局限性</p>
+<h3 id="NAC"><a href="#NAC" class="headerlink" title="NAC"></a>NAC</h3><p>NAC会决定出什么样的设备有什么样的访问权限</p>
+<p>主机上有软件，包括对主机的评估(病毒软件等)。</p>
+<p>主机询问策略服务器是否可以使用网络</p>
+<p>网络将强制执行策略(有限或完全访问)</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230130102028572.png" alt="image-20230130102028572"></p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/01/28/2023-1-28-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%AC%E4%BA%94%E7%AB%A0/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2023-1-25-机器学习复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -769,363 +1287,6 @@
 
 
   
-    <article id="post-2023110-装饰器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/01/10/2023110-%E8%A3%85%E9%A5%B0%E5%99%A8/" target="_blank">装饰器</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/01/10/2023110-%E8%A3%85%E9%A5%B0%E5%99%A8/" class="archive-article-date">
-        <time datetime="2023-01-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-10</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="一切皆是对象"><a href="#一切皆是对象" class="headerlink" title="一切皆是对象"></a>一切皆是对象</h1><p>在python中函数也可以作为变量传入另一个函数。同时函数也可以成为一个返回值。</p>
-    
-    <a class="article-more-a" href="/2023/01/10/2023110-%E8%A3%85%E9%A5%B0%E5%99%A8/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">python进阶</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/01/10/2023110-%E8%A3%85%E9%A5%B0%E5%99%A8/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-202319-args-和kwargs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/01/09/202319-args-%E5%92%8Ckwargs/" target="_blank">*args和*kwargs</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/01/09/202319-args-%E5%92%8Ckwargs/" class="archive-article-date">
-        <time datetime="2023-01-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-09</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h1>
-    
-    <a class="article-more-a" href="/2023/01/09/202319-args-%E5%92%8Ckwargs/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">python进阶</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/01/09/202319-args-%E5%92%8Ckwargs/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据库备忘录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/01/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%87%E5%BF%98%E5%BD%95/" target="_blank">数据库备忘录</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/01/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%87%E5%BF%98%E5%BD%95/" class="archive-article-date">
-        <time datetime="2023-01-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>域—一组具有相同数据类型的集合</p>
-<p>笛卡尔积中的每一个元素为元组</p>
-<p>元组的每一个值称为一个分量</p>
-<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230305193542035.png" alt="image-20230305193542035" style="zoom:50%;" /></p>
-<h1 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h1><p>通过定义外键约束，关系数据库可以保证无法插入无效的数据。即如果<code>classes</code>表不存在<code>id=99</code>的记录，<code>students</code>表就无法插入<code>class_id=99</code>的记录。</p>
-<p>由于外键约束会降低数据库的性能，大部分互联网应用程序为了追求速度，并不设置外键约束，而是仅靠应用程序自身来保证逻辑的正确性。这种情况下，<code>class_id</code>仅仅是一个普通的列，只是它起到了外键的作用而已。</p>
-    
-    <a class="article-more-a" href="/2023/01/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%87%E5%BF%98%E5%BD%95/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/01/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%87%E5%BF%98%E5%BD%95/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2023-1-8-继承和多态" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/01/08/2023-1-8-%E7%BB%A7%E6%89%BF%E5%92%8C%E5%A4%9A%E6%80%81/" target="_blank">继承和多态</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/01/08/2023-1-8-%E7%BB%A7%E6%89%BF%E5%92%8C%E5%A4%9A%E6%80%81/" class="archive-article-date">
-        <time datetime="2023-01-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="Python类—继承和多态"><a href="#Python类—继承和多态" class="headerlink" title="Python类—继承和多态"></a>Python类—继承和多态</h1>
-    
-    <a class="article-more-a" href="/2023/01/08/2023-1-8-%E7%BB%A7%E6%89%BF%E5%92%8C%E5%A4%9A%E6%80%81/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/01/08/2023-1-8-%E7%BB%A7%E6%89%BF%E5%92%8C%E5%A4%9A%E6%80%81/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
@@ -1365,6 +1526,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">深度学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">408复习</a>
               </li>
             
             <div class="clearfix"></div>
