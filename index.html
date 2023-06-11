@@ -223,6 +223,289 @@
             
 
   
+    <article id="post-2023-6-11-狂吃CTF" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/06/11/2023-6-11-%E7%8B%82%E5%90%83CTF/" target="_blank">狂吃CTF</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/06/11/2023-6-11-%E7%8B%82%E5%90%83CTF/" class="archive-article-date">
+        <time datetime="2023-06-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-06-11</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="CTF知识"><a href="#CTF知识" class="headerlink" title="CTF知识"></a>CTF知识</h1><h2 id="密码学"><a href="#密码学" class="headerlink" title="密码学"></a>密码学</h2><p>古典密码学主要包含以下几个方面：</p>
+<ul>
+<li>单表替换加密（Monoalphabetic Cipher）</li>
+<li>多表替换加密（Polyalphabetic Cipher）</li>
+</ul>
+<p>现代密码学则起源于 20 世纪中后期出现的大量相关理论，1949 年香农（C. E. Shannon）发表了题为《保密系统的通信理论》的经典论文标志着现代密码学的开始。现代密码学主要包含以下几个方面：</p>
+<ul>
+<li>对称加密（Symmetric Cryptography），以 DES，AES，RC4  SM4为代表。</li>
+<li>非对称加密（Asymmetric Cryptography），以 RSA，ElGamal，椭圆曲线加密为代表。</li>
+<li>哈希函数（Hash Function），以 MD5，SHA-1，SHA-512 SM3 等为代表。</li>
+<li>数字签名（Digital Signature），以 RSA 签名，ElGamal 签名，DSA 签名为代表。</li>
+</ul>
+<p>对称加密体制主要分为两种方式：</p>
+<ul>
+<li>分组密码（Block Cipher），又称为块密码。</li>
+<li>序列密码（Stream Cipher），又称为流密码。</li>
+</ul>
+<p>一般来说，密码设计者的根本目标是保障信息及信息系统的</p>
+<ul>
+<li>机密性（Confidentiality）</li>
+<li>完整性（Integrity）</li>
+<li>可用性（Availability）</li>
+<li>认证性（Authentication）</li>
+<li>不可否认性（Non-repudiation）</li>
+</ul>
+<p>其中，前三者被称为信息安全的 CIA 三要素 。</p>
+<h3 id="古典密码"><a href="#古典密码" class="headerlink" title="古典密码"></a>古典密码</h3><h4 id="单表代换密码"><a href="#单表代换密码" class="headerlink" title="单表代换密码"></a>单表代换密码</h4><p>在单表替换加密中，所有的加密方式几乎都有一个共性，那就是明密文一一对应。所以说，一般有以下两种方式来进行破解</p>
+<ul>
+<li>在密钥空间较小的情况下，采用暴力破解方式</li>
+<li>在密文长度足够长的时候，使用词频分析，<a target="_blank" rel="noopener" href="http://quipqiup.com/">http://quipqiup.com/</a></li>
+</ul>
+<p>凯撒密码（Caesar）加密时会将明文中的 <strong>每个字母</strong> 都按照其在字母表中的顺序向后（或向前）移动固定数目（<strong>循环移动</strong>）作为密文。例如，当偏移量是左移 3 的时候（解密时的密钥就是 3）：</p>
+<h4 id="仿射密码"><a href="#仿射密码" class="headerlink" title="仿射密码"></a>仿射密码</h4><p>仿射密码的加密函数是 E(x)=(ax+b)(modm)E(x)=(ax+b)(modm)，其中</p>
+<ul>
+<li>xx 表示明文按照某种编码得到的数字</li>
+<li>aa 和 mm 互质</li>
+<li>mm 是编码系统中字母的数目。</li>
+</ul>
+<h4 id="多表代换加密"><a href="#多表代换加密" class="headerlink" title="多表代换加密"></a>多表代换加密</h4><h5 id="Vigenere-维吉尼亚密码"><a href="#Vigenere-维吉尼亚密码" class="headerlink" title="Vigenere 维吉尼亚密码"></a>Vigenere 维吉尼亚密码</h5><p>对包括维吉尼亚密码在内的所有多表密码的破译都是以字母频率为基础的，但直接的频率分析却并不适用，这是因为在维吉尼亚密码中，一个字母可以被加密成不同的密文，因而简单的频率分析在这里并没有用。</p>
+<p><img src="http://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/vigenere2.jpg" alt="维吉尼亚加密"></p>
+<p><strong>破译维吉尼亚密码的关键在于它的密钥是循环重复的。</strong> 如果我们知道了密钥的长度，那密文就可以被看作是交织在一起的凯撒密码，而其中每一个都可以单独破解。关于密码的长度，我们可以 使用卡西斯基试验和弗里德曼试验来获取。</p>
+<h5 id="Nihilist"><a href="#Nihilist" class="headerlink" title="Nihilist"></a>Nihilist</h5><p>Nihilist 密码又称关键字密码：明文 + 关键字 = 密文。以关键字 helloworld 为例。</p>
+<p>首先利用密钥构造棋盘矩阵（类似 Polybius 密码） - 新建一个 5 × 5 矩阵 - 将字符不重复地依次填入矩阵 - 剩下部分按字母顺序填入 - 字母 i 和 j 等价</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">1</th>
+<th style="text-align:left">2</th>
+<th style="text-align:left">3</th>
+<th style="text-align:left">4</th>
+<th style="text-align:left">5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">h</td>
+<td style="text-align:left">e</td>
+<td style="text-align:left">l</td>
+<td style="text-align:left">o</td>
+<td style="text-align:left">w</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">r</td>
+<td style="text-align:left">d</td>
+<td style="text-align:left">a</td>
+<td style="text-align:left">b</td>
+<td style="text-align:left">c</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">f</td>
+<td style="text-align:left">g</td>
+<td style="text-align:left">i / j</td>
+<td style="text-align:left">k</td>
+<td style="text-align:left">m</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">n</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">q</td>
+<td style="text-align:left">s</td>
+<td style="text-align:left">t</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">u</td>
+<td style="text-align:left">v</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left">y</td>
+<td style="text-align:left">z</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>对于加密过程参照矩阵 M 进行加密：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a -&gt; M[2,3] -&gt; 23</span><br><span class="line">t -&gt; M[4,5] -&gt; 45</span><br></pre></td></tr></table></figure>
+<p>对于解密过程</p>
+<p>参照矩阵 M 进行解密：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">23 -&gt; M[2,3] -&gt; a</span><br><span class="line">45 -&gt; M[4,5] -&gt; t</span><br></pre></td></tr></table></figure>
+<h5 id="Hill密码"><a href="#Hill密码" class="headerlink" title="Hill密码"></a>Hill密码</h5><p>希尔密码（Hill）使用每个字母在字母表中的顺序作为其对应的数字，即 A=0，B=1，C=2 等，然后将明文转化为 n 维向量，跟一个 n × n 的矩阵相乘，再将得出的结果模 26。注意用作加密的矩阵（即密匙）在 $Z^{n}_{26}$ 必须是可逆的，否则就不可能解码。只有矩阵的行列式和 26 互质，才是可逆的。下面举一个例子</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230611152225069.png" alt="image-20230611152225069"></p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">CTF知识</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/06/11/2023-6-11-%E7%8B%82%E5%90%83CTF/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2023-6-10-59螺旋矩阵" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/06/10/2023-6-10-59%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/" target="_blank">59螺旋矩阵</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/06/10/2023-6-10-59%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/" class="archive-article-date">
+        <time datetime="2023-06-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-06-10</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="59螺旋矩阵"><a href="#59螺旋矩阵" class="headerlink" title="59螺旋矩阵"></a>59螺旋矩阵</h1><p>给你一个正整数 <code>n</code> ，生成一个包含 <code>1</code> 到 <code>n2</code> 所有元素，且元素按顺时针顺序螺旋排列的 <code>n x n</code> 正方形矩阵 <code>matrix</code> 。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/spiraln.jpg" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 3</span><br><span class="line">输出：[[1,2,3],[8,9,4],[7,6,5]]</span><br></pre></td></tr></table></figure>
+<p>解题思路:</p>
+<p>对矩阵进行螺旋访问，界定upperbound从左向右访问，直到访问完一行，upperbound向下移动。</p>
+<p>再按照列访问right_bound。访问完right_bound之后将right_bound向左收缩。同样的访问下界，在访问左界。直到num&lt;=n*n 。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">generateMatrix</span>(<span class="type">int</span> n) &#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">martix</span>(n,<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n,<span class="number">0</span>));</span><br><span class="line">        <span class="type">int</span> upper_bound=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> low_bound=n<span class="number">-1</span>;</span><br><span class="line">        <span class="type">int</span> right_bound=n<span class="number">-1</span>;</span><br><span class="line">        <span class="type">int</span> left_bound=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> num=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(num&lt;=n*n)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(upper_bound&lt;=low_bound)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> j=left_bound;j&lt;=right_bound;j++)</span><br><span class="line">                &#123;</span><br><span class="line">                    martix[upper_bound][j]=num++;</span><br><span class="line">                &#125;</span><br><span class="line">                upper_bound++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(left_bound&lt;=right_bound)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> j=upper_bound;j&lt;=low_bound;j++)</span><br><span class="line">                &#123;</span><br><span class="line">                    martix[j][right_bound]=num++;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            right_bound--;</span><br><span class="line"></span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(upper_bound&lt;=low_bound)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> j=right_bound;j&gt;=left_bound;j--)</span><br><span class="line">                &#123;</span><br><span class="line">                    martix[low_bound][j]=num++;</span><br><span class="line">                &#125;</span><br><span class="line">                low_bound--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(left_bound&lt;=right_bound)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> j=low_bound;j&gt;=upper_bound;j--)</span><br><span class="line">                &#123;</span><br><span class="line">                    martix[j][left_bound]=num++;</span><br><span class="line">                &#125;            </span><br><span class="line">                left_bound++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> martix;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/06/10/2023-6-10-59%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2023-6-7-48.旋转图像" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1037,192 +1320,9 @@ I\left(X; Y,Z\right)=I(X,Y)+I\left(X; Z\mid Y\right)</script><p><img src="https:
 
 
   
-    <article id="post-2023-5-14-谷歌快捷键" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/05/14/2023-5-14-%E8%B0%B7%E6%AD%8C%E5%BF%AB%E6%8D%B7%E9%94%AE/" target="_blank">快捷键</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/05/14/2023-5-14-%E8%B0%B7%E6%AD%8C%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="archive-article-date">
-        <time datetime="2023-05-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-14</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>谷歌浏览器的快捷键：</p>
-<p><strong>定位地址栏：alt + d</strong> </p>
-<p><strong>搜索：ctrl + f</strong></p>
-<p><strong>打开最近关闭的窗口 ctrl + shift + t</strong></p>
-<p><strong>标签页切换 : ctrl+tab</strong></p>
-<p><strong>文件下载查看 ctrl + j</strong></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其他</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/05/14/2023-5-14-%E8%B0%B7%E6%AD%8C%E5%BF%AB%E6%8D%B7%E9%94%AE/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2023-4-30-C++常用的函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/30/2023-4-30-C++%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0/" target="_blank">C++常用的函数</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/30/2023-4-30-C++%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0/" class="archive-article-date">
-        <time datetime="2023-04-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-30</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>常用的函数:</p>
-<p>无序集合:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unordered_set&lt;<span class="type">int</span>&gt; visited;</span><br><span class="line">visited.<span class="built_in">insert</span>(path[i][<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
-<p>vector</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">IN</span><span class="params">(N+<span class="number">10001</span>)</span></span>;  <span class="comment">//初始化大小为N+10001的全0的列表</span></span><br></pre></td></tr></table></figure>
-<p>哈希表</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;unordered_map&gt;</span><br><span class="line"></span><br><span class="line">unordered_map&lt;int, int&gt; map;</span><br><span class="line">unordered_map&lt;int, int&gt; hmap&#123; &#123;1,10&#125;,&#123;2,12&#125;,&#123;3,13&#125; &#125;;</span><br><span class="line">hmap[4] = 14;  ///赋值</span><br><span class="line"></span><br><span class="line">//根据key 查找</span><br><span class="line">unordered_map&lt;int, int&gt; hmap&#123; &#123;1,10&#125;,&#123;2,12&#125;,&#123;3,13&#125; &#125;;</span><br><span class="line">int elem = hmap.at(3);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/30/2023-4-30-C++%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1463,6 +1563,10 @@ I\left(X; Y,Z\right)=I(X,Y)+I\left(X; Z\mid Y\right)</script><p><img src="https:
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">408复习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CTF知识</a>
               </li>
             
             <div class="clearfix"></div>
