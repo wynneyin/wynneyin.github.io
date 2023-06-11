@@ -19,7 +19,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1266.png">
 <meta property="article:published_time" content="2023-03-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-04-02T06:28:27.497Z">
+<meta property="article:modified_time" content="2023-06-11T09:17:33.403Z">
 <meta property="article:author" content="Wynneyin">
 <meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
@@ -280,6 +280,7 @@
 <p><strong>保证</strong> 对于给定的测试用例，总是有可能找到具有给定需求的二叉搜索树。</p>
 <p><strong>二叉搜索树</strong> 是一棵二叉树，其中每个节点， <code>Node.left</code> 的任何后代的值 <strong>严格小于</strong> <code>Node.val</code> , <code>Node.right</code> 的任何后代的值 <strong>严格大于</strong> <code>Node.val</code>。</p>
 <p>二叉树的 <strong>前序遍历</strong> 首先显示节点的值，然后遍历<code>Node.left</code>，最后遍历<code>Node.right</code>。</p>
+<span id="more"></span>
 <p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1266.png" alt="img" style="zoom:67%;" /></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：preorder = [8,5,1,7,10,12]</span><br><span class="line">输出：[8,5,10,1,7,null,12]</span><br></pre></td></tr></table></figure>
 <p>对于一个前序遍历 ，第一个元素必为根节点，那根据根节点的值再进行划分，大于根的为右子树 小于根的为左子树。再分别对左右子树进行递归。构建 以图中 10为例子 当确定10为根节点时候 会在[10,12]中寻找 小于10的但是没有 就返回null  比10大的为12就返回12.</p>

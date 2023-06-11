@@ -10,16 +10,16 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="动态规划专题322.零钱兑换 给你 k 种面值的硬币，面值分别为 c1, c2 ... ck，每种硬币的数量无限，再给一个总金额 amount，问你最少需要几枚硬币凑出这个金额，如果不可能凑出，算法返回 -1 。算法的函数签名如下： 如何正确的列出状态转移方程: 1,确定基本的状态也就是最简单的状态 。如题当amount&#x3D;0 时就返回0。 2.确定状态，也就是原问题和子问题的变化量。 此问题中的变">
+  <meta name="description" content="动态规划专题322.零钱兑换 给你 k 种面值的硬币，面值分别为 c1, c2 ... ck，每种硬币的数量无限，再给一个总金额 amount，问你最少需要几枚硬币凑出这个金额，如果不可能凑出，算法返回 -1 。算法的函数签名如下：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="动态规划">
 <meta property="og:url" content="http://wynneyin.site/2023/04/15/2023-4-15-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/index.html">
 <meta property="og:site_name" content="wynneblog">
-<meta property="og:description" content="动态规划专题322.零钱兑换 给你 k 种面值的硬币，面值分别为 c1, c2 ... ck，每种硬币的数量无限，再给一个总金额 amount，问你最少需要几枚硬币凑出这个金额，如果不可能凑出，算法返回 -1 。算法的函数签名如下： 如何正确的列出状态转移方程: 1,确定基本的状态也就是最简单的状态 。如题当amount&#x3D;0 时就返回0。 2.确定状态，也就是原问题和子问题的变化量。 此问题中的变">
+<meta property="og:description" content="动态规划专题322.零钱兑换 给你 k 种面值的硬币，面值分别为 c1, c2 ... ck，每种硬币的数量无限，再给一个总金额 amount，问你最少需要几枚硬币凑出这个金额，如果不可能凑出，算法返回 -1 。算法的函数签名如下：">
 <meta property="og:locale">
 <meta property="og:image" content="https://labuladong.github.io/algo/images/动态规划详解进阶/6.jpg">
 <meta property="article:published_time" content="2023-04-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-04-15T10:47:26.960Z">
+<meta property="article:modified_time" content="2023-06-11T09:17:07.015Z">
 <meta property="article:author" content="Wynneyin">
 <meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
@@ -278,6 +278,7 @@
     
     <h1 id="动态规划专题"><a href="#动态规划专题" class="headerlink" title="动态规划专题"></a>动态规划专题</h1><p>322.零钱兑换</p>
 <p>给你 <code>k</code> 种面值的硬币，面值分别为 <code>c1, c2 ... ck</code>，每种硬币的数量无限，再给一个总金额 <code>amount</code>，问你<strong>最少</strong>需要几枚硬币凑出这个金额，如果不可能凑出，算法返回 -1 。算法的函数签名如下：</p>
+<span id="more"></span>
 <p>如何正确的列出状态转移方程:</p>
 <p>1,确定基本的状态也就是最简单的状态 。如题当amount=0 时就返回0。</p>
 <p>2.确定状态，也就是原问题和子问题的变化量。 此问题中的变量显然是amount</p>

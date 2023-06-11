@@ -10,16 +10,16 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="旋转图像给定一个 n × n 的二维矩阵 matrix 表示一个图像。请你将图像顺时针旋转 90 度。 你必须在 原地 旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要 使用另一个矩阵来旋转图像。 示例 1：  12输入：matrix &#x3D; [[1,2,3],[4,5,6],[7,8,9]]输出：[[7,4,1],[8,5,2],[9,6,3]] 思路: 将数组顺时针反转，首先按照159对角线">
+  <meta name="description" content="旋转图像给定一个 n × n 的二维矩阵 matrix 表示一个图像。请你将图像顺时针旋转 90 度。 你必须在 原地 旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要 使用另一个矩阵来旋转图像。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="48.旋转图像">
 <meta property="og:url" content="http://wynneyin.site/2023/06/07/2023-6-7-48.%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/index.html">
 <meta property="og:site_name" content="wynneblog">
-<meta property="og:description" content="旋转图像给定一个 n × n 的二维矩阵 matrix 表示一个图像。请你将图像顺时针旋转 90 度。 你必须在 原地 旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要 使用另一个矩阵来旋转图像。 示例 1：  12输入：matrix &#x3D; [[1,2,3],[4,5,6],[7,8,9]]输出：[[7,4,1],[8,5,2],[9,6,3]] 思路: 将数组顺时针反转，首先按照159对角线">
+<meta property="og:description" content="旋转图像给定一个 n × n 的二维矩阵 matrix 表示一个图像。请你将图像顺时针旋转 90 度。 你必须在 原地 旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要 使用另一个矩阵来旋转图像。">
 <meta property="og:locale">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/mat1.jpg">
 <meta property="article:published_time" content="2023-06-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-06-07T13:20:43.470Z">
+<meta property="article:modified_time" content="2023-06-11T09:15:35.949Z">
 <meta property="article:author" content="Wynneyin">
 <meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
@@ -278,6 +278,7 @@
     
     <h1 id="旋转图像"><a href="#旋转图像" class="headerlink" title="旋转图像"></a>旋转图像</h1><p>给定一个 <em>n</em> × <em>n</em> 的二维矩阵 <code>matrix</code> 表示一个图像。请你将图像顺时针旋转 90 度。</p>
 <p>你必须在<strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/原地算法"> 原地</a></strong> 旋转图像，这意味着你需要直接修改输入的二维矩阵。<strong>请不要</strong> 使用另一个矩阵来旋转图像。</p>
+<span id="more"></span>
 <p><strong>示例 1：</strong></p>
 <p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/mat1.jpg" alt="img"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：matrix = [[1,2,3],[4,5,6],[7,8,9]]</span><br><span class="line">输出：[[7,4,1],[8,5,2],[9,6,3]]</span><br></pre></td></tr></table></figure>

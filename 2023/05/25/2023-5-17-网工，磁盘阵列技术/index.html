@@ -10,12 +10,12 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="磁盘阵列技术1. RAID 0 无数据校验的条带化技术。RAID 0具有低成本、最高读写性能、磁盘利用率100%，不提供数据冗余保护。 2. RAID 1： 磁盘空间利用率为50%。RAID 1具有最高的安全性，实现成本高。一旦工作磁盘发生故障，系统自动从镜像磁盘读取数据，但读写性能最低。 3. RAID  3: 使用专用校验盘的并行访问阵列，它采用一个专用的磁盘作为校验盘，其余磁盘作为数据盘，R">
+  <meta name="description" content="磁盘阵列技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网工知识点">
 <meta property="og:url" content="http://wynneyin.site/2023/05/25/2023-5-17-%E7%BD%91%E5%B7%A5%EF%BC%8C%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/index.html">
 <meta property="og:site_name" content="wynneblog">
-<meta property="og:description" content="磁盘阵列技术1. RAID 0 无数据校验的条带化技术。RAID 0具有低成本、最高读写性能、磁盘利用率100%，不提供数据冗余保护。 2. RAID 1： 磁盘空间利用率为50%。RAID 1具有最高的安全性，实现成本高。一旦工作磁盘发生故障，系统自动从镜像磁盘读取数据，但读写性能最低。 3. RAID  3: 使用专用校验盘的并行访问阵列，它采用一个专用的磁盘作为校验盘，其余磁盘作为数据盘，R">
+<meta property="og:description" content="磁盘阵列技术">
 <meta property="og:locale">
 <meta property="og:image" content="c:/Users/wynne/AppData/Roaming/Typora/typora-user-images/image-20230517140513660.png">
 <meta property="og:image" content="c:/Users/wynne/AppData/Roaming/Typora/typora-user-images/image-20230517140625757.png">
@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191405404.png">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230504191442736.png">
 <meta property="article:published_time" content="2023-05-24T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-05-30T08:56:30.275Z">
+<meta property="article:modified_time" content="2023-06-11T09:16:19.311Z">
 <meta property="article:author" content="Wynneyin">
 <meta property="article:tag" content="网络工程师">
 <meta name="twitter:card" content="summary">
@@ -288,7 +288,8 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="磁盘阵列技术"><a href="#磁盘阵列技术" class="headerlink" title="磁盘阵列技术"></a>磁盘阵列技术</h1><h2 id="1-RAID-0"><a href="#1-RAID-0" class="headerlink" title="1. RAID 0"></a>1. RAID 0</h2><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20230517140513660.png" alt="image-20230517140513660" style="zoom:50%;" /></p>
+    <h1 id="磁盘阵列技术"><a href="#磁盘阵列技术" class="headerlink" title="磁盘阵列技术"></a>磁盘阵列技术</h1><span id="more"></span>
+<h2 id="1-RAID-0"><a href="#1-RAID-0" class="headerlink" title="1. RAID 0"></a>1. RAID 0</h2><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20230517140513660.png" alt="image-20230517140513660" style="zoom:50%;" /></p>
 <p>无数据校验的条带化技术。RAID 0具有低成本、最高读写性能、磁盘利用率100%，<br>不提供数据冗余保护。</p>
 <h2 id="2-RAID-1："><a href="#2-RAID-1：" class="headerlink" title="2. RAID 1："></a>2. RAID 1：</h2><p><img src="C:\Users\wynne\AppData\Roaming\Typora\typora-user-images\image-20230517140625757.png" alt="image-20230517140625757" style="zoom:50%;" /></p>
 <p>磁盘空间利用率为50%。RAID 1具有最高的安全性，实现成本高。一旦工作磁盘发生故障，系统自动从镜像磁盘读取数据，但读写性能最低。</p>

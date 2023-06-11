@@ -10,16 +10,16 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="59螺旋矩阵给你一个正整数 n ，生成一个包含 1 到 n2 所有元素，且元素按顺时针顺序螺旋排列的 n x n 正方形矩阵 matrix 。  12输入：n &#x3D; 3输出：[[1,2,3],[8,9,4],[7,6,5]] 解题思路: 对矩阵进行螺旋访问，界定upperbound从左向右访问，直到访问完一行，upperbound向下移动。 再按照列访问right_bound。访问完right_bo">
+  <meta name="description" content="59螺旋矩阵给你一个正整数 n ，生成一个包含 1 到 n2 所有元素，且元素按顺时针顺序螺旋排列的 n x n 正方形矩阵 matrix 。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="59螺旋矩阵">
 <meta property="og:url" content="http://wynneyin.site/2023/06/10/2023-6-10-59%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/index.html">
 <meta property="og:site_name" content="wynneblog">
-<meta property="og:description" content="59螺旋矩阵给你一个正整数 n ，生成一个包含 1 到 n2 所有元素，且元素按顺时针顺序螺旋排列的 n x n 正方形矩阵 matrix 。  12输入：n &#x3D; 3输出：[[1,2,3],[8,9,4],[7,6,5]] 解题思路: 对矩阵进行螺旋访问，界定upperbound从左向右访问，直到访问完一行，upperbound向下移动。 再按照列访问right_bound。访问完right_bo">
+<meta property="og:description" content="59螺旋矩阵给你一个正整数 n ，生成一个包含 1 到 n2 所有元素，且元素按顺时针顺序螺旋排列的 n x n 正方形矩阵 matrix 。">
 <meta property="og:locale">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/spiraln.jpg">
 <meta property="article:published_time" content="2023-06-09T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-06-10T12:08:12.616Z">
+<meta property="article:modified_time" content="2023-06-11T09:15:26.770Z">
 <meta property="article:author" content="Wynneyin">
 <meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
@@ -277,6 +277,7 @@
   <div class="article-entry" itemprop="articleBody">
     
     <h1 id="59螺旋矩阵"><a href="#59螺旋矩阵" class="headerlink" title="59螺旋矩阵"></a>59螺旋矩阵</h1><p>给你一个正整数 <code>n</code> ，生成一个包含 <code>1</code> 到 <code>n2</code> 所有元素，且元素按顺时针顺序螺旋排列的 <code>n x n</code> 正方形矩阵 <code>matrix</code> 。</p>
+<span id="more"></span>
 <p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/spiraln.jpg" alt="img"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 3</span><br><span class="line">输出：[[1,2,3],[8,9,4],[7,6,5]]</span><br></pre></td></tr></table></figure>
 <p>解题思路:</p>
