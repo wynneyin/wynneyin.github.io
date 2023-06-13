@@ -18,7 +18,7 @@
 <meta property="og:description" content="常用的函数:">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-04-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-06-11T09:16:52.703Z">
+<meta property="article:modified_time" content="2023-06-11T11:16:14.568Z">
 <meta property="article:author" content="Wynneyin">
 <meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
@@ -254,7 +254,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">109字</span>
+      <span class="post-count">473字</span>
     </span>
   </span>
 
@@ -263,7 +263,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -274,14 +274,21 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>常用的函数:</p>
-<span id="more"></span>
+    <h1 id="常用的函数"><a href="#常用的函数" class="headerlink" title="常用的函数:"></a>常用的函数:</h1><span id="more"></span>
 <p>无序集合:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unordered_set&lt;<span class="type">int</span>&gt; visited;</span><br><span class="line">visited.<span class="built_in">insert</span>(path[i][<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
 <p>vector</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">IN</span><span class="params">(N+<span class="number">10001</span>)</span></span>;  <span class="comment">//初始化大小为N+10001的全0的列表</span></span><br></pre></td></tr></table></figure>
 <p>哈希表</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;unordered_map&gt;</span><br><span class="line"></span><br><span class="line">unordered_map&lt;int, int&gt; map;</span><br><span class="line">unordered_map&lt;int, int&gt; hmap&#123; &#123;1,10&#125;,&#123;2,12&#125;,&#123;3,13&#125; &#125;;</span><br><span class="line">hmap[4] = 14;  ///赋值</span><br><span class="line"></span><br><span class="line">//根据key 查找</span><br><span class="line">unordered_map&lt;int, int&gt; hmap&#123; &#123;1,10&#125;,&#123;2,12&#125;,&#123;3,13&#125; &#125;;</span><br><span class="line">int elem = hmap.at(3);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="C-二分查找的函数"><a href="#C-二分查找的函数" class="headerlink" title="C++ 二分查找的函数"></a>C++ 二分查找的函数</h3><h4 id="Lower-bound-函数"><a href="#Lower-bound-函数" class="headerlink" title="Lower_bound()函数"></a>Lower_bound()函数</h4><p>c++中常见的find()和find_if() 等函数底层都是采用的顺序查找的方式，STL库中的lower-bound() ,upper_bound(),equal_bound 等函数底层采用的二分查找的方式。</p>
+<p>语法格式有</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//在 [first, last) 区域内查找不小于 val 的元素</span></span><br><span class="line"><span class="function">ForwardIterator <span class="title">lower_bound</span> <span class="params">(ForwardIterator first, ForwardIterator last,</span></span></span><br><span class="line"><span class="params"><span class="function">                             <span class="type">const</span> T&amp; val)</span></span>;</span><br><span class="line"><span class="comment">//在 [first, last) 区域内查找第一个不符合 comp 规则的元素</span></span><br><span class="line"><span class="function">ForwardIterator <span class="title">lower_bound</span> <span class="params">(ForwardIterator first, ForwardIterator last,</span></span></span><br><span class="line"><span class="params"><span class="function">                             <span class="type">const</span> T&amp; val, Compare comp)</span></span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="lower-bound-的底层实现"><a href="#lower-bound-的底层实现" class="headerlink" title="lower_bound()的底层实现"></a>lower_bound()的底层实现</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">ForwardIterator</span>, <span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="function">ForwardIterator <span class="title">lower_bound</span> <span class="params">(ForwardIterator first, ForwardIterator last, <span class="type">const</span> T&amp; val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ForwardIterator it;</span><br><span class="line">    iterator_traits&lt;ForwardIterator&gt;::difference_type count, step;</span><br><span class="line">    count = <span class="built_in">distance</span>(first,last);</span><br><span class="line">    <span class="keyword">while</span> (count&gt;<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        it = first; step=count/<span class="number">2</span>; <span class="built_in">advance</span> (it,step);</span><br><span class="line">        <span class="keyword">if</span> (*it&lt;val) &#123;  <span class="comment">//或者 if (comp(*it,val))，对应第 2 种语法格式</span></span><br><span class="line">            first=++it;</span><br><span class="line">            count-=step+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> count=step;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> first;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该函数仅适用于已排好序的序列。所谓“已排好序”，</p>
+<h5 id="upper-bound-函数"><a href="#upper-bound-函数" class="headerlink" title="upper_bound()函数"></a>upper_bound()函数</h5><p>类似于lower_bound() “已排好序”的序列。注意，这里所说的“已排好序”，并不要求数据完全按照某个排序规则进行升序或降序排序，而仅仅要求 [first, last) 区域内所有令 element&lt;val（或者 comp(val, element）成立的元素都位于不成立元素的前面（其中 element 为指定范围内的元素.</p>
+<h5 id="equel-range-函数"><a href="#equel-range-函数" class="headerlink" title="equel_range()函数"></a>equel_range()函数</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//找到 [first, last) 范围中所有等于 val 的元素</span><br><span class="line">pair&lt;ForwardIterator,ForwardIterator&gt; equal_range (ForwardIterator first, ForwardIterator last, const T&amp; val);</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wenningker/article/details/124197939">https://blog.csdn.net/wenningker/article/details/124197939</a></p>
 
     
 
@@ -704,6 +711,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">CTF知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">区块链知识</a>
               </li>
             
             <div class="clearfix"></div>
