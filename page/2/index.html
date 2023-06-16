@@ -223,6 +223,191 @@
             
 
   
+    <article id="post-2023-5-3-信息论--极化码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/05/25/2023-5-3-%E4%BF%A1%E6%81%AF%E8%AE%BA--%E6%9E%81%E5%8C%96%E7%A0%81/" target="_blank">信息论极化码</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/05/25/2023-5-3-%E4%BF%A1%E6%81%AF%E8%AE%BA--%E6%9E%81%E5%8C%96%E7%A0%81/" class="archive-article-date">
+        <time datetime="2023-05-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-25</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="极化码"><a href="#极化码" class="headerlink" title="极化码"></a>极化码</h1><p>极化码的形式:</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/0a95e6e0fa9947e7a691a34a1f22fd52.png" alt="img"></p>
+<p>解码的方法:</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/1b06991b8c8e46209cf483becdd434e1.png" alt="img"></p>
+<p>W_ 信道:<br><img src="https://img-blog.csdnimg.cn/8363c111a82643cfbbe66edd64082b6f.png" alt="img"></p>
+<p>W+信道:</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/50ccac3a660f4b27b0a481396c1db712.png" alt="img"></p>
+<p>因为U1信道不好那么我们直接放弃，改为一个固定的值。</p>
+<p><em>解决</em>：Arikan的思路为抛弃差信道(冻结)，差信道不传输信息，而U1的值事先约定好，即U1已知不需要解码，目的是为了成功解码好信道中传输的U2</p>
+<p>相较于两个BEC信道独立的传输U1 U2时，成功传输的概率各自为1-P，而极化信道<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/gif.latex" alt="W^{-}()">中U1传输成功的概率为<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/gif.latex" alt="(1-P)^{2}">，U2传输成功的概率为<img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/gif.latex" alt="1-P^{2}"></p>
+<p>$\begin{array}{l}<br>I(w)=1-p \<br>I\left(W^{-}\right)=1-p(2-p)=(1-p)^{2} \<br>I\left(W^{+}\right)=1-p^{2}<br>\end{array}$  </p>
+<p>$\begin{array}{l}<br>\text {定理(BEC)} \forall \varepsilon&gt;0 ,W=B E C(p) \text {, } \<br>\mu<em>{t}(\varepsilon)=\frac{1}{2^{t}} \sum</em>{s^{\epsilon} \in\left{+,-\xi^{t}\right.} 1\left(p\left(s^{t}\right) \in(\varepsilon, 1-\varepsilon)\right) \<br>\text { k24. } \lim <em>{t \rightarrow \infty} \mu</em>{t}(\varepsilon)=0 \<br>\end{array}$</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">信息论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/05/25/2023-5-3-%E4%BF%A1%E6%81%AF%E8%AE%BA--%E6%9E%81%E5%8C%96%E7%A0%81/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2023-5-10-信息论备忘录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/05/25/2023-5-10-%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%A4%87%E5%BF%98%E5%BD%95/" target="_blank">信息论--熵部分</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/05/25/2023-5-10-%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%A4%87%E5%BF%98%E5%BD%95/" class="archive-article-date">
+        <time datetime="2023-05-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-25</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="信息论备忘录"><a href="#信息论备忘录" class="headerlink" title="信息论备忘录"></a>信息论备忘录</h1>
+    
+    <a class="article-more-a" href="/2023/05/25/2023-5-10-%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%A4%87%E5%BF%98%E5%BD%95/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">信息论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/05/25/2023-5-10-%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%A4%87%E5%BF%98%E5%BD%95/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2023-5-17-网工，磁盘阵列技术" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -906,185 +1091,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2023/04/01/2023-4-1-1008.%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2023-3-25-联合云论文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/03/25/2023-3-25-%E8%81%94%E5%90%88%E4%BA%91%E8%AE%BA%E6%96%87/" target="_blank">联合云论文</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/03/25/2023-3-25-%E8%81%94%E5%90%88%E4%BA%91%E8%AE%BA%E6%96%87/" class="archive-article-date">
-        <time datetime="2023-03-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-25</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="JointCloud-A-Cross-Cloud-Cooperation-Architecture-for-Integrated-Internet-Service-Customization"><a href="#JointCloud-A-Cross-Cloud-Cooperation-Architecture-for-Integrated-Internet-Service-Customization" class="headerlink" title="JointCloud: A Cross-Cloud Cooperation Architecture for Integrated Internet Service Customization"></a>JointCloud: A Cross-Cloud Cooperation Architecture for Integrated Internet Service Customization</h1>
-    
-    <a class="article-more-a" href="/2023/03/25/2023-3-25-%E8%81%94%E5%90%88%E4%BA%91%E8%AE%BA%E6%96%87/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">云数据安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/03/25/2023-3-25-%E8%81%94%E5%90%88%E4%BA%91%E8%AE%BA%E6%96%87/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2023-3-25-盛雨水最多的容器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/03/25/2023-3-25-%E7%9B%9B%E9%9B%A8%E6%B0%B4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AE%B9%E5%99%A8/" target="_blank">盛雨水最多的容器</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/03/25/2023-3-25-%E7%9B%9B%E9%9B%A8%E6%B0%B4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AE%B9%E5%99%A8/" class="archive-article-date">
-        <time datetime="2023-03-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-25</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="11-盛最多水的容器"><a href="#11-盛最多水的容器" class="headerlink" title="11.盛最多水的容器"></a>11.盛最多水的容器</h1><p>相关企业</p>
-<p>给定一个长度为 <code>n</code> 的整数数组 <code>height</code> 。有 <code>n</code> 条垂线，第 <code>i</code> 条线的两个端点是 <code>(i, 0)</code> 和 <code>(i, height[i])</code> 。</p>
-<p>找出其中的两条线，使得它们与 <code>x</code> 轴共同构成的容器可以容纳最多的水。</p>
-<p>返回容器可以储存的最大水量。</p>
-    
-    <a class="article-more-a" href="/2023/03/25/2023-3-25-%E7%9B%9B%E9%9B%A8%E6%B0%B4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AE%B9%E5%99%A8/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/03/25/2023-3-25-%E7%9B%9B%E9%9B%A8%E6%B0%B4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AE%B9%E5%99%A8/">展开全文 >></a>
     </p>
     
 

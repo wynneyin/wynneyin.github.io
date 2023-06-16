@@ -24,8 +24,10 @@
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/eq">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/v2-9b1fc63cf1058e5543285494fa26a4c1_720w.webp">
 <meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230531194438758.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230616151441161.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230616152030186.png">
 <meta property="article:published_time" content="2023-05-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-06-11T09:16:11.000Z">
+<meta property="article:modified_time" content="2023-06-16T08:32:17.542Z">
 <meta property="article:author" content="Wynneyin">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
@@ -262,7 +264,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.3k字</span>
+      <span class="post-count">2.4k字</span>
     </span>
   </span>
 
@@ -324,6 +326,11 @@
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2nd Step: Updating the weights of the neural network of the generator</span></span><br><span class="line">netG.zero_grad()</span><br><span class="line">target = Variable(torch.ones(<span class="built_in">input</span>.size()[<span class="number">0</span>]))</span><br><span class="line">output = netD(fake)</span><br><span class="line">errG = criterion(output, target)</span><br><span class="line">errG.backward()</span><br><span class="line">optimizerG.step()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3rd Step: Printing the losses and saving the real images and the generated images of the minibatch every 100 steps</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;[%d/%d][%d/%d] Loss_D: %.4f; Loss_G: %.4f&#x27;</span> % (epoch, EPOCH, i, <span class="built_in">len</span>(train_loader), errD.item(), errG.item()))</span><br><span class="line"><span class="keyword">if</span> i % <span class="number">100</span> == <span class="number">0</span>:</span><br><span class="line">    vutils.save_image(real, <span class="string">&#x27;%s/real_samples.png&#x27;</span> % <span class="string">&quot;./results&quot;</span>, normalize=<span class="literal">True</span>)</span><br><span class="line">    fake = netG(noise)</span><br><span class="line">    vutils.save_image(fake.data, <span class="string">&#x27;%s/fake_samples_epoch_%03d.png&#x27;</span> % (<span class="string">&quot;./results&quot;</span>, epoch), normalize=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
 <p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230531194438758.png" alt="image-20230531194438758"></p>
 <p>生成器和辨别器不平衡导致过拟合，高度敏感的超参选择</p>
+<p>不同的GAN的loss function:</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230616151441161.png" alt="image-20230616151441161"></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/img/image-20230616152030186.png" alt="image-20230616152030186"></p>
+<p>Conditional 图片和文字相互匹配才能给高分。</p>
+<p>监督学习学出的图片不清楚，因为输出的是平均的一个结果综合模糊。但是GAN可能会突发奇想的产生一些东西，最好是将GAN和监督学习相结合。</p>
 
     
 
