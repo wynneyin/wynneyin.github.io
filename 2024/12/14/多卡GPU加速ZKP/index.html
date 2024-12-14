@@ -6,17 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | Hexo</title>
+  <title>多卡GPU加速ZKP | Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="NTT 算子GPU 进行 NTT 连续访存，需要将标量转变为列主序 （Column-Major Layout）形式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多卡GPU加速ZKP">
+<meta property="og:url" content="http://example.com/2024/12/14/%E5%A4%9A%E5%8D%A1GPU%E5%8A%A0%E9%80%9FZKP/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="NTT 算子GPU 进行 NTT 连续访存，需要将标量转变为列主序 （Column-Major Layout）形式">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240701220043.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240704231606.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240705195901.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240705200913.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240705201311.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240705202234.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240705202243.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240705202310.png">
+<meta property="og:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240705202320.png">
+<meta property="article:published_time" content="2024-12-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-12-14T12:53:25.753Z">
 <meta property="article:author" content="Wynne Yin">
+<meta property="article:tag" content="多卡ZKP">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240701220043.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -207,84 +222,292 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-多卡GPU加速ZKP" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2024/12/14/java/" class="archive-article-date">
-        <time datetime="2024-12-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-12-14</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2024/12/14/java/" target="_blank">JAVA</a>
   
+    <h1 class="article-title" itemprop="name">
+      多卡GPU加速ZKP
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2024/12/14/%E5%A4%9A%E5%8D%A1GPU%E5%8A%A0%E9%80%9FZKP/" class="archive-article-date">
         <time datetime="2024-12-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-12-14</time>
 </a>
 
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">2.4k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">8分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="NTT-算子"><a href="#NTT-算子" class="headerlink" title="NTT 算子"></a>NTT 算子</h2><p>GPU 进行 NTT 连续访存，需要将标量转变为列主序 （Column-Major Layout）形式<span id="more"></span><br><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240701220043.png" alt="image.png"></p>
+<p>1.对于NTT  前n-2轮 跨度不会超过$2^{n-3}$   那么就用四张卡独立的去算前n-2轮<br>2 .四张卡之间需要 进行一次数据交换，每张卡需要与另外三张卡各交换的 1 2 𝑛−2个标量，来消除卡 与卡间数据依赖问题。交换完成后，每张卡仍然拥有2 𝑛−2个标量。</p>
+<h3 id="1-不同-GPU-拓扑结构下数据传输优化"><a href="#1-不同-GPU-拓扑结构下数据传输优化" class="headerlink" title="1.不同 GPU 拓扑结构下数据传输优化"></a>1.不同 GPU 拓扑结构下数据传输优化</h3><p>Nvlink 全连接拓扑   直接卡与卡直接直接传输即可<br>Nvlink 环路链接拓扑  需要两个交换，将数据分为两部分走两次</p>
+<h3 id="2-卡内子计算"><a href="#2-卡内子计算" class="headerlink" title="2.卡内子计算"></a>2.卡内子计算</h3><p>最后两轮访存的跨度大，只需要执行两轮，——&gt;  访存不连续 和block内线程数过低<br>解决方案： 每一个block合并多个小计算任务</p>
+<h3 id="3-计算和通信重叠"><a href="#3-计算和通信重叠" class="headerlink" title="3.计算和通信重叠"></a>3.计算和通信重叠</h3><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240704231606.png" alt="image.png"></p>
+<h2 id="MSM-算子"><a href="#MSM-算子" class="headerlink" title="MSM 算子"></a>MSM 算子</h2><p>Pippenger 算法的计算热点在桶内点归约阶段，其占了总计算时间的 75%左右，<br>另外，分桶阶段（包含主存到设备内存拷贝操作）占了总计算时间的 17% 左右，<br>桶归约和窗口归约占了总计算时间的 8%左右。<br><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240705195901.png" alt="image.png"></p>
+<p>分桶任务<br>数据的放置方式，标量采取列存储，点采取行存储（仿射坐标系下椭圆曲线每个点包含𝑥和𝑦两个值，这两个值的位数大小为 𝐿(𝐿&gt;&#x3D; 256)。读取某个点时，该点会被⌈ 𝐿&#x2F;64 ⌉个线程访问，) 。共同取一个点的一组线程被称为一个tile</p>
+<h4 id="桶的摆放"><a href="#桶的摆放" class="headerlink" title="桶的摆放"></a>桶的摆放</h4><p>某一个窗口的一个桶如果被访问那么这个桶附近的桶也有很大的概率被访问，那么将桶连续进行放置<br><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240705200913.png" alt="image.png"></p>
+<h4 id="计算和通信重叠"><a href="#计算和通信重叠" class="headerlink" title="计算和通信重叠"></a>计算和通信重叠</h4><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240705201311.png" alt="image.png"></p>
+<p>第一行放着标量集内每一个标量的第一个64位无符号整数，后面以此类推。<br>计算第一个分桶时，进行第二组传输。</p>
+<h4 id="高效的分桶策略"><a href="#高效的分桶策略" class="headerlink" title="高效的分桶策略"></a>高效的分桶策略</h4><p>竟态条件-》，需要引入 CUDA 原子函数。使用原子函数后， 当两个线程同时写一个统计值时，系统会保证原子性，保证统计结果正确。</p>
+<h4 id="桶内规约策略"><a href="#桶内规约策略" class="headerlink" title="桶内规约策略"></a>桶内规约策略</h4><p>首先指定一个任务阈值，随后对每个桶的任务大小进 行统计，如果桶内的任务数大于任务阈值，则需要将该计算任务标记为大任务，否则 标记为小任务。<br>为不同任务给不同的计算资源<br>Hyper-Q 技术 将多个核函数加载到一个GPU上</p>
+<h4 id="小任务导致的线程分束化"><a href="#小任务导致的线程分束化" class="headerlink" title="小任务导致的线程分束化"></a>小任务导致的线程分束化</h4><p>为了解决线程束分化的问题，可以将局部的交错配对归约改成全局的交错配对 归约，将多个小计算任务的中间结果归约操作进行合并。</p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240705202234.png" alt="image.png"><br><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240705202243.png" alt="image.png"></p>
+<h4 id="多卡任务调度优化"><a href="#多卡任务调度优化" class="headerlink" title="多卡任务调度优化"></a>多卡任务调度优化</h4><p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240705202310.png" alt="image.png"></p>
+<p><img src="https://wynneyin.oss-cn-hangzhou.aliyuncs.com/20240705202320.png" alt="image.png"></p>
+<p>MGZKP 提出了适用于零知识证明的多gpu数据划分方案，nvlink替换pcle通信<br>MGZKP 优化GPU的任务调度和GPU内的任务并行策略，针对访存不连续的问题利用share memory 作为缓存</p>
+<p>多gpu的问题：</p>
+<ol>
+<li>多卡ntt运算的瓶颈在数据划分和传输哈桑，由于算法特性卡与卡之间必须进行数据交换。</li>
+<li>多卡msm设计存在主存和设备内存传输延迟的问题，进行多卡规约时执行重复计算，卡内任务大小不一致导致的调度困难。</li>
+</ol>
+<h3 id="同步数据拷贝"><a href="#同步数据拷贝" class="headerlink" title="同步数据拷贝"></a>同步数据拷贝</h3><ul>
+<li><strong>定义</strong>：同步拷贝意味着主机执行的数据拷贝操作会阻塞，直到数据拷贝完成为止。也就是说，主机的执行会等待这个拷贝操作结束后，才继续往下执行其他代码。</li>
+<li><strong>优点</strong>：<ul>
+<li>代码执行顺序更容易理解和调试，因为所有操作按顺序执行。</li>
+<li>简化了同步的需求，因为在数据拷贝完成前，代码不会继续执行。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：<ul>
+<li>由于拷贝是阻塞的，主机的 CPU 在等待拷贝完成的过程中可能会浪费资源，而不能并行执行其他任务。</li>
+</ul>
+</li>
+</ul>
+<h3 id="异步数据拷贝"><a href="#异步数据拷贝" class="headerlink" title="异步数据拷贝"></a>异步数据拷贝</h3><ul>
+<li><strong>定义</strong>：异步拷贝意味着数据拷贝操作是非阻塞的，主机会立即继续执行后续代码，而不会等待数据</li>
+</ul>
+<p>这四点是提升多卡推理性能的关键优化方向，分别从数据处理、并行性、模型效率和资源管理四个维度提升吞吐量和降低延迟。以下是每个优化方向的详细讲解：  </p>
+<hr>
+<h3 id="1-Batching：批量处理推理请求，充分利用-GPU-的并行计算能力"><a href="#1-Batching：批量处理推理请求，充分利用-GPU-的并行计算能力" class="headerlink" title="1. Batching：批量处理推理请求，充分利用 GPU 的并行计算能力"></a><strong>1. Batching：批量处理推理请求，充分利用 GPU 的并行计算能力</strong></h3><h4 id="核心原理"><a href="#核心原理" class="headerlink" title="核心原理"></a><strong>核心原理</strong></h4><p>GPU 的计算单元是为批量数据处理设计的。如果一次推理只处理一个请求，会浪费大部分计算资源。通过将多个推理请求合并为一个“批次”，可以充分利用 GPU 的并行能力，提升推理效率。</p>
+<h4 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a><strong>实现方法</strong></h4><ul>
+<li><strong>Batch合并</strong>：在推理前，收集多个请求，将它们合并为一个 Tensor 进行处理。<ul>
+<li>例如：多个图片拼接为一个 [batch_size, channels, height, width] 的 Tensor。</li>
+</ul>
+</li>
+<li><strong>自动批量工具</strong>：<ul>
+<li>使用深度学习框架的内置工具，如 PyTorch 的 <code>torch.utils.data.DataLoader</code> 或 TensorRT 的批处理接口。</li>
+</ul>
+</li>
+</ul>
+<h4 id="优化点"><a href="#优化点" class="headerlink" title="优化点"></a><strong>优化点</strong></h4><ul>
+<li><strong>批量大小选择</strong>：<ul>
+<li>批次过小：GPU 资源利用不足。</li>
+<li>批次过大：会增加推理延迟，或导致显存不足。</li>
+<li>通常根据 GPU 的显存容量和应用的延迟要求调节批次大小。</li>
+</ul>
+</li>
+<li><strong>动态批量</strong>：<ul>
+<li>使用动态批次机制，根据当前请求队列自动调整批量大小。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-多流并行：利用-CUDA-Streams-提高多请求的吞吐率"><a href="#2-多流并行：利用-CUDA-Streams-提高多请求的吞吐率" class="headerlink" title="2. 多流并行：利用 CUDA Streams 提高多请求的吞吐率"></a><strong>2. 多流并行：利用 CUDA Streams 提高多请求的吞吐率</strong></h3><h4 id="核心原理-1"><a href="#核心原理-1" class="headerlink" title="核心原理"></a><strong>核心原理</strong></h4><p>GPU 支持多个 CUDA Stream，通过将计算任务分配到不同的 Stream，可以实现不同请求的并行处理，避免单一 Stream 的等待延迟。</p>
+<h4 id="实现方法-1"><a href="#实现方法-1" class="headerlink" title="实现方法"></a><strong>实现方法</strong></h4><ul>
+<li><strong>定义多个 Stream</strong>：<ul>
+<li>在 PyTorch 中，可以使用 <code>torch.cuda.Stream()</code> 创建多个 CUDA Stream。</li>
+</ul>
+</li>
+<li><strong>请求分配</strong>：<ul>
+<li>将不同推理请求分配到不同 Stream 中，让它们并行执行。</li>
+</ul>
+</li>
+<li><strong>异步执行</strong>：<ul>
+<li>利用异步操作（如 <code>torch.cuda.synchronize()</code>）协调任务完成。</li>
+</ul>
+</li>
+</ul>
+<h4 id="优化点-1"><a href="#优化点-1" class="headerlink" title="优化点"></a><strong>优化点</strong></h4><ul>
+<li><strong>任务分配策略</strong>：<ul>
+<li>可以通过轮询或负载均衡算法将推理请求分配到不同 Stream。</li>
+</ul>
+</li>
+<li><strong>同步点设置</strong>：<ul>
+<li>确保必要的同步，例如 GPU 到 CPU 的结果拷贝。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="3-模型优化：使用-TensorRT、ONNX-等工具对模型进行量化或剪枝"><a href="#3-模型优化：使用-TensorRT、ONNX-等工具对模型进行量化或剪枝" class="headerlink" title="3. 模型优化：使用 TensorRT、ONNX 等工具对模型进行量化或剪枝"></a><strong>3. 模型优化：使用 TensorRT、ONNX 等工具对模型进行量化或剪枝</strong></h3><h4 id="核心原理-2"><a href="#核心原理-2" class="headerlink" title="核心原理"></a><strong>核心原理</strong></h4><p>通过对模型进行优化（如量化、剪枝、张量重排等），减少计算复杂度和内存需求，从而提升推理效率。  </p>
+<h4 id="优化方法"><a href="#优化方法" class="headerlink" title="优化方法"></a><strong>优化方法</strong></h4><ol>
+<li><strong>量化（Quantization）</strong>：<ul>
+<li>将模型参数从 FP32 转换为 FP16 或 INT8 格式，减少内存占用和计算量。</li>
+<li>工具：TensorRT、ONNX Runtime、PyTorch 的 <code>torch.quantization</code> 模块。</li>
+</ul>
+</li>
+<li><strong>模型剪枝（Pruning）</strong>：<ul>
+<li>去掉不重要的网络连接或神经元，减小模型规模。</li>
+<li>工具：DeepSpeed、SparseML。</li>
+</ul>
+</li>
+<li><strong>算子融合</strong>：<ul>
+<li>合并多个算子为一个高效算子，减少内存拷贝和冗余计算。</li>
+<li>工具：ONNX Graph Optimizer、TensorRT。</li>
+</ul>
+</li>
+<li><strong>TensorRT 加速</strong>：<ul>
+<li>TensorRT 是 NVIDIA 专为 GPU 推理设计的优化框架，可大幅提升模型推理性能。</li>
+</ul>
+</li>
+</ol>
+<h4 id="优化点-2"><a href="#优化点-2" class="headerlink" title="优化点"></a><strong>优化点</strong></h4><ul>
+<li><strong>量化前的校准</strong>：<ul>
+<li>在 INT8 量化前，使用校准数据评估精度损失。</li>
+</ul>
+</li>
+<li><strong>剪枝后的再训练</strong>：<ul>
+<li>剪枝可能影响模型性能，再训练可弥补性能下降。</li>
+</ul>
+</li>
+<li><strong>推理框架选择</strong>：<ul>
+<li>优先选择专门优化的推理框架，如 TensorRT 或 ONNX Runtime。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="4-负载均衡：通过任务调度工具对不同-GPU-进行动态分配"><a href="#4-负载均衡：通过任务调度工具对不同-GPU-进行动态分配" class="headerlink" title="4. 负载均衡：通过任务调度工具对不同 GPU 进行动态分配"></a><strong>4. 负载均衡：通过任务调度工具对不同 GPU 进行动态分配</strong></h3><h4 id="核心原理-3"><a href="#核心原理-3" class="headerlink" title="核心原理"></a><strong>核心原理</strong></h4><p>在多卡系统中，推理请求的分布可能不均匀。负载均衡通过调度算法将任务动态分配到不同 GPU，避免某些 GPU 过载或闲置。</p>
+<h4 id="实现方法-2"><a href="#实现方法-2" class="headerlink" title="实现方法"></a><strong>实现方法</strong></h4><ol>
+<li><strong>静态分配</strong>：<ul>
+<li>使用简单的轮询策略（Round Robin）或固定分配。</li>
+</ul>
+</li>
+<li><strong>动态分配</strong>：<ul>
+<li>根据 GPU 当前的任务负载（如使用率、显存占用）动态调整任务分配。</li>
+</ul>
+</li>
+<li><strong>调度工具</strong>：<ul>
+<li><strong>Kubernetes</strong>：通过 GPU-aware 调度扩展支持动态资源分配。</li>
+<li><strong>NVIDIA Triton Inference Server</strong>：自动处理多 GPU 推理任务的负载均衡。</li>
+</ul>
+</li>
+</ol>
+<h4 id="优化点-3"><a href="#优化点-3" class="headerlink" title="优化点"></a><strong>优化点</strong></h4><ul>
+<li><strong>监控与调整</strong>：<ul>
+<li>实时监控 GPU 使用率，动态调整任务调度策略。</li>
+</ul>
+</li>
+<li><strong>带宽优化</strong>：<ul>
+<li>如果任务需要在 GPU 间通信，选择 NVLink 带宽更高的拓扑结构。</li>
+</ul>
+</li>
+<li><strong>弹性扩展</strong>：<ul>
+<li>在任务流量波动时，自动添加或移除 GPU 资源（在云环境下常用）。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="综合应用策略"><a href="#综合应用策略" class="headerlink" title="综合应用策略"></a><strong>综合应用策略</strong></h3><p>这四种优化方法可以结合使用：</p>
+<ol>
+<li><strong>批量处理</strong>是提升单卡吞吐率的基础。</li>
+<li><strong>多流并行</strong>进一步提高并行能力，适合高请求量场景。</li>
+<li><strong>模型优化</strong>减少推理开销，适配硬件特性。</li>
+<li><strong>负载均衡</strong>在多卡环境中分配任务，确保资源充分利用。</li>
+</ol>
+<p>具体应用中，可根据需求选择合适的优化组合，例如：</p>
+<ul>
+<li><strong>实时性优先</strong>：使用小批次、多流并行和动态负载均衡。</li>
+<li><strong>吞吐量优先</strong>：结合大批次、量化模型和负载均衡实现高效率推理。</li>
+</ul>
+<p>如果你有具体的推理任务场景，可以进一步讨论细化优化策略！</p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2024/12/14/%E5%A4%9A%E5%8D%A1GPU%E5%8A%A0%E9%80%9FZKP/" target="_blank">多卡GPU加速ZKP</a>
-  
-    </h1>
-  
+      </a>
+    </div>
+    
 
-
-        <div class="article-info info-on-right">
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Wynne Yin
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://example.com/2024/12/14/多卡GPU加速ZKP/" title="多卡GPU加速ZKP" target="_blank">http://example.com/2024/12/14/多卡GPU加速ZKP/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -296,377 +519,116 @@
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/12/14/%E5%A4%9A%E5%8D%A1GPU%E5%8A%A0%E9%80%9FZKP/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
+    <a href="/2024/12/14/java/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JAVA
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/06/10/2023-6-10-59%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">59螺旋矩阵</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/06/10/2023-6-10-59%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/" class="archive-article-date">
-        <time datetime="2023-06-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-06-10</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/06/10/2023-6-10-59%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/" target="_blank">59螺旋矩阵</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/06/07/2023-6-7-48.%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/" class="archive-article-date">
-        <time datetime="2023-06-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-06-07</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/06/07/2023-6-7-48.%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/" target="_blank">48.旋转图像</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/06/05/2023-6-5-%E8%AE%BE%E8%AE%A1%E5%93%88%E5%B8%8C%E8%A1%A8%E6%98%A0%E5%B0%84/" class="archive-article-date">
-        <time datetime="2023-06-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-06-05</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/06/05/2023-6-5-%E8%AE%BE%E8%AE%A1%E5%93%88%E5%B8%8C%E8%A1%A8%E6%98%A0%E5%B0%84/" target="_blank">设计哈希表映射</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/06/04/2023-6-4-75%E9%A2%9C%E8%89%B2%E5%88%86%E7%B1%BB/" class="archive-article-date">
-        <time datetime="2023-06-03T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-06-04</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/06/04/2023-6-4-75%E9%A2%9C%E8%89%B2%E5%88%86%E7%B1%BB/" target="_blank">75颜色分类</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/04/30/2023-4-30-C++%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0/" class="archive-article-date">
-        <time datetime="2023-04-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-30</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/04/30/2023-4-30-C++%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0/" target="_blank">C++常用的函数</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/04/15/2023-4-15-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="archive-article-date">
-        <time datetime="2023-04-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-15</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/04/15/2023-4-15-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" target="_blank">动态规划</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/04/05/2023-4-5-82.-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0-II/" class="archive-article-date">
-        <time datetime="2023-04-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-05</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/04/05/2023-4-5-82.-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0-II/" target="_blank">82. 删除排序链表中的重复元素 II</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/04/05/2023-4-5-%E4%B8%A4%E6%95%B4%E6%95%B0%E4%B9%8B%E5%92%8C/" class="archive-article-date">
-        <time datetime="2023-04-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-05</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/04/05/2023-4-5-%E4%B8%A4%E6%95%B4%E6%95%B0%E4%B9%8B%E5%92%8C/" target="_blank">两整数之和</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">力扣</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -707,8 +669,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
